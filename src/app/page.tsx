@@ -4,6 +4,7 @@ import Header from "./s_components/Header";
 import Background from "./s_components/Background";
 import HeroContent from "./s_components/HeroContent";
 import CollectionsArea from "./s_components/CollectionsArea";
+import ExampleCardArea from "./s_components/ExampleCardArea";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       </div>
       <div className="relative">
         <CollectionsArea />
+      </div>
+      <div className="relative">
+        <ExampleCardArea />
       </div>
     </>
   );
