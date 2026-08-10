@@ -1,5 +1,4 @@
 export default function HeroContent() {
-
     return (
         <>
             <div className="relative z-10">
@@ -24,6 +23,7 @@ export default function HeroContent() {
             </div>
 
             <div className="relative z-10">
+
                 <div>
                     <p
                         className="text-right grotesk-xbold absolute left-266 top-63.5 text-[96px] leading-9.5 tracking-normal uppercase"
@@ -48,9 +48,11 @@ export default function HeroContent() {
                         Objekte
                     </p>
                 </div>
+
             </div>
 
             <div className="relative z-10">
+
                 <button
                     className="uppercase absolute top-148 left-150 text-center grotesk-xbold text-[24px] tracking-[1px] w-48.75 h-12.25 bg-(--mainColor) text-white"
                 >
@@ -61,6 +63,7 @@ export default function HeroContent() {
                 >
                     Archivieren
                 </button>
+                
             </div>
         </>
     );
