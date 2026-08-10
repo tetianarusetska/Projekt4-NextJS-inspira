@@ -25,7 +25,7 @@ export default function ExampleCardArea() {
 
                 </div>
 
-                <div className="mx-auto mt-10 w-full max-w-301.75 h-148.75 border-[5px] border-black bg-black">
+                <div className="mx-auto mt-30 w-full max-w-301.75 h-148.75 border-[5px] border-black bg-black">
 
                     <div className="grid grid-cols-1 md:grid-cols-[38%_62%]">
                         

@@ -14,7 +14,7 @@ export default function CollectionsArea() {
 
     return (
         <>
-            <div className="relative z-10 mt-13" style={{ height: 832, width: 1280 }}>
+            <div className="relative z-10 mt-43" style={{ height: 832, width: 1280 }}>
 
                 <p
                     className="text-left grotesk-xbold absolute left-15.25 top-13 text-[64px] leading-[100%] tracking-[1%] uppercase"
