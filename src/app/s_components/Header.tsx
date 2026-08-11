@@ -1,4 +1,4 @@
-import NavLinks from "../cl_components/NavLinks";
+import HeaderNavLinks from "../cl_components/HeaderNavLinks";
 
 
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
                 alt="i.nspira"
                 className="mt-2 ml-2"
             />
-            <NavLinks />
+            <HeaderNavLinks />
 
         </header>
     );
