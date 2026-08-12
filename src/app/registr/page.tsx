@@ -1,9 +1,9 @@
 import Header from "../components/header/Header";
-import Login from "./Login";
+import Registr from "./Registr";
 
 
 
-export default function LoginPage() {
+export default function RegistrPage() {
 
     return (
         <>
@@ -15,7 +15,7 @@ export default function LoginPage() {
             <div className="absolute bg-black" style={{ left: 1019.5 - 1.5, top: 0, width: 3, height: 72 }} />
             <div className="absolute bg-black" style={{ left: 1189.5 - 1.5, top: 0, width: 3, height: 72 }} />
             <div className="absolute bg-black" style={{ left: 1339.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <Login />
+            <Registr />
         </>
     )
 }

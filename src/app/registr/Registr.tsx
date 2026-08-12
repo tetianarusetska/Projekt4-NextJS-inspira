@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Login() {
+export default function Registr() {
     return (
         <>
             <div className="relative w-screen h-screen flex justify-center items-center">
@@ -105,7 +105,7 @@ export default function Login() {
                                 Weiter mit Google
                             </button>
                         </div>
-                        <p className="mt-5 text-[16px] text-center text-[#636161]">Bereits ein Konto? <Link href="registr" className="underline text-(--mainColor)">Anmelden</Link></p>
+                        <p className="mt-5 text-[16px] text-center text-[#636161]">Bereits ein Konto? <Link href="login" className="underline text-(--mainColor)">Anmelden</Link></p>
                     </form>
                 </div>
             </div>
