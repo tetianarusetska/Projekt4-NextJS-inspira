@@ -4,16 +4,17 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const links = [
-    { href: "/discover", label: "ENTDECKEN", width: 170 },
-    { href: "/about", label: "UBER INSPIRA", width: 150 },
-    { href: "/login", label: "LOGIN", width: 140.5 },
+    { href: "/impressum", label: "IMPRESSUM", width: 170 },
+    { href: "/datenschutz", label: "DATENSCHUTZ", width: 150 },
+    { href: "/kontakt", label: "KONTAKT", width: 140.5 },
 ];
 
-export default function HeaderNavLinks() {
+export default function FooterNavLinks() {
+
     const pathname = usePathname();
 
     return (
-        <nav className="flex ml-221" style={{ height: 72 }}>
+        <nav className="flex z-3 mr-2" style={{ height: 72 }}>
             {links.map((link) => (
                 <Link
                     key={link.href}
