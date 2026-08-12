@@ -3,12 +3,12 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-import Header from "./s_components/Header";
-import Background from "./s_components/Background";
-import HeroContent from "./s_components/HeroContent";
-import CollectionsArea from "./s_components/CollectionsArea";
-import ExampleCardArea from "./s_components/ExampleCardArea";
-import AboutArea from "./s_components/AboutArea";
+import Header from "./components/header/Header";
+import Background from "./components/homepage/Background";
+import HeroContent from "./components/homepage/HeroContent";
+import CollectionsArea from "./components/homepage/CollectionsArea";
+import ExampleCardArea from "./components/homepage/ExampleCardArea";
+import AboutArea from "./components/homepage/AboutArea";
 
 export default function Home() {
 

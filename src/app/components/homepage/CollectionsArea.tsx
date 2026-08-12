@@ -1,5 +1,3 @@
-
-
 export default function CollectionsArea() {
 
     const cards = [
@@ -10,7 +8,6 @@ export default function CollectionsArea() {
         { name: "ZITATE", count: "1090 OBJEKTE", color: "#13322C", top: 276.5, left: 982.5 },
         { name: "MUSEEN", count: "999 OBJEKTE", color: "#000000", top: 158.5, left: 1228.5 }
     ];
-
 
     return (
         <>

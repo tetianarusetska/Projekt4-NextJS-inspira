@@ -1,5 +1,4 @@
 export default function ExampleCardArea() {
-
     return (
         <>
             <div className="relative z-10 mt-13 h-screen w-screen">

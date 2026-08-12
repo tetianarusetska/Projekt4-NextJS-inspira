@@ -1,5 +1,4 @@
-import HeaderNavLinks from "../cl_components/HeaderNavLinks";
-
+import HeaderNavLinks from "./HeaderNavLinks";
 
 export default function Header() {
     return (
