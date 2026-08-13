@@ -16,11 +16,16 @@ export default function PersonalArea() {
                 </p>
             </div>
 
-            <div className="relative z-30">
+            <div className="flex flex-col relative z-30">
                 <p
                     className="text-right absolute left-288 top-26 text-[40px] leading-9.5 tracking-normal"
                 >
                 XXX XXXXXXXXX
+                </p>
+                <p
+                    className="text-right absolute left-307 top-40 text-[24px] leading-9.5 tracking-normal"
+                >
+                SAMMLER SEIT XXXXJ.
                 </p>
             </div>
 
@@ -28,7 +33,7 @@ export default function PersonalArea() {
 
                 <div>
                     <p
-                        className="text-right grotesk-xbold absolute left-266 top-63.5 text-[96px] leading-9.5 tracking-normal uppercase"
+                        className="text-right grotesk-xbold absolute left-272 top-63.5 text-[96px] leading-9.5 tracking-normal uppercase"
                     >
                         X
                     </p>
@@ -40,7 +45,7 @@ export default function PersonalArea() {
                 </div>
                 <div>
                     <p
-                        className="text-right grotesk-xbold absolute left-328 top-63.5 text-[96px] leading-9.5 tracking-normal uppercase"
+                        className="text-right grotesk-xbold absolute left-330 top-63.5 text-[96px] leading-9.5 tracking-normal uppercase"
                     >
                         X
                     </p>

@@ -7,7 +7,7 @@ const links = [
     { href: "/collections", label: "SAMMLUNGEN", width: 142 },
     { href: "/archive", label: "ARCHIVIEREN", width: 170 },
     { href: "/activity", label: "AKTIVITAT", width: 150 },
-    { href: "/login", label: "LOGIN", width: 142 },
+    { href: "/login", label: "LOGIN", width: 144 },
 ];
 
 export default function CabinetNavLinks() {

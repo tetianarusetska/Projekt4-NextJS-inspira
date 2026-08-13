@@ -4,9 +4,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const links = [
-    { href: "/#discover", label: "ENTDECKEN", width: 170 },
+    { href: "/#discover", label: "ENTDECKEN", width: 165 },
     { href: "/#about", label: "UBER INSPIRA", width: 150 },
-    { href: "/login", label: "LOGIN", width: 140.5 },
+    { href: "/login", label: "LOGIN", width: 142 },
 ];
 
 export default function HeaderNavLinks() {

@@ -25,7 +25,7 @@ export default function CabinetBackground() {
                     left: 922.5,
                     top: 71.9961,
                     width: 3,
-                    height: Math.sqrt((784.466 - 782.5) ** 2 + (867.996 - 71.9961) ** 2), // ≈760.001
+                    height: Math.sqrt((784.466 - 782.5) ** 2 + (866.996 - 71.9961) ** 2), // ≈760.001
                     backgroundColor: "#808080",
                     transformOrigin: "top left",
                     transform: `rotate(${Math.atan2(784.466 - 782.5, 831.996 - 71.9961) * (180 / Math.PI)}deg)`,
@@ -38,7 +38,7 @@ export default function CabinetBackground() {
             <div className="absolute bg-black" style={{ left: 508.5 - 1.5, top: 602, width: 3, height: 746 - 602 }} />
             <div
                 className="absolute"
-                style={{ right: 0, top: 221.5 - 1.5, width: 325, height: 3, backgroundColor: "#808080" }}
+                style={{ right: 0, top: 221.5 - 1.5, width: 338, height: 3, backgroundColor: "#808080" }}
             />
         </div>
     );

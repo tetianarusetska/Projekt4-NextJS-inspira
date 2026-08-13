@@ -31,9 +31,9 @@ export default function Background() {
                     transform: `rotate(${Math.atan2(784.466 - 782.5, 831.996 - 71.9961) * (180 / Math.PI)}deg)`,
                 }}
             />
-            <div className="absolute bg-black" style={{ left: 1019.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 1189.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 1339.5 - 1.5, top: 0, width: 3, height: 72 }} />
+            <div className="absolute bg-black" style={{ left: 1177.5 - 1.5, top: 0, width: 3, height: 72 }} />
+            <div className="absolute bg-black" style={{ left: 1012.5 - 1.5, top: 0, width: 3, height: 72 }} />
+            <div className="absolute bg-black" style={{ left: 1329.5 - 1.5, top: 0, width: 3, height: 72 }} />
             <div className="absolute bg-black" style={{ left: 508.5 - 1.5, top: 602, width: 3, height: 746 - 602 }} />
             <div
                 className="absolute"
