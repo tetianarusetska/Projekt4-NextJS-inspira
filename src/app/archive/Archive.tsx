@@ -8,13 +8,14 @@ import Product from "./Product";
 
 const steps = [
     { id: "collection", label: "01    ·    SAMMLUNG" },
-    { id: "details",    label: "02    ·    DETAILS" },
-    { id: "media",      label: "03    ·    MEDIA" },
-    { id: "product",    label: "04    ·    VORSCHAU" },
+    { id: "details", label: "02    ·    DETAILS" },
+    { id: "media", label: "03    ·    MEDIA" },
+    { id: "product", label: "04    ·    VORSCHAU" },
 ];
 
 export default function Archive() {
 
+    const [selectedCategory, setSelectedCategory] = useState("bucher");
     const [activeStep, setActiveStep] = useState("collection");
 
     return (
@@ -41,11 +42,10 @@ export default function Archive() {
                             key={step.id}
                             type="button"
                             onClick={() => setActiveStep(step.id)}
-                            className={`flex h-full w-69.5 items-center justify-center text-[24px] grotesk-xbold transition-colors ${
-                                isActive
+                            className={`flex h-full w-69.5 items-center justify-center text-[24px] grotesk-xbold transition-colors ${isActive
                                     ? "bg-black text-white"
                                     : "text-black hover:bg-black hover:text-white"
-                            }`}
+                                }`}
                         >
                             {step.label}
                         </button>
@@ -54,8 +54,20 @@ export default function Archive() {
             </div>
 
             {/* CONTENT */}
-            {activeStep === "collection" && <Collection />}
+            
+            {activeStep === "collection" && (
+                <Collection
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
+                />
+            )}
 
+            {activeStep === "details" && (
+                <Details selectedCategory={selectedCategory} />
+            )}
+
+            {activeStep === "media" && <Media />}
+            {activeStep === "product" && <Product />}
         </div>
     );
 }

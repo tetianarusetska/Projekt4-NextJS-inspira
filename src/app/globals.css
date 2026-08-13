@@ -277,3 +277,10 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.kino-placeholder::placeholder {
+    font-family: "Kino40";
+    font-size: 32px;
+    color: #0C213C;
+    opacity: 1;
+}
