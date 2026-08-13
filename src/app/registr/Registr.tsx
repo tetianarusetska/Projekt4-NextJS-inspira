@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Registr() {
     return (
         <>
-            <div className="relative w-screen h-screen flex justify-center items-center">
+            <div className="relative w-full h-full flex justify-center items-center">
                 <div>
                     <p
                         className="grotesk-xbold text-[64px] leading-[100%] tracking-[1%] absolute left-8 top-21"
@@ -16,7 +16,7 @@ export default function Registr() {
                         Halte fest, was bleibt.
                     </p>
                 </div>
-                <div className="w-125 h-200 bg-white rounded-2xl mt-20">
+                <div className="w-125 h-200 bg-white rounded-2xl mt-20 mb-10">
                     <div className="mt-10 flex flex-row justify-between border-b-2 border-[#EDEDED] py-2">
                         <p
                             className="grotesk-xbold text-[24px] leading-[100%] tracking-[1%] uppercase ml-30"

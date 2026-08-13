@@ -1,6 +1,6 @@
 export default function AboutArea() {
     return (
-        <div className="mt-100 relative z-30 flex flex-col">
+        <div className="mt-100 relative z-30 flex flex-col" id="about">
 
             <div className="flex flex-col px-15.25">
                 <p

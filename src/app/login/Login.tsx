@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Login() {
     return (
         <>
-            <div className="relative w-screen h-screen flex justify-center items-center">
+            <div className="relative w-full h-full flex justify-center items-center">
                 <div>
                     <p
                         className="grotesk-xbold text-[64px] leading-[100%] tracking-[1%] absolute left-8 top-21"
@@ -16,7 +16,7 @@ export default function Login() {
                         Alles, was dich bewegt,<br></br>bleibt hier.
                     </p>
                 </div>
-                <div className="w-125 h-200 bg-white rounded-2xl mt-20">
+                <div className="w-125 h-200 bg-white rounded-2xl mt-20 mb-10">
                     <div className="mt-10 flex flex-row justify-between border-b-2 border-[#EDEDED] py-2">
                         <p
                             className="grotesk-xbold text-[24px] leading-[100%] tracking-[1%] uppercase ml-30  border-b-2"
