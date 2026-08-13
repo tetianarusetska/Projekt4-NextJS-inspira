@@ -77,7 +77,7 @@ export const categories: Record<string, Category> = {
                 id: "note",
                 label: "N°04, NOTIZ",
                 type: "textarea",
-                placeholder: "Zuerst war ich von der Musik beeindruckt. Dann war ich von den Persönlichkeiten beeindruckt.",
+                placeholder: "Zuerst war ich von der Musik beeindruckt. Dann war ich von den Personlichkeiten beeindruckt.",
             },
             {
                 id: "bestQuote",
@@ -119,7 +119,7 @@ export const categories: Record<string, Category> = {
                 id: "discovered_by",
                 label: "N°04, ENTDECKT DURCH",
                 type: "text",
-                placeholder: `Eines Tages fand meine Großmutter auf der Straße neben den kostenlosen Büchern "RAY".`,
+                placeholder: `Eines Tages fand meine Großmutter auf der Straße neben den kostenlosen Buchern "RAY".`,
             },
             {
                 id: "note",
@@ -131,7 +131,7 @@ export const categories: Record<string, Category> = {
                 id: "bestQuote",
                 label: "N°06, BESTES ZITAT",
                 type: "textarea",
-                placeholder: "“ Fotografie ist eine Liebesaffäre mit dem Leben. “",
+                placeholder: "“ Fotografie ist eine Liebesaffare mit dem Leben. “",
                 font: "kino-40",
             },
         ]
@@ -164,7 +164,7 @@ export const categories: Record<string, Category> = {
                 id: "technique",
                 label: "N°03, TECHNIK",
                 type: "text",
-                placeholder: "Öl auf Leinwand",
+                placeholder: "Ol auf Leinwand",
             },
             {
                 id: "dimensions",
@@ -205,7 +205,7 @@ export const categories: Record<string, Category> = {
                 id: "city",
                 label: "N°02, ORT",
                 type: "text",
-                placeholder: "Köln",
+                placeholder: "Koln",
             },
             {
                 id: "exhibition",
@@ -223,7 +223,7 @@ export const categories: Record<string, Category> = {
                 id: "discovered_by",
                 label: "N°05, ENTDECKT DURCH",
                 type: "text",
-                placeholder: "Reise nach Köln",
+                placeholder: "Reise nach Koln",
             },
             {
                 id: "note",
@@ -299,7 +299,7 @@ export const categories: Record<string, Category> = {
                 id: "creator",
                 label: "N°02, URHEBER",
                 type: "text",
-                placeholder: "Name des Künstlers",
+                placeholder: "Name des Kunstlers",
             },
             {
                 id: "year",
@@ -323,7 +323,7 @@ export const categories: Record<string, Category> = {
                 id: "note",
                 label: "N°06, NOTIZ",
                 type: "textarea",
-                placeholder: "Warum ich dieses Bild behalten möchte...",
+                placeholder: "Warum ich dieses Bild behalten mochte...",
             },
         ]
     },
@@ -387,7 +387,7 @@ export const categories: Record<string, Category> = {
                 id: "category",
                 label: "N°02, ART",
                 type: "select",
-                options: ["PROJEKT", "KONZEPT", "FRAGE", "GEDANKE"],
+                options: ["Projekt", "Konzept", "Frage", "Gedanke"],
             },
             {
                 id: "inspiration",
@@ -403,7 +403,7 @@ export const categories: Record<string, Category> = {
             },
             {
                 id: "next_step",
-                label: "N°05, NÄCHSTER SCHRITT",
+                label: "N°05, NACHSTER SCHRITT",
                 type: "text",
                 placeholder: "Recherche beginnen",
             },
@@ -475,7 +475,7 @@ export const categories: Record<string, Category> = {
                 id: "reason",
                 label: "N°03, WARUM",
                 type: "textarea",
-                placeholder: "Warum möchte ich diese Sammlung anlegen?",
+                placeholder: "Warum mochte ich diese Sammlung anlegen?",
             },
         ]
     },

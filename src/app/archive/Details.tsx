@@ -50,7 +50,7 @@ export default function Details({ selectedCategory }: DetailsProps) {
                                 <select
                                     id={detail.id}
                                     defaultValue=""
-                                    className="mt-6 w-full border-0 bg-transparent p-0 text-[24px] leading-none outline-none"
+                                    className="mt-6 w-full border-0 bg-black text-white p-0 text-[24px] leading-none outline-none"
                                 >
                                     <option value="" disabled>
                                         {detail.placeholder}
