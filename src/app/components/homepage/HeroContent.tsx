@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HeroContent() {
     return (
         <>
@@ -53,15 +55,15 @@ export default function HeroContent() {
 
             <div className="relative z-10">
 
-                <button
+                <button 
                     className="uppercase absolute top-148 left-150 text-center grotesk-xbold text-[24px] tracking-[1px] w-48.75 h-12.25 bg-(--mainColor) text-white"
                 >
-                    Sammlungen
+                    <Link href="/login">Sammlungen</Link>
                 </button>
                 <button
                     className="uppercase absolute top-148 left-250  text-center grotesk-xbold text-[24px] w-48.75 h-12.25 tracking-[1px] border-2 border-(--mainColor)"
                 >
-                    Archivieren
+                    <Link href="/login">Archivieren</Link>
                 </button>
                 
             </div>

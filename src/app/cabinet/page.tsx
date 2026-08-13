@@ -3,11 +3,11 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-import Header from "../components/header/Header";
-import Background from "../components/homepage/Background";
+import CabinetHeader from "./header/CabinetHeader";
 import FooterIntro from "../components/footer/FooterIntro";
 import Footer from "../components/footer/Footer";
 import PersonalArea from "./PersonalArea";
+import CabinetBackground from "./CabinetBackground";
 
 export default function PersonalAreaPage() {
 
@@ -31,8 +31,8 @@ export default function PersonalAreaPage() {
   return (
     <>
       <div className="relative h-screen w-screen">
-        <Background />
-        <Header />
+        <CabinetBackground />
+        <CabinetHeader />
         <PersonalArea />
       </div>
 
