@@ -1,6 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
+
+.material-symbols-outlined {
+    font-size: 60px;
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 300,
+        "GRAD" 0,
+        "opsz" 48;
+}
 
 @font-face {
     font-family: "BebasNeue";
@@ -88,10 +99,10 @@
     font-family: "BrandonGrotesque-Light";
     src: url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.eot");
     src: url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.svg#BrandonGrotesque-Light")format("svg");
+        url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/4720a7d244f0e454a222c6c175fd2a01.svg#BrandonGrotesque-Light")format("svg");
 }
 
 @font-face {
@@ -241,27 +252,28 @@
 
 
 :root {
-  --bgColor: #EDEDED;
-  --mainColor: #000000;
-  --secondaryColor: #808080;
+    --bgColor: #EDEDED;
+    --mainColor: #000000;
+    --secondaryColor: #808080;
 
-  --mainFont: "Grotesk_thin", sans-serif;
-  --decorativeFont: "Grotesk_XBold", sans-serif;
+    --mainFont: "Grotesk_thin", sans-serif;
+    --decorativeFont: "Grotesk_XBold", sans-serif;
 
 }
 
 body {
-  background: var(--bgColor);
-  color: var(--mainColor);
-  font-family: var(--mainFont);
+    background: var(--bgColor);
+    color: var(--mainColor);
+    font-family: var(--mainFont);
 }
 
 .grotesk-xbold {
-  font-family: "Grotesk_XBold", sans-serif;
+    font-family: "Grotesk_XBold", sans-serif;
 }
 
-html, body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
+html,
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
