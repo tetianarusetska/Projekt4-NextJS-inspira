@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { CollectionContentProps } from "@/app/types/CollectionContentProps";
 import { createObjects } from "@/app/data/MockObjects";
 import Link from "next/link";
@@ -5,7 +8,23 @@ import Link from "next/link";
 
 export default function CollectionContent({ collection }: CollectionContentProps) {
 
-    const objects = createObjects(collection.name, 36);
+    const objects = createObjects(
+        collection.id,
+        collection.name,
+        36
+    );
+
+    const objectsPerPage = 10;
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const totalPages = Math.ceil(objects.length / objectsPerPage);
+
+    const startIndex = (currentPage - 1) * objectsPerPage;
+
+    const currentObjects = objects.slice(
+        startIndex,
+        startIndex + objectsPerPage
+    );
 
     return (
         <>
@@ -37,12 +56,12 @@ export default function CollectionContent({ collection }: CollectionContentProps
                 </div>
 
                 <div className="mt-20 ml-11 grid w-7xl grid-cols-5 gap-x-28 gap-y-8">
-                    {objects.slice(0, 10).map((object) => (
+                    {currentObjects.map((object) => (
                         <div
                             key={object.id}
                             className="shadow-[8px_8px_8px_0_rgba(0,0,0,0.25)] w-59.75 h-97.25"
                         >
-                            <Link href={`/objects/${object.id}`}>
+                            <Link href={`/collections/${collection.id}/${object.id}`}>
                                 <div
                                     className="h-80 w-59.75 border-[5px] border-black"
                                     style={{ background: object.color }}
@@ -61,6 +80,34 @@ export default function CollectionContent({ collection }: CollectionContentProps
 
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-12 mr-11 flex justify-end items-center gap-6 text-[24px] grotesk-xbold">
+                    <button
+                        type="button"
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage((page) => page - 1)}
+                        className={currentPage === 1 ? "opacity-30" : ""}
+                    >
+                        ←
+                    </button>
+
+                    <span>
+                        {startIndex + 1}–{Math.min(startIndex + objectsPerPage, objects.length)}
+                    </span>
+
+                    <span>/</span>
+
+                    <span>{objects.length}</span>
+
+                    <button
+                        type="button"
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage((page) => page + 1)}
+                        className={currentPage === totalPages ? "opacity-30" : ""}
+                    >
+                        →
+                    </button>
                 </div>
 
             </div>
