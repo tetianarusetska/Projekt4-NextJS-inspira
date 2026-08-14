@@ -1,31 +1,10 @@
-"use client"
-
 import Footer from "../components/footer/Footer";
 import FooterIntro from "../components/footer/FooterIntro";
 import Header from "../components/header/Header";
 import Login from "./Login";
 
-import Lenis from "lenis";
-import { useEffect } from "react";
-
 
 export default function LoginPage() {
-
-    useEffect(() => {
-    
-            const lenis = new Lenis();
-    
-            function raf(time: number) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            }
-    
-            requestAnimationFrame(raf);
-    
-            return () => {
-                lenis.destroy();
-            };
-        }, []);
 
     return (
         <>

@@ -32,7 +32,6 @@ export default function Archive() {
                 </p>
             </div>
 
-            {/* STEPS */}
             <div className="mx-auto mt-70 flex h-13.75 w-275 border-[3px] border-[#808080]">
                 {steps.map((step) => {
                     const isActive = activeStep === step.id;
@@ -52,8 +51,6 @@ export default function Archive() {
                     );
                 })}
             </div>
-
-            {/* CONTENT */}
             
             {activeStep === "collection" && (
                 <Collection

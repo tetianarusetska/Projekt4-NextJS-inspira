@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { collections } from "../data/Collections";
 
 export default function Collections() {
@@ -26,7 +27,7 @@ export default function Collections() {
             </div>
 
             <div className="absolute left-0 top-0 h-[1620px] w-[1280px]">
-                {collections.map((col) => (
+                {Object.values(collections).map((col) => (
                     <div
                         key={col.id}
                         className="absolute shadow-[8px_8px_8px_0_rgba(0,0,0,0.25)]"
@@ -35,20 +36,25 @@ export default function Collections() {
                             top: col.top,
                         }}
                     >
-                        <div
-                            className="h-60.5 w-[236.138px] border-[5px] border-black"
-                            style={{ background: col.color }}
-                        />
+                        <Link href={`/collections/${col.id}`}>
+                            <div
+                                className="h-60.5 w-[236.138px] border-[5px] border-black"
+                                style={{ background: col.color }}
+                            />
 
-                        <div className="relative h-30 w-[236.138px] border-[5px] border-black bg-white">
-                            <div className="grotesk-xbold absolute left-3 top-2 text-[36px] uppercase">
-                                {col.name} ®
-                            </div>
+                            <div className="relative h-30 w-[236.138px] border-[5px] border-black bg-white">
+                                <div className="grotesk-xbold absolute left-3 top-2 text-[36px] uppercase">
+                                    {col.name}
+                                    <span className='relative -top-2.5 ml-1 text-[16px] bold'>
+                                        ®
+                                    </span>
+                                </div>
 
-                            <div className="grotesk-xbold absolute left-3 top-10 text-[24px] uppercase">
-                                {col.count}
+                                <div className="grotesk-xbold absolute left-3 top-10 text-[24px] uppercase">
+                                    {col.count}
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 ))}
             </div>

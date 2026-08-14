@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AboutArea() {
     return (
         <div className="mt-100 relative z-30 flex flex-col" id="about">
@@ -118,7 +120,7 @@ export default function AboutArea() {
                 <button
                     className="mt-15 uppercase text-center grotesk-xbold text-[24px] leading-[100%] tracking-[1%] w-75 h-13.5 bg-(--mainColor) text-white"
                 >
-                    Kuratieren
+                    <Link href="/login">Kuratieren</Link>
                 </button>
             </div>
 

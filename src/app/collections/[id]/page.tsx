@@ -1,9 +1,19 @@
-import CabinetHeader from "../cabinet/header/CabinetHeader";
-import FooterIntro from "../components/footer/FooterIntro";
-import Footer from "../components/footer/Footer";
-import Collections from "./Collections"
+import { collections } from "../../data/Collections";
+import FooterIntro from "@/app/components/footer/FooterIntro";
+import Footer from "@/app/components/footer/Footer";
+import CabinetHeader from "@/app/cabinet/header/CabinetHeader";
+import CollectionContent from "./CollectionContent";
 
-export default function CollectionsPage() {
+
+export default async function CollectionPage({ params }: { params: Promise<{ id: string }> }) {
+
+    const { id } = await params;
+
+    const collection = collections[id];
+
+    if (!collection) {
+        return <div>Collection not found</div>;
+    }
 
     return (
         <>
@@ -18,7 +28,7 @@ export default function CollectionsPage() {
             <div className="absolute bg-black" style={{ left: 1177.5 - 1.5, top: 0, width: 3, height: 72 }} />
             <div className="absolute bg-black" style={{ left: 1325.5 - 1.5, top: 0, width: 3, height: 72 }} />
 
-            <Collections />
+            <CollectionContent collection={collection} />
 
             <FooterIntro />
             <Footer />

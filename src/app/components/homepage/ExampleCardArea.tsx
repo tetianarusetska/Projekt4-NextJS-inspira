@@ -21,7 +21,7 @@ export default function ExampleCardArea() {
                     <button
                         className="uppercase text-center grotesk-xbold text-[32px] leading-[102%] tracking-[1%] w-60.25 h-15.5 bg-(--mainColor) text-white"
                     >
-                        <Link href="/registr">Kuratieren</Link>
+                        <Link href="/login">Kuratieren</Link>
                     </button>
 
                 </div>

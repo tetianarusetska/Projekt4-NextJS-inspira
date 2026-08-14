@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "material-symbols/outlined.css";
 import "./globals.css";
 import "./globals.css";
+import SmoothScroll from "./components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "i . n spira",
@@ -14,10 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
-
+    <html lang="en">
       <body>
-        <main>{children}</main>
+        <SmoothScroll />
+
+        {children}
       </body>
     </html>
   );

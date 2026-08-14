@@ -1,31 +1,9 @@
-"use client";
-
-import { useEffect } from "react";
-import Lenis from "lenis";
-
 import CabinetHeader from "../cabinet/header/CabinetHeader";
 import FooterIntro from "../components/footer/FooterIntro";
 import Footer from "../components/footer/Footer";
 import Archive from "./Archive";
 
 export default function ArchivePage() {
-
-    useEffect(() => {
-
-        const lenis = new Lenis();
-
-        function raf(time: number) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-
-        return () => {
-            lenis.destroy();
-        };
-    }, []);
-
 
     return (
         <>

@@ -1,5 +1,3 @@
-
-
 export default function Media() {
     return (
         <div id="media" className="mb-20">

@@ -27,8 +27,11 @@ export default function CollectionsArea() {
 
                             <div className="relative w-[236.138px] h-30 bg-white border-[5px] border-black">
 
-                                <div className="grotesk-xbold absolute left-3 top-2x text-[36px] uppercase">
-                                    {card.name} ®
+                                <div className="grotesk-xbold absolute left-3 top-2 text-[36px] uppercase">
+                                    {card.name}
+                                    <span className='relative -top-2.5 ml-1 text-[16px] bold'>
+                                        ®
+                                    </span>
                                 </div>
 
                                 <div className="grotesk-xbold absolute left-3 top-10 text-[24px] uppercase">

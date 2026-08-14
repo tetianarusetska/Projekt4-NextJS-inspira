@@ -1,9 +1,9 @@
-import { categories } from "../data/Categories";
+import { collections } from "../data/Collections";
 import { DetailsProps } from "../types/DetailsProps";
 
 export default function Details({ selectedCategory }: DetailsProps) {
 
-    const category = Object.values(categories).find(
+    const category = Object.values(collections).find(
         (item) => item.id === selectedCategory
     );
 
