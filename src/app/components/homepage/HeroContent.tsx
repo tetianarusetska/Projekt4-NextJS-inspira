@@ -5,12 +5,14 @@ export default function HeroContent() {
         <>
             <div className="relative z-10">
                 <p
-                    className="absolute left-10.75 top-35 text-[96px] leading-25.5 tracking-[1.0px]"
+                    className="absolute leading-25.5 tracking-[1.0px] text-[64px] left-8 top-20
+                    lg:left-10.75 lg:top-35 lg:text-[96px]
+                    "
                 >
                     Mehr als ein<br></br>Archiv
                 </p>
                 <p
-                    className="absolute left-78 top-75 text-[32px] leading-25 tracking-[0.5px]"
+                    className="hidden lg:absolute lg:left-78 lg:top-75 lg:text-[32px] lg:leading-25 lg:tracking-[0.5px]"
                 >
                     Jede Idee beginnt mit einer Inspiration
                 </p>

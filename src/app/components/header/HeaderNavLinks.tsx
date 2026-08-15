@@ -13,7 +13,7 @@ export default function HeaderNavLinks() {
     const pathname = usePathname();
 
     return (
-        <nav className="flex ml-221" style={{ height: 72 }}>
+        <nav className="md:flex lg:ml-221 md:ml-30 hidden" style={{ height: 72 }}>
             {links.map((link) => (
                 <Link
                     key={link.href}
