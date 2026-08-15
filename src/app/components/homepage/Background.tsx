@@ -57,7 +57,7 @@ export default function Background() {
             {/* right horizontal */}
             <div
                 className="hidden 
-                           lg:absolute lg:h-[3px] lg:w-[303px] lg:top-[220px] lg:right-0 lg:bg-[#808080]
+                           lg:absolute lg:h-[3px] lg:w-[303px] lg:top-[220px] lg:right-0 lg:bg-[#808080] lg:block
                 "
             />
         </div>
