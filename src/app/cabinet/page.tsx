@@ -14,7 +14,6 @@ export default function PersonalAreaPage() {
         <PersonalArea />
       </div>
 
-
       <FooterIntro />
       <Footer />
     </>

@@ -28,7 +28,7 @@ export default function CollectionContent({ collection }: CollectionContentProps
 
     return (
         <>
-            <div className="relative h-420">
+            <div className="relative lg:h-420 md:700">
                 <div className="absolute bg-[#808080]" style={{ left: 0, top: 140, width: 1470, height: 3 }} />
 
                 <div className="ml-11 mt-15 flex flex-col gap-4">
@@ -44,10 +44,10 @@ export default function CollectionContent({ collection }: CollectionContentProps
                 </div>
 
                 <div>
-                    <p className="mr-11 -mt-30 text-[24px] leading-[100%] tracking-[1%] text-right">
+                    <p className="hidden md:block md:mr-11 md:-mt-30 md:text-[24px] md:leading-[100%] md:tracking-[1%] md:text-right">
                         N°01 — 39 Objekte<br></br>zuletzt aktualisiert heute
                     </p>
-                    <div className="uppercase flex flex-row gap-8 text-[20px] justify-end mt-13 mr-11">
+                    <div className="hidden md:uppercase md:flex md:flex-row md:gap-8 md:text-[20px] md:justify-end md:mt-13 md:mr-11">
                         <p>Neuste</p>
                         <p>A–Z</p>
                         <p>N°</p>
@@ -55,7 +55,8 @@ export default function CollectionContent({ collection }: CollectionContentProps
                     </div>
                 </div>
 
-                <div className="mt-20 ml-11 grid w-7xl grid-cols-5 gap-x-28 gap-y-8">
+                {/* LG */}
+                <div className="hidden lg:mt-20 lg:ml-11 lg:grid lg:w-7xl lg:grid-cols-5 lg:gap-x-28 lg:gap-y-8">
                     {currentObjects.map((object) => (
                         <div
                             key={object.id}
@@ -82,7 +83,60 @@ export default function CollectionContent({ collection }: CollectionContentProps
                     ))}
                 </div>
 
-                <div className="mt-12 mr-11 flex justify-end items-center gap-6 text-[24px] grotesk-xbold">
+                {/* Mobile */}
+                <div className="mt-20 grid grid-cols-1 gap-2 px-3 md:hidden">
+                    {currentObjects.map((object) => (
+                        <Link
+                            key={object.id}
+                            href={`/collections/${collection.id}/${object.id}`}
+                            className="flex h-14 w-full border-[3px] border-black"
+                        >
+                            <div
+                                className="flex flex-1 items-center px-3"
+                                style={{ background: object.color }}
+                            >
+                                <span className="grotesk-xbold text-[20px] uppercase text-white">
+                                    {object.name}
+                                </span>
+                            </div>
+
+                            <div className="flex w-20 items-center justify-center border-l-[3px] border-black bg-black">
+                                <span className="grotesk-xbold text-[18px] uppercase text-white">
+                                    N°{String(object.id).padStart(2, "0")}
+                                </span>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+
+                {/* MD */}
+                <div className="hidden md:grid lg:hidden md:mt-10 md:ml-3 md:grid-cols-3 md:gap-3">
+                    {currentObjects.map((object) => (
+                        <div
+                            key={object.id}
+                            className="h-[364px] w-[236.138px] shadow-[6px_6px_6px_0_rgba(0,0,0,0.25)]"
+                        >
+                            <Link href={`/collections/${collection.id}/${object.id}`}>
+                                <div
+                                    className="h-60.5 w-[236.138px] border-[5px] border-black"
+                                    style={{ background: object.color }}
+                                />
+
+                                <div className="relative h-30 w-[236.138px] border-x-[5px] border-b-[5px] border-black bg-black text-white">
+                                    <div className="grotesk-xbold absolute left-2 top-1 text-[26px] uppercase">
+                                        {object.name}
+                                    </div>
+
+                                    <div className="grotesk-xbold absolute left-2 top-8 text-[20px] uppercase">
+                                        N°{String(object.id).padStart(2, "0")}
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="mt-12 mb-10 md:mb-20 lg:mb-0 mr-11 flex justify-end items-center gap-6 text-[24px] grotesk-xbold">
                     <button
                         type="button"
                         disabled={currentPage === 1}
