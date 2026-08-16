@@ -14,7 +14,7 @@ export default function CabinetNavLinks() {
     const pathname = usePathname();
 
     return (
-        <nav className="flex" style={{ height: 72 }}>
+        <nav className="md:flex hidden" style={{ height: 72 }}>
             {links.map((link) => (
                 <Link
                     key={link.href}

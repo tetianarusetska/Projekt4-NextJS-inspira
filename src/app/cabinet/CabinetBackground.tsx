@@ -1,45 +1,74 @@
 export default function CabinetBackground() {
-    return (
+
+     return (
         <div className="bg-(--bgColor) h-screen w-screen absolute inset-0">
+
+            {/* circle */}
             <div
-                className="absolute rounded-full"
-                style={{
-                    left: 168 - 123.5,
-                    top: 654 - 123.5,
-                    width: 123.5 * 2,
-                    height: 123.5 * 2,
-                    border: "3px solid #808080",
-                }}
+                className="absolute rounded-full w-61.75 h-61.75 left-[30.5px] top-[390.5px] border-[3px] border-[#808080]
+                md:left-[44.5px] md:top-[390.5px]
+                lg:left-[44.5px] lg:top-[530.5px]
+                "
+            />
+
+            {/* horizontal lines */}
+            <div
+                className="absolute bg-black w-full h-1 left-0 top-[398px]
+                md: left-0 top-[558px]
+                lg:left-0 lg:top-[598px]
+                "
             />
             <div
-                className="absolute bg-black"
-                style={{ left: 0, top: 600 - 2, width: "100%", height: 4 }}
+                className="absolute bg-black w-full h-1 left-0 top-[68px]
+                "
+            />
+
+            {/* vertical lines */}
+            <div
+                className="hidden
+                           md:block md:absolute md:w-[3px]  md:h-[760.001px]  md:bg-[#808080] md:origin-top-left md:rotate-[0.147deg] md:left-[520px] md:top-[72px]
+                           lg:left-[922.5px] lg:top-[71.9961px]"
+            />
+
+            <div className="hidden 
+                            md:block md:absolute md:bg-black md:top-0 md:w-[3px] h-[72px] md:left-[320px]
+                            lg:left-[1176px]
+                            "
+            />
+
+            <div className="hidden 
+                            md:block md:absolute md:bg-black md:left-[460px] md:top-0 w-[3px] h-[72px]
+                            lg:left-[1011px]
+                            "
             />
             <div
-                className="absolute bg-black"
-                style={{ left: 0, top: 70 - 2, width: "100%", height: 4 }}
+                className="hidden
+                           md:block md:absolute md:bg-black md:top-0, md:w-[3px] md:h-[72px] md:left-[638px]
+                           lg:left-[1328px]
+            "
             />
             <div
-                className="absolute"
-                style={{
-                    left: 922.5,
-                    top: 71.9961,
-                    width: 3,
-                    height: Math.sqrt((784.466 - 782.5) ** 2 + (866.996 - 71.9961) ** 2), // ≈760.001
-                    backgroundColor: "#808080",
-                    transformOrigin: "top left",
-                    transform: `rotate(${Math.atan2(784.466 - 782.5, 831.996 - 71.9961) * (180 / Math.PI)}deg)`,
-                }}
+                className="hidden
+                           md:block md:absolute md:bg-black md:top-0, md:w-[3px] md:h-[72px] md:left-[150px]
+                           lg:left-[860px]
+            "
             />
-            <div className="absolute bg-black" style={{ left: 865.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 1006.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 1177.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 1328.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 508.5 - 1.5, top: 602, width: 3, height: 746 - 602 }} />
+
+            {/* bottom vertical */}
             <div
-                className="absolute"
-                style={{ right: 0, top: 221.5 - 1.5, width: 338, height: 3, backgroundColor: "#808080" }}
+                className="hidden
+                           lg:w-[3px] lg:h-[144px] lg:absolute lg:bg-black  lg:block lg:top-[602px] lg:left-[427px]
+            "
+            />
+
+            {/* right horizontal */}
+            <div
+                className="hidden 
+                           lg:absolute lg:h-[3px] lg:w-[333px] lg:top-[180px] lg:right-0 lg:bg-[#808080] lg:block
+                "
             />
         </div>
     );
 }
+
+

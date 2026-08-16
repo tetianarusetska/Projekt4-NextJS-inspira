@@ -17,13 +17,6 @@ export default function HeroContent() {
                 >
                     Jede Idee beginnt mit einer Inspiration
                 </p>
-
-                {/* <button
-                    className="absolute top-100 left-8 uppercase text-center grotesk-xbold text-[32px] w-60.25 h-15.5 leading-[102%] tracking-[1%] bg-(--mainColor) text-white
-                               md:hidden"
-                >
-                    <Link href="/login">Kuratieren</Link>
-                </button> */}
             </div>
 
             <div className="relative z-10">
@@ -40,15 +33,15 @@ export default function HeroContent() {
                 <div>
                     <p
                         className="hidden grotesk-xbold
-                        md:block md:text-right md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-155 md:top-5 md:text-[64px]
-                        lg:left-266 lg:top-63.5 lg:text-[96px]"
+                                   md:block md:text-right md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-155 md:top-5 md:text-[64px]
+                                   lg:left-266 lg:top-63.5 lg:text-[96px]"
                     >
                         10
                     </p>
                     <p
                         className="hidden text-right grotesk-xbold
-                        md:block md:absolute md:text-[40px] md:leading-9.5 md:tracking-normal md:uppercase md:left-140 md:top-20
-                        lg:left-250 lg:top-81.75 lg:text-[48px]"
+                                   md:block md:absolute md:text-[40px] md:leading-9.5 md:tracking-normal md:uppercase md:left-140 md:top-20
+                                   lg:left-250 lg:top-81.75 lg:text-[48px]"
                     >
                         Sammlungen
                     </p>
@@ -56,16 +49,16 @@ export default function HeroContent() {
                 <div className="mt-10">
                     <p
                         className="hidden text-right grotesk-xbold 
-                        md:block md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-148 md:top-45 md:text-[64px]
-                        lg:left-315 lg:top-63.5 lg:text-[96px] 
+                                   md:block md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-148 md:top-45 md:text-[64px]
+                                   lg:left-315 lg:top-63.5 lg:text-[96px] 
                         "
                     >
                         11272
                     </p>
                     <p
                         className="hidden text-right grotesk-xbold 
-                        md:block md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-147 md:top-60 md:text-[40px]
-                        lg:left-318 lg:top-81.75 lg:text-[48px]"
+                                   md:block md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-147 md:top-60 md:text-[40px]
+                                   lg:left-318 lg:top-81.75 lg:text-[48px]"
                     >
                         Objekte
                     </p>

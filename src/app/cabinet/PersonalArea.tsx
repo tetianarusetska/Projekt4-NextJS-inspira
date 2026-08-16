@@ -3,14 +3,22 @@ import Link from "next/link";
 export default function PersonalArea() {
     return (
         <>
-         <div className="relative z-10">
+            <div className="relative z-10">
                 <p
-                    className="absolute left-10.75 top-35 text-[96px] leading-25.5 tracking-[1.0px]"
+                    className="absolute leading-17.5 tracking-[1.0px] text-[64px] left-4 top-20
+                               md:leading-20.5 md:text-[74px] md:left-8 md:top-20
+                               lg:left-10.75 lg:top-35 lg:text-[96px]"
                 >
                     Personliches<br></br>Archiv
                 </p>
                 <p
-                    className="absolute left-78 top-75 text-[32px] leading-25 tracking-[0.5px]"
+                className="md:hidden text-[24px] top-55 left-35 absolute"
+                >
+                    von XXX XXXXXXXXX
+                </p>
+                <p
+                    className="hidden 
+                               lg:block lg:absolute lg:left-78 lg:top-75 lg:text-[32px] lg:leading-25 lg:tracking-[0.5px]"
                 >
                     Jede Idee beginnt mit einer Inspiration
                 </p>
@@ -18,39 +26,65 @@ export default function PersonalArea() {
 
             <div className="flex flex-col relative z-30">
                 <p
-                    className="text-right absolute left-288 top-26 text-[40px] leading-9.5 tracking-normal"
+                    className="text-right absolute left-288 top-16 text-[40px] leading-9.5 tracking-normal"
                 >
-                XXX XXXXXXXXX
+                    XXX XXXXXXXXX
                 </p>
                 <p
-                    className="text-right absolute left-307 top-40 text-[24px] leading-9.5 tracking-normal"
+                    className="text-right absolute left-307 top-30 text-[24px] leading-9.5 tracking-normal"
                 >
-                SAMMLER SEIT XXXXJ.
+                    SAMMLER SEIT XXXXJ.
                 </p>
             </div>
 
-            <div className="relative z-30">
+            <div className="relative z-30 md:mt-35 lg:mt-0 flex flex-col">
+
+                <div className="hidden md:block lg:hidden grotesk-xbold">
+                    <p
+                        className="absolute left-140 -top-25 text-2xl"
+                    >
+                        Hallo, XXX XXXXXXXXXX
+                    </p>
+                </div>
+
+                <div className="hidden md:block lg:hidden">
+                    <p
+                        className="absolute left-140 -top-18 text-xl"
+                    >
+                        Du bist ein Sammler seit XXXJ.
+                    </p>
+                </div>
+
 
                 <div>
                     <p
-                        className="text-right grotesk-xbold absolute left-272 top-63.5 text-[96px] leading-9.5 tracking-normal uppercase"
+                        className="hidden grotesk-xbold
+                                   md:block md:text-right md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-155 md:top-5 md:text-[64px]
+                                   lg:left-272 lg:top-63.5 lg:text-[96px]"
                     >
                         X
                     </p>
                     <p
-                        className="text-right grotesk-xbold absolute left-250 top-81.75 text-[48px] leading-9.5 tracking-normal uppercase"
+                        className="hidden text-right grotesk-xbold
+                                   md:block md:absolute md:text-[40px] md:leading-9.5 md:tracking-normal md:uppercase md:left-140 md:top-20
+                                   lg:left-250 lg:top-81.75 lg:text-[48px]"
                     >
                         Sammlungen
                     </p>
                 </div>
                 <div>
                     <p
-                        className="text-right grotesk-xbold absolute left-330 top-63.5 text-[96px] leading-9.5 tracking-normal uppercase"
+                        className="hidden text-right grotesk-xbold 
+                                   md:block md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-155 md:top-45 md:text-[64px]
+                                   lg:left-330 lg:top-63.5 lg:text-[96px] 
+                        "
                     >
                         X
                     </p>
                     <p
-                        className="text-right grotesk-xbold absolute left-318 top-81.75 text-[48px] leading-9.5 tracking-normal uppercase"
+                        className="hidden text-right grotesk-xbold 
+                                   md:block md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-144 md:top-60 md:text-[40px]
+                                   lg:left-318 lg:top-81.75 lg:text-[48px]"
                     >
                         Objekte
                     </p>
@@ -61,16 +95,20 @@ export default function PersonalArea() {
             <div className="relative z-10">
 
                 <button
-                    className="uppercase absolute top-148 left-150 text-center grotesk-xbold text-[24px] tracking-[1px] w-48.75 h-12.25 bg-(--mainColor) text-white"
+                    className="hidden grotesk-xbold
+                    md:block md:uppercase md:absolute md:top-100 md:left-75 md:text-center md:text-[24px] md:tracking-[1px] md:w-48.75 md:h-12.25 md:bg-(--mainColor) md:text-white
+                    lg:top-148 lg:left-150"
                 >
                     <Link href="/collections">Sammlungen</Link>
                 </button>
                 <button
-                    className="uppercase absolute top-148 left-250  text-center grotesk-xbold text-[24px] w-48.75 h-12.25 tracking-[1px] border-2 border-(--mainColor)"
+                    className="hidden grotesk-xbold 
+                    md:block md:uppercase md:absolute md:top-100 md:left-135  md:text-center md:text-[24px] md:w-48.75 md:h-12.25 md:tracking-[1px] md:border-2 md:border-(--mainColor)
+                    lg:top-148 lg:left-250"
                 >
                     <Link href="/archive">Archivieren</Link>
                 </button>
-                
+
             </div>
         </>
     )
