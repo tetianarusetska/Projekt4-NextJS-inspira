@@ -83,7 +83,7 @@ export default function ExampleCardArea() {
 
                             </div>
 
-                            <p className="mt-3 text-[24px]">
+                            <p className="mt-3 md:mb-10 lg:mb-0 text-[24px]">
                                 Ich habe es an einem Regentag in Prag gefunden — die erste
                                 Seite hat mich sofort gepackt.
                             </p>

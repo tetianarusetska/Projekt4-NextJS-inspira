@@ -14,7 +14,7 @@ export default function FooterNavLinks() {
     const pathname = usePathname();
 
     return (
-        <nav className="flex z-3 mr-2" style={{ height: 72 }}>
+        <nav className="flex z-3 mr-2 lg:h-[72px]" >
             {links.map((link) => (
                 <Link
                     key={link.href}
@@ -29,3 +29,4 @@ export default function FooterNavLinks() {
         </nav>
     );
 }
+

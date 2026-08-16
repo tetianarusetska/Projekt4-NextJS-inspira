@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AboutArea() {
     return (
-        <div className="-translate-y-20 md:translate-y-0 relative z-30 flex flex-col
+        <div className="mt-20 relative z-30 flex flex-col
                         md:mt-90 lg:mt-100" 
                         id="about">
 

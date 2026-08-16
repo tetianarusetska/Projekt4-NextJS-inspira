@@ -3,12 +3,12 @@ import FooterNavLinks from "./FooterNavLinks";
 
 export default function FooterMenu() {
     return (
-        <header className="relative z-30 flex items-stretch justify-between w-full">
+        <header className="relative z-30 items-stretch justify-between hidden lg:flex lg:w-full">
             <Link href="/">
                 <img
                     src="/images/Logo.svg"
                     alt="i.nspira"
-                    className="mt-2 ml-2"
+                    className="md:-mt-2 lg:mt-2 lg:ml-2"
                 />
             </Link>
             <FooterNavLinks />

@@ -18,12 +18,12 @@ export default function HeroContent() {
                     Jede Idee beginnt mit einer Inspiration
                 </p>
 
-                <button
+                {/* <button
                     className="absolute top-100 left-8 uppercase text-center grotesk-xbold text-[32px] w-60.25 h-15.5 leading-[102%] tracking-[1%] bg-(--mainColor) text-white
                                md:hidden"
                 >
                     <Link href="/login">Kuratieren</Link>
-                </button>
+                </button> */}
             </div>
 
             <div className="relative z-10">

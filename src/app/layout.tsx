@@ -5,7 +5,7 @@ import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 
 export const metadata: Metadata = {
-  title: "i . n spira",
+  title: "i . nspira",
   description: "Mehr als ein Archiv",
 };
 
