@@ -35,7 +35,7 @@ export default function HeroContent() {
                 </p>
             </div>
 
-            <div className="relative z-10 mt-20">
+            <div className="relative z-10 md:mt-25">
 
                 <div>
                     <p

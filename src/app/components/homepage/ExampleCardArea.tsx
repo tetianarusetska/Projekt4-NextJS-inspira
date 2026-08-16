@@ -3,17 +3,22 @@ import Link from "next/link";
 export default function ExampleCardArea() {
     return (
         <>
-            <div className="relative z-10 mt-13 h-screen w-screen">
+            <div className="relative z-10 h-screen w-screen
+                            lg:mt-13">
 
                 <div className="flex flex-col gap-13.75 items-center justify-center">
 
                     <p
-                        className="text-center grotesk-xbold text-[64px] leading-[102%] tracking-[1%] uppercase"
+                        className="mt-20 text-center grotesk-xbold text-[48px] leading-[102%] tracking-[1%] uppercase
+                                   md:mt-0
+                                   lg:text-[64px]"
                     >
                         02.KURATIERE DEINE WELT.
                     </p>
                     <p
-                        className="text-center text-[32px] tracking-[3%]"
+                        className="text-[20px] text-center
+                                   md:text-[24px]
+                                   lg:text-[32px] lg:tracking-[3%] lg:text-center "
                     >
                         Organisiere deine Inspirationen, entdecke Verbindungen zwischen deinen<br></br>
                         Interessen und baue eine digitale Sammlung deiner eigenen Welt auf.
@@ -26,7 +31,9 @@ export default function ExampleCardArea() {
 
                 </div>
 
-                <div className="mx-auto mt-30 w-full max-w-301.75 h-148.75 border-[5px] border-black bg-black">
+                <div className="hidden 
+                                md:block md:mx-auto md:mt-30 md:border-[5px] md:border-black md:bg-black
+                                lg:w-full lg:max-w-301.75 lg:h-148.75">
 
                     <div className="grid grid-cols-1 md:grid-cols-[38%_62%]">
                         

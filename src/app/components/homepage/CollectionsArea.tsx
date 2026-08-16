@@ -11,37 +11,55 @@ export default function CollectionsArea() {
 
     return (
         <>
-            <div className="relative z-10 mt-43" style={{ height: 832, width: 1280 }} id="discover">
+            <div className="relative z-10 w-full h-[532px] mt-15 
+                            md:-mt-30 md:ml-4 md:h-[832px]
+                            lg:ml-0 lg:mt-43 lg:w-[1280px]" 
+                            id="discover">
 
                 <p
-                    className="text-left grotesk-xbold absolute left-15.25 top-13 text-[64px] leading-[100%] tracking-[1%] uppercase"
+                    className="block text-center grotesk-xbold  leading-[100%] tracking-[1%] uppercase text-[48px]
+                               md:text-left  md:ml-4
+                               lg:text-[64px] lg:top-13 lg:left-15.25 lg:absolute lg:ml-0"
                 >
                     01.Alles, was dich<br></br>inspiriert.
                 </p>
+                <div className="-translate-y-50 translate-x-15
+                                md:-translate-y-30 md:translate-x-0
+                                lg:translate-y-0 lg:translate-x-0">
 
-                {
-                    cards.map((card) => (
-                        <div key={card.name} className="absolute shadow-[8px_8px_8px_0_rgba(0,0,0,0.25)]" style={{ left: card.left, top: card.top }}>
+                    {
+                        cards.map((card, index) => (
+                            <div
+                                key={card.name}
+                                className={`absolute shadow-[8px_8px_8px_0_rgba(0,0,0,0.25)] ${index === 0
+                                        ? "block"
+                                        : index < 3
+                                            ? "hidden md:block"
+                                            : "hidden lg:block"
+                                    }`}
+                                style={{ left: card.left, top: card.top }}
+                            >
 
-                            <div className="w-[236.138px] h-60.5 border-[5px] border-black" style={{ background: card.color }} />
+                                <div className="w-[236.138px] h-60.5 border-[5px] border-black" style={{ background: card.color }} />
 
-                            <div className="relative w-[236.138px] h-30 bg-white border-[5px] border-black">
+                                <div className="relative w-[236.138px] h-30 bg-white border-[5px] border-black">
 
-                                <div className="grotesk-xbold absolute left-3 top-2 text-[36px] uppercase">
-                                    {card.name}
-                                    <span className='relative -top-2.5 ml-1 text-[16px] bold'>
-                                        ®
-                                    </span>
+                                    <div className="grotesk-xbold absolute left-3 top-2 text-[36px] uppercase">
+                                        {card.name}
+                                        <span className='relative -top-2.5 ml-1 text-[16px] bold'>
+                                            ®
+                                        </span>
+                                    </div>
+
+                                    <div className="grotesk-xbold absolute left-3 top-10 text-[24px] uppercase">
+                                        {card.count}
+                                    </div>
+
                                 </div>
-
-                                <div className="grotesk-xbold absolute left-3 top-10 text-[24px] uppercase">
-                                    {card.count}
-                                </div>
-
                             </div>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>
             </div>
         </>
     )

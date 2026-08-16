@@ -2,9 +2,10 @@ import Link from "next/link";
 
 export default function AboutArea() {
     return (
-        <div className="mt-100 relative z-30 flex flex-col" id="about">
+        <div className="md:mt-100 relative z-30 flex flex-col" id="about">
 
-            <div className="flex flex-col px-15.25">
+            <div className="hidden 
+                            md:flex md:flex-col md:px-15.25">
                 <p
                     className="text-left grotesk-xbold text-[64px] leading-[100%] tracking-[1%] uppercase"
                 >
@@ -22,7 +23,7 @@ export default function AboutArea() {
                 </p>
             </div>
 
-            <div className="mt-36 w-full border-t-2 border-[#808080] border-b-2">
+            <div className="mt-36 w-full border-t-2 border-[#808080] border-b-2 -translate-y-40 md:translate-y-0">
                 <div className="px-6 py-8 ml-10 flex flex-col gap-4">
                     <p className="grotesk-xbold text-[36px] leading-[100%] tracking-[5%] uppercase">
                         N°01, PERSONLICH.
@@ -33,7 +34,7 @@ export default function AboutArea() {
                 </div>
             </div>
 
-            <div className="w-full border-[#808080] border-b-2">
+            <div className="w-full border-[#808080] border-b-2 -translate-y-40 md:translate-y-0">
                 <div className="ml-10 px-6 py-8 flex flex-col gap-4">
                     <p className="grotesk-xbold text-[36px] leading-[100%] tracking-[5%] uppercase">
                         N°02, DIGITAL.
@@ -45,7 +46,7 @@ export default function AboutArea() {
                 </div>
             </div>
 
-            <div className="w-full border-[#808080] border-b-2">
+            <div className="w-full border-[#808080] border-b-2 -translate-y-40 md:translate-y-0">
                 <div className="ml-10 px-6 py-8 flex flex-col gap-4">
                     <p className="grotesk-xbold text-[36px] leading-[100%] tracking-[5%] uppercase">
                         N°03, KURATIERT.
@@ -56,7 +57,7 @@ export default function AboutArea() {
                 </div>
             </div>
 
-            <div className="mt-44 mx-10">
+            <div className="hidden md:mt-44 nd:mx-10">
 
                 <p className="grotesk-xbold text-[36px] tracking-[5%]">
                     so funktioniert&apos;s...
@@ -112,7 +113,8 @@ export default function AboutArea() {
                 </div>
             </div>
 
-            <div className="mt-50 mb-40 w-full flex flex-col justify-center items-center">
+            <div className="hidden 
+                            md:mt-50 md:mb-40 md:w-full md:flex md:flex-col md:justify-center md:items-center">
                 <p className="text-center grotesk-xbold text-[64px] leading-[100%] uppercase tracking-[5%]">
                     Beginne deine Sammlung.
                 </p>
