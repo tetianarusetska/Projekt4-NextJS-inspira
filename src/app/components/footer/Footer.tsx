@@ -3,10 +3,10 @@ import FooterContent from './FooterContent';
 export default function Footer() {
   return (
     <div 
-      className='relative h-200 md:h-250 lg:h-200'
+      className='hidden lg:block lg:h-200 lg:relative'
       style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
     >
-      <div className='fixed bottom-0 h-200 w-full'>
+      <div className='hidden lg:block lg:fixed lg:bottom-0 lg:h-200 lg:w-full'>
         <FooterContent />
       </div>
     </div>

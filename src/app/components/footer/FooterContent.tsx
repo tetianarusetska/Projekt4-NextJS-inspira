@@ -14,6 +14,7 @@ export default function FooterContent() {
                 src="/images/mob.svg"
                 alt="footer"
                 className="z-30 md:hidden translate-y-10 h-200" />
+
             <p
                 className="z-30 absolute text-white top-60 left-10 text-[54px]
                            md:top-80 md:left-65 md:text-[64px]
@@ -35,7 +36,7 @@ export default function FooterContent() {
     )
 }
 
-const Section = () => {
+export const Section = () => {
     return (
 
         <div className="hidden lg:block lg:absolute inset-0 z-20 pointer-events-none">
