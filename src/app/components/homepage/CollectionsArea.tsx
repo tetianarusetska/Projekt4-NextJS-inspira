@@ -11,8 +11,8 @@ export default function CollectionsArea() {
 
     return (
         <>
-            <div className="relative z-10 w-full h-[532px] mt-15 
-                            md:-mt-30 md:ml-4 md:h-[832px]
+            <div className="relative z-10 w-full h-[532px] mt-25 
+                            md:-mt-60 md:ml-4 md:h-[832px]
                             lg:ml-0 lg:mt-43 lg:w-[1280px]" 
                             id="discover">
 

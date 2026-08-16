@@ -6,7 +6,8 @@ export default function FooterContent() {
             <img
                 src="/images/background.png"
                 alt="footer-background"
-                className="absolute left-0 top-0 -translate-y-25 translate-x-30 w-6xl h-158 object-contain"
+                className="object-contain w-screen h-screen
+                           lg:absolute lg:left-0 lg:top-0 lg:top-[3.125%] lg:h-[103.125%] lg:-translate-y-25 lg:translate-x-30 lg:w-6xl lg:h-158"
                 style={{ top: "3.125%", height: "103.125%" }}
             />
             <p className="absolute top-35 left-122.5 text-[96px] text-white">Mehr als</p>

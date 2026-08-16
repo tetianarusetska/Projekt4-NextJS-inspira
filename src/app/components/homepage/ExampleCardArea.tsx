@@ -3,8 +3,9 @@ import Link from "next/link";
 export default function ExampleCardArea() {
     return (
         <>
-            <div className="relative z-10 h-screen w-screen
-                            lg:mt-13">
+            <div className="relative z-10 h-screen w-screen mt-8 
+                            md:mt-0 md:-translate-y-20
+                            lg:mt-13 lg:translate-y-0">
 
                 <div className="flex flex-col gap-13.75 items-center justify-center">
 
@@ -35,11 +36,11 @@ export default function ExampleCardArea() {
                                 md:block md:mx-auto md:mt-30 md:border-[5px] md:border-black md:bg-black
                                 lg:w-full lg:max-w-301.75 lg:h-148.75">
 
-                    <div className="grid grid-cols-1 md:grid-cols-[38%_62%]">
+                    <div className="grid grid-cols-1 lg:grid-cols-[38%_62%]">
                         
-                        <div className="h-146 w-116.25 bg-[#012F38]" />
+                        <div className="md:h-100 lg:h-146 md:w-189.5 lg:w-116.25 bg-[#012F38]" />
 
-                        <div className="ml-12 text-white">
+                        <div className="md:ml-8 lg:ml-12 text-white">
 
                             <h3 className="mt-10 grotesk-xbold leading-[136%] tracking-[5%] text-[40px]">
                                 OPUS PISTORUM
