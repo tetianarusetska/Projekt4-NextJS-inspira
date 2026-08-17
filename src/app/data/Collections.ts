@@ -27,7 +27,7 @@ export const collections: Record<string, Collection>  = {
                 placeholder: "688",
             },
             {
-                id: "discoveredBy",
+                id: "discovered_by",
                 label: "N°03, ENTDECKT DURCH",
                 type: "text",
                 placeholder: "Buchladen in Prag",
@@ -77,7 +77,7 @@ export const collections: Record<string, Collection>  = {
                 placeholder: `Sinéad O'Connor "Nothing Compares 2 U", 1990`,
             },
             {
-                id: "discoveredBy",
+                id: "discovered_by",
                 label: "N°03, ENTDECKT DURCH",
                 type: "text",
                 placeholder: "Mein Cousin Egor und seine Frau Kasya.",
@@ -192,7 +192,7 @@ export const collections: Record<string, Collection>  = {
                 placeholder: "349,3 × 776,6 cm",
             },
             {
-                id: "discoveredBy",
+                id: "discovered_by",
                 label: "N°05, ENTDECKT DURCH",
                 type: "text",
                 placeholder: "Ausstellung",
