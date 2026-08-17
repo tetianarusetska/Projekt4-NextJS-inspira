@@ -1,3 +1,5 @@
+import { CollectionDetail } from "./CollectionDetail";
+
 export interface Collection {
     id: string;
     number: string;
@@ -10,5 +12,5 @@ export interface Collection {
     left: number;
     top: number;
 
-    details: any[];
+    details: CollectionDetail[];
 }
