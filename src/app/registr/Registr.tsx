@@ -55,16 +55,16 @@ export default function Registr() {
                 <div className="w-125 h-200 bg-white rounded-2xl mt-20 mb-10">
 
                     <div className="mt-10 flex flex-row gap-25 md:gap-0 md:justify-between border-b-2 border-[#EDEDED] py-2">
-                        <p
+                        <button
                             className="grotesk-xbold text-[24px] leading-[100%] tracking-[1%] uppercase ml-12 md:ml-30"
                         >
-                            Anmelden
-                        </p>
-                        <p
+                            <Link href="/login">Anmelden</Link>
+                        </button>
+                        <button
                             className="grotesk-xbold text-[24px] leading-[100%] tracking-[1%] uppercase  mr-2 md:mr-30 border-b-2"
                         >
-                            Registrieren
-                        </p>
+                            <Link href="/login">Registrieren</Link>
+                        </button>
                     </div>
 
                     <div className="flex flex-col gap-2 mt-10 text-left md:ml-25 ml-10">

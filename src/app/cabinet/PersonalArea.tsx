@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { PersonalAreaProps } from "../types/PersonalAreaProps";
 
-export default function PersonalArea() {
+
+export default function PersonalArea({ user }: PersonalAreaProps) {
+
+    const displayName = user.name?.trim() || user.email;
+
+
     return (
         <>
             <div className="relative z-10">
@@ -14,7 +20,7 @@ export default function PersonalArea() {
                 <p
                 className="md:hidden text-[24px] top-55 left-35 absolute"
                 >
-                    von XXX XXXXXXXXX
+                    von {displayName}
                 </p>
                 <p
                     className="hidden 
@@ -26,12 +32,12 @@ export default function PersonalArea() {
 
             <div className="flex flex-col relative z-30">
                 <p
-                    className="text-right absolute left-288 top-16 text-[40px] leading-9.5 tracking-normal"
+                    className="text-right absolute left-286 top-16 text-[40px] leading-9.5 tracking-normal"
                 >
-                    XXX XXXXXXXXX
+                    {displayName}
                 </p>
                 <p
-                    className="text-right absolute left-307 top-30 text-[24px] leading-9.5 tracking-normal"
+                    className="text-right absolute left-286 top-29 text-[24px] leading-9.5 tracking-normal"
                 >
                     SAMMLER SEIT XXXXJ.
                 </p>
@@ -43,7 +49,7 @@ export default function PersonalArea() {
                     <p
                         className="absolute left-140 -top-25 text-2xl"
                     >
-                        Hallo, XXX XXXXXXXXXX
+                        Hallo, {displayName}
                     </p>
                 </div>
 

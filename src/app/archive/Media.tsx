@@ -1,13 +1,32 @@
+"use client";
+
+import { useState } from "react";
+import { upload } from "@vercel/blob/client";
+import { MediaProps } from "../types/MediaProps";
+
 export default function Media({ image, setImage }: MediaProps) {
+    const [isUploading, setIsUploading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
-    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
-
         if (!file) return;
 
-        const imageUrl = URL.createObjectURL(file);
+        setIsUploading(true);
+        setError(null);
 
-        setImage(imageUrl);
+        try {
+            const blob = await upload(file.name, file, {
+                access: "public",
+                handleUploadUrl: "/api/upload",
+            });
+
+            setImage(blob.url);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Fehler beim Hochladen");
+        } finally {
+            setIsUploading(false);
+        }
     };
 
     return (
@@ -34,9 +53,12 @@ export default function Media({ image, setImage }: MediaProps) {
                     accept="image/*"
                     className="hidden"
                     onChange={handleImageUpload}
+                    disabled={isUploading}
                 />
 
-                {image ? (
+                {isUploading ? (
+                    <span className="text-[24px]">Wird hochgeladen...</span>
+                ) : image ? (
                     <img
                         src={image}
                         alt="Hochgeladenes Bild"
@@ -49,6 +71,10 @@ export default function Media({ image, setImage }: MediaProps) {
                 )}
 
             </label>
+
+            {error && (
+                <p className="ml-5.25 mt-2 text-[16px] text-red-600">{error}</p>
+            )}
 
         </div>
     )

@@ -1,6 +1,6 @@
 import { Collection } from "../types/Collection";
 
-export const collections: Record<string, Collection>  = {
+export const collections: Record<string, Collection> = {
     books: {
         id: "books",
         number: "N°01",
@@ -18,29 +18,41 @@ export const collections: Record<string, Collection>  = {
                 id: "title",
                 label: "N°01, TITEL",
                 type: "text",
-                placeholder: 'Henry Miller, “Sexus”, 1947',
+                placeholder: '“Sexus”',
+            },
+            {
+                id: "author",
+                label: "N°02, AUTOR",
+                type: "text",
+                placeholder: 'Henry Miller',
+            },
+            {
+                id: "year",
+                label: "N°03, ERSCHEINUNGSJAHR",
+                type: "text",
+                placeholder: '1947',
             },
             {
                 id: "pages",
-                label: "N°02, SEITENZAHL",
+                label: "N°04, SEITENZAHL",
                 type: "number",
                 placeholder: "688",
             },
             {
                 id: "discovered_by",
-                label: "N°03, ENTDECKT DURCH",
+                label: "N°05, ENTDECKT DURCH",
                 type: "text",
                 placeholder: "Buchladen in Prag",
             },
             {
                 id: "note",
-                label: "N°04, NOTIZ",
+                label: "N°06, NOTIZ",
                 type: "textarea",
                 placeholder: "Ich habe es an einem Regentag in Prag gefunden — die erste Seite hat mich sofort gepackt. Erinnert mich daran, warum ich lese.",
             },
             {
                 id: "bestQuote",
-                label: "N°05, BESTES ZITAT",
+                label: "N°07, BESTES ZITAT",
                 type: "textarea",
                 placeholder: "“ Wenn die Maschinerie stillstehst, verbreitet sie eine Leere, die noch unheimlicher ist als der Tod. Ich war ein Gespenst, das sich in einem Vakuum bewegte. “",
                 font: "kino-40",
@@ -74,23 +86,35 @@ export const collections: Record<string, Collection>  = {
                 id: "title",
                 label: "N°02, TITEL",
                 type: "text",
-                placeholder: `Sinéad O'Connor "Nothing Compares 2 U", 1990`,
+                placeholder: `"Nothing Compares 2 U"`,
+            },
+            {
+                id: "author",
+                label: "N°03, AUTOR",
+                type: "text",
+                placeholder: 'Sinéad O`Connor',
+            },
+            {
+                id: "year",
+                label: "N°04, ERSCHEINUNGSJAHR",
+                type: "text",
+                placeholder: '1990',
             },
             {
                 id: "discovered_by",
-                label: "N°03, ENTDECKT DURCH",
+                label: "N°05, ENTDECKT DURCH",
                 type: "text",
                 placeholder: "Mein Cousin Egor und seine Frau Kasya.",
             },
             {
                 id: "note",
-                label: "N°04, NOTIZ",
+                label: "N°06, NOTIZ",
                 type: "textarea",
                 placeholder: "Zuerst war ich von der Musik beeindruckt. Dann war ich von den Personlichkeiten beeindruckt.",
             },
             {
                 id: "bestQuote",
-                label: "N°05, BESTES ZITAT",
+                label: "N°07, BESTES ZITAT",
                 type: "textarea",
                 placeholder: "“ Cause nothing comparesNothing compares to you. “",
                 font: "kino-40",
@@ -177,29 +201,42 @@ export const collections: Record<string, Collection>  = {
                 id: "title",
                 label: "N°02, TITEL",
                 type: "text",
-                placeholder: `"Guernica"", 1937`,
+                placeholder: `"Guernica"`,
             },
             {
+                id: "author",
+                label: "N°03, AUTOR",
+                type: "text",
+                placeholder: 'Pablo Picasso',
+            },
+            {
+                id: "year",
+                label: "N°04, ERSCHEINUNGSJAHR",
+                type: "text",
+                placeholder: ' 1937',
+            },
+            
+            {
                 id: "technique",
-                label: "N°03, TECHNIK",
+                label: "N°05, TECHNIK",
                 type: "text",
                 placeholder: "Ol auf Leinwand",
             },
             {
                 id: "dimensions",
-                label: "N°04, MASSE",
+                label: "N°06, MASSE",
                 type: "text",
                 placeholder: "349,3 × 776,6 cm",
             },
             {
                 id: "discovered_by",
-                label: "N°05, ENTDECKT DURCH",
+                label: "N°07, ENTDECKT DURCH",
                 type: "text",
                 placeholder: "Ausstellung",
             },
             {
                 id: "note",
-                label: "N°06, NOTIZ",
+                label: "N°08, NOTIZ",
                 type: "textarea",
                 placeholder: "Was mich an diesem Werk bewegt...",
             },
@@ -506,7 +543,7 @@ export const collections: Record<string, Collection>  = {
     },
 
     newCollection: {
-        id: "new",
+        id: "newCollection",
         number: "N°11",
         code: "Neue",
         name: "neue",
