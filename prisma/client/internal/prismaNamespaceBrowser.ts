@@ -53,6 +53,8 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   User: 'User',
   Session: 'Session',
+  Account: 'Account',
+  Verification: 'Verification',
   Book: 'Book',
   Music: 'Music',
   Magazine: 'Magazine',
@@ -63,7 +65,7 @@ export const ModelName = {
   Photograph: 'Photograph',
   Idea: 'Idea',
   Quote: 'Quote',
-  New: 'New'
+  NewCollection: 'NewCollection'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -86,8 +88,10 @@ export const UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
   email: 'email',
-  passwordHash: 'passwordHash',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  emailVerified: 'emailVerified',
+  image: 'image',
+  updatedAt: 'updatedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -97,10 +101,45 @@ export const SessionScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
   expiresAt: 'expiresAt',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  token: 'token',
+  updatedAt: 'updatedAt',
+  ipAddress: 'ipAddress',
+  userAgent: 'userAgent'
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
+
+
+export const AccountScalarFieldEnum = {
+  id: 'id',
+  accountId: 'accountId',
+  providerId: 'providerId',
+  userId: 'userId',
+  accessToken: 'accessToken',
+  refreshToken: 'refreshToken',
+  idToken: 'idToken',
+  accessTokenExpiresAt: 'accessTokenExpiresAt',
+  refreshTokenExpiresAt: 'refreshTokenExpiresAt',
+  scope: 'scope',
+  password: 'password',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AccountScalarFieldEnum = (typeof AccountScalarFieldEnum)[keyof typeof AccountScalarFieldEnum]
+
+
+export const VerificationScalarFieldEnum = {
+  id: 'id',
+  identifier: 'identifier',
+  value: 'value',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
 export const BookScalarFieldEnum = {
@@ -258,7 +297,7 @@ export const QuoteScalarFieldEnum = {
 export type QuoteScalarFieldEnum = (typeof QuoteScalarFieldEnum)[keyof typeof QuoteScalarFieldEnum]
 
 
-export const NewScalarFieldEnum = {
+export const NewCollectionScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
   name: 'name',
@@ -268,7 +307,7 @@ export const NewScalarFieldEnum = {
   createdAt: 'createdAt'
 } as const
 
-export type NewScalarFieldEnum = (typeof NewScalarFieldEnum)[keyof typeof NewScalarFieldEnum]
+export type NewCollectionScalarFieldEnum = (typeof NewCollectionScalarFieldEnum)[keyof typeof NewCollectionScalarFieldEnum]
 
 
 export const SortOrder = {

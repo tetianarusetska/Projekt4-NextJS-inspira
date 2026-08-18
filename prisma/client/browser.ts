@@ -28,6 +28,16 @@ export type User = Prisma.UserModel
  */
 export type Session = Prisma.SessionModel
 /**
+ * Model Account
+ * 
+ */
+export type Account = Prisma.AccountModel
+/**
+ * Model Verification
+ * 
+ */
+export type Verification = Prisma.VerificationModel
+/**
  * Model Book
  * 
  */
@@ -78,7 +88,7 @@ export type Idea = Prisma.IdeaModel
  */
 export type Quote = Prisma.QuoteModel
 /**
- * Model New
+ * Model NewCollection
  * 
  */
-export type New = Prisma.NewModel
+export type NewCollection = Prisma.NewCollectionModel

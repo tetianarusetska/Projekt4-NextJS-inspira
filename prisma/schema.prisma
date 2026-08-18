@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "./client"
 }
 
 datasource db {
@@ -11,10 +11,14 @@ model User {
   id              String       @id @default(cuid())
   name            String?
   email           String       @unique
-  passwordHash    String
   createdAt       DateTime     @default(now())
 
+  emailVerified   Boolean      @default(false)
+  image           String?
+  updatedAt       DateTime     @updatedAt
+
   sessions        Session[]
+  accounts        Account[]
 
   books           Book[]
   music           Music[]
@@ -26,7 +30,7 @@ model User {
   photographs     Photograph[]
   ideas           Idea[]
   quotes          Quote[]
-  news            New[]
+  news            NewCollection[]
 }
 
 model Session {
@@ -35,6 +39,41 @@ model Session {
   user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)
   expiresAt       DateTime
   createdAt       DateTime     @default(now())
+
+  token           String       @unique
+  updatedAt       DateTime     @updatedAt
+  ipAddress       String?
+  userAgent       String?
+}
+
+model Account {
+  id                      String      @id @default(cuid())
+  accountId               String
+  providerId              String
+  userId                  String
+  user                    User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  accessToken             String?
+  refreshToken            String?
+  idToken                 String?
+  accessTokenExpiresAt    DateTime?
+  refreshTokenExpiresAt   DateTime?
+  scope                   String?
+  password                String?
+
+  createdAt               DateTime    @default(now())
+  updatedAt               DateTime    @updatedAt
+
+  @@unique([providerId, accountId])
+}
+
+model Verification {
+  id              String       @id @default(cuid())
+  identifier      String
+  value           String
+  expiresAt       DateTime
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
 }
 
 model Book {
@@ -192,7 +231,7 @@ model Quote {
   createdAt       DateTime @default(now())
 }
 
-model New {
+model NewCollection {
   id              Int           @id @default(autoincrement())
   userId          String
   user            User          @relation(fields: [userId], references: [id])

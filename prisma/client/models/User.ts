@@ -28,24 +28,30 @@ export type UserMinAggregateOutputType = {
   id: string | null
   name: string | null
   email: string | null
-  passwordHash: string | null
   createdAt: Date | null
+  emailVerified: boolean | null
+  image: string | null
+  updatedAt: Date | null
 }
 
 export type UserMaxAggregateOutputType = {
   id: string | null
   name: string | null
   email: string | null
-  passwordHash: string | null
   createdAt: Date | null
+  emailVerified: boolean | null
+  image: string | null
+  updatedAt: Date | null
 }
 
 export type UserCountAggregateOutputType = {
   id: number
   name: number
   email: number
-  passwordHash: number
   createdAt: number
+  emailVerified: number
+  image: number
+  updatedAt: number
   _all: number
 }
 
@@ -54,24 +60,30 @@ export type UserMinAggregateInputType = {
   id?: true
   name?: true
   email?: true
-  passwordHash?: true
   createdAt?: true
+  emailVerified?: true
+  image?: true
+  updatedAt?: true
 }
 
 export type UserMaxAggregateInputType = {
   id?: true
   name?: true
   email?: true
-  passwordHash?: true
   createdAt?: true
+  emailVerified?: true
+  image?: true
+  updatedAt?: true
 }
 
 export type UserCountAggregateInputType = {
   id?: true
   name?: true
   email?: true
-  passwordHash?: true
   createdAt?: true
+  emailVerified?: true
+  image?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -151,8 +163,10 @@ export type UserGroupByOutputType = {
   id: string
   name: string | null
   email: string
-  passwordHash: string
   createdAt: Date
+  emailVerified: boolean
+  image: string | null
+  updatedAt: Date
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
@@ -180,9 +194,12 @@ export type UserWhereInput = {
   id?: Prisma.StringFilter<"User"> | string
   name?: Prisma.StringNullableFilter<"User"> | string | null
   email?: Prisma.StringFilter<"User"> | string
-  passwordHash?: Prisma.StringFilter<"User"> | string
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  emailVerified?: Prisma.BoolFilter<"User"> | boolean
+  image?: Prisma.StringNullableFilter<"User"> | string | null
+  updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   sessions?: Prisma.SessionListRelationFilter
+  accounts?: Prisma.AccountListRelationFilter
   books?: Prisma.BookListRelationFilter
   music?: Prisma.MusicListRelationFilter
   magazines?: Prisma.MagazineListRelationFilter
@@ -193,16 +210,19 @@ export type UserWhereInput = {
   photographs?: Prisma.PhotographListRelationFilter
   ideas?: Prisma.IdeaListRelationFilter
   quotes?: Prisma.QuoteListRelationFilter
-  news?: Prisma.NewListRelationFilter
+  news?: Prisma.NewCollectionListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  emailVerified?: Prisma.SortOrder
+  image?: Prisma.SortOrderInput | Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   sessions?: Prisma.SessionOrderByRelationAggregateInput
+  accounts?: Prisma.AccountOrderByRelationAggregateInput
   books?: Prisma.BookOrderByRelationAggregateInput
   music?: Prisma.MusicOrderByRelationAggregateInput
   magazines?: Prisma.MagazineOrderByRelationAggregateInput
@@ -213,7 +233,7 @@ export type UserOrderByWithRelationInput = {
   photographs?: Prisma.PhotographOrderByRelationAggregateInput
   ideas?: Prisma.IdeaOrderByRelationAggregateInput
   quotes?: Prisma.QuoteOrderByRelationAggregateInput
-  news?: Prisma.NewOrderByRelationAggregateInput
+  news?: Prisma.NewCollectionOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -223,9 +243,12 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   name?: Prisma.StringNullableFilter<"User"> | string | null
-  passwordHash?: Prisma.StringFilter<"User"> | string
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  emailVerified?: Prisma.BoolFilter<"User"> | boolean
+  image?: Prisma.StringNullableFilter<"User"> | string | null
+  updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   sessions?: Prisma.SessionListRelationFilter
+  accounts?: Prisma.AccountListRelationFilter
   books?: Prisma.BookListRelationFilter
   music?: Prisma.MusicListRelationFilter
   magazines?: Prisma.MagazineListRelationFilter
@@ -236,15 +259,17 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   photographs?: Prisma.PhotographListRelationFilter
   ideas?: Prisma.IdeaListRelationFilter
   quotes?: Prisma.QuoteListRelationFilter
-  news?: Prisma.NewListRelationFilter
+  news?: Prisma.NewCollectionListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  emailVerified?: Prisma.SortOrder
+  image?: Prisma.SortOrderInput | Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
   _min?: Prisma.UserMinOrderByAggregateInput
@@ -257,17 +282,22 @@ export type UserScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"User"> | string
   name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   email?: Prisma.StringWithAggregatesFilter<"User"> | string
-  passwordHash?: Prisma.StringWithAggregatesFilter<"User"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
+  emailVerified?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
+  image?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
 }
 
 export type UserCreateInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -278,16 +308,19 @@ export type UserCreateInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -298,16 +331,19 @@ export type UserUncheckedCreateInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -318,16 +354,19 @@ export type UserUpdateInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -338,55 +377,67 @@ export type UserUncheckedUpdateInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
 }
 
 export type UserUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  emailVerified?: Prisma.SortOrder
+  image?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  emailVerified?: Prisma.SortOrder
+  image?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  emailVerified?: Prisma.SortOrder
+  image?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type UserScalarRelationFilter = {
@@ -406,6 +457,10 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
 
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
+}
+
 export type UserCreateNestedOneWithoutSessionsInput = {
   create?: Prisma.XOR<Prisma.UserCreateWithoutSessionsInput, Prisma.UserUncheckedCreateWithoutSessionsInput>
   connectOrCreate?: Prisma.UserCreateOrConnectWithoutSessionsInput
@@ -418,6 +473,20 @@ export type UserUpdateOneRequiredWithoutSessionsNestedInput = {
   upsert?: Prisma.UserUpsertWithoutSessionsInput
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutSessionsInput, Prisma.UserUpdateWithoutSessionsInput>, Prisma.UserUncheckedUpdateWithoutSessionsInput>
+}
+
+export type UserCreateNestedOneWithoutAccountsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAccountsInput, Prisma.UserUncheckedCreateWithoutAccountsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAccountsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutAccountsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAccountsInput, Prisma.UserUncheckedCreateWithoutAccountsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAccountsInput
+  upsert?: Prisma.UserUpsertWithoutAccountsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAccountsInput, Prisma.UserUpdateWithoutAccountsInput>, Prisma.UserUncheckedUpdateWithoutAccountsInput>
 }
 
 export type UserCreateNestedOneWithoutBooksInput = {
@@ -578,8 +647,11 @@ export type UserCreateWithoutSessionsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -590,15 +662,18 @@ export type UserCreateWithoutSessionsInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -609,7 +684,7 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -632,8 +707,11 @@ export type UserUpdateWithoutSessionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -644,15 +722,18 @@ export type UserUpdateWithoutSessionsInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -663,16 +744,19 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
-export type UserCreateWithoutBooksInput = {
+export type UserCreateWithoutAccountsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
   artworks?: Prisma.ArtworkCreateNestedManyWithoutUserInput
@@ -682,16 +766,19 @@ export type UserCreateWithoutBooksInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
-export type UserUncheckedCreateWithoutBooksInput = {
+export type UserUncheckedCreateWithoutAccountsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
   artworks?: Prisma.ArtworkUncheckedCreateNestedManyWithoutUserInput
@@ -701,7 +788,111 @@ export type UserUncheckedCreateWithoutBooksInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutAccountsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutAccountsInput, Prisma.UserUncheckedCreateWithoutAccountsInput>
+}
+
+export type UserUpsertWithoutAccountsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutAccountsInput, Prisma.UserUncheckedUpdateWithoutAccountsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutAccountsInput, Prisma.UserUncheckedCreateWithoutAccountsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutAccountsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutAccountsInput, Prisma.UserUncheckedUpdateWithoutAccountsInput>
+}
+
+export type UserUpdateWithoutAccountsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  books?: Prisma.BookUpdateManyWithoutUserNestedInput
+  music?: Prisma.MusicUpdateManyWithoutUserNestedInput
+  magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
+  artworks?: Prisma.ArtworkUpdateManyWithoutUserNestedInput
+  museums?: Prisma.MuseumUpdateManyWithoutUserNestedInput
+  galleries?: Prisma.GalleryUpdateManyWithoutUserNestedInput
+  images?: Prisma.ImageUpdateManyWithoutUserNestedInput
+  photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
+  ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
+  quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutAccountsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
+  music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
+  magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
+  artworks?: Prisma.ArtworkUncheckedUpdateManyWithoutUserNestedInput
+  museums?: Prisma.MuseumUncheckedUpdateManyWithoutUserNestedInput
+  galleries?: Prisma.GalleryUncheckedUpdateManyWithoutUserNestedInput
+  images?: Prisma.ImageUncheckedUpdateManyWithoutUserNestedInput
+  photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
+  ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
+  quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutBooksInput = {
+  id?: string
+  name?: string | null
+  email: string
+  createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  music?: Prisma.MusicCreateNestedManyWithoutUserInput
+  magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
+  artworks?: Prisma.ArtworkCreateNestedManyWithoutUserInput
+  museums?: Prisma.MuseumCreateNestedManyWithoutUserInput
+  galleries?: Prisma.GalleryCreateNestedManyWithoutUserInput
+  images?: Prisma.ImageCreateNestedManyWithoutUserInput
+  photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
+  ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
+  quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutBooksInput = {
+  id?: string
+  name?: string | null
+  email: string
+  createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
+  magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
+  artworks?: Prisma.ArtworkUncheckedCreateNestedManyWithoutUserInput
+  museums?: Prisma.MuseumUncheckedCreateNestedManyWithoutUserInput
+  galleries?: Prisma.GalleryUncheckedCreateNestedManyWithoutUserInput
+  images?: Prisma.ImageUncheckedCreateNestedManyWithoutUserInput
+  photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
+  ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
+  quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutBooksInput = {
@@ -724,9 +915,12 @@ export type UserUpdateWithoutBooksInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
   artworks?: Prisma.ArtworkUpdateManyWithoutUserNestedInput
@@ -736,16 +930,19 @@ export type UserUpdateWithoutBooksInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBooksInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
   artworks?: Prisma.ArtworkUncheckedUpdateManyWithoutUserNestedInput
@@ -755,16 +952,19 @@ export type UserUncheckedUpdateWithoutBooksInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMusicInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
   artworks?: Prisma.ArtworkCreateNestedManyWithoutUserInput
@@ -774,16 +974,19 @@ export type UserCreateWithoutMusicInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMusicInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
   artworks?: Prisma.ArtworkUncheckedCreateNestedManyWithoutUserInput
@@ -793,7 +996,7 @@ export type UserUncheckedCreateWithoutMusicInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMusicInput = {
@@ -816,9 +1019,12 @@ export type UserUpdateWithoutMusicInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
   artworks?: Prisma.ArtworkUpdateManyWithoutUserNestedInput
@@ -828,16 +1034,19 @@ export type UserUpdateWithoutMusicInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMusicInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
   artworks?: Prisma.ArtworkUncheckedUpdateManyWithoutUserNestedInput
@@ -847,16 +1056,19 @@ export type UserUncheckedUpdateWithoutMusicInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMagazinesInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   artworks?: Prisma.ArtworkCreateNestedManyWithoutUserInput
@@ -866,16 +1078,19 @@ export type UserCreateWithoutMagazinesInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMagazinesInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   artworks?: Prisma.ArtworkUncheckedCreateNestedManyWithoutUserInput
@@ -885,7 +1100,7 @@ export type UserUncheckedCreateWithoutMagazinesInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMagazinesInput = {
@@ -908,9 +1123,12 @@ export type UserUpdateWithoutMagazinesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   artworks?: Prisma.ArtworkUpdateManyWithoutUserNestedInput
@@ -920,16 +1138,19 @@ export type UserUpdateWithoutMagazinesInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMagazinesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   artworks?: Prisma.ArtworkUncheckedUpdateManyWithoutUserNestedInput
@@ -939,16 +1160,19 @@ export type UserUncheckedUpdateWithoutMagazinesInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutArtworksInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -958,16 +1182,19 @@ export type UserCreateWithoutArtworksInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutArtworksInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -977,7 +1204,7 @@ export type UserUncheckedCreateWithoutArtworksInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutArtworksInput = {
@@ -1000,9 +1227,12 @@ export type UserUpdateWithoutArtworksInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -1012,16 +1242,19 @@ export type UserUpdateWithoutArtworksInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutArtworksInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -1031,16 +1264,19 @@ export type UserUncheckedUpdateWithoutArtworksInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMuseumsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -1050,16 +1286,19 @@ export type UserCreateWithoutMuseumsInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMuseumsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -1069,7 +1308,7 @@ export type UserUncheckedCreateWithoutMuseumsInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMuseumsInput = {
@@ -1092,9 +1331,12 @@ export type UserUpdateWithoutMuseumsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -1104,16 +1346,19 @@ export type UserUpdateWithoutMuseumsInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMuseumsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -1123,16 +1368,19 @@ export type UserUncheckedUpdateWithoutMuseumsInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutGalleriesInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -1142,16 +1390,19 @@ export type UserCreateWithoutGalleriesInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutGalleriesInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -1161,7 +1412,7 @@ export type UserUncheckedCreateWithoutGalleriesInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutGalleriesInput = {
@@ -1184,9 +1435,12 @@ export type UserUpdateWithoutGalleriesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -1196,16 +1450,19 @@ export type UserUpdateWithoutGalleriesInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutGalleriesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -1215,16 +1472,19 @@ export type UserUncheckedUpdateWithoutGalleriesInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutImagesInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -1234,16 +1494,19 @@ export type UserCreateWithoutImagesInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutImagesInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -1253,7 +1516,7 @@ export type UserUncheckedCreateWithoutImagesInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutImagesInput = {
@@ -1276,9 +1539,12 @@ export type UserUpdateWithoutImagesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -1288,16 +1554,19 @@ export type UserUpdateWithoutImagesInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutImagesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -1307,16 +1576,19 @@ export type UserUncheckedUpdateWithoutImagesInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutPhotographsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -1326,16 +1598,19 @@ export type UserCreateWithoutPhotographsInput = {
   images?: Prisma.ImageCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPhotographsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -1345,7 +1620,7 @@ export type UserUncheckedCreateWithoutPhotographsInput = {
   images?: Prisma.ImageUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutPhotographsInput = {
@@ -1368,9 +1643,12 @@ export type UserUpdateWithoutPhotographsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -1380,16 +1658,19 @@ export type UserUpdateWithoutPhotographsInput = {
   images?: Prisma.ImageUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPhotographsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -1399,16 +1680,19 @@ export type UserUncheckedUpdateWithoutPhotographsInput = {
   images?: Prisma.ImageUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutIdeasInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -1418,16 +1702,19 @@ export type UserCreateWithoutIdeasInput = {
   images?: Prisma.ImageCreateNestedManyWithoutUserInput
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutIdeasInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -1437,7 +1724,7 @@ export type UserUncheckedCreateWithoutIdeasInput = {
   images?: Prisma.ImageUncheckedCreateNestedManyWithoutUserInput
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutIdeasInput = {
@@ -1460,9 +1747,12 @@ export type UserUpdateWithoutIdeasInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -1472,16 +1762,19 @@ export type UserUpdateWithoutIdeasInput = {
   images?: Prisma.ImageUpdateManyWithoutUserNestedInput
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutIdeasInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -1491,16 +1784,19 @@ export type UserUncheckedUpdateWithoutIdeasInput = {
   images?: Prisma.ImageUncheckedUpdateManyWithoutUserNestedInput
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutQuotesInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -1510,16 +1806,19 @@ export type UserCreateWithoutQuotesInput = {
   images?: Prisma.ImageCreateNestedManyWithoutUserInput
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutQuotesInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -1529,7 +1828,7 @@ export type UserUncheckedCreateWithoutQuotesInput = {
   images?: Prisma.ImageUncheckedCreateNestedManyWithoutUserInput
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewUncheckedCreateNestedManyWithoutUserInput
+  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutQuotesInput = {
@@ -1552,9 +1851,12 @@ export type UserUpdateWithoutQuotesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -1564,16 +1866,19 @@ export type UserUpdateWithoutQuotesInput = {
   images?: Prisma.ImageUpdateManyWithoutUserNestedInput
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutQuotesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -1583,16 +1888,19 @@ export type UserUncheckedUpdateWithoutQuotesInput = {
   images?: Prisma.ImageUncheckedUpdateManyWithoutUserNestedInput
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewUncheckedUpdateManyWithoutUserNestedInput
+  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutNewsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   books?: Prisma.BookCreateNestedManyWithoutUserInput
   music?: Prisma.MusicCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineCreateNestedManyWithoutUserInput
@@ -1609,9 +1917,12 @@ export type UserUncheckedCreateWithoutNewsInput = {
   id?: string
   name?: string | null
   email: string
-  passwordHash: string
   createdAt?: Date | string
+  emailVerified?: boolean
+  image?: string | null
+  updatedAt?: Date | string
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutUserInput
   music?: Prisma.MusicUncheckedCreateNestedManyWithoutUserInput
   magazines?: Prisma.MagazineUncheckedCreateNestedManyWithoutUserInput
@@ -1644,9 +1955,12 @@ export type UserUpdateWithoutNewsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUpdateManyWithoutUserNestedInput
@@ -1663,9 +1977,12 @@ export type UserUncheckedUpdateWithoutNewsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutUserNestedInput
   music?: Prisma.MusicUncheckedUpdateManyWithoutUserNestedInput
   magazines?: Prisma.MagazineUncheckedUpdateManyWithoutUserNestedInput
@@ -1685,6 +2002,7 @@ export type UserUncheckedUpdateWithoutNewsInput = {
 
 export type UserCountOutputType = {
   sessions: number
+  accounts: number
   books: number
   music: number
   magazines: number
@@ -1700,6 +2018,7 @@ export type UserCountOutputType = {
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sessions?: boolean | UserCountOutputTypeCountSessionsArgs
+  accounts?: boolean | UserCountOutputTypeCountAccountsArgs
   books?: boolean | UserCountOutputTypeCountBooksArgs
   music?: boolean | UserCountOutputTypeCountMusicArgs
   magazines?: boolean | UserCountOutputTypeCountMagazinesArgs
@@ -1728,6 +2047,13 @@ export type UserCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
  */
 export type UserCountOutputTypeCountSessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.SessionWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountAccountsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AccountWhereInput
 }
 
 /**
@@ -1804,7 +2130,7 @@ export type UserCountOutputTypeCountQuotesArgs<ExtArgs extends runtime.Types.Ext
  * UserCountOutputType without action
  */
 export type UserCountOutputTypeCountNewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NewWhereInput
+  where?: Prisma.NewCollectionWhereInput
 }
 
 
@@ -1812,9 +2138,12 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   id?: boolean
   name?: boolean
   email?: boolean
-  passwordHash?: boolean
   createdAt?: boolean
+  emailVerified?: boolean
+  image?: boolean
+  updatedAt?: boolean
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
+  accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   books?: boolean | Prisma.User$booksArgs<ExtArgs>
   music?: boolean | Prisma.User$musicArgs<ExtArgs>
   magazines?: boolean | Prisma.User$magazinesArgs<ExtArgs>
@@ -1833,29 +2162,36 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   id?: boolean
   name?: boolean
   email?: boolean
-  passwordHash?: boolean
   createdAt?: boolean
+  emailVerified?: boolean
+  image?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
   email?: boolean
-  passwordHash?: boolean
   createdAt?: boolean
+  emailVerified?: boolean
+  image?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
   id?: boolean
   name?: boolean
   email?: boolean
-  passwordHash?: boolean
   createdAt?: boolean
+  emailVerified?: boolean
+  image?: boolean
+  updatedAt?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "passwordHash" | "createdAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "createdAt" | "emailVerified" | "image" | "updatedAt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
+  accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   books?: boolean | Prisma.User$booksArgs<ExtArgs>
   music?: boolean | Prisma.User$musicArgs<ExtArgs>
   magazines?: boolean | Prisma.User$magazinesArgs<ExtArgs>
@@ -1876,6 +2212,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   name: "User"
   objects: {
     sessions: Prisma.$SessionPayload<ExtArgs>[]
+    accounts: Prisma.$AccountPayload<ExtArgs>[]
     books: Prisma.$BookPayload<ExtArgs>[]
     music: Prisma.$MusicPayload<ExtArgs>[]
     magazines: Prisma.$MagazinePayload<ExtArgs>[]
@@ -1886,14 +2223,16 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     photographs: Prisma.$PhotographPayload<ExtArgs>[]
     ideas: Prisma.$IdeaPayload<ExtArgs>[]
     quotes: Prisma.$QuotePayload<ExtArgs>[]
-    news: Prisma.$NewPayload<ExtArgs>[]
+    news: Prisma.$NewCollectionPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     name: string | null
     email: string
-    passwordHash: string
     createdAt: Date
+    emailVerified: boolean
+    image: string | null
+    updatedAt: Date
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -2289,6 +2628,7 @@ readonly fields: UserFieldRefs;
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  accounts<T extends Prisma.User$accountsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   books<T extends Prisma.User$booksArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$booksArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BookPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   music<T extends Prisma.User$musicArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$musicArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MusicPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   magazines<T extends Prisma.User$magazinesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$magazinesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MagazinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -2299,7 +2639,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   photographs<T extends Prisma.User$photographsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$photographsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PhotographPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   ideas<T extends Prisma.User$ideasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ideasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$IdeaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   quotes<T extends Prisma.User$quotesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$quotesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$QuotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  news<T extends Prisma.User$newsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$newsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  news<T extends Prisma.User$newsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$newsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NewCollectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2332,8 +2672,10 @@ export interface UserFieldRefs {
   readonly id: Prisma.FieldRef<"User", 'String'>
   readonly name: Prisma.FieldRef<"User", 'String'>
   readonly email: Prisma.FieldRef<"User", 'String'>
-  readonly passwordHash: Prisma.FieldRef<"User", 'String'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
+  readonly emailVerified: Prisma.FieldRef<"User", 'Boolean'>
+  readonly image: Prisma.FieldRef<"User", 'String'>
+  readonly updatedAt: Prisma.FieldRef<"User", 'DateTime'>
 }
     
 
@@ -2751,6 +3093,30 @@ export type User$sessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 }
 
 /**
+ * User.accounts
+ */
+export type User$accountsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Account
+   */
+  select?: Prisma.AccountSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Account
+   */
+  omit?: Prisma.AccountOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AccountInclude<ExtArgs> | null
+  where?: Prisma.AccountWhereInput
+  orderBy?: Prisma.AccountOrderByWithRelationInput | Prisma.AccountOrderByWithRelationInput[]
+  cursor?: Prisma.AccountWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AccountScalarFieldEnum | Prisma.AccountScalarFieldEnum[]
+}
+
+/**
  * User.books
  */
 export type User$booksArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2995,23 +3361,23 @@ export type User$quotesArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
  */
 export type User$newsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the New
+   * Select specific fields to fetch from the NewCollection
    */
-  select?: Prisma.NewSelect<ExtArgs> | null
+  select?: Prisma.NewCollectionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the New
+   * Omit specific fields from the NewCollection
    */
-  omit?: Prisma.NewOmit<ExtArgs> | null
+  omit?: Prisma.NewCollectionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NewInclude<ExtArgs> | null
-  where?: Prisma.NewWhereInput
-  orderBy?: Prisma.NewOrderByWithRelationInput | Prisma.NewOrderByWithRelationInput[]
-  cursor?: Prisma.NewWhereUniqueInput
+  include?: Prisma.NewCollectionInclude<ExtArgs> | null
+  where?: Prisma.NewCollectionWhereInput
+  orderBy?: Prisma.NewCollectionOrderByWithRelationInput | Prisma.NewCollectionOrderByWithRelationInput[]
+  cursor?: Prisma.NewCollectionWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.NewScalarFieldEnum | Prisma.NewScalarFieldEnum[]
+  distinct?: Prisma.NewCollectionScalarFieldEnum | Prisma.NewCollectionScalarFieldEnum[]
 }
 
 /**

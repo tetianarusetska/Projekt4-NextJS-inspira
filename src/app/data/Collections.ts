@@ -505,7 +505,7 @@ export const collections: Record<string, Collection>  = {
         ],
     },
 
-    new: {
+    newCollection: {
         id: "new",
         number: "N°11",
         code: "Neue",
