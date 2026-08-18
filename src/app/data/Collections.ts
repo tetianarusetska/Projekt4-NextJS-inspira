@@ -220,8 +220,8 @@ export const collections: Record<string, Collection>  = {
 
         details: [
             {
-                id: "name",
-                label: "N°01, NAME",
+                id: "title",
+                label: "N°01, TITEL",
                 type: "text",
                 placeholder: "Museum Ludwig",
             },
@@ -272,8 +272,8 @@ export const collections: Record<string, Collection>  = {
 
         details: [
             {
-                id: "name",
-                label: "N°01, NAME",
+                id: "title",
+                label: "N°01, TITEL",
                 type: "text",
                 placeholder: "Galerie Max Hetzler",
             },

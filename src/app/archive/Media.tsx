@@ -1,4 +1,15 @@
-export default function Media() {
+export default function Media({ image, setImage }: MediaProps) {
+
+    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+
+        if (!file) return;
+
+        const imageUrl = URL.createObjectURL(file);
+
+        setImage(imageUrl);
+    };
+
     return (
         <div id="media" className="mb-20">
 
@@ -22,12 +33,21 @@ export default function Media() {
                     type="file"
                     accept="image/*"
                     className="hidden"
+                    onChange={handleImageUpload}
                 />
 
-                <span className="text-[24px]">
-                    Bild hierher ziehen oder klicken zum Hochladen
-                </span>
-                
+                {image ? (
+                    <img
+                        src={image}
+                        alt="Hochgeladenes Bild"
+                        className="h-full w-full object-contain"
+                    />
+                ) : (
+                    <span className="text-[24px]">
+                        Bild hierher ziehen oder klicken zum Hochladen
+                    </span>
+                )}
+
             </label>
 
         </div>

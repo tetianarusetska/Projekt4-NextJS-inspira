@@ -1,4 +1,20 @@
-export default function Product() {
+import { collections } from "../data/Collections";
+import { ProductProps } from "../types/ProductProps";
+
+export default function Product({ selectedCategory, values, image }: ProductProps) {
+
+    const collection = collections[selectedCategory];
+
+    if (!collection) {
+        return null;
+    }
+
+    const getDetailValue = (id: string) => {
+        const detail = collection.details.find((item) => item.id === id);
+
+        return values[id] || detail?.placeholder || "";
+    };
+
     return (
         <div id="product" className="mb-20">
 
@@ -16,8 +32,86 @@ export default function Product() {
                 </p>
             </div>
 
-            
-            <div></div>
+            <div>
+
+                <div className="mt-10 ml-6 flex w-full max-w-210 h-104 gap-6 border-dashed border-[#808080] border-2 p-6">
+
+                    <div className="h-full flex-1">
+
+                        <div
+                            className="h-60.5 w-[236.138px] border-[5px] border-black"
+                            style={{ background: collection.color }}
+                        />
+                        <div className="relative h-30 w-[236.138px] border-[5px] border-black bg-white">
+                            <div className="grotesk-xbold absolute left-3 top-2 text-[36px] uppercase">
+                                {collection.name}
+                                <span className="relative -top-2.5 ml-1 text-[16px]">
+                                    ®
+                                </span>
+                            </div>
+                            <div className="grotesk-xbold absolute left-3 top-10 text-[24px] uppercase">
+                                {collection.count}
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="h-full flex-1">
+                        <div className="gap-2 text-center h-90.5 w-[236.138px] border-[5px] border-black flex flex-col justify-center items-center">
+                            <p
+                                className="text-[24px]"
+                            >
+                                {getDetailValue("title")}
+                            </p>
+                            <p
+                                className="text-[18px]"
+                            >
+                                {getDetailValue("discovered_by")}
+                            </p>
+                            <p
+                                className="text-[18px]"
+                            >
+                                "{getDetailValue("note")}"
+                            </p>
+                            <p
+                                className="font-['Kino40'] text-[24px]"
+                            >
+                                {new Date().toLocaleDateString("de-DE", {
+                                    month: "2-digit",
+                                    year: "numeric",
+                                })}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="h-full flex-1">
+                        <div className="h-90.5 w-[236.138px] border-[5px] border-black overflow-hidden">
+                            {image && (
+                                <img
+                                    src={image}
+                                    alt="Hochgeladenes Bild"
+                                    className="h-full w-full object-cover"
+                                />
+                            )}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div className="mt-10 ml-6 w-210 h-50 border-[#808080] border-2 flex flex-row justify-between items-center">
+                <div>
+                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mt-9 ml-7">Wird gespeichert als</p>
+                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mb-5 ml-7">N° XXX — {collection.code}</p>
+                </div>
+                <div>
+                    <button
+                        className="mt-9 mr-9 grotesk-xbold block  text-white bg-black uppercase text-center text-[32px] w-60.25 h-15.5 tracking-[1px] border-2 border-(--mainColor)"
+                    >
+                        Speichern
+                    </button>
+                </div>
+            </div>
 
         </div>
     )

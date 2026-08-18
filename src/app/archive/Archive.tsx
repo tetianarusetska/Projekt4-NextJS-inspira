@@ -17,6 +17,8 @@ export default function Archive() {
 
     const [selectedCategory, setSelectedCategory] = useState("bucher");
     const [activeStep, setActiveStep] = useState("collection");
+    const [formValues, setFormValues] = useState<Record<string, string>>({});
+    const [image, setImage] = useState<string | null>(null);
 
     return (
         <div className="relative flex flex-col">
@@ -42,8 +44,8 @@ export default function Archive() {
                             type="button"
                             onClick={() => setActiveStep(step.id)}
                             className={`flex h-full w-69.5 items-center justify-center text-[24px] grotesk-xbold transition-colors ${isActive
-                                    ? "bg-black text-white"
-                                    : "text-black hover:bg-black hover:text-white"
+                                ? "bg-black text-white"
+                                : "text-black hover:bg-black hover:text-white"
                                 }`}
                         >
                             {step.label}
@@ -51,7 +53,7 @@ export default function Archive() {
                     );
                 })}
             </div>
-            
+
             {activeStep === "collection" && (
                 <Collection
                     selectedCategory={selectedCategory}
@@ -60,11 +62,27 @@ export default function Archive() {
             )}
 
             {activeStep === "details" && (
-                <Details selectedCategory={selectedCategory} />
+                <Details
+                    selectedCategory={selectedCategory}
+                    formValues={formValues}
+                    setFormValues={setFormValues}
+                />
             )}
 
-            {activeStep === "media" && <Media />}
-            {activeStep === "product" && <Product />}
+            {activeStep === "media" && (
+                <Media
+                    image={image}
+                    setImage={setImage}
+                />
+            )}
+
+            {activeStep === "product" && (<Product
+                selectedCategory={selectedCategory}
+                values={formValues}
+                image={image}
+            />
+            )}
+
         </div>
     );
 }

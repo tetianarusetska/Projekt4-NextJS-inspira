@@ -1,7 +1,7 @@
 import { collections } from "../data/Collections";
 import { DetailsProps } from "../types/DetailsProps";
 
-export default function Details({ selectedCategory }: DetailsProps) {
+export default function Details({ selectedCategory, formValues, setFormValues }: DetailsProps) {
 
     const category = Object.values(collections).find(
         (item) => item.id === selectedCategory
@@ -49,7 +49,13 @@ export default function Details({ selectedCategory }: DetailsProps) {
                             {detail.type === "select" ? (
                                 <select
                                     id={detail.id}
-                                    defaultValue=""
+                                    value={formValues[detail.id] ?? ""}
+                                    onChange={(e) =>
+                                        setFormValues((prev) => ({
+                                            ...prev,
+                                            [detail.id]: e.target.value,
+                                        }))
+                                    }
                                     className="mt-6 w-full border-0 bg-black text-white p-0 text-[24px] leading-none outline-none"
                                 >
                                     <option value="" disabled>
@@ -66,6 +72,13 @@ export default function Details({ selectedCategory }: DetailsProps) {
                                 <textarea
                                     id={detail.id}
                                     placeholder={detail.placeholder}
+                                    value={formValues[detail.id] ?? ""}
+                                    onChange={(e) =>
+                                        setFormValues((prev) => ({
+                                            ...prev,
+                                            [detail.id]: e.target.value,
+                                        }))
+                                    }
                                     className={`mt-6 w-full resize-none border-0 bg-transparent p-0 text-[24px] leading-[1.2] outline-none placeholder:text-[#808080] placeholder:opacity-100 ${detail.font === "kino-40"
                                         ? "kino-placeholder"
                                         : ""
@@ -81,6 +94,13 @@ export default function Details({ selectedCategory }: DetailsProps) {
                                     type={detail.type}
                                     id={detail.id}
                                     placeholder={detail.placeholder}
+                                    value={formValues[detail.id] ?? ""}
+                                    onChange={(e) =>
+                                        setFormValues((prev) => ({
+                                            ...prev,
+                                            [detail.id]: e.target.value,
+                                        }))
+                                    }
                                     className={`mt-6 w-full border-0 bg-transparent p-0 text-[24px] leading-none outline-none placeholder:text-[#808080] placeholder:opacity-100 ${detail.font === "kino-40"
                                         ? "kino-placeholder"
                                         : ""
