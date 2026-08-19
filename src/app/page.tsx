@@ -1,5 +1,5 @@
 import Header from "./components/header/Header";
-import Background from "./components/homepage/Background";
+import Background from "@/app/layoutDesign/Background";
 import HeroContent from "./components/homepage/HeroContent";
 import CollectionsArea from "./components/homepage/CollectionsArea";
 import ExampleCardArea from "./components/homepage/ExampleCardArea";

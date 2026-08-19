@@ -6,7 +6,7 @@ import CabinetHeader from "./header/CabinetHeader";
 import FooterIntro from "../components/footer/FooterIntro";
 import Footer from "../components/footer/Footer";
 import PersonalArea from "./PersonalArea";
-import CabinetBackground from "./CabinetBackground";
+import CabinetBackground from "../layoutDesign/CabinetBackground";
 
 export default async function PersonalAreaPage() {
 

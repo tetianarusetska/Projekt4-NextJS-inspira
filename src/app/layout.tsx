@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "material-symbols/outlined.css";
 import "./globals.css";
-import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 
 export const metadata: Metadata = {

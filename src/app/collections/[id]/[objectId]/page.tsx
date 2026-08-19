@@ -4,6 +4,7 @@ import CabinetHeader from "@/app/cabinet/header/CabinetHeader";
 import { createObjects } from "@/app/data/MockObjects";
 import ObjectCard from "./ObjectCard";
 import { collections } from "@/app/data/Collections";
+import CabinetDividers from "@/app/layoutDesign/CabinetDividers";
 
 
 export default async function ObjectPage({ params }: { params: Promise<{ id: string,  objectId: string }> }) {
@@ -33,15 +34,7 @@ export default async function ObjectPage({ params }: { params: Promise<{ id: str
     return (
         <>
             <CabinetHeader />
-
-            <div
-                className="absolute bg-black"
-                style={{ left: 0, top: 70 - 2, width: "100%", height: 4 }}
-            />
-            <div className="absolute bg-black" style={{ left: 865.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 1006.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 1177.5 - 1.5, top: 0, width: 3, height: 72 }} />
-            <div className="absolute bg-black" style={{ left: 1325.5 - 1.5, top: 0, width: 3, height: 72 }} />
+            <CabinetDividers />
 
             <ObjectCard  object={object} collection={collection} />
             <FooterIntro />
