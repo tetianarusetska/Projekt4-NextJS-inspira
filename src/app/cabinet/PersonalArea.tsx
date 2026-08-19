@@ -10,6 +10,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
     return (
         <>
             <div className="relative z-10">
+                {/* Decorative Text */}
                 <p
                     className="absolute leading-17.5 tracking-[1.0px] text-[64px] left-4 top-20
                                md:leading-20.5 md:text-[74px] md:left-8 md:top-20
@@ -18,7 +19,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
                     Personliches<br></br>Archiv
                 </p>
                 <p
-                className="md:hidden text-[24px] top-55 left-35 absolute"
+                    className="md:hidden text-[24px] top-55 left-35 absolute"
                 >
                     von {displayName}
                 </p>
@@ -30,6 +31,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
                 </p>
             </div>
 
+            {/* Begrüßung */}
             <div className="flex flex-col relative z-30">
                 <p
                     className="text-right absolute left-286 top-16 text-[40px] leading-9.5 tracking-normal"
@@ -61,7 +63,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
                     </p>
                 </div>
 
-
+                {/* Objekte, Sammlungen */}
                 <div>
                     <p
                         className="hidden grotesk-xbold
@@ -98,6 +100,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
 
             </div>
 
+            {/* CTA Buttons */}
             <div className="relative z-10">
 
                 <button

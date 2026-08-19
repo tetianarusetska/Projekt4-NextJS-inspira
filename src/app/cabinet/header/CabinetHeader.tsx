@@ -5,6 +5,7 @@ export default function CabinetHeader() {
     return (
         <header className="relative z-10 flex items-stretch justify-between w-full">
 
+            {/* Logo */}
             <Link href="/">
                 <img
                     src="/images/Logo.svg"
@@ -12,6 +13,7 @@ export default function CabinetHeader() {
                     className="mt-2 ml-2"
                 />
             </Link>
+            {/* Nav */}
             <CabinetNavLinks />
 
         </header>

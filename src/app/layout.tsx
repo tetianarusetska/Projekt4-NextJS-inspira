@@ -17,7 +17,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SmoothScroll />
-
         {children}
       </body>
     </html>

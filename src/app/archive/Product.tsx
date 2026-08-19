@@ -10,6 +10,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
     }
 
     const getDetailValue = (id: string) => {
+
         const detail = collection.details.find((item) => item.id === id);
 
         return values[id] || detail?.placeholder || "";
@@ -17,7 +18,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
 
     return (
         <div id="product" className="mb-20">
-
+            {/* Überschrift */}
             <div className="mt-20 ml-5.25 flex flex-col gap-4">
                 <p className="grotesk-xbold text-[32px] leading-[100%] tracking-[1%]">
                     04    –    VORSCHAU
@@ -32,8 +33,9 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                 </p>
             </div>
 
+            {/* Vorschau */}
             <div>
-
+                {/* Ausgewählte Sammlung */}
                 <div className="mt-10 ml-6 flex w-full max-w-210 h-104 gap-6 border-dashed border-[#808080] border-2 p-6">
 
                     <div className="h-full flex-1">
@@ -56,6 +58,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                         </div>
                     </div>
 
+                    {/* Generierte Karte von Objekt */}
                     <div className="h-full flex-1">
                         <div className="gap-2 text-center h-90.5 w-[236.138px] border-[5px] border-black flex flex-col justify-center items-center">
                             <p
@@ -83,7 +86,8 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                             </p>
                         </div>
                     </div>
-
+                    {/*  */}
+                    {/* Hinzugefügte Media */}
                     <div className="h-full flex-1">
                         <div className="h-90.5 w-[236.138px] border-[5px] border-black overflow-hidden">
                             {image && (
@@ -98,7 +102,8 @@ export default function Product({ selectedCategory, values, image }: ProductProp
 
                 </div>
             </div>
-
+            
+            {/* CTA Button  */}
             <div className="mt-10 ml-6 w-210 h-50 border-[#808080] border-2 flex flex-row justify-between items-center">
                 <div>
                     <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mt-9 ml-7">Wird gespeichert als</p>

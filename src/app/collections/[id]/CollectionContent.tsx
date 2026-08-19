@@ -15,6 +15,7 @@ export default function CollectionContent({ collection }: CollectionContentProps
     );
 
     const objectsPerPage = 10;
+
     const [currentPage, setCurrentPage] = useState(1);
 
     const totalPages = Math.ceil(objects.length / objectsPerPage);
@@ -31,6 +32,7 @@ export default function CollectionContent({ collection }: CollectionContentProps
             <div className="relative lg:h-420 md:700">
                 <div className="absolute bg-[#808080]" style={{ left: 0, top: 140, width: 1470, height: 3 }} />
 
+                {/* Titel von Sammlung */}
                 <div className="ml-11 mt-15 flex flex-col gap-4">
                     <span className="material-symbols-outlined text-[60px]">
                         {collection.icon}
@@ -43,6 +45,7 @@ export default function CollectionContent({ collection }: CollectionContentProps
                     </p>
                 </div>
 
+                {/* Filter */}
                 <div>
                     <p className="hidden md:block md:mr-11 md:-mt-30 md:text-[24px] md:leading-[100%] md:tracking-[1%] md:text-right">
                         N°01 — 39 Objekte<br></br>zuletzt aktualisiert heute
@@ -55,7 +58,7 @@ export default function CollectionContent({ collection }: CollectionContentProps
                     </div>
                 </div>
 
-                {/* LG */}
+                {/* Objekt Karte für LG */}
                 <div className="hidden lg:mt-20 lg:ml-11 lg:grid lg:w-7xl lg:grid-cols-5 lg:gap-x-28 lg:gap-y-8">
                     {currentObjects.map((object) => (
                         <div
@@ -83,7 +86,7 @@ export default function CollectionContent({ collection }: CollectionContentProps
                     ))}
                 </div>
 
-                {/* Mobile */}
+                {/* Objekt Karte für Mobile */}
                 <div className="mt-20 grid grid-cols-1 gap-2 px-3 md:hidden">
                     {currentObjects.map((object) => (
                         <Link
@@ -109,7 +112,7 @@ export default function CollectionContent({ collection }: CollectionContentProps
                     ))}
                 </div>
 
-                {/* MD */}
+                {/* Objekt Karte für MD */}
                 <div className="hidden md:grid lg:hidden md:mt-10 md:ml-3 md:grid-cols-3 md:gap-3">
                     {currentObjects.map((object) => (
                         <div
@@ -136,6 +139,7 @@ export default function CollectionContent({ collection }: CollectionContentProps
                     ))}
                 </div>
 
+                {/* Pagination */}
                 <div className="mt-12 mb-10 md:mb-20 lg:mb-0 mr-11 flex justify-end items-center gap-6 text-[24px] grotesk-xbold">
                     <button
                         type="button"
@@ -145,15 +149,11 @@ export default function CollectionContent({ collection }: CollectionContentProps
                     >
                         ←
                     </button>
-
                     <span>
                         {startIndex + 1}–{Math.min(startIndex + objectsPerPage, objects.length)}
                     </span>
-
                     <span>/</span>
-
                     <span>{objects.length}</span>
-
                     <button
                         type="button"
                         disabled={currentPage === totalPages}

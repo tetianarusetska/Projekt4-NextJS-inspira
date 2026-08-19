@@ -8,14 +8,18 @@ import { authClient } from "@/lib/auth-client";
 export default function Registr() {
 
     const router = useRouter();
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
 
     async function handleRegister(e: SyntheticEvent<HTMLFormElement>) {
+
         e.preventDefault();
+
         setError(null);
         setLoading(true);
 
@@ -38,7 +42,7 @@ export default function Registr() {
     return (
         <>
             <div className="relative md:w-full md:h-full flex justify-center items-center">
-
+                {/* Überschrift */}
                 <div className="hidden lg:block">
                     <p
                         className="grotesk-xbold text-[64px] leading-[100%] tracking-[1%] absolute left-8 top-21"
@@ -51,7 +55,7 @@ export default function Registr() {
                         Halte fest, was bleibt.
                     </p>
                 </div>
-
+                {/* NAV Buttons */}
                 <div className="w-125 h-200 bg-white rounded-2xl mt-20 mb-10">
 
                     <div className="mt-10 flex flex-row gap-25 md:gap-0 md:justify-between border-b-2 border-[#EDEDED] py-2">
@@ -66,7 +70,7 @@ export default function Registr() {
                             <Link href="/login">Registrieren</Link>
                         </button>
                     </div>
-
+                    {/* Überschrift */}
                     <div className="flex flex-col gap-2 mt-10 text-left md:ml-25 ml-10">
                         <p
                             className="grotesk-xbold text-[36px] leading-[100%] tracking-[1%] uppercase"
@@ -79,7 +83,7 @@ export default function Registr() {
                             Starte deine digitale Sammlung.
                         </p>
                     </div>
-
+                    {/* Registr Form */}
                     <form onSubmit={handleRegister} className="mt-15 flex flex-col gap-6 items-center">
 
                         <div className="flex flex-col gap-4">

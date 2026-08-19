@@ -3,6 +3,7 @@ import Link from "next/link";
 export default function HeroContent() {
     return (
         <>
+            {/* Decoration, Text */}
             <div className="relative z-10">
                 <p
                     className="absolute leading-17.5 tracking-[1.0px] text-[64px] left-8 top-20
@@ -28,6 +29,7 @@ export default function HeroContent() {
                 </p>
             </div>
 
+            {/* Sammlungen, Objekte */}
             <div className="relative z-10 md:mt-25">
 
                 <div>
@@ -66,6 +68,8 @@ export default function HeroContent() {
 
             </div>
 
+
+            {/* CTA Buttons */}
             <div className="relative z-10">
 
                 <button

@@ -8,13 +8,17 @@ import { authClient } from "@/lib/auth-client";
 export default function Login() {
 
     const router = useRouter();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
 
     async function handleLogin(e: SyntheticEvent<HTMLFormElement>) {
+
         e.preventDefault();
+
         setError(null);
         setLoading(true);
 
@@ -37,7 +41,7 @@ export default function Login() {
     return (
         <>
             <div className="relative md:w-full md:h-full flex justify-center items-center">
-
+                {/* Überschrift */}
                 <div className="hidden lg:block">
                     <p
                         className="grotesk-xbold text-[64px] leading-[100%] tracking-[1%] absolute left-8 top-21"
@@ -51,6 +55,7 @@ export default function Login() {
                     </p>
                 </div>
 
+                {/* NAV Buttons */}
                 <div className="w-95 md:w-125 h-200 bg-white rounded-2xl mt-20 mb-10">
                     <div className="mt-10 flex flex-row gap-25 md:gap-0 md:justify-between border-b-2 border-[#EDEDED] py-2">
                         <button
@@ -84,6 +89,7 @@ export default function Login() {
                         Wilkommen zuruck...
                     </p>
 
+                    {/* Login Form */}
                     <form onSubmit={handleLogin} className="mt-15 flex flex-col gap-6 items-center">
 
                         <div className="flex flex-col gap-4">

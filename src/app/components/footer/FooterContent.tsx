@@ -3,6 +3,7 @@ import FooterMenu from "./FooterMenu"
 export default function FooterContent() {
     return (
         <div className="relative w-full md:-translate-y-100 lg:translate-y-0 md:h-256 lg:h-240 md:aspect-1280/832 md:bg-[#EDEDED] bg-black overflow-hidden">
+            {/* Background */}
             <img
                 src="/images/background.svg"
                 alt="footer-background"
@@ -10,11 +11,12 @@ export default function FooterContent() {
                             md:flex md:absolute md:object-contain md:w-[100%] md:h-full md:left-0 md:top-0
                             lg:left-0 lg:top-[3.125%] lg:-translate-y-25 lg:translate-x-30 lg:w-6xl lg:h-[103.125%]"
             />
+            {/* Background für Mobile */}
             <img
                 src="/images/mob.svg"
                 alt="footer"
                 className="z-30 md:hidden translate-y-10 h-200" />
-
+            {/* Decorative text */}
             <p
                 className="z-30 absolute text-white top-60 left-10 text-[54px]
                            md:top-80 md:left-65 md:text-[64px]
@@ -31,6 +33,7 @@ export default function FooterContent() {
             </p>
 
             <FooterMenu />
+            {/* Nav Linien */}
             <Section />
         </div>
     )
@@ -38,7 +41,7 @@ export default function FooterContent() {
 
 export const Section = () => {
     return (
-
+        // NAV Linien
         <div className="hidden lg:block lg:absolute inset-0 z-20 pointer-events-none">
             <div className="absolute left-0 w-full bg-black" style={{ top: "7.2%", height: "0.481%" }} />
             <div className="absolute bg-black" style={{ left: "68%", top: "-1.2%", height: "8.6%", width: "0.25%" }} />

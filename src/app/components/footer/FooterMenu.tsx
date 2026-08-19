@@ -4,6 +4,8 @@ import FooterNavLinks from "./FooterNavLinks";
 export default function FooterMenu() {
     return (
         <header className="relative z-30 items-stretch justify-between hidden lg:flex lg:w-full">
+
+            {/* Logo */}
             <Link href="/">
                 <img
                     src="/images/Logo.svg"
@@ -11,6 +13,7 @@ export default function FooterMenu() {
                     className="md:-mt-2 lg:mt-2 lg:ml-2"
                 />
             </Link>
+            {/* Nav */}
             <FooterNavLinks />
 
         </header>

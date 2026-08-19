@@ -5,10 +5,12 @@ import { upload } from "@vercel/blob/client";
 import { MediaProps } from "../types/MediaProps";
 
 export default function Media({ image, setImage }: MediaProps) {
+
     const [isUploading, setIsUploading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+
         const file = e.target.files?.[0];
         if (!file) return;
 
@@ -31,7 +33,7 @@ export default function Media({ image, setImage }: MediaProps) {
 
     return (
         <div id="media" className="mb-20">
-
+            {/* Überschrift */}
             <div className="mt-20 ml-5.25 flex flex-col gap-4">
                 <p className="grotesk-xbold text-[32px] leading-[100%] tracking-[1%]">
                     03    –    MEDIEN HINZUFUGEN
@@ -46,6 +48,7 @@ export default function Media({ image, setImage }: MediaProps) {
                 </p>
             </div>
 
+            {/* Media hinzufügen */}
             <label className="mt-20 ml-5.25 flex h-35.75 w-209 cursor-pointer items-center justify-center border-2 border-dashed border-[#808080]">
 
                 <input

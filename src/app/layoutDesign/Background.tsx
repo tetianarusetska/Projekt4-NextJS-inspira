@@ -2,7 +2,7 @@ export default function Background() {
     return (
         <div className="bg-(--bgColor) h-screen w-screen absolute inset-0">
 
-            {/* circle */}
+            {/* Decoration, circle */}
             <div
                 className="absolute rounded-full w-61.75 h-61.75 left-[30.5px] top-[390.5px] border-[3px] border-[#808080]
                 md:left-[44.5px] md:top-[390.5px]
@@ -10,7 +10,7 @@ export default function Background() {
                 "
             />
 
-            {/* horizontal lines */}
+            {/* Decoration, horizontal lines */}
             <div
                 className="absolute bg-black w-full h-1 left-0 top-[398px]
                 md: left-0 top-[558px]
@@ -18,11 +18,11 @@ export default function Background() {
                 "
             />
             <div
-                className="absolute bg-black w-full h-1 left-0 top-[68px]
+                className="absolute bg-black w-full h-1 left-0 top-17
                 "
             />
 
-            {/* vertical lines */}
+            {/* NAV, vertical lines */}
             <div
                 className="hidden
                            md:block md:absolute md:w-[3px]  md:h-[760.001px]  md:bg-[#808080] md:origin-top-left md:rotate-[0.147deg] md:left-[520px] md:top-[72px]
@@ -47,14 +47,14 @@ export default function Background() {
             "
             />
 
-            {/* bottom vertical */}
+            {/* Decoration, bottom vertical */}
             <div
                 className="hidden
                            lg:w-[3px] lg:h-[144px] lg:absolute lg:bg-black  lg:block lg:top-[602px] lg:left-[427px]
             "
             />
 
-            {/* right horizontal */}
+            {/* Decoration, right horizontal */}
             <div
                 className="hidden 
                            lg:absolute lg:h-[3px] lg:w-[303px] lg:top-[220px] lg:right-0 lg:bg-[#808080] lg:block

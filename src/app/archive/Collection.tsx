@@ -9,6 +9,7 @@ export default function Collection({ selectedCategory, setSelectedCategory }: Co
         <>
             <div id="collection" className="mb-20">
 
+                {/* Überschrift */}
                 <div className="mt-20 flex flex-col gap-4 ml-5.25">
                     <p className="grotesk-xbold text-[32px] leading-[100%] tracking-[1%]">01    –    SAMMLUNG WAHLEN</p>
                     <p
@@ -23,6 +24,7 @@ export default function Collection({ selectedCategory, setSelectedCategory }: Co
                     </p>
                 </div>
 
+                {/* Sammlung wählen */}
                 <div className="ml-5.25 mt-20 grid h-176.5 w-235.75 grid-cols-4 grid-rows-3">
                     {Object.values(collections).map((collect, index) => {
 

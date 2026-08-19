@@ -13,7 +13,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ id:
     const collection = collections[id];
 
     if (!collection) {
-        return <div>Collection not found</div>;
+        return <div>Sammlung wurde nicht gefunden.</div>;
     }
 
     return (

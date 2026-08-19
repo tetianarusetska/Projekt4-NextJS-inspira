@@ -7,6 +7,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
             <div className="relative h-300">
                 <div className="absolute bg-[#808080]" style={{ left: 0, top: 140, width: 1470, height: 3 }} />
 
+                {/* Objekt Titel */}
                 <div className="ml-11 mt-15 flex flex-col gap-4">
                     <span className="material-symbols-outlined text-[60px]">
                         {collection.icon}
@@ -19,6 +20,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                     </p>
                 </div>
 
+                {/* Obkjekt Karte */}
                 <div className="ml-11 mt-20 w-full max-w-301.75 h-148.75 border-[5px] border-black bg-black">
                     <div className="grid grid-cols-1 md:grid-cols-[38%_62%]">
 
@@ -63,7 +65,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                                 Ich habe es an einem Regentag in Prag gefunden — die erste
                                 Seite hat mich sofort gepackt.
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>

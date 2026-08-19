@@ -9,6 +9,7 @@ export default function ExampleCardArea() {
 
                 <div className="flex flex-col gap-13.75 items-center justify-center">
 
+                    {/* Überschrift */}
                     <p
                         className="mt-20 text-center grotesk-xbold text-[48px] leading-[102%] tracking-[1%] uppercase
                                    md:mt-0
@@ -24,6 +25,8 @@ export default function ExampleCardArea() {
                         Organisiere deine Inspirationen, entdecke Verbindungen zwischen deinen<br></br>
                         Interessen und baue eine digitale Sammlung deiner eigenen Welt auf.
                     </p>
+
+                    {/* CTA Button */}
                     <button
                         className="uppercase text-center grotesk-xbold text-[32px] leading-[102%] tracking-[1%] w-60.25 h-15.5 bg-(--mainColor) text-white"
                     >
@@ -32,12 +35,14 @@ export default function ExampleCardArea() {
 
                 </div>
 
+                {/* Example Card */}
+
                 <div className="hidden 
                                 md:block md:mx-auto md:mt-30 md:border-[5px] md:border-black md:bg-black
                                 lg:w-full lg:max-w-301.75 lg:h-148.75">
 
                     <div className="grid grid-cols-1 lg:grid-cols-[38%_62%]">
-                        
+
                         <div className="md:h-100 lg:h-146 md:w-189.5 lg:w-116.25 bg-[#012F38]" />
 
                         <div className="md:ml-8 lg:ml-12 text-white">

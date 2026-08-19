@@ -5,6 +5,7 @@ export default function Collections() {
     return (
         <div className="relative h-200 lg:h-420 md:h-460 flex flex-col">
 
+            {/* Überschrift */}
             <div className="md:mt-20 hidden md:block">
                 <p className="grotesk-xbold absolute left-5.25 md:top-13 lg:top-10.75 text-[64px] leading-[100%] tracking-[1%] text-(--mainColor)">
                     dein personlicher<br />
@@ -16,6 +17,7 @@ export default function Collections() {
                 </p>
             </div>
 
+            {/* Sammlungen, Objekte */}
             <div className="hidden md:absolute md:right-4 md:top-16 lg:right-8.25 lg:top-10.75 md:flex md:flex-col md:items-end md:gap-0">
                 <p className="grotesk-xbold text-right text-[48px] leading-[100%] tracking-[1%] text-[#808080]">
                     sammlungen – XXX
@@ -26,7 +28,7 @@ export default function Collections() {
                 </p>
             </div>
 
-            {/* Mobile */}
+            {/* Sammlungen Karte für Mobile */}
             <div className="grid grid-cols-1 gap-2 md:hidden mt-10">
                 {Object.values(collections).map((col) => (
                     <Link
@@ -53,7 +55,7 @@ export default function Collections() {
                 ))}
             </div>
 
-            {/* MD */}
+            {/* Sammlungen Karte für MD */}
             <div className="hidden md:grid lg:hidden md:grid-cols-3 md:gap-3 md:mt-50 md:ml-3">
                 {Object.values(collections).map((col) => (
                     <Link
@@ -82,7 +84,7 @@ export default function Collections() {
                 ))}
             </div>
 
-            {/* LG */}
+            {/* Sammlungen Karte für LG */}
             <div className="absolute left-0 top-0 hidden h-[1620px] w-[1280px] lg:block">
                 {Object.values(collections).map((col) => (
                     <div

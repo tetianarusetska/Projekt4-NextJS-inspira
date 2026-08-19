@@ -13,6 +13,7 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
 
     return (
         <div id="details" className="mb-20">
+            {/* Übershcrift */}
             <div className="mt-20 ml-5.25 flex flex-col gap-4">
                 <p className="grotesk-xbold text-[32px] leading-[100%] tracking-[1%]">
                     02 – DETAILS HINZUFUGEN
@@ -28,6 +29,7 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
                 </p>
             </div>
 
+            {/* Detail hinzufügen */}
             <form className="mt-20 ml-5.25 w-209 border-2 border-[#808080]">
                 {category.details.map((detail, index) => (
                     <div key={detail.id}>

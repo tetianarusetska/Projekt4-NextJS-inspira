@@ -3,11 +3,13 @@ import Link from "next/link";
 export default function AboutArea() {
     return (
         <div className="mt-20 relative z-30 flex flex-col
-                        md:mt-90 lg:mt-100" 
-                        id="about">
+                        md:mt-90 lg:mt-100"
+            id="about">
 
             <div className="hidden 
                             md:flex md:flex-col md:px-15.25">
+
+                {/* Überschrift */}
                 <p
                     className="text-left grotesk-xbold leading-[100%] tracking-[1%] uppercase
                                md:text-[48px]
@@ -16,6 +18,7 @@ export default function AboutArea() {
                     Die digitale Sammlung deiner<br></br>physischen und digitalen<br></br>Welt.
                 </p>
 
+                {/* Über App */}
                 <p className="mt-16 text-left leading-[100%] tracking-[1%]
                               md:text-[24px]
                               lg:text-[36px]">
@@ -31,6 +34,7 @@ export default function AboutArea() {
                 </p>
             </div>
 
+            {/* Beschreibung von App */}
             <div className="w-full border-t-2 border-[#808080] border-b-2 -translate-y-40 md:translate-y-0
                             md:mt-26
                             lg:mt-36 ">
@@ -67,6 +71,8 @@ export default function AboutArea() {
                 </div>
             </div>
 
+
+            {/* Schritte für Archivieren */}
             <div className="hidden md:block md:mt-24 lg:mt-44 md:mx-10">
 
                 <p className="grotesk-xbold text-[36px] tracking-[5%]">
@@ -130,6 +136,7 @@ export default function AboutArea() {
                     Beginne deine Sammlung.
                 </p>
 
+                {/* CTA Button  */}
                 <button
                     className="md:mt-10 lg:mt-15 uppercase text-center grotesk-xbold text-[24px] leading-[100%] tracking-[1%] w-75 h-13.5 bg-(--mainColor) text-white"
                 >
