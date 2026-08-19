@@ -39,6 +39,8 @@ export type MusicMinAggregateOutputType = {
   userId: string | null
   format: string | null
   title: string | null
+  author: string | null
+  year: string | null
   discovered_by: string | null
   note: string | null
   bestQuote: string | null
@@ -51,6 +53,8 @@ export type MusicMaxAggregateOutputType = {
   userId: string | null
   format: string | null
   title: string | null
+  author: string | null
+  year: string | null
   discovered_by: string | null
   note: string | null
   bestQuote: string | null
@@ -63,6 +67,8 @@ export type MusicCountAggregateOutputType = {
   userId: number
   format: number
   title: number
+  author: number
+  year: number
   discovered_by: number
   note: number
   bestQuote: number
@@ -85,6 +91,8 @@ export type MusicMinAggregateInputType = {
   userId?: true
   format?: true
   title?: true
+  author?: true
+  year?: true
   discovered_by?: true
   note?: true
   bestQuote?: true
@@ -97,6 +105,8 @@ export type MusicMaxAggregateInputType = {
   userId?: true
   format?: true
   title?: true
+  author?: true
+  year?: true
   discovered_by?: true
   note?: true
   bestQuote?: true
@@ -109,6 +119,8 @@ export type MusicCountAggregateInputType = {
   userId?: true
   format?: true
   title?: true
+  author?: true
+  year?: true
   discovered_by?: true
   note?: true
   bestQuote?: true
@@ -208,6 +220,8 @@ export type MusicGroupByOutputType = {
   userId: string
   format: string
   title: string
+  author: string
+  year: string
   discovered_by: string
   note: string
   bestQuote: string
@@ -243,6 +257,8 @@ export type MusicWhereInput = {
   userId?: Prisma.StringFilter<"Music"> | string
   format?: Prisma.StringFilter<"Music"> | string
   title?: Prisma.StringFilter<"Music"> | string
+  author?: Prisma.StringFilter<"Music"> | string
+  year?: Prisma.StringFilter<"Music"> | string
   discovered_by?: Prisma.StringFilter<"Music"> | string
   note?: Prisma.StringFilter<"Music"> | string
   bestQuote?: Prisma.StringFilter<"Music"> | string
@@ -256,6 +272,8 @@ export type MusicOrderByWithRelationInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
@@ -272,6 +290,8 @@ export type MusicWhereUniqueInput = Prisma.AtLeast<{
   userId?: Prisma.StringFilter<"Music"> | string
   format?: Prisma.StringFilter<"Music"> | string
   title?: Prisma.StringFilter<"Music"> | string
+  author?: Prisma.StringFilter<"Music"> | string
+  year?: Prisma.StringFilter<"Music"> | string
   discovered_by?: Prisma.StringFilter<"Music"> | string
   note?: Prisma.StringFilter<"Music"> | string
   bestQuote?: Prisma.StringFilter<"Music"> | string
@@ -285,6 +305,8 @@ export type MusicOrderByWithAggregationInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
@@ -305,6 +327,8 @@ export type MusicScalarWhereWithAggregatesInput = {
   userId?: Prisma.StringWithAggregatesFilter<"Music"> | string
   format?: Prisma.StringWithAggregatesFilter<"Music"> | string
   title?: Prisma.StringWithAggregatesFilter<"Music"> | string
+  author?: Prisma.StringWithAggregatesFilter<"Music"> | string
+  year?: Prisma.StringWithAggregatesFilter<"Music"> | string
   discovered_by?: Prisma.StringWithAggregatesFilter<"Music"> | string
   note?: Prisma.StringWithAggregatesFilter<"Music"> | string
   bestQuote?: Prisma.StringWithAggregatesFilter<"Music"> | string
@@ -315,6 +339,8 @@ export type MusicScalarWhereWithAggregatesInput = {
 export type MusicCreateInput = {
   format: string
   title: string
+  author: string
+  year: string
   discovered_by: string
   note: string
   bestQuote: string
@@ -328,6 +354,8 @@ export type MusicUncheckedCreateInput = {
   userId: string
   format: string
   title: string
+  author: string
+  year: string
   discovered_by: string
   note: string
   bestQuote: string
@@ -338,6 +366,8 @@ export type MusicUncheckedCreateInput = {
 export type MusicUpdateInput = {
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
@@ -351,6 +381,8 @@ export type MusicUncheckedUpdateInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
@@ -363,6 +395,8 @@ export type MusicCreateManyInput = {
   userId: string
   format: string
   title: string
+  author: string
+  year: string
   discovered_by: string
   note: string
   bestQuote: string
@@ -373,6 +407,8 @@ export type MusicCreateManyInput = {
 export type MusicUpdateManyMutationInput = {
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
@@ -385,6 +421,8 @@ export type MusicUncheckedUpdateManyInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
@@ -407,6 +445,8 @@ export type MusicCountOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
@@ -423,6 +463,8 @@ export type MusicMaxOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
@@ -435,6 +477,8 @@ export type MusicMinOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
@@ -491,6 +535,8 @@ export type MusicUncheckedUpdateManyWithoutUserNestedInput = {
 export type MusicCreateWithoutUserInput = {
   format: string
   title: string
+  author: string
+  year: string
   discovered_by: string
   note: string
   bestQuote: string
@@ -502,6 +548,8 @@ export type MusicUncheckedCreateWithoutUserInput = {
   id?: number
   format: string
   title: string
+  author: string
+  year: string
   discovered_by: string
   note: string
   bestQuote: string
@@ -543,6 +591,8 @@ export type MusicScalarWhereInput = {
   userId?: Prisma.StringFilter<"Music"> | string
   format?: Prisma.StringFilter<"Music"> | string
   title?: Prisma.StringFilter<"Music"> | string
+  author?: Prisma.StringFilter<"Music"> | string
+  year?: Prisma.StringFilter<"Music"> | string
   discovered_by?: Prisma.StringFilter<"Music"> | string
   note?: Prisma.StringFilter<"Music"> | string
   bestQuote?: Prisma.StringFilter<"Music"> | string
@@ -554,6 +604,8 @@ export type MusicCreateManyUserInput = {
   id?: number
   format: string
   title: string
+  author: string
+  year: string
   discovered_by: string
   note: string
   bestQuote: string
@@ -564,6 +616,8 @@ export type MusicCreateManyUserInput = {
 export type MusicUpdateWithoutUserInput = {
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
@@ -575,6 +629,8 @@ export type MusicUncheckedUpdateWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
@@ -586,6 +642,8 @@ export type MusicUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
@@ -600,6 +658,8 @@ export type MusicSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   userId?: boolean
   format?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
@@ -613,6 +673,8 @@ export type MusicSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   userId?: boolean
   format?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
@@ -626,6 +688,8 @@ export type MusicSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   userId?: boolean
   format?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
@@ -639,6 +703,8 @@ export type MusicSelectScalar = {
   userId?: boolean
   format?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
@@ -646,7 +712,7 @@ export type MusicSelectScalar = {
   createdAt?: boolean
 }
 
-export type MusicOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "format" | "title" | "discovered_by" | "note" | "bestQuote" | "imageUrl" | "createdAt", ExtArgs["result"]["music"]>
+export type MusicOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "format" | "title" | "author" | "year" | "discovered_by" | "note" | "bestQuote" | "imageUrl" | "createdAt", ExtArgs["result"]["music"]>
 export type MusicInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -667,6 +733,8 @@ export type $MusicPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     userId: string
     format: string
     title: string
+    author: string
+    year: string
     discovered_by: string
     note: string
     bestQuote: string
@@ -1100,6 +1168,8 @@ export interface MusicFieldRefs {
   readonly userId: Prisma.FieldRef<"Music", 'String'>
   readonly format: Prisma.FieldRef<"Music", 'String'>
   readonly title: Prisma.FieldRef<"Music", 'String'>
+  readonly author: Prisma.FieldRef<"Music", 'String'>
+  readonly year: Prisma.FieldRef<"Music", 'String'>
   readonly discovered_by: Prisma.FieldRef<"Music", 'String'>
   readonly note: Prisma.FieldRef<"Music", 'String'>
   readonly bestQuote: Prisma.FieldRef<"Music", 'String'>

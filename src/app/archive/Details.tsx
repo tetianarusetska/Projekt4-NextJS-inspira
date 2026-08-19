@@ -13,6 +13,7 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
 
     return (
         <div id="details" className="mb-20">
+            
             {/* Übershcrift */}
             <div className="mt-20 ml-5.25 flex flex-col gap-4">
                 <p className="grotesk-xbold text-[32px] leading-[100%] tracking-[1%]">

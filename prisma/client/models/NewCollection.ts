@@ -37,7 +37,7 @@ export type NewCollectionSumAggregateOutputType = {
 export type NewCollectionMinAggregateOutputType = {
   id: number | null
   userId: string | null
-  name: string | null
+  title: string | null
   description: string | null
   reason: string | null
   imageUrl: string | null
@@ -47,7 +47,7 @@ export type NewCollectionMinAggregateOutputType = {
 export type NewCollectionMaxAggregateOutputType = {
   id: number | null
   userId: string | null
-  name: string | null
+  title: string | null
   description: string | null
   reason: string | null
   imageUrl: string | null
@@ -57,7 +57,7 @@ export type NewCollectionMaxAggregateOutputType = {
 export type NewCollectionCountAggregateOutputType = {
   id: number
   userId: number
-  name: number
+  title: number
   description: number
   reason: number
   imageUrl: number
@@ -77,7 +77,7 @@ export type NewCollectionSumAggregateInputType = {
 export type NewCollectionMinAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   description?: true
   reason?: true
   imageUrl?: true
@@ -87,7 +87,7 @@ export type NewCollectionMinAggregateInputType = {
 export type NewCollectionMaxAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   description?: true
   reason?: true
   imageUrl?: true
@@ -97,7 +97,7 @@ export type NewCollectionMaxAggregateInputType = {
 export type NewCollectionCountAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   description?: true
   reason?: true
   imageUrl?: true
@@ -194,7 +194,7 @@ export type NewCollectionGroupByArgs<ExtArgs extends runtime.Types.Extensions.In
 export type NewCollectionGroupByOutputType = {
   id: number
   userId: string
-  name: string
+  title: string
   description: string
   reason: string
   imageUrl: string | null
@@ -227,7 +227,7 @@ export type NewCollectionWhereInput = {
   NOT?: Prisma.NewCollectionWhereInput | Prisma.NewCollectionWhereInput[]
   id?: Prisma.IntFilter<"NewCollection"> | number
   userId?: Prisma.StringFilter<"NewCollection"> | string
-  name?: Prisma.StringFilter<"NewCollection"> | string
+  title?: Prisma.StringFilter<"NewCollection"> | string
   description?: Prisma.StringFilter<"NewCollection"> | string
   reason?: Prisma.StringFilter<"NewCollection"> | string
   imageUrl?: Prisma.StringNullableFilter<"NewCollection"> | string | null
@@ -238,7 +238,7 @@ export type NewCollectionWhereInput = {
 export type NewCollectionOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   reason?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -252,7 +252,7 @@ export type NewCollectionWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.NewCollectionWhereInput[]
   NOT?: Prisma.NewCollectionWhereInput | Prisma.NewCollectionWhereInput[]
   userId?: Prisma.StringFilter<"NewCollection"> | string
-  name?: Prisma.StringFilter<"NewCollection"> | string
+  title?: Prisma.StringFilter<"NewCollection"> | string
   description?: Prisma.StringFilter<"NewCollection"> | string
   reason?: Prisma.StringFilter<"NewCollection"> | string
   imageUrl?: Prisma.StringNullableFilter<"NewCollection"> | string | null
@@ -263,7 +263,7 @@ export type NewCollectionWhereUniqueInput = Prisma.AtLeast<{
 export type NewCollectionOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   reason?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -281,7 +281,7 @@ export type NewCollectionScalarWhereWithAggregatesInput = {
   NOT?: Prisma.NewCollectionScalarWhereWithAggregatesInput | Prisma.NewCollectionScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"NewCollection"> | number
   userId?: Prisma.StringWithAggregatesFilter<"NewCollection"> | string
-  name?: Prisma.StringWithAggregatesFilter<"NewCollection"> | string
+  title?: Prisma.StringWithAggregatesFilter<"NewCollection"> | string
   description?: Prisma.StringWithAggregatesFilter<"NewCollection"> | string
   reason?: Prisma.StringWithAggregatesFilter<"NewCollection"> | string
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"NewCollection"> | string | null
@@ -289,7 +289,7 @@ export type NewCollectionScalarWhereWithAggregatesInput = {
 }
 
 export type NewCollectionCreateInput = {
-  name: string
+  title: string
   description: string
   reason: string
   imageUrl?: string | null
@@ -300,7 +300,7 @@ export type NewCollectionCreateInput = {
 export type NewCollectionUncheckedCreateInput = {
   id?: number
   userId: string
-  name: string
+  title: string
   description: string
   reason: string
   imageUrl?: string | null
@@ -308,7 +308,7 @@ export type NewCollectionUncheckedCreateInput = {
 }
 
 export type NewCollectionUpdateInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   reason?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -319,7 +319,7 @@ export type NewCollectionUpdateInput = {
 export type NewCollectionUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   reason?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -329,7 +329,7 @@ export type NewCollectionUncheckedUpdateInput = {
 export type NewCollectionCreateManyInput = {
   id?: number
   userId: string
-  name: string
+  title: string
   description: string
   reason: string
   imageUrl?: string | null
@@ -337,7 +337,7 @@ export type NewCollectionCreateManyInput = {
 }
 
 export type NewCollectionUpdateManyMutationInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   reason?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -347,7 +347,7 @@ export type NewCollectionUpdateManyMutationInput = {
 export type NewCollectionUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   reason?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -367,7 +367,7 @@ export type NewCollectionOrderByRelationAggregateInput = {
 export type NewCollectionCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   reason?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
@@ -381,7 +381,7 @@ export type NewCollectionAvgOrderByAggregateInput = {
 export type NewCollectionMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   reason?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
@@ -391,7 +391,7 @@ export type NewCollectionMaxOrderByAggregateInput = {
 export type NewCollectionMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   reason?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
@@ -445,7 +445,7 @@ export type NewCollectionUncheckedUpdateManyWithoutUserNestedInput = {
 }
 
 export type NewCollectionCreateWithoutUserInput = {
-  name: string
+  title: string
   description: string
   reason: string
   imageUrl?: string | null
@@ -454,7 +454,7 @@ export type NewCollectionCreateWithoutUserInput = {
 
 export type NewCollectionUncheckedCreateWithoutUserInput = {
   id?: number
-  name: string
+  title: string
   description: string
   reason: string
   imageUrl?: string | null
@@ -493,7 +493,7 @@ export type NewCollectionScalarWhereInput = {
   NOT?: Prisma.NewCollectionScalarWhereInput | Prisma.NewCollectionScalarWhereInput[]
   id?: Prisma.IntFilter<"NewCollection"> | number
   userId?: Prisma.StringFilter<"NewCollection"> | string
-  name?: Prisma.StringFilter<"NewCollection"> | string
+  title?: Prisma.StringFilter<"NewCollection"> | string
   description?: Prisma.StringFilter<"NewCollection"> | string
   reason?: Prisma.StringFilter<"NewCollection"> | string
   imageUrl?: Prisma.StringNullableFilter<"NewCollection"> | string | null
@@ -502,7 +502,7 @@ export type NewCollectionScalarWhereInput = {
 
 export type NewCollectionCreateManyUserInput = {
   id?: number
-  name: string
+  title: string
   description: string
   reason: string
   imageUrl?: string | null
@@ -510,7 +510,7 @@ export type NewCollectionCreateManyUserInput = {
 }
 
 export type NewCollectionUpdateWithoutUserInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   reason?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -519,7 +519,7 @@ export type NewCollectionUpdateWithoutUserInput = {
 
 export type NewCollectionUncheckedUpdateWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   reason?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -528,7 +528,7 @@ export type NewCollectionUncheckedUpdateWithoutUserInput = {
 
 export type NewCollectionUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   reason?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -540,7 +540,7 @@ export type NewCollectionUncheckedUpdateManyWithoutUserInput = {
 export type NewCollectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   description?: boolean
   reason?: boolean
   imageUrl?: boolean
@@ -551,7 +551,7 @@ export type NewCollectionSelect<ExtArgs extends runtime.Types.Extensions.Interna
 export type NewCollectionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   description?: boolean
   reason?: boolean
   imageUrl?: boolean
@@ -562,7 +562,7 @@ export type NewCollectionSelectCreateManyAndReturn<ExtArgs extends runtime.Types
 export type NewCollectionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   description?: boolean
   reason?: boolean
   imageUrl?: boolean
@@ -573,14 +573,14 @@ export type NewCollectionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types
 export type NewCollectionSelectScalar = {
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   description?: boolean
   reason?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type NewCollectionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "description" | "reason" | "imageUrl" | "createdAt", ExtArgs["result"]["newCollection"]>
+export type NewCollectionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "description" | "reason" | "imageUrl" | "createdAt", ExtArgs["result"]["newCollection"]>
 export type NewCollectionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -599,7 +599,7 @@ export type $NewCollectionPayload<ExtArgs extends runtime.Types.Extensions.Inter
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     userId: string
-    name: string
+    title: string
     description: string
     reason: string
     imageUrl: string | null
@@ -1030,7 +1030,7 @@ export interface Prisma__NewCollectionClient<T, Null = never, ExtArgs extends ru
 export interface NewCollectionFieldRefs {
   readonly id: Prisma.FieldRef<"NewCollection", 'Int'>
   readonly userId: Prisma.FieldRef<"NewCollection", 'String'>
-  readonly name: Prisma.FieldRef<"NewCollection", 'String'>
+  readonly title: Prisma.FieldRef<"NewCollection", 'String'>
   readonly description: Prisma.FieldRef<"NewCollection", 'String'>
   readonly reason: Prisma.FieldRef<"NewCollection", 'String'>
   readonly imageUrl: Prisma.FieldRef<"NewCollection", 'String'>

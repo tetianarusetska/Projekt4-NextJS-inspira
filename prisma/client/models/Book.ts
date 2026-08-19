@@ -40,6 +40,8 @@ export type BookMinAggregateOutputType = {
   id: number | null
   userId: string | null
   title: string | null
+  author: string | null
+  year: string | null
   pages: number | null
   discovered_by: string | null
   note: string | null
@@ -52,6 +54,8 @@ export type BookMaxAggregateOutputType = {
   id: number | null
   userId: string | null
   title: string | null
+  author: string | null
+  year: string | null
   pages: number | null
   discovered_by: string | null
   note: string | null
@@ -64,6 +68,8 @@ export type BookCountAggregateOutputType = {
   id: number
   userId: number
   title: number
+  author: number
+  year: number
   pages: number
   discovered_by: number
   note: number
@@ -88,6 +94,8 @@ export type BookMinAggregateInputType = {
   id?: true
   userId?: true
   title?: true
+  author?: true
+  year?: true
   pages?: true
   discovered_by?: true
   note?: true
@@ -100,6 +108,8 @@ export type BookMaxAggregateInputType = {
   id?: true
   userId?: true
   title?: true
+  author?: true
+  year?: true
   pages?: true
   discovered_by?: true
   note?: true
@@ -112,6 +122,8 @@ export type BookCountAggregateInputType = {
   id?: true
   userId?: true
   title?: true
+  author?: true
+  year?: true
   pages?: true
   discovered_by?: true
   note?: true
@@ -211,6 +223,8 @@ export type BookGroupByOutputType = {
   id: number
   userId: string
   title: string
+  author: string
+  year: string
   pages: number
   discovered_by: string
   note: string
@@ -246,6 +260,8 @@ export type BookWhereInput = {
   id?: Prisma.IntFilter<"Book"> | number
   userId?: Prisma.StringFilter<"Book"> | string
   title?: Prisma.StringFilter<"Book"> | string
+  author?: Prisma.StringFilter<"Book"> | string
+  year?: Prisma.StringFilter<"Book"> | string
   pages?: Prisma.IntFilter<"Book"> | number
   discovered_by?: Prisma.StringFilter<"Book"> | string
   note?: Prisma.StringFilter<"Book"> | string
@@ -259,6 +275,8 @@ export type BookOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   pages?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
@@ -275,6 +293,8 @@ export type BookWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.BookWhereInput | Prisma.BookWhereInput[]
   userId?: Prisma.StringFilter<"Book"> | string
   title?: Prisma.StringFilter<"Book"> | string
+  author?: Prisma.StringFilter<"Book"> | string
+  year?: Prisma.StringFilter<"Book"> | string
   pages?: Prisma.IntFilter<"Book"> | number
   discovered_by?: Prisma.StringFilter<"Book"> | string
   note?: Prisma.StringFilter<"Book"> | string
@@ -288,6 +308,8 @@ export type BookOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   pages?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
@@ -308,6 +330,8 @@ export type BookScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Book"> | number
   userId?: Prisma.StringWithAggregatesFilter<"Book"> | string
   title?: Prisma.StringWithAggregatesFilter<"Book"> | string
+  author?: Prisma.StringWithAggregatesFilter<"Book"> | string
+  year?: Prisma.StringWithAggregatesFilter<"Book"> | string
   pages?: Prisma.IntWithAggregatesFilter<"Book"> | number
   discovered_by?: Prisma.StringWithAggregatesFilter<"Book"> | string
   note?: Prisma.StringWithAggregatesFilter<"Book"> | string
@@ -318,6 +342,8 @@ export type BookScalarWhereWithAggregatesInput = {
 
 export type BookCreateInput = {
   title: string
+  author: string
+  year: string
   pages: number
   discovered_by: string
   note: string
@@ -331,6 +357,8 @@ export type BookUncheckedCreateInput = {
   id?: number
   userId: string
   title: string
+  author: string
+  year: string
   pages: number
   discovered_by: string
   note: string
@@ -341,6 +369,8 @@ export type BookUncheckedCreateInput = {
 
 export type BookUpdateInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   pages?: Prisma.IntFieldUpdateOperationsInput | number
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
@@ -354,6 +384,8 @@ export type BookUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   pages?: Prisma.IntFieldUpdateOperationsInput | number
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
@@ -366,6 +398,8 @@ export type BookCreateManyInput = {
   id?: number
   userId: string
   title: string
+  author: string
+  year: string
   pages: number
   discovered_by: string
   note: string
@@ -376,6 +410,8 @@ export type BookCreateManyInput = {
 
 export type BookUpdateManyMutationInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   pages?: Prisma.IntFieldUpdateOperationsInput | number
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
@@ -388,6 +424,8 @@ export type BookUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   pages?: Prisma.IntFieldUpdateOperationsInput | number
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
@@ -410,6 +448,8 @@ export type BookCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   pages?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
@@ -427,6 +467,8 @@ export type BookMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   pages?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
@@ -439,6 +481,8 @@ export type BookMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   pages?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
@@ -504,6 +548,8 @@ export type IntFieldUpdateOperationsInput = {
 
 export type BookCreateWithoutUserInput = {
   title: string
+  author: string
+  year: string
   pages: number
   discovered_by: string
   note: string
@@ -515,6 +561,8 @@ export type BookCreateWithoutUserInput = {
 export type BookUncheckedCreateWithoutUserInput = {
   id?: number
   title: string
+  author: string
+  year: string
   pages: number
   discovered_by: string
   note: string
@@ -556,6 +604,8 @@ export type BookScalarWhereInput = {
   id?: Prisma.IntFilter<"Book"> | number
   userId?: Prisma.StringFilter<"Book"> | string
   title?: Prisma.StringFilter<"Book"> | string
+  author?: Prisma.StringFilter<"Book"> | string
+  year?: Prisma.StringFilter<"Book"> | string
   pages?: Prisma.IntFilter<"Book"> | number
   discovered_by?: Prisma.StringFilter<"Book"> | string
   note?: Prisma.StringFilter<"Book"> | string
@@ -567,6 +617,8 @@ export type BookScalarWhereInput = {
 export type BookCreateManyUserInput = {
   id?: number
   title: string
+  author: string
+  year: string
   pages: number
   discovered_by: string
   note: string
@@ -577,6 +629,8 @@ export type BookCreateManyUserInput = {
 
 export type BookUpdateWithoutUserInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   pages?: Prisma.IntFieldUpdateOperationsInput | number
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
@@ -588,6 +642,8 @@ export type BookUpdateWithoutUserInput = {
 export type BookUncheckedUpdateWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   pages?: Prisma.IntFieldUpdateOperationsInput | number
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
@@ -599,6 +655,8 @@ export type BookUncheckedUpdateWithoutUserInput = {
 export type BookUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   pages?: Prisma.IntFieldUpdateOperationsInput | number
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
@@ -613,6 +671,8 @@ export type BookSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   id?: boolean
   userId?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   pages?: boolean
   discovered_by?: boolean
   note?: boolean
@@ -626,6 +686,8 @@ export type BookSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   id?: boolean
   userId?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   pages?: boolean
   discovered_by?: boolean
   note?: boolean
@@ -639,6 +701,8 @@ export type BookSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   id?: boolean
   userId?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   pages?: boolean
   discovered_by?: boolean
   note?: boolean
@@ -652,6 +716,8 @@ export type BookSelectScalar = {
   id?: boolean
   userId?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   pages?: boolean
   discovered_by?: boolean
   note?: boolean
@@ -660,7 +726,7 @@ export type BookSelectScalar = {
   createdAt?: boolean
 }
 
-export type BookOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "pages" | "discovered_by" | "note" | "bestQuote" | "imageUrl" | "createdAt", ExtArgs["result"]["book"]>
+export type BookOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "author" | "year" | "pages" | "discovered_by" | "note" | "bestQuote" | "imageUrl" | "createdAt", ExtArgs["result"]["book"]>
 export type BookInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -680,6 +746,8 @@ export type $BookPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     id: number
     userId: string
     title: string
+    author: string
+    year: string
     pages: number
     discovered_by: string
     note: string
@@ -1113,6 +1181,8 @@ export interface BookFieldRefs {
   readonly id: Prisma.FieldRef<"Book", 'Int'>
   readonly userId: Prisma.FieldRef<"Book", 'String'>
   readonly title: Prisma.FieldRef<"Book", 'String'>
+  readonly author: Prisma.FieldRef<"Book", 'String'>
+  readonly year: Prisma.FieldRef<"Book", 'String'>
   readonly pages: Prisma.FieldRef<"Book", 'Int'>
   readonly discovered_by: Prisma.FieldRef<"Book", 'String'>
   readonly note: Prisma.FieldRef<"Book", 'String'>

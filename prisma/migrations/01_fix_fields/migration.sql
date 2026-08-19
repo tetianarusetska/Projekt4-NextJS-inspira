@@ -145,7 +145,7 @@ CREATE TABLE "Museum" (
 CREATE TABLE "Gallery" (
     "id" SERIAL NOT NULL,
     "userId" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
     "city" TEXT NOT NULL,
     "artist" TEXT NOT NULL,
     "exhibition" TEXT NOT NULL,
@@ -207,7 +207,7 @@ CREATE TABLE "Idea" (
 CREATE TABLE "Quote" (
     "id" SERIAL NOT NULL,
     "userId" TEXT NOT NULL,
-    "quote" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
     "author" TEXT NOT NULL,
     "source" TEXT NOT NULL,
     "year" INTEGER NOT NULL,
@@ -222,7 +222,7 @@ CREATE TABLE "Quote" (
 CREATE TABLE "NewCollection" (
     "id" SERIAL NOT NULL,
     "userId" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "reason" TEXT NOT NULL,
     "imageUrl" TEXT,

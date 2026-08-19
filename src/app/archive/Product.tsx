@@ -1,7 +1,16 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { collections } from "../data/Collections";
 import { ProductProps } from "../types/ProductProps";
 
 export default function Product({ selectedCategory, values, image }: ProductProps) {
+
+    const router = useRouter();
+
+    const [isSaving, setIsSaving] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const collection = collections[selectedCategory];
 
@@ -15,6 +24,35 @@ export default function Product({ selectedCategory, values, image }: ProductProp
 
         return values[id] || detail?.placeholder || "";
     };
+
+
+    async function handleSave() {
+        setIsSaving(true);
+        setError(null);
+
+        try {
+            const res = await fetch("/api/objects", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    collectionId: selectedCategory,
+                    values,
+                    imageUrl: image,
+                }),
+            });
+
+            if (!res.ok) {
+                const data = await res.json();
+                throw new Error(data.error || "Fehler beim Speichern");
+            }
+
+            router.push(`/collections/${selectedCategory}`);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Fehler beim Speichern");
+        } finally {
+            setIsSaving(false);
+        }
+    }
 
     return (
         <div id="product" className="mb-20">
@@ -102,7 +140,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
 
                 </div>
             </div>
-            
+
             {/* CTA Button  */}
             <div className="mt-10 ml-6 w-210 h-50 border-[#808080] border-2 flex flex-row justify-between items-center">
                 <div>
@@ -111,10 +149,15 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                 </div>
                 <div>
                     <button
+                        onClick={handleSave}
+                        disabled={isSaving}
                         className="mt-9 mr-9 grotesk-xbold block  text-white bg-black uppercase text-center text-[32px] w-60.25 h-15.5 tracking-[1px] border-2 border-(--mainColor)"
                     >
-                        Speichern
+                        {isSaving ? "..." : "Speichern"}
                     </button>
+                    {error && (
+                        <p className="mt-2 text-[16px] text-black">{error}</p>
+                    )}
                 </div>
             </div>
 

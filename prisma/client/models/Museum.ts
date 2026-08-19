@@ -37,7 +37,7 @@ export type MuseumSumAggregateOutputType = {
 export type MuseumMinAggregateOutputType = {
   id: number | null
   userId: string | null
-  name: string | null
+  title: string | null
   city: string | null
   exhibition: string | null
   date: Date | null
@@ -50,7 +50,7 @@ export type MuseumMinAggregateOutputType = {
 export type MuseumMaxAggregateOutputType = {
   id: number | null
   userId: string | null
-  name: string | null
+  title: string | null
   city: string | null
   exhibition: string | null
   date: Date | null
@@ -63,7 +63,7 @@ export type MuseumMaxAggregateOutputType = {
 export type MuseumCountAggregateOutputType = {
   id: number
   userId: number
-  name: number
+  title: number
   city: number
   exhibition: number
   date: number
@@ -86,7 +86,7 @@ export type MuseumSumAggregateInputType = {
 export type MuseumMinAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   city?: true
   exhibition?: true
   date?: true
@@ -99,7 +99,7 @@ export type MuseumMinAggregateInputType = {
 export type MuseumMaxAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   city?: true
   exhibition?: true
   date?: true
@@ -112,7 +112,7 @@ export type MuseumMaxAggregateInputType = {
 export type MuseumCountAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   city?: true
   exhibition?: true
   date?: true
@@ -212,7 +212,7 @@ export type MuseumGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 export type MuseumGroupByOutputType = {
   id: number
   userId: string
-  name: string
+  title: string
   city: string
   exhibition: string
   date: Date
@@ -248,7 +248,7 @@ export type MuseumWhereInput = {
   NOT?: Prisma.MuseumWhereInput | Prisma.MuseumWhereInput[]
   id?: Prisma.IntFilter<"Museum"> | number
   userId?: Prisma.StringFilter<"Museum"> | string
-  name?: Prisma.StringFilter<"Museum"> | string
+  title?: Prisma.StringFilter<"Museum"> | string
   city?: Prisma.StringFilter<"Museum"> | string
   exhibition?: Prisma.StringFilter<"Museum"> | string
   date?: Prisma.DateTimeFilter<"Museum"> | Date | string
@@ -262,7 +262,7 @@ export type MuseumWhereInput = {
 export type MuseumOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -279,7 +279,7 @@ export type MuseumWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.MuseumWhereInput[]
   NOT?: Prisma.MuseumWhereInput | Prisma.MuseumWhereInput[]
   userId?: Prisma.StringFilter<"Museum"> | string
-  name?: Prisma.StringFilter<"Museum"> | string
+  title?: Prisma.StringFilter<"Museum"> | string
   city?: Prisma.StringFilter<"Museum"> | string
   exhibition?: Prisma.StringFilter<"Museum"> | string
   date?: Prisma.DateTimeFilter<"Museum"> | Date | string
@@ -293,7 +293,7 @@ export type MuseumWhereUniqueInput = Prisma.AtLeast<{
 export type MuseumOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -314,7 +314,7 @@ export type MuseumScalarWhereWithAggregatesInput = {
   NOT?: Prisma.MuseumScalarWhereWithAggregatesInput | Prisma.MuseumScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Museum"> | number
   userId?: Prisma.StringWithAggregatesFilter<"Museum"> | string
-  name?: Prisma.StringWithAggregatesFilter<"Museum"> | string
+  title?: Prisma.StringWithAggregatesFilter<"Museum"> | string
   city?: Prisma.StringWithAggregatesFilter<"Museum"> | string
   exhibition?: Prisma.StringWithAggregatesFilter<"Museum"> | string
   date?: Prisma.DateTimeWithAggregatesFilter<"Museum"> | Date | string
@@ -325,7 +325,7 @@ export type MuseumScalarWhereWithAggregatesInput = {
 }
 
 export type MuseumCreateInput = {
-  name: string
+  title: string
   city: string
   exhibition: string
   date: Date | string
@@ -339,7 +339,7 @@ export type MuseumCreateInput = {
 export type MuseumUncheckedCreateInput = {
   id?: number
   userId: string
-  name: string
+  title: string
   city: string
   exhibition: string
   date: Date | string
@@ -350,7 +350,7 @@ export type MuseumUncheckedCreateInput = {
 }
 
 export type MuseumUpdateInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -364,7 +364,7 @@ export type MuseumUpdateInput = {
 export type MuseumUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -377,7 +377,7 @@ export type MuseumUncheckedUpdateInput = {
 export type MuseumCreateManyInput = {
   id?: number
   userId: string
-  name: string
+  title: string
   city: string
   exhibition: string
   date: Date | string
@@ -388,7 +388,7 @@ export type MuseumCreateManyInput = {
 }
 
 export type MuseumUpdateManyMutationInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -401,7 +401,7 @@ export type MuseumUpdateManyMutationInput = {
 export type MuseumUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -424,7 +424,7 @@ export type MuseumOrderByRelationAggregateInput = {
 export type MuseumCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -441,7 +441,7 @@ export type MuseumAvgOrderByAggregateInput = {
 export type MuseumMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -454,7 +454,7 @@ export type MuseumMaxOrderByAggregateInput = {
 export type MuseumMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -511,7 +511,7 @@ export type MuseumUncheckedUpdateManyWithoutUserNestedInput = {
 }
 
 export type MuseumCreateWithoutUserInput = {
-  name: string
+  title: string
   city: string
   exhibition: string
   date: Date | string
@@ -523,7 +523,7 @@ export type MuseumCreateWithoutUserInput = {
 
 export type MuseumUncheckedCreateWithoutUserInput = {
   id?: number
-  name: string
+  title: string
   city: string
   exhibition: string
   date: Date | string
@@ -565,7 +565,7 @@ export type MuseumScalarWhereInput = {
   NOT?: Prisma.MuseumScalarWhereInput | Prisma.MuseumScalarWhereInput[]
   id?: Prisma.IntFilter<"Museum"> | number
   userId?: Prisma.StringFilter<"Museum"> | string
-  name?: Prisma.StringFilter<"Museum"> | string
+  title?: Prisma.StringFilter<"Museum"> | string
   city?: Prisma.StringFilter<"Museum"> | string
   exhibition?: Prisma.StringFilter<"Museum"> | string
   date?: Prisma.DateTimeFilter<"Museum"> | Date | string
@@ -577,7 +577,7 @@ export type MuseumScalarWhereInput = {
 
 export type MuseumCreateManyUserInput = {
   id?: number
-  name: string
+  title: string
   city: string
   exhibition: string
   date: Date | string
@@ -588,7 +588,7 @@ export type MuseumCreateManyUserInput = {
 }
 
 export type MuseumUpdateWithoutUserInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -600,7 +600,7 @@ export type MuseumUpdateWithoutUserInput = {
 
 export type MuseumUncheckedUpdateWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -612,7 +612,7 @@ export type MuseumUncheckedUpdateWithoutUserInput = {
 
 export type MuseumUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -627,7 +627,7 @@ export type MuseumUncheckedUpdateManyWithoutUserInput = {
 export type MuseumSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   city?: boolean
   exhibition?: boolean
   date?: boolean
@@ -641,7 +641,7 @@ export type MuseumSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
 export type MuseumSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   city?: boolean
   exhibition?: boolean
   date?: boolean
@@ -655,7 +655,7 @@ export type MuseumSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type MuseumSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   city?: boolean
   exhibition?: boolean
   date?: boolean
@@ -669,7 +669,7 @@ export type MuseumSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type MuseumSelectScalar = {
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   city?: boolean
   exhibition?: boolean
   date?: boolean
@@ -679,7 +679,7 @@ export type MuseumSelectScalar = {
   createdAt?: boolean
 }
 
-export type MuseumOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "city" | "exhibition" | "date" | "discovered_by" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["museum"]>
+export type MuseumOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "city" | "exhibition" | "date" | "discovered_by" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["museum"]>
 export type MuseumInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -698,7 +698,7 @@ export type $MuseumPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     userId: string
-    name: string
+    title: string
     city: string
     exhibition: string
     date: Date
@@ -1132,7 +1132,7 @@ export interface Prisma__MuseumClient<T, Null = never, ExtArgs extends runtime.T
 export interface MuseumFieldRefs {
   readonly id: Prisma.FieldRef<"Museum", 'Int'>
   readonly userId: Prisma.FieldRef<"Museum", 'String'>
-  readonly name: Prisma.FieldRef<"Museum", 'String'>
+  readonly title: Prisma.FieldRef<"Museum", 'String'>
   readonly city: Prisma.FieldRef<"Museum", 'String'>
   readonly exhibition: Prisma.FieldRef<"Museum", 'String'>
   readonly date: Prisma.FieldRef<"Museum", 'DateTime'>

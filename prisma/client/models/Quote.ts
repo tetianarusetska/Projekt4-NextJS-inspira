@@ -39,7 +39,7 @@ export type QuoteSumAggregateOutputType = {
 export type QuoteMinAggregateOutputType = {
   id: number | null
   userId: string | null
-  quote: string | null
+  title: string | null
   author: string | null
   source: string | null
   year: number | null
@@ -51,7 +51,7 @@ export type QuoteMinAggregateOutputType = {
 export type QuoteMaxAggregateOutputType = {
   id: number | null
   userId: string | null
-  quote: string | null
+  title: string | null
   author: string | null
   source: string | null
   year: number | null
@@ -63,7 +63,7 @@ export type QuoteMaxAggregateOutputType = {
 export type QuoteCountAggregateOutputType = {
   id: number
   userId: number
-  quote: number
+  title: number
   author: number
   source: number
   year: number
@@ -87,7 +87,7 @@ export type QuoteSumAggregateInputType = {
 export type QuoteMinAggregateInputType = {
   id?: true
   userId?: true
-  quote?: true
+  title?: true
   author?: true
   source?: true
   year?: true
@@ -99,7 +99,7 @@ export type QuoteMinAggregateInputType = {
 export type QuoteMaxAggregateInputType = {
   id?: true
   userId?: true
-  quote?: true
+  title?: true
   author?: true
   source?: true
   year?: true
@@ -111,7 +111,7 @@ export type QuoteMaxAggregateInputType = {
 export type QuoteCountAggregateInputType = {
   id?: true
   userId?: true
-  quote?: true
+  title?: true
   author?: true
   source?: true
   year?: true
@@ -210,7 +210,7 @@ export type QuoteGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type QuoteGroupByOutputType = {
   id: number
   userId: string
-  quote: string
+  title: string
   author: string
   source: string
   year: number
@@ -245,7 +245,7 @@ export type QuoteWhereInput = {
   NOT?: Prisma.QuoteWhereInput | Prisma.QuoteWhereInput[]
   id?: Prisma.IntFilter<"Quote"> | number
   userId?: Prisma.StringFilter<"Quote"> | string
-  quote?: Prisma.StringFilter<"Quote"> | string
+  title?: Prisma.StringFilter<"Quote"> | string
   author?: Prisma.StringFilter<"Quote"> | string
   source?: Prisma.StringFilter<"Quote"> | string
   year?: Prisma.IntFilter<"Quote"> | number
@@ -258,7 +258,7 @@ export type QuoteWhereInput = {
 export type QuoteOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  quote?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
@@ -274,7 +274,7 @@ export type QuoteWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.QuoteWhereInput[]
   NOT?: Prisma.QuoteWhereInput | Prisma.QuoteWhereInput[]
   userId?: Prisma.StringFilter<"Quote"> | string
-  quote?: Prisma.StringFilter<"Quote"> | string
+  title?: Prisma.StringFilter<"Quote"> | string
   author?: Prisma.StringFilter<"Quote"> | string
   source?: Prisma.StringFilter<"Quote"> | string
   year?: Prisma.IntFilter<"Quote"> | number
@@ -287,7 +287,7 @@ export type QuoteWhereUniqueInput = Prisma.AtLeast<{
 export type QuoteOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  quote?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
@@ -307,7 +307,7 @@ export type QuoteScalarWhereWithAggregatesInput = {
   NOT?: Prisma.QuoteScalarWhereWithAggregatesInput | Prisma.QuoteScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Quote"> | number
   userId?: Prisma.StringWithAggregatesFilter<"Quote"> | string
-  quote?: Prisma.StringWithAggregatesFilter<"Quote"> | string
+  title?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   author?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   source?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   year?: Prisma.IntWithAggregatesFilter<"Quote"> | number
@@ -317,7 +317,7 @@ export type QuoteScalarWhereWithAggregatesInput = {
 }
 
 export type QuoteCreateInput = {
-  quote: string
+  title: string
   author: string
   source: string
   year: number
@@ -330,7 +330,7 @@ export type QuoteCreateInput = {
 export type QuoteUncheckedCreateInput = {
   id?: number
   userId: string
-  quote: string
+  title: string
   author: string
   source: string
   year: number
@@ -340,7 +340,7 @@ export type QuoteUncheckedCreateInput = {
 }
 
 export type QuoteUpdateInput = {
-  quote?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
@@ -353,7 +353,7 @@ export type QuoteUpdateInput = {
 export type QuoteUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  quote?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
@@ -365,7 +365,7 @@ export type QuoteUncheckedUpdateInput = {
 export type QuoteCreateManyInput = {
   id?: number
   userId: string
-  quote: string
+  title: string
   author: string
   source: string
   year: number
@@ -375,7 +375,7 @@ export type QuoteCreateManyInput = {
 }
 
 export type QuoteUpdateManyMutationInput = {
-  quote?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
@@ -387,7 +387,7 @@ export type QuoteUpdateManyMutationInput = {
 export type QuoteUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  quote?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
@@ -409,7 +409,7 @@ export type QuoteOrderByRelationAggregateInput = {
 export type QuoteCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  quote?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
@@ -426,7 +426,7 @@ export type QuoteAvgOrderByAggregateInput = {
 export type QuoteMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  quote?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
@@ -438,7 +438,7 @@ export type QuoteMaxOrderByAggregateInput = {
 export type QuoteMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  quote?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
@@ -495,7 +495,7 @@ export type QuoteUncheckedUpdateManyWithoutUserNestedInput = {
 }
 
 export type QuoteCreateWithoutUserInput = {
-  quote: string
+  title: string
   author: string
   source: string
   year: number
@@ -506,7 +506,7 @@ export type QuoteCreateWithoutUserInput = {
 
 export type QuoteUncheckedCreateWithoutUserInput = {
   id?: number
-  quote: string
+  title: string
   author: string
   source: string
   year: number
@@ -547,7 +547,7 @@ export type QuoteScalarWhereInput = {
   NOT?: Prisma.QuoteScalarWhereInput | Prisma.QuoteScalarWhereInput[]
   id?: Prisma.IntFilter<"Quote"> | number
   userId?: Prisma.StringFilter<"Quote"> | string
-  quote?: Prisma.StringFilter<"Quote"> | string
+  title?: Prisma.StringFilter<"Quote"> | string
   author?: Prisma.StringFilter<"Quote"> | string
   source?: Prisma.StringFilter<"Quote"> | string
   year?: Prisma.IntFilter<"Quote"> | number
@@ -558,7 +558,7 @@ export type QuoteScalarWhereInput = {
 
 export type QuoteCreateManyUserInput = {
   id?: number
-  quote: string
+  title: string
   author: string
   source: string
   year: number
@@ -568,7 +568,7 @@ export type QuoteCreateManyUserInput = {
 }
 
 export type QuoteUpdateWithoutUserInput = {
-  quote?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
@@ -579,7 +579,7 @@ export type QuoteUpdateWithoutUserInput = {
 
 export type QuoteUncheckedUpdateWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  quote?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
@@ -590,7 +590,7 @@ export type QuoteUncheckedUpdateWithoutUserInput = {
 
 export type QuoteUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  quote?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
@@ -604,7 +604,7 @@ export type QuoteUncheckedUpdateManyWithoutUserInput = {
 export type QuoteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  quote?: boolean
+  title?: boolean
   author?: boolean
   source?: boolean
   year?: boolean
@@ -617,7 +617,7 @@ export type QuoteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
 export type QuoteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  quote?: boolean
+  title?: boolean
   author?: boolean
   source?: boolean
   year?: boolean
@@ -630,7 +630,7 @@ export type QuoteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type QuoteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  quote?: boolean
+  title?: boolean
   author?: boolean
   source?: boolean
   year?: boolean
@@ -643,7 +643,7 @@ export type QuoteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type QuoteSelectScalar = {
   id?: boolean
   userId?: boolean
-  quote?: boolean
+  title?: boolean
   author?: boolean
   source?: boolean
   year?: boolean
@@ -652,7 +652,7 @@ export type QuoteSelectScalar = {
   createdAt?: boolean
 }
 
-export type QuoteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "quote" | "author" | "source" | "year" | "context" | "imageUrl" | "createdAt", ExtArgs["result"]["quote"]>
+export type QuoteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "author" | "source" | "year" | "context" | "imageUrl" | "createdAt", ExtArgs["result"]["quote"]>
 export type QuoteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -671,7 +671,7 @@ export type $QuotePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     userId: string
-    quote: string
+    title: string
     author: string
     source: string
     year: number
@@ -1104,7 +1104,7 @@ export interface Prisma__QuoteClient<T, Null = never, ExtArgs extends runtime.Ty
 export interface QuoteFieldRefs {
   readonly id: Prisma.FieldRef<"Quote", 'Int'>
   readonly userId: Prisma.FieldRef<"Quote", 'String'>
-  readonly quote: Prisma.FieldRef<"Quote", 'String'>
+  readonly title: Prisma.FieldRef<"Quote", 'String'>
   readonly author: Prisma.FieldRef<"Quote", 'String'>
   readonly source: Prisma.FieldRef<"Quote", 'String'>
   readonly year: Prisma.FieldRef<"Quote", 'Int'>

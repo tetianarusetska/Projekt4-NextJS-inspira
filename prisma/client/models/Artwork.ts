@@ -39,6 +39,8 @@ export type ArtworkMinAggregateOutputType = {
   userId: string | null
   format: string | null
   title: string | null
+  author: string | null
+  year: string | null
   technique: string | null
   dimensions: string | null
   discovered_by: string | null
@@ -52,6 +54,8 @@ export type ArtworkMaxAggregateOutputType = {
   userId: string | null
   format: string | null
   title: string | null
+  author: string | null
+  year: string | null
   technique: string | null
   dimensions: string | null
   discovered_by: string | null
@@ -65,6 +69,8 @@ export type ArtworkCountAggregateOutputType = {
   userId: number
   format: number
   title: number
+  author: number
+  year: number
   technique: number
   dimensions: number
   discovered_by: number
@@ -88,6 +94,8 @@ export type ArtworkMinAggregateInputType = {
   userId?: true
   format?: true
   title?: true
+  author?: true
+  year?: true
   technique?: true
   dimensions?: true
   discovered_by?: true
@@ -101,6 +109,8 @@ export type ArtworkMaxAggregateInputType = {
   userId?: true
   format?: true
   title?: true
+  author?: true
+  year?: true
   technique?: true
   dimensions?: true
   discovered_by?: true
@@ -114,6 +124,8 @@ export type ArtworkCountAggregateInputType = {
   userId?: true
   format?: true
   title?: true
+  author?: true
+  year?: true
   technique?: true
   dimensions?: true
   discovered_by?: true
@@ -214,6 +226,8 @@ export type ArtworkGroupByOutputType = {
   userId: string
   format: string
   title: string
+  author: string
+  year: string
   technique: string
   dimensions: string
   discovered_by: string
@@ -250,6 +264,8 @@ export type ArtworkWhereInput = {
   userId?: Prisma.StringFilter<"Artwork"> | string
   format?: Prisma.StringFilter<"Artwork"> | string
   title?: Prisma.StringFilter<"Artwork"> | string
+  author?: Prisma.StringFilter<"Artwork"> | string
+  year?: Prisma.StringFilter<"Artwork"> | string
   technique?: Prisma.StringFilter<"Artwork"> | string
   dimensions?: Prisma.StringFilter<"Artwork"> | string
   discovered_by?: Prisma.StringFilter<"Artwork"> | string
@@ -264,6 +280,8 @@ export type ArtworkOrderByWithRelationInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   technique?: Prisma.SortOrder
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
@@ -281,6 +299,8 @@ export type ArtworkWhereUniqueInput = Prisma.AtLeast<{
   userId?: Prisma.StringFilter<"Artwork"> | string
   format?: Prisma.StringFilter<"Artwork"> | string
   title?: Prisma.StringFilter<"Artwork"> | string
+  author?: Prisma.StringFilter<"Artwork"> | string
+  year?: Prisma.StringFilter<"Artwork"> | string
   technique?: Prisma.StringFilter<"Artwork"> | string
   dimensions?: Prisma.StringFilter<"Artwork"> | string
   discovered_by?: Prisma.StringFilter<"Artwork"> | string
@@ -295,6 +315,8 @@ export type ArtworkOrderByWithAggregationInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   technique?: Prisma.SortOrder
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
@@ -316,6 +338,8 @@ export type ArtworkScalarWhereWithAggregatesInput = {
   userId?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
   format?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
   title?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
+  author?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
+  year?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
   technique?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
   dimensions?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
   discovered_by?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
@@ -327,6 +351,8 @@ export type ArtworkScalarWhereWithAggregatesInput = {
 export type ArtworkCreateInput = {
   format: string
   title: string
+  author: string
+  year: string
   technique: string
   dimensions: string
   discovered_by: string
@@ -341,6 +367,8 @@ export type ArtworkUncheckedCreateInput = {
   userId: string
   format: string
   title: string
+  author: string
+  year: string
   technique: string
   dimensions: string
   discovered_by: string
@@ -352,6 +380,8 @@ export type ArtworkUncheckedCreateInput = {
 export type ArtworkUpdateInput = {
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   technique?: Prisma.StringFieldUpdateOperationsInput | string
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
@@ -366,6 +396,8 @@ export type ArtworkUncheckedUpdateInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   technique?: Prisma.StringFieldUpdateOperationsInput | string
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
@@ -379,6 +411,8 @@ export type ArtworkCreateManyInput = {
   userId: string
   format: string
   title: string
+  author: string
+  year: string
   technique: string
   dimensions: string
   discovered_by: string
@@ -390,6 +424,8 @@ export type ArtworkCreateManyInput = {
 export type ArtworkUpdateManyMutationInput = {
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   technique?: Prisma.StringFieldUpdateOperationsInput | string
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
@@ -403,6 +439,8 @@ export type ArtworkUncheckedUpdateManyInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   technique?: Prisma.StringFieldUpdateOperationsInput | string
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
@@ -426,6 +464,8 @@ export type ArtworkCountOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   technique?: Prisma.SortOrder
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
@@ -443,6 +483,8 @@ export type ArtworkMaxOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   technique?: Prisma.SortOrder
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
@@ -456,6 +498,8 @@ export type ArtworkMinOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   format?: Prisma.SortOrder
   title?: Prisma.SortOrder
+  author?: Prisma.SortOrder
+  year?: Prisma.SortOrder
   technique?: Prisma.SortOrder
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
@@ -513,6 +557,8 @@ export type ArtworkUncheckedUpdateManyWithoutUserNestedInput = {
 export type ArtworkCreateWithoutUserInput = {
   format: string
   title: string
+  author: string
+  year: string
   technique: string
   dimensions: string
   discovered_by: string
@@ -525,6 +571,8 @@ export type ArtworkUncheckedCreateWithoutUserInput = {
   id?: number
   format: string
   title: string
+  author: string
+  year: string
   technique: string
   dimensions: string
   discovered_by: string
@@ -567,6 +615,8 @@ export type ArtworkScalarWhereInput = {
   userId?: Prisma.StringFilter<"Artwork"> | string
   format?: Prisma.StringFilter<"Artwork"> | string
   title?: Prisma.StringFilter<"Artwork"> | string
+  author?: Prisma.StringFilter<"Artwork"> | string
+  year?: Prisma.StringFilter<"Artwork"> | string
   technique?: Prisma.StringFilter<"Artwork"> | string
   dimensions?: Prisma.StringFilter<"Artwork"> | string
   discovered_by?: Prisma.StringFilter<"Artwork"> | string
@@ -579,6 +629,8 @@ export type ArtworkCreateManyUserInput = {
   id?: number
   format: string
   title: string
+  author: string
+  year: string
   technique: string
   dimensions: string
   discovered_by: string
@@ -590,6 +642,8 @@ export type ArtworkCreateManyUserInput = {
 export type ArtworkUpdateWithoutUserInput = {
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   technique?: Prisma.StringFieldUpdateOperationsInput | string
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
@@ -602,6 +656,8 @@ export type ArtworkUncheckedUpdateWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   technique?: Prisma.StringFieldUpdateOperationsInput | string
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
@@ -614,6 +670,8 @@ export type ArtworkUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   format?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
+  author?: Prisma.StringFieldUpdateOperationsInput | string
+  year?: Prisma.StringFieldUpdateOperationsInput | string
   technique?: Prisma.StringFieldUpdateOperationsInput | string
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
@@ -629,6 +687,8 @@ export type ArtworkSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   userId?: boolean
   format?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   technique?: boolean
   dimensions?: boolean
   discovered_by?: boolean
@@ -643,6 +703,8 @@ export type ArtworkSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   userId?: boolean
   format?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   technique?: boolean
   dimensions?: boolean
   discovered_by?: boolean
@@ -657,6 +719,8 @@ export type ArtworkSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   userId?: boolean
   format?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   technique?: boolean
   dimensions?: boolean
   discovered_by?: boolean
@@ -671,6 +735,8 @@ export type ArtworkSelectScalar = {
   userId?: boolean
   format?: boolean
   title?: boolean
+  author?: boolean
+  year?: boolean
   technique?: boolean
   dimensions?: boolean
   discovered_by?: boolean
@@ -679,7 +745,7 @@ export type ArtworkSelectScalar = {
   createdAt?: boolean
 }
 
-export type ArtworkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "format" | "title" | "technique" | "dimensions" | "discovered_by" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["artwork"]>
+export type ArtworkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "format" | "title" | "author" | "year" | "technique" | "dimensions" | "discovered_by" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["artwork"]>
 export type ArtworkInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -700,6 +766,8 @@ export type $ArtworkPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     userId: string
     format: string
     title: string
+    author: string
+    year: string
     technique: string
     dimensions: string
     discovered_by: string
@@ -1134,6 +1202,8 @@ export interface ArtworkFieldRefs {
   readonly userId: Prisma.FieldRef<"Artwork", 'String'>
   readonly format: Prisma.FieldRef<"Artwork", 'String'>
   readonly title: Prisma.FieldRef<"Artwork", 'String'>
+  readonly author: Prisma.FieldRef<"Artwork", 'String'>
+  readonly year: Prisma.FieldRef<"Artwork", 'String'>
   readonly technique: Prisma.FieldRef<"Artwork", 'String'>
   readonly dimensions: Prisma.FieldRef<"Artwork", 'String'>
   readonly discovered_by: Prisma.FieldRef<"Artwork", 'String'>

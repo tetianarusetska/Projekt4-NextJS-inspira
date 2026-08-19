@@ -37,7 +37,7 @@ export type GallerySumAggregateOutputType = {
 export type GalleryMinAggregateOutputType = {
   id: number | null
   userId: string | null
-  name: string | null
+  title: string | null
   city: string | null
   artist: string | null
   exhibition: string | null
@@ -50,7 +50,7 @@ export type GalleryMinAggregateOutputType = {
 export type GalleryMaxAggregateOutputType = {
   id: number | null
   userId: string | null
-  name: string | null
+  title: string | null
   city: string | null
   artist: string | null
   exhibition: string | null
@@ -63,7 +63,7 @@ export type GalleryMaxAggregateOutputType = {
 export type GalleryCountAggregateOutputType = {
   id: number
   userId: number
-  name: number
+  title: number
   city: number
   artist: number
   exhibition: number
@@ -86,7 +86,7 @@ export type GallerySumAggregateInputType = {
 export type GalleryMinAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   city?: true
   artist?: true
   exhibition?: true
@@ -99,7 +99,7 @@ export type GalleryMinAggregateInputType = {
 export type GalleryMaxAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   city?: true
   artist?: true
   exhibition?: true
@@ -112,7 +112,7 @@ export type GalleryMaxAggregateInputType = {
 export type GalleryCountAggregateInputType = {
   id?: true
   userId?: true
-  name?: true
+  title?: true
   city?: true
   artist?: true
   exhibition?: true
@@ -212,7 +212,7 @@ export type GalleryGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
 export type GalleryGroupByOutputType = {
   id: number
   userId: string
-  name: string
+  title: string
   city: string
   artist: string
   exhibition: string
@@ -248,7 +248,7 @@ export type GalleryWhereInput = {
   NOT?: Prisma.GalleryWhereInput | Prisma.GalleryWhereInput[]
   id?: Prisma.IntFilter<"Gallery"> | number
   userId?: Prisma.StringFilter<"Gallery"> | string
-  name?: Prisma.StringFilter<"Gallery"> | string
+  title?: Prisma.StringFilter<"Gallery"> | string
   city?: Prisma.StringFilter<"Gallery"> | string
   artist?: Prisma.StringFilter<"Gallery"> | string
   exhibition?: Prisma.StringFilter<"Gallery"> | string
@@ -262,7 +262,7 @@ export type GalleryWhereInput = {
 export type GalleryOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   artist?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
@@ -279,7 +279,7 @@ export type GalleryWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.GalleryWhereInput[]
   NOT?: Prisma.GalleryWhereInput | Prisma.GalleryWhereInput[]
   userId?: Prisma.StringFilter<"Gallery"> | string
-  name?: Prisma.StringFilter<"Gallery"> | string
+  title?: Prisma.StringFilter<"Gallery"> | string
   city?: Prisma.StringFilter<"Gallery"> | string
   artist?: Prisma.StringFilter<"Gallery"> | string
   exhibition?: Prisma.StringFilter<"Gallery"> | string
@@ -293,7 +293,7 @@ export type GalleryWhereUniqueInput = Prisma.AtLeast<{
 export type GalleryOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   artist?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
@@ -314,7 +314,7 @@ export type GalleryScalarWhereWithAggregatesInput = {
   NOT?: Prisma.GalleryScalarWhereWithAggregatesInput | Prisma.GalleryScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Gallery"> | number
   userId?: Prisma.StringWithAggregatesFilter<"Gallery"> | string
-  name?: Prisma.StringWithAggregatesFilter<"Gallery"> | string
+  title?: Prisma.StringWithAggregatesFilter<"Gallery"> | string
   city?: Prisma.StringWithAggregatesFilter<"Gallery"> | string
   artist?: Prisma.StringWithAggregatesFilter<"Gallery"> | string
   exhibition?: Prisma.StringWithAggregatesFilter<"Gallery"> | string
@@ -325,7 +325,7 @@ export type GalleryScalarWhereWithAggregatesInput = {
 }
 
 export type GalleryCreateInput = {
-  name: string
+  title: string
   city: string
   artist: string
   exhibition: string
@@ -339,7 +339,7 @@ export type GalleryCreateInput = {
 export type GalleryUncheckedCreateInput = {
   id?: number
   userId: string
-  name: string
+  title: string
   city: string
   artist: string
   exhibition: string
@@ -350,7 +350,7 @@ export type GalleryUncheckedCreateInput = {
 }
 
 export type GalleryUpdateInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   artist?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
@@ -364,7 +364,7 @@ export type GalleryUpdateInput = {
 export type GalleryUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   artist?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
@@ -377,7 +377,7 @@ export type GalleryUncheckedUpdateInput = {
 export type GalleryCreateManyInput = {
   id?: number
   userId: string
-  name: string
+  title: string
   city: string
   artist: string
   exhibition: string
@@ -388,7 +388,7 @@ export type GalleryCreateManyInput = {
 }
 
 export type GalleryUpdateManyMutationInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   artist?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
@@ -401,7 +401,7 @@ export type GalleryUpdateManyMutationInput = {
 export type GalleryUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   artist?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
@@ -424,7 +424,7 @@ export type GalleryOrderByRelationAggregateInput = {
 export type GalleryCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   artist?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
@@ -441,7 +441,7 @@ export type GalleryAvgOrderByAggregateInput = {
 export type GalleryMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   artist?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
@@ -454,7 +454,7 @@ export type GalleryMaxOrderByAggregateInput = {
 export type GalleryMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  title?: Prisma.SortOrder
   city?: Prisma.SortOrder
   artist?: Prisma.SortOrder
   exhibition?: Prisma.SortOrder
@@ -511,7 +511,7 @@ export type GalleryUncheckedUpdateManyWithoutUserNestedInput = {
 }
 
 export type GalleryCreateWithoutUserInput = {
-  name: string
+  title: string
   city: string
   artist: string
   exhibition: string
@@ -523,7 +523,7 @@ export type GalleryCreateWithoutUserInput = {
 
 export type GalleryUncheckedCreateWithoutUserInput = {
   id?: number
-  name: string
+  title: string
   city: string
   artist: string
   exhibition: string
@@ -565,7 +565,7 @@ export type GalleryScalarWhereInput = {
   NOT?: Prisma.GalleryScalarWhereInput | Prisma.GalleryScalarWhereInput[]
   id?: Prisma.IntFilter<"Gallery"> | number
   userId?: Prisma.StringFilter<"Gallery"> | string
-  name?: Prisma.StringFilter<"Gallery"> | string
+  title?: Prisma.StringFilter<"Gallery"> | string
   city?: Prisma.StringFilter<"Gallery"> | string
   artist?: Prisma.StringFilter<"Gallery"> | string
   exhibition?: Prisma.StringFilter<"Gallery"> | string
@@ -577,7 +577,7 @@ export type GalleryScalarWhereInput = {
 
 export type GalleryCreateManyUserInput = {
   id?: number
-  name: string
+  title: string
   city: string
   artist: string
   exhibition: string
@@ -588,7 +588,7 @@ export type GalleryCreateManyUserInput = {
 }
 
 export type GalleryUpdateWithoutUserInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   artist?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
@@ -600,7 +600,7 @@ export type GalleryUpdateWithoutUserInput = {
 
 export type GalleryUncheckedUpdateWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   artist?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
@@ -612,7 +612,7 @@ export type GalleryUncheckedUpdateWithoutUserInput = {
 
 export type GalleryUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   artist?: Prisma.StringFieldUpdateOperationsInput | string
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
@@ -627,7 +627,7 @@ export type GalleryUncheckedUpdateManyWithoutUserInput = {
 export type GallerySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   city?: boolean
   artist?: boolean
   exhibition?: boolean
@@ -641,7 +641,7 @@ export type GallerySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
 export type GallerySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   city?: boolean
   artist?: boolean
   exhibition?: boolean
@@ -655,7 +655,7 @@ export type GallerySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
 export type GallerySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   city?: boolean
   artist?: boolean
   exhibition?: boolean
@@ -669,7 +669,7 @@ export type GallerySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
 export type GallerySelectScalar = {
   id?: boolean
   userId?: boolean
-  name?: boolean
+  title?: boolean
   city?: boolean
   artist?: boolean
   exhibition?: boolean
@@ -679,7 +679,7 @@ export type GallerySelectScalar = {
   createdAt?: boolean
 }
 
-export type GalleryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "city" | "artist" | "exhibition" | "date" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["gallery"]>
+export type GalleryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "city" | "artist" | "exhibition" | "date" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["gallery"]>
 export type GalleryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -698,7 +698,7 @@ export type $GalleryPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     userId: string
-    name: string
+    title: string
     city: string
     artist: string
     exhibition: string
@@ -1132,7 +1132,7 @@ export interface Prisma__GalleryClient<T, Null = never, ExtArgs extends runtime.
 export interface GalleryFieldRefs {
   readonly id: Prisma.FieldRef<"Gallery", 'Int'>
   readonly userId: Prisma.FieldRef<"Gallery", 'String'>
-  readonly name: Prisma.FieldRef<"Gallery", 'String'>
+  readonly title: Prisma.FieldRef<"Gallery", 'String'>
   readonly city: Prisma.FieldRef<"Gallery", 'String'>
   readonly artist: Prisma.FieldRef<"Gallery", 'String'>
   readonly exhibition: Prisma.FieldRef<"Gallery", 'String'>

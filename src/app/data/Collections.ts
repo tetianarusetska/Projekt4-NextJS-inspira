@@ -277,7 +277,7 @@ export const collections: Record<string, Collection> = {
             {
                 id: "date",
                 label: "N°04, DATUM",
-                type: "text",
+                type: "date",
                 placeholder: "12.08.2025",
             },
             {
@@ -335,7 +335,7 @@ export const collections: Record<string, Collection> = {
             {
                 id: "date",
                 label: "N°05, DATUM",
-                type: "text",
+                type: "date",
                 placeholder: "03.06.2025",
             },
             {
@@ -510,8 +510,8 @@ export const collections: Record<string, Collection> = {
 
         details: [
             {
-                id: "quote",
-                label: "N°01, ZITAT",
+                id: "title",
+                label: "N°01, TITEL",
                 type: "textarea",
                 placeholder: "Das Zitat...",
             },
@@ -556,8 +556,8 @@ export const collections: Record<string, Collection> = {
 
         details: [
             {
-                id: "name",
-                label: "N°01, NAME",
+                id: "title",
+                label: "N°01,TITEL",
                 type: "text",
                 placeholder: "Name der neuen Sammlung",
             },
