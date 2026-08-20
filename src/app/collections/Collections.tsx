@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { collections } from "../data/Collections";
+import { CollectionsProps } from "../types/CollectionsProps";
 
-export default function Collections() {
+export default function Collections({ counts }: CollectionsProps) {
+
+    const totalObjects = Object.values(counts).reduce((sum, n) => sum + n, 0);
+
+    const totalCollections = Object.keys(collections).length;
+
     return (
         <div className="relative h-200 lg:h-420 md:h-460 flex flex-col">
 
@@ -20,11 +26,11 @@ export default function Collections() {
             {/* Sammlungen, Objekte */}
             <div className="hidden md:absolute md:right-4 md:top-16 lg:right-8.25 lg:top-10.75 md:flex md:flex-col md:items-end md:gap-0">
                 <p className="grotesk-xbold text-right text-[48px] leading-[100%] tracking-[1%] text-[#808080]">
-                    sammlungen – XXX
+                    sammlungen – {totalCollections}
                 </p>
 
                 <p className="grotesk-xbold text-right text-[48px] leading-[100%] tracking-[1%] text-[#808080]">
-                    objekte – XXX
+                    objekte – {totalObjects}
                 </p>
             </div>
 
@@ -48,7 +54,7 @@ export default function Collections() {
 
                         <div className="flex w-16 items-center justify-center border-l-[3px]  text-center border-black bg-white">
                             <span className="grotesk-xbold text-[18px]">
-                                {col.count}
+                                {counts[col.id] ?? 0} OBJEKTE
                             </span>
                         </div>
                     </Link>
@@ -77,7 +83,7 @@ export default function Collections() {
                             </div>
 
                             <div className="grotesk-xbold absolute left-2 top-8 text-[20px] uppercase">
-                                {col.count}
+                               {counts[col.id] ?? 0} OBJEKTE
                             </div>
                         </div>
                     </Link>
@@ -110,7 +116,7 @@ export default function Collections() {
                                 </div>
 
                                 <div className="grotesk-xbold absolute left-3 top-10 text-[24px] uppercase">
-                                    {col.count}
+                                    {counts[col.id] ?? 0} OBJEKTE
                                 </div>
                             </div>
                         </Link>

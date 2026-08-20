@@ -2,6 +2,8 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 
+import { getObjectCounts } from "../api/objects/getObjectCounts";
+
 import CabinetHeader from "../cabinet/header/CabinetHeader";
 import FooterIntro from "../components/footer/FooterIntro";
 import Footer from "../components/footer/Footer";
@@ -16,13 +18,14 @@ export default async function CollectionsPage() {
         redirect("/login");
     }
 
+    const counts = await getObjectCounts(session.user.id);
 
     return (
         <>
             <CabinetHeader />
             <CabinetDividers />
 
-            <Collections />
+            <Collections counts={counts} />
 
             <FooterIntro />
             <Footer />

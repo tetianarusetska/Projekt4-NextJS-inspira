@@ -1,11 +1,15 @@
 import Link from "next/link";
+import { collections } from "../data/Collections";
 import { PersonalAreaProps } from "../types/PersonalAreaProps";
 
 
-export default function PersonalArea({ user }: PersonalAreaProps) {
+export default function PersonalArea({ user, counts }: PersonalAreaProps) {
 
     const displayName = user.name?.trim() || user.email;
 
+    const totalObjects = Object.values(counts).reduce((sum, n) => sum + n, 0);
+
+    const totalCollections = Object.keys(collections).length;
 
     return (
         <>
@@ -32,6 +36,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
             </div>
 
             {/* Begrüßung */}
+            {/* MD, LG */}
             <div className="flex flex-col relative z-30">
                 <p
                     className="text-right absolute left-286 top-16 text-[40px] leading-9.5 tracking-normal"
@@ -41,10 +46,12 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
                 <p
                     className="text-right absolute left-286 top-29 text-[24px] leading-9.5 tracking-normal"
                 >
-                    SAMMLER SEIT XXXXJ.
+                    SAMMLER SEIT 2026J.
                 </p>
             </div>
 
+            {/* BEGRÜßUNG */}
+            {/* MOB */}
             <div className="relative z-30 md:mt-35 lg:mt-0 flex flex-col">
 
                 <div className="hidden md:block lg:hidden grotesk-xbold">
@@ -59,7 +66,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
                     <p
                         className="absolute left-140 -top-18 text-xl"
                     >
-                        Du bist ein Sammler seit XXXJ.
+                        SAMMLER SEIT 2026J.
                     </p>
                 </div>
 
@@ -70,7 +77,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
                                    md:block md:text-right md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-155 md:top-5 md:text-[64px]
                                    lg:left-272 lg:top-63.5 lg:text-[96px]"
                     >
-                        X
+                        {totalCollections}
                     </p>
                     <p
                         className="hidden text-right grotesk-xbold
@@ -87,7 +94,7 @@ export default function PersonalArea({ user }: PersonalAreaProps) {
                                    lg:left-330 lg:top-63.5 lg:text-[96px] 
                         "
                     >
-                        X
+                        {totalObjects}
                     </p>
                     <p
                         className="hidden text-right grotesk-xbold 

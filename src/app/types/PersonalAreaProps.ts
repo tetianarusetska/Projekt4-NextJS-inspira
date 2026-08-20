@@ -3,4 +3,6 @@ export interface PersonalAreaProps {
         name?: string | null;
         email: string;
     };
+
+    counts: Record<string, number>;
 }

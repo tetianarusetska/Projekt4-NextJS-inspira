@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
+import { getObjects } from "@/app/api/objects/getObjects";
 import { collections } from "../../data/Collections";
 
 import FooterIntro from "@/app/components/footer/FooterIntro";
@@ -18,7 +19,6 @@ export default async function CollectionPage({ params }: { params: Promise<{ id:
         redirect("/login");
     }
 
-
     const { id } = await params;
 
     const collection = collections[id];
@@ -27,12 +27,14 @@ export default async function CollectionPage({ params }: { params: Promise<{ id:
         return <div>Sammlung wurde nicht gefunden.</div>;
     }
 
+    const objects = await getObjects(session.user.id, id);
+
     return (
         <>
             <CabinetHeader />
             <CabinetDividers />
 
-            <CollectionContent collection={collection} />
+            <CollectionContent collection={collection} objects={objects} />
 
             <FooterIntro />
             <Footer />

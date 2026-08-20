@@ -10,7 +10,10 @@ export default function Product({ selectedCategory, values, image }: ProductProp
     const router = useRouter();
 
     const [isSaving, setIsSaving] = useState(false);
+    
     const [error, setError] = useState<string | null>(null);
+
+    const [objectId, setObjectId] = useState<number | null>(null);
 
     const collection = collections[selectedCategory];
 
@@ -45,6 +48,9 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                 const data = await res.json();
                 throw new Error(data.error || "Fehler beim Speichern");
             }
+
+            const data = await res.json();
+            setObjectId(data.id);
 
             router.push(`/collections/${selectedCategory}`);
         } catch (err) {
@@ -145,7 +151,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
             <div className="mt-10 ml-6 w-210 h-50 border-[#808080] border-2 flex flex-row justify-between items-center">
                 <div>
                     <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mt-9 ml-7">Wird gespeichert als</p>
-                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mb-5 ml-7">N° XXX — {collection.code}</p>
+                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mb-5 ml-7">N° N° {objectId ?? "—"} — {collection.code}</p>
                 </div>
                 <div>
                     <button

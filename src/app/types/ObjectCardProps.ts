@@ -1,7 +1,12 @@
 import { Collection } from "./Collection";
-import { CollectionObject } from "./CollectionObject";
 
 export interface ObjectCardProps {
+
     collection: Collection;
-    object: CollectionObject;
+
+    object: {
+        id: number;
+        imageUrl: string | null;
+        [key: string]: unknown;
+    };
 }
