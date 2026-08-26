@@ -32,24 +32,25 @@ export default function Media({ image, setImage }: MediaProps) {
     };
 
     return (
-        <div id="media" className="mb-20">
+        <div id="media" className="relative z-10 mb-20">
+
             {/* Überschrift */}
-            <div className="mt-20 ml-5.25 flex flex-col gap-4">
-                <p className="grotesk-xbold text-[32px] leading-[100%] tracking-[1%]">
-                    03    –    MEDIEN HINZUFUGEN
+            <div className="flex flex-col gap-4 mt-10">
+                <p className="font-inter font-black text-[32px] leading-[100%] tracking-[1%]">
+                    03    –    MEDIEN HINZUFÜGEN
                 </p>
 
-                <p className="grotesk-xbold text-[64px] leading-[84%]">
+                {/* <p className="grotesk-xbold text-[64px] leading-[84%]">
                     zeig, was bleibt.
-                </p>
+                </p> */}
 
                 <p className="text-[24px] leading-[100%]">
-                    Fuge die wichtigsten Details hinzu.
+                    Füge die wichtigsten Details hinzu.
                 </p>
             </div>
 
             {/* Media hinzufügen */}
-            <label className="mt-20 ml-5.25 flex h-35.75 w-209 cursor-pointer items-center justify-center border-2 border-dashed border-[#808080]">
+            <label className="mt-20  flex h-70 w-250 cursor-pointer items-center justify-center border-2 border-dashed border-[#808080]">
 
                 <input
                     type="file"
@@ -82,3 +83,4 @@ export default function Media({ image, setImage }: MediaProps) {
         </div>
     )
 }
+

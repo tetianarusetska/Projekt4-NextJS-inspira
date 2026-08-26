@@ -1,64 +1,89 @@
+"use client";
+
 import { CollectionProps } from "../types/CollectionProps";
 import { collections } from "../data/Collections";
 
+// Extending the interface locally to allow passing the stepper callback safely
+interface ExtendedCollectionProps extends CollectionProps {
+  onNext?: () => void;
+}
 
-export default function Collection({ selectedCategory, setSelectedCategory }: CollectionProps) {
+export default function Collection({
+  selectedCategory,
+  setSelectedCategory,
+  onNext
+}: ExtendedCollectionProps) {
+  return (
+    <div id="collection" className="mb-20 w-full">
 
+      {/* ================= HEADER SECTION ================= */}
+      <div className="mt-12 lg:mt-16 flex flex-col gap-4">
+        <p className="font-inter font-black text-2xl lg:text-[32px] tracking-wider text-black">
+          01 — SAMMLUNG WÄHLEN
+        </p>
+        <p className="text-lg lg:text-[24px] leading-normal tracking-wide text-neutral-500 max-w-3xl">
+          Acht Kategorien, eine Sammlung. Wähle, wo deine <br className="hidden md:block" />
+          nächste Inspiration hingehört.
+        </p>
+      </div>
 
-    return (
-        <>
-            <div id="collection" className="mb-20">
+      {/* ================= GRID ================= */}
+      <div className="mt-12 w-full border-[3px] border-[#808080] bg-[#808080] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[3px]">
 
-                {/* Überschrift */}
-                <div className="mt-20 flex flex-col gap-4 ml-5.25">
-                    <p className="grotesk-xbold text-[32px] leading-[100%] tracking-[1%]">01    –    SAMMLUNG WAHLEN</p>
-                    <p
-                        className="grotesk-xbold text-[64px] leading-[84%] tracking-[1%]"
-                    >
-                        jedes objekt gehort in<br></br>eine sammlung.
-                    </p>
-                    <p
-                        className="text-[24px] leading-[100%] tracking-[1%]"
-                    >
-                        Acht Kategorien, eine Sammlung. Wahle, wo deine<br></br>nachste Inspiration hingehort.
-                    </p>
+        {Object.values(collections).map((collect) => {
+          const isActive = selectedCategory === collect.id;
+
+          return (
+            <button
+              key={collect.id}
+              type="button"
+              onClick={() => {
+                setSelectedCategory(collect.id);
+                if (onNext) onNext(); // Triggers fluid step advance upon category click
+              }}
+              className={`group flex flex-col justify-between p-6 h-[200px] w-full text-left outline-none transition-all duration-300 relative
+                ${isActive
+                  ? "bg-black text-white"
+                  : "bg-[#EDEDED] text-black hover:bg-neutral-100"
+                }`}
+            >
+
+              {/* Top Section: Material Icon */}
+              <div className="w-full">
+                <span className={`material-symbols-outlined text-[54px] transition-colors duration-300
+                  ${isActive
+                    ? "text-white"
+                    : "text-[#808080] group-hover:text-black"
+                  }`}
+                >
+                  {collect.icon}
+                </span>
+              </div>
+
+              {/* Bottom Section: Swatch Labels */}
+              <div className="w-full space-y-1">
+                <div className={`font-inter font-black text-2xl lg:text-2xl uppercase leading-none tracking-wide transition-colors
+                  ${isActive ? "text-white" : "text-black"}`}
+                >
+                  {collect.name}
                 </div>
 
-                {/* Sammlung wählen */}
-                <div className="ml-5.25 mt-20 grid h-176.5 w-235.75 grid-cols-4 grid-rows-3">
-                    {Object.values(collections).map((collect, index) => {
-
-                        const isActive = selectedCategory === collect.id;
-                        const row = Math.floor(index / 4);
-                        const col = index % 4;
-
-                        return (
-                            <button
-                                key={collect.id}
-                                type="button"
-                                onClick={() => setSelectedCategory(collect.id)}
-                                className={`relative flex h-full w-full appearance-none flex-col text-left outline-none transition-colors ${isActive ? "bg-black text-white" : "bg-[#EDEDED] text-black"} ${row === 0 ? "border-t border-[#808080]" : ""} ${col === 0 ? "border-l border-[#808080]" : "border-l border-[#808080]"} ${col === 3 && row < 2 ? "border-r border-[#808080]" : ""} ${row < 2 ? "border-b border-[#808080]" : ""} ${index >= 8 ? "border-b border-[#808080]" : ""} ${index === 10 ? "border-r border-[#808080]" : ""}`}
-                            >
-                                <span className={`material-symbols-outlined absolute left-6 top-12 text-[60px] ${isActive ? "text-white" : "text-[#808080]"}`}>
-                                    {collect.icon}
-                                </span>
-
-                                <div className="absolute bottom-6 left-6">
-                                    <div className={`grotesk-xbold text-[36px] leading-none ${isActive ? "text-white" : "text-black"}`}>
-                                        {collect.name}
-                                    </div>
-
-                                    <div className={`mt-3 text-[24px] leading-none ${isActive ? "text-white" : "text-black"}`}>
-                                        {collect.number} - {collect.code}
-                                    </div>
-                                </div>
-                            </button>
-                        );
-                    })}
+                <div className={`text-xs font-bold tracking-widest uppercase transition-colors
+                  ${isActive ? "text-neutral-400" : "text-neutral-500"}`}
+                >
+                  {collect.number} — {collect.code}
                 </div>
+              </div>
 
-            </div>
+              {/* Elegant red active dot indicator on chosen categories */}
+              {isActive && (
+                <span className="absolute top-6 right-6 w-2.5 h-2.5 rounded-full bg-[#E23B2A] animate-pulse" />
+              )}
+            </button>
+          );
+        })}
+      </div>
 
-        </>
-    )
+    </div>
+  );
 }

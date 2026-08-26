@@ -5,12 +5,12 @@ export const collections: Record<string, Collection> = {
         id: "books",
         number: "N°01",
         code: "Buch",
-        name: "BUCHER",
+        name: "BÜCHER",
         icon: "menu_book",
 
         count: "XXX OBJEKTE",
         color: "#012F38",
-        left: 10,
+        left: 40,
         top: 350,
 
         details: [
@@ -24,13 +24,13 @@ export const collections: Record<string, Collection> = {
                 id: "author",
                 label: "N°02, AUTOR",
                 type: "text",
-                placeholder: 'Henry Miller',
+                placeholder: "Henry Miller",
             },
             {
                 id: "year",
                 label: "N°03, ERSCHEINUNGSJAHR",
                 type: "text",
-                placeholder: '1947',
+                placeholder: "1947",
             },
             {
                 id: "pages",
@@ -54,7 +54,7 @@ export const collections: Record<string, Collection> = {
                 id: "bestQuote",
                 label: "N°07, BESTES ZITAT",
                 type: "textarea",
-                placeholder: "“ Wenn die Maschinerie stillstehst, verbreitet sie eine Leere, die noch unheimlicher ist als der Tod. Ich war ein Gespenst, das sich in einem Vakuum bewegte. “",
+                placeholder: "„Wenn die Maschinerie stillsteht, verbreitet sie eine Leere, die noch unheimlicher ist als der Tod. Ich war ein Gespenst, das sich in einem Vakuum bewegte.“",
                 font: "kino-40",
             },
         ],
@@ -69,7 +69,7 @@ export const collections: Record<string, Collection> = {
 
         count: "XXX OBJEKTE",
         color: "#015C42",
-        left: 313,
+        left: 323,
         top: 395,
 
         details: [
@@ -92,13 +92,13 @@ export const collections: Record<string, Collection> = {
                 id: "author",
                 label: "N°03, AUTOR",
                 type: "text",
-                placeholder: 'Sinéad O`Connor',
+                placeholder: "Sinéad O'Connor",
             },
             {
                 id: "year",
                 label: "N°04, ERSCHEINUNGSJAHR",
                 type: "text",
-                placeholder: '1990',
+                placeholder: "1990",
             },
             {
                 id: "discovered_by",
@@ -110,13 +110,13 @@ export const collections: Record<string, Collection> = {
                 id: "note",
                 label: "N°06, NOTIZ",
                 type: "textarea",
-                placeholder: "Zuerst war ich von der Musik beeindruckt. Dann war ich von den Personlichkeiten beeindruckt.",
+                placeholder: "Zuerst war ich von der Musik beeindruckt. Dann war ich von den Persönlichkeiten beeindruckt.",
             },
             {
                 id: "bestQuote",
                 label: "N°07, BESTES ZITAT",
                 type: "textarea",
-                placeholder: "“ Cause nothing comparesNothing compares to you. “",
+                placeholder: "„Cause nothing compares, nothing compares to you.“",
                 font: "kino-40",
             },
         ],
@@ -131,7 +131,7 @@ export const collections: Record<string, Collection> = {
 
         count: "XXX OBJEKTE",
         color: "#0688B8",
-        left: 620,
+        left: 610,
         top: 303,
 
         details: [
@@ -157,7 +157,7 @@ export const collections: Record<string, Collection> = {
                 id: "discovered_by",
                 label: "N°04, ENTDECKT DURCH",
                 type: "text",
-                placeholder: `Eines Tages fand meine Großmutter auf der Straße neben den kostenlosen Buchern "RAY".`,
+                placeholder: 'Eines Tages fand meine Großmutter auf der Straße neben den kostenlosen Büchern „RAY“.',
             },
             {
                 id: "note",
@@ -169,7 +169,7 @@ export const collections: Record<string, Collection> = {
                 id: "bestQuote",
                 label: "N°06, BESTES ZITAT",
                 type: "textarea",
-                placeholder: "“ Fotografie ist eine Liebesaffare mit dem Leben. “",
+                placeholder: "„Fotografie ist eine Liebesaffäre mit dem Leben.“",
                 font: "kino-40",
             },
         ],
@@ -184,7 +184,7 @@ export const collections: Record<string, Collection> = {
 
         count: "XXX OBJEKTE",
         color: "#CF2F23",
-        left: 924,
+        left: 905,
         top: 420,
 
         details: [
@@ -207,24 +207,23 @@ export const collections: Record<string, Collection> = {
                 id: "author",
                 label: "N°03, AUTOR",
                 type: "text",
-                placeholder: 'Pablo Picasso',
+                placeholder: "Pablo Picasso",
             },
             {
                 id: "year",
                 label: "N°04, ERSCHEINUNGSJAHR",
                 type: "text",
-                placeholder: ' 1937',
+                placeholder: "1937",
             },
-            
             {
                 id: "technique",
                 label: "N°05, TECHNIK",
                 type: "text",
-                placeholder: "Ol auf Leinwand",
+                placeholder: "Öl auf Leinwand",
             },
             {
                 id: "dimensions",
-                label: "N°06, MASSE",
+                label: "N°06, MAẞE",
                 type: "text",
                 placeholder: "349,3 × 776,6 cm",
             },
@@ -252,7 +251,7 @@ export const collections: Record<string, Collection> = {
 
         count: "XXX OBJEKTE",
         color: "#000000",
-        left: 1222,
+        left: 1200,
         top: 347,
 
         details: [
@@ -266,7 +265,7 @@ export const collections: Record<string, Collection> = {
                 id: "city",
                 label: "N°02, ORT",
                 type: "text",
-                placeholder: "Koln",
+                placeholder: "Köln",
             },
             {
                 id: "exhibition",
@@ -284,7 +283,7 @@ export const collections: Record<string, Collection> = {
                 id: "discovered_by",
                 label: "N°05, ENTDECKT DURCH",
                 type: "text",
-                placeholder: "Reise nach Koln",
+                placeholder: "Reise nach Köln",
             },
             {
                 id: "note",
@@ -304,7 +303,7 @@ export const collections: Record<string, Collection> = {
 
         count: "XXX OBJEKTE",
         color: "#EDC225",
-        left: 10,
+        left: 40,
         top: 821,
 
         details: [
@@ -356,7 +355,7 @@ export const collections: Record<string, Collection> = {
 
         count: "XXX OBJEKTE",
         color: "#D72638",
-        left: 313,
+        left: 323,
         top: 873,
 
         details: [
@@ -370,7 +369,7 @@ export const collections: Record<string, Collection> = {
                 id: "creator",
                 label: "N°02, URHEBER",
                 type: "text",
-                placeholder: "Name des Kunstlers",
+                placeholder: "Name des Künstlers",
             },
             {
                 id: "year",
@@ -394,7 +393,7 @@ export const collections: Record<string, Collection> = {
                 id: "note",
                 label: "N°06, NOTIZ",
                 type: "textarea",
-                placeholder: "Warum ich dieses Bild behalten mochte...",
+                placeholder: "Warum ich dieses Bild behalten möchte...",
             },
         ],
     },
@@ -408,7 +407,7 @@ export const collections: Record<string, Collection> = {
 
         count: "XXX OBJEKTE",
         color: "#34544C",
-        left: 620,
+        left: 610,
         top: 782,
 
         details: [
@@ -438,7 +437,7 @@ export const collections: Record<string, Collection> = {
             },
             {
                 id: "note",
-                label: "N°06, NOTIZ",
+                label: "N°05, NOTIZ",
                 type: "textarea",
                 placeholder: "Was diese Fotografie für mich festhält...",
             },
@@ -454,7 +453,7 @@ export const collections: Record<string, Collection> = {
 
         count: "XXX OBJEKTE",
         color: "#C49A3A",
-        left: 924,
+        left: 905,
         top: 912,
 
         details: [
@@ -489,7 +488,7 @@ export const collections: Record<string, Collection> = {
             },
             {
                 id: "next_step",
-                label: "N°05, NACHSTER SCHRITT",
+                label: "N°05, NÄCHSTER SCHRITT",
                 type: "text",
                 placeholder: "Recherche beginnen",
             },
@@ -500,12 +499,12 @@ export const collections: Record<string, Collection> = {
         id: "quotes",
         number: "N°10",
         code: "Zit",
-        name: "ZITATEN",
+        name: "ZITATE",
         icon: "chat_bubble_outline",
 
         count: "XXX OBJEKTE",
         color: "#13322C",
-        left: 1222,
+        left: 1200,
         top: 810,
 
         details: [
@@ -546,7 +545,7 @@ export const collections: Record<string, Collection> = {
         id: "newCollection",
         number: "N°11",
         code: "Neue",
-        name: "neue",
+        name: "NEUE",
         icon: "add",
 
         count: "XXX OBJEKTE",
@@ -557,7 +556,7 @@ export const collections: Record<string, Collection> = {
         details: [
             {
                 id: "title",
-                label: "N°01,TITEL",
+                label: "N°01, TITEL",
                 type: "text",
                 placeholder: "Name der neuen Sammlung",
             },
@@ -571,7 +570,7 @@ export const collections: Record<string, Collection> = {
                 id: "reason",
                 label: "N°03, WARUM",
                 type: "textarea",
-                placeholder: "Warum mochte ich diese Sammlung anlegen?",
+                placeholder: "Warum möchte ich diese Sammlung anlegen?",
             },
         ],
     },

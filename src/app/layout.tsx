@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import "material-symbols/outlined.css";
 import "./globals.css";
-import SmoothScroll from "./components/SmoothScroll";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "i . nspira",
@@ -14,9 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de" className={`${inter.variable}`}>
       <body>
-        <SmoothScroll />
         {children}
       </body>
     </html>

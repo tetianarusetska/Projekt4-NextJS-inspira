@@ -4,12 +4,15 @@ import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { getObject } from "@/app/api/objects/getObject";
 import { collections } from "@/app/data/Collections";
-
-import FooterIntro from "@/app/components/footer/FooterIntro";
-import Footer from "@/app/components/footer/Footer";
-import CabinetHeader from "@/app/cabinet/header/CabinetHeader";
-import CabinetDividers from "@/app/layoutDesign/CabinetDividers";
+import StudioHeader from "@/app/studio/header/StudioHeader";
+import StudioBackground from "@/app/layoutDesign/StudioBackground";
 import ObjectCard from "./ObjectCard";
+
+// import FooterIntro from "@/app/components/footer/FooterIntro";
+// import Footer from "@/app/components/footer/Footer";
+// import CabinetHeader from "@/app/studio/header/AltCabinetHeader";
+// import CabinetDividers from "@/app/layoutDesign/AltCabinetDividers";
+// import ObjectCard from "./ObjectCard";
 
 
 export default async function ObjectPage({ params }: { params: Promise<{ id: string, objectId: string }> }) {
@@ -36,13 +39,18 @@ export default async function ObjectPage({ params }: { params: Promise<{ id: str
 
     return (
         <>
-            <CabinetHeader />
+            {/* <CabinetHeader />
             <CabinetDividers />
 
             <ObjectCard collection={collection} object={object} />
 
             <FooterIntro />
-            <Footer />
+            <Footer /> */}
+
+            <StudioHeader />
+            <StudioBackground />
+            <ObjectCard collection={collection} object={object} />
+
         </>
     );
 }

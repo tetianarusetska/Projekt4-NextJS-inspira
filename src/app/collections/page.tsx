@@ -4,11 +4,9 @@ import { auth } from "@/lib/auth";
 
 import { getObjectCounts } from "../api/objects/getObjectCounts";
 
-import CabinetHeader from "../cabinet/header/CabinetHeader";
-import FooterIntro from "../components/footer/FooterIntro";
-import Footer from "../components/footer/Footer";
 import Collections from "./Collections"
-import CabinetDividers from "../layoutDesign/CabinetDividers";
+import StudioHeader from "../studio/header/StudioHeader";
+import StudioBackground from "../layoutDesign/StudioBackground";
 
 export default async function CollectionsPage() {
 
@@ -22,13 +20,13 @@ export default async function CollectionsPage() {
 
     return (
         <>
-            <CabinetHeader />
-            <CabinetDividers />
-
-            <Collections counts={counts} />
-
-            <FooterIntro />
-            <Footer />
+            <main className="relative w-screen">
+                <StudioBackground />
+                <div className="relative z-10 flex flex-col w-full">
+                    <StudioHeader />
+                    <Collections counts={counts} />
+                </div>
+            </main>
         </>
     );
 }

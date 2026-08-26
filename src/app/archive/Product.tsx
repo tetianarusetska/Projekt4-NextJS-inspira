@@ -10,9 +10,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
     const router = useRouter();
 
     const [isSaving, setIsSaving] = useState(false);
-    
     const [error, setError] = useState<string | null>(null);
-
     const [objectId, setObjectId] = useState<number | null>(null);
 
     const collection = collections[selectedCategory];
@@ -62,25 +60,26 @@ export default function Product({ selectedCategory, values, image }: ProductProp
 
     return (
         <div id="product" className="mb-20">
+
             {/* Überschrift */}
-            <div className="mt-20 ml-5.25 flex flex-col gap-4">
-                <p className="grotesk-xbold text-[32px] leading-[100%] tracking-[1%]">
+            <div className="mt-10 flex flex-col gap-4">
+                <p className="font-inter font-black text-[32px] leading-[100%] tracking-[1%]">
                     04    –    VORSCHAU
                 </p>
 
-                <p className="grotesk-xbold text-[64px] leading-[84%]">
-                    ein letzter blick.
-                </p>
+                {/* <p className="font-inter  text-[24px] leading-[84%]">
+                    Ein letzter Blick.
+                </p> */}
 
-                <p className="text-[24px] leading-[100%]">
-                    Uberprufe deine Angaben. Dann ist<br></br>dein Objekt bereit fur dein Archiv.
+                <p className="font-inter  text-[24px] leading-[100%]">
+                    Überprüfe deine Angaben. Dann ist<br></br>dein Objekt bereit fur dein Archiv.
                 </p>
             </div>
 
             {/* Vorschau */}
             <div>
                 {/* Ausgewählte Sammlung */}
-                <div className="mt-10 ml-6 flex w-full max-w-210 h-104 gap-6 border-dashed border-[#808080] border-2 p-6">
+                <div className="mt-10 flex w-full max-w-210 h-104 gap-6 border-dashed border-[#808080] border-2 p-6">
 
                     <div className="h-full flex-1">
 
@@ -89,13 +88,13 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                             style={{ background: collection.color }}
                         />
                         <div className="relative h-30 w-[236.138px] border-[5px] border-black bg-white">
-                            <div className="grotesk-xbold absolute left-3 top-2 text-[36px] uppercase">
+                            <div className="font-inter font-black absolute left-3 top-2 text-2xl uppercase">
                                 {collection.name}
                                 <span className="relative -top-2.5 ml-1 text-[16px]">
                                     ®
                                 </span>
                             </div>
-                            <div className="grotesk-xbold absolute left-3 top-10 text-[24px] uppercase">
+                            <div className="grotesk-xbold text-sm text-neutral-500 mt-1 absolute left-3 top-16 text-[24px] uppercase">
                                 {collection.count}
                             </div>
 
@@ -130,7 +129,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                             </p>
                         </div>
                     </div>
-                    {/*  */}
+
                     {/* Hinzugefügte Media */}
                     <div className="h-full flex-1">
                         <div className="h-90.5 w-[236.138px] border-[5px] border-black overflow-hidden">
@@ -148,10 +147,10 @@ export default function Product({ selectedCategory, values, image }: ProductProp
             </div>
 
             {/* CTA Button  */}
-            <div className="mt-10 ml-6 w-210 h-50 border-[#808080] border-2 flex flex-row justify-between items-center">
+            <div className="mt-10 w-210 h-50 border-[#808080] border-2 flex flex-row justify-between items-center">
                 <div>
                     <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mt-9 ml-7">Wird gespeichert als</p>
-                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mb-5 ml-7">N° N° {objectId ?? "—"} — {collection.code}</p>
+                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mb-5 ml-7">N°{objectId ?? "—"} — {collection.code}</p>
                 </div>
                 <div>
                     <button

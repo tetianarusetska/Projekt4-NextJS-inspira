@@ -252,24 +252,32 @@
 
 
 :root {
-    --bgColor: #EDEDED;
-    --mainColor: #000000;
-    --secondaryColor: #808080;
+  --bgColor: #EDEDED;
+  --mainColor: #000000;
+  --secondaryColor: #808080;
 
-    --mainFont: "Grotesk_thin", sans-serif;
-    --decorativeFont: "Grotesk_XBold", sans-serif;
+  --mainFont: var(--font-inter), sans-serif;
+  --displayFont: "Grotesk_XBold", sans-serif;
+}
 
+@theme {
+  --font-text: var(--font-inter), sans-serif;
+  --font-display: "Grotesk_XBold", sans-serif;
 }
 
 body {
-    background: var(--bgColor);
-    color: var(--mainColor);
-    font-family: var(--mainFont);
+  background: var(--bgColor);
+  color: var(--mainColor);
+  font-family: var(--mainFont); 
 }
 
 .grotesk-xbold {
-    font-family: "Grotesk_XBold", sans-serif;
+  font-family: var(--displayFont);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.02em; 
 }
+
 
 html,
 body {

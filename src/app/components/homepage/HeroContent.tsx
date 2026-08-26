@@ -1,93 +1,83 @@
-import Link from "next/link";
+"use client";
 
 export default function HeroContent() {
-    return (
-        <>
-            {/* Decoration, Text */}
-            <div className="relative z-10">
-                <p
-                    className="absolute leading-17.5 tracking-[1.0px] text-[64px] left-8 top-20
-                               md:leading-20.5 md:text-[74px]
-                               lg:left-10.75 lg:top-35 lg:text-[96px]"
-                >
-                    Mehr als ein<br></br>Archiv
-                </p>
-                <p
-                    className="hidden 
-                               lg:block lg:absolute lg:left-78 lg:top-75 lg:text-[32px] lg:leading-25 lg:tracking-[0.5px]"
-                >
-                    Jede Idee beginnt mit einer Inspiration
-                </p>
-            </div>
+  const pantoneCards = [
+    { color: "bg-[#012F38]", title: "FORSCHUNG", subtitle: "N°01" },
+    { color: "bg-[#D72638]", title: "DIGITALISIERUNG", subtitle: "N°02" },
+    { color: "bg-[#131937]", title: "VERNETZUNG", subtitle: "N°03" },
+    { color: "bg-[#000000]", title: "ZUKUNFT", subtitle: "N°04" }
+  ];
 
-            <div className="relative z-10">
-                <p
-                    className="hidden grotesk-xbold
-                               lg:block lg:text-right lg:absolute lg:left-295 lg:top-6 lg:text-[48px] lg:leading-9.5 lg:tracking-normal lg:uppercase"
-                >
-                    Dein<br></br>personlicher<br></br>Sammlungsraum
+  return (
+    <div className="grid grid-cols-12 flex-1 w-full h-[calc(100vh-72px)]">
+
+      {/* ================= LEFT SIDE ================= */}
+      <div className="col-span-5 flex flex-col justify-between p-12 border-r border-black h-full">
+
+        {/* Main Hero Header */}
+        <div className="mt-8 lg:mt-16 space-y-6">
+          <h1 className="text-6xl lg:text-[84px] font-black leading-[0.85]  tracking-[1%] grotesk-xbold uppercase">
+            Mehr als<br />ein Archiv.
+          </h1>
+          <p className="text-neutral-500 font-['Inter'] text-sm max-w-[80%] font-medium tracking-wide">
+            Dein persönlicher Sammlungsraum zur Digitalisierung, Vernetzung und Zukunft deiner Inspirationen.
+          </p>
+        </div>
+
+        {/* Boxes mit Zählen */}
+        <div className="grid grid-cols-3 gap-4 mt-auto">
+          <div className="border border-black p-4 flex flex-col justify-between aspect-square">
+            <span className="text-3xl font-black grotesk-xbold">11 272+</span>
+            <span className="text-[10px] font-bold tracking-wider text-neutral-500 uppercase leading-none">Objekte</span>
+          </div>
+          <div className="border border-black p-4 flex flex-col justify-between aspect-square">
+            <span className="text-3xl font-black grotesk-xbold">800</span>
+            <span className="text-[10px] font-bold tracking-wider text-neutral-500 uppercase leading-none">Benutzer</span>
+          </div>
+          <div className="border border-black p-4 flex flex-col justify-between aspect-square">
+            <span className="text-3xl font-black grotesk-xbold">24/7</span>
+            <span className="text-[10px] font-bold tracking-wider text-neutral-500 uppercase leading-none">Zugriff</span>
+          </div>
+        </div>
+      </div>
+
+
+      {/* ================= RIGHT SIDE ================= */}
+      <div className="col-span-7 grid grid-cols-4 h-full relative">
+
+        {/* Decorative Grid Lines */}
+        <div className="absolute inset-0 grid grid-rows-6 pointer-events-none opacity-[0.03]">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="border-b border-black w-full h-full" />
+          ))}
+        </div>
+
+        {/* Pantone Columns */}
+        {pantoneCards.map((card, idx) => (
+          <div
+            key={idx}
+            className="border-r border-black last:border-r-0 flex flex-col justify-center p-6 h-full relative group transition-colors duration-300 hover:bg-black/5"
+          >
+            {/* Pantone Card Container */}
+            <div className="relative z-10 bg-white border-2 border-black flex flex-col overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+              {/* Color Block */}
+              <div className={`aspect-[3/4] w-full ${card.color} border-b-2 border-black`} />
+              {/* Card Label */}
+              <div className="p-4 text-left font-text bg-white">
+                <p className="text-lg font-black tracking-wider text-black uppercase leading-tight mb-1 font-display">
+                  {card.title}
                 </p>
-            </div>
-
-            {/* Sammlungen, Objekte */}
-            <div className="relative z-10 md:mt-25">
-
-                <div>
-                    <p
-                        className="hidden grotesk-xbold
-                                   md:block md:text-right md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-155 md:top-5 md:text-[64px]
-                                   lg:left-266 lg:top-63.5 lg:text-[96px]"
-                    >
-                        10
-                    </p>
-                    <p
-                        className="hidden text-right grotesk-xbold
-                                   md:block md:absolute md:text-[40px] md:leading-9.5 md:tracking-normal md:uppercase md:left-140 md:top-20
-                                   lg:left-250 lg:top-81.75 lg:text-[48px]"
-                    >
-                        Sammlungen
-                    </p>
+                <div className="flex justify-between items-center text-[10px] text-neutral-400 font-bold">
+                  <span>PANTONE</span>
+                  <span>{card.subtitle}</span>
                 </div>
-                <div className="mt-10">
-                    <p
-                        className="hidden text-right grotesk-xbold 
-                                   md:block md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-148 md:top-45 md:text-[64px]
-                                   lg:left-315 lg:top-63.5 lg:text-[96px] 
-                        "
-                    >
-                        11272
-                    </p>
-                    <p
-                        className="hidden text-right grotesk-xbold 
-                                   md:block md:absolute md:leading-9.5 md:tracking-normal md:uppercase md:left-147 md:top-60 md:text-[40px]
-                                   lg:left-318 lg:top-81.75 lg:text-[48px]"
-                    >
-                        Objekte
-                    </p>
-                </div>
-
+              </div>
             </div>
+          </div>
+        ))}
 
+      </div>
 
-            {/* CTA Buttons */}
-            <div className="relative z-10">
-
-                <button
-                    className="hidden grotesk-xbold
-                    md:block md:uppercase md:absolute md:top-110 md:left-75 md:text-center md:text-[24px] md:tracking-[1px] md:w-48.75 md:h-12.25 md:bg-(--mainColor) md:text-white
-                    lg:top-148 lg:left-150"
-                >
-                    <Link href="/login">Sammlungen</Link>
-                </button>
-                <button
-                    className="hidden grotesk-xbold 
-                    md:block md:uppercase md:absolute md:top-110 md:left-135  md:text-center md:text-[24px] md:w-48.75 md:h-12.25 md:tracking-[1px] md:border-2 md:border-(--mainColor)
-                    lg:top-148 lg:left-250"
-                >
-                    <Link href="/login">Archivieren</Link>
-                </button>
-
-            </div>
-        </>
-    );
+    </div>
+  );
 }

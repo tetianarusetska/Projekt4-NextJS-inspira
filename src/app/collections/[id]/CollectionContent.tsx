@@ -5,171 +5,131 @@ import { CollectionContentProps } from "@/app/types/CollectionContentProps";
 import { getObjectColor } from "@/app/utils/getObjectColor";
 import Link from "next/link";
 
-
 export default function CollectionContent({ collection, objects }: CollectionContentProps) {
+  const objectsPerPage = 10;
+  const [currentPage, setCurrentPage] = useState(1);
 
-    const objectsPerPage = 10;
+  const totalPages = Math.ceil(objects.length / objectsPerPage) || 1;
+  const startIndex = (currentPage - 1) * objectsPerPage;
+  const currentObjects = objects.slice(startIndex, startIndex + objectsPerPage);
 
-    const [currentPage, setCurrentPage] = useState(1);
+  return (
+    <div className="w-full text-black min-h-screen flex flex-col justify-between selection:bg-black selection:text-white pb-12">
+      <div>
 
-    const totalPages = Math.ceil(objects.length / objectsPerPage) || 1;
-
-    const startIndex = (currentPage - 1) * objectsPerPage;
-
-    const currentObjects = objects.slice(
-        startIndex,
-        startIndex + objectsPerPage
-    );
-
-    return (
-        <>
-            <div className="relative lg:h-420 md:700">
-                <div className="absolute bg-[#808080]" style={{ left: 0, top: 140, width: 1470, height: 3 }} />
-
-                {/* Titel von Sammlung */}
-                <div className="ml-11 mt-15 flex flex-col gap-4">
-                    <span className="material-symbols-outlined text-[60px]">
-                        {collection.icon}
-                    </span>
-                    <p className="grotesk-xbold text-[64px] leading-[36%] tracking-[5%]">
-                        {collection.name}
-                    </p>
-                    <p className="mt-16 uppercase grotesk-xbold text-[24px] leading-[29%] tracking-[1%]">
-                        {objects.length} objekte in dieser sammlung
-                    </p>
-                </div>
-
-                {/* Filter */}
-                <div>
-                    <p className="hidden md:block md:mr-11 md:-mt-30 md:text-[24px] md:leading-[100%] md:tracking-[1%] md:text-right">
-                        N°01 — {objects.length} Objekte<br></br>zuletzt aktualisiert heute
-                    </p>
-                    <div className="hidden md:uppercase md:flex md:flex-row md:gap-8 md:text-[20px] md:justify-end md:mt-13 md:mr-11">
-                        <p>Neuste</p>
-                        <p>A–Z</p>
-                        <p>N°</p>
-                        <p>aufsteigend</p>
-                    </div>
-                </div>
-
-                {objects.length === 0 ? (
-                    <p className="mt-20 ml-11 text-[24px] text-[#808080]">
-                        Noch keine Objekte in dieser Sammlung.
-                    </p>
-                ) : (
-                    <>
-                        {/* Objekt Karte für LG */}
-                        <div className="hidden lg:mt-20 lg:ml-11 lg:grid lg:w-7xl lg:grid-cols-5 lg:gap-x-28 lg:gap-y-8">
-                            {currentObjects.map((object) => (
-                                <div
-                                    key={object.id}
-                                    className="shadow-[8px_8px_8px_0_rgba(0,0,0,0.25)] w-59.75 h-97.25"
-                                >
-                                    <Link href={`/collections/${collection.id}/${object.id}`}>
-                                        <div
-                                            className="h-80 w-59.75 border-[5px] border-black"
-                                            style={{ background: getObjectColor(object.id) }}
-                                        />
-
-                                        <div className="relative h-17.25 w-59.75 border-[5px] border-black bg-black text-white">
-                                            <div className="ml-2 text-[24px]">
-                                                {object.title}
-                                            </div>
-                                            <div className="-mt-2 ml-2 grotesk-xbold text-[20px] uppercase">
-                                                N°{String(object.id).padStart(2, "0")}
-                                            </div>
-                                        </div>
-
-                                    </Link>
-
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Objekt Karte für Mobile */}
-                        <div className="mt-20 grid grid-cols-1 gap-2 px-3 md:hidden">
-                            {currentObjects.map((object) => (
-                                <Link
-                                    key={object.id}
-                                    href={`/collections/${collection.id}/${object.id}`}
-                                    className="flex h-14 w-full border-[3px] border-black"
-                                >
-                                    <div
-                                        className="flex flex-1 items-center px-3"
-                                        style={{ background: getObjectColor(object.id) }}
-                                    >
-                                        <span className="grotesk-xbold text-[20px] uppercase text-white">
-                                            {object.title}
-                                        </span>
-                                    </div>
-
-                                    <div className="flex w-20 items-center justify-center border-l-[3px] border-black bg-black">
-                                        <span className="grotesk-xbold text-[18px] uppercase text-white">
-                                            N°{String(object.id).padStart(2, "0")}
-                                        </span>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-
-                        {/* Objekt Karte für MD */}
-                        <div className="hidden md:grid lg:hidden md:mt-10 md:ml-3 md:grid-cols-3 md:gap-3">
-                            {currentObjects.map((object) => (
-                                <div
-                                    key={object.id}
-                                    className="h-[364px] w-[236.138px] shadow-[6px_6px_6px_0_rgba(0,0,0,0.25)]"
-                                >
-                                    <Link href={`/collections/${collection.id}/${object.id}`}>
-                                        <div
-                                            className="h-60.5 w-[236.138px] border-[5px] border-black"
-                                            style={{ background: getObjectColor(object.id) }}
-                                        />
-
-                                        <div className="relative h-30 w-[236.138px] border-x-[5px] border-b-[5px] border-black bg-black text-white">
-                                            <div className="grotesk-xbold absolute left-2 top-1 text-[26px] uppercase">
-                                                {object.title}
-                                            </div>
-
-                                            <div className="grotesk-xbold absolute left-2 top-8 text-[20px] uppercase">
-                                                N°{String(object.id).padStart(2, "0")}
-                                            </div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Pagination */}
-                        <div className="mt-12 mb-10 md:mb-20 lg:mb-0 mr-11 flex justify-end items-center gap-6 text-[24px] grotesk-xbold">
-                            <button
-                                type="button"
-                                disabled={currentPage === 1}
-                                onClick={() => setCurrentPage((page) => page - 1)}
-                                className={currentPage === 1 ? "opacity-30" : ""}
-                            >
-                                ←
-                            </button>
-
-                            <span>
-                                {startIndex + 1}–{Math.min(startIndex + objectsPerPage, objects.length)}
-                            </span>
-
-                            <span>/</span>
-
-                            <span>{objects.length}</span>
-
-                            <button
-                                type="button"
-                                disabled={currentPage === totalPages}
-                                onClick={() => setCurrentPage((page) => page + 1)}
-                                className={currentPage === totalPages ? "opacity-30" : ""}
-                            >
-                                →
-                            </button>
-                        </div>
-                    </>
-                )}
+        {/* Header Section */}
+        <section className="p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-end w-full border-b-[3px] border-neutral-400 pb-8 gap-6">
+          <div className="space-y-6">
+            <span className="text-sm font-bold tracking-widest text-neutral-400 font-text uppercase block">
+              Sammlung /
+            </span>
+            <div className="flex items-center gap-3">
+              {collection.icon && (
+                <span className="material-symbols-outlined text-[44px]">
+                  {collection.icon}
+                </span>
+              )}
+              <p className="font-text font-bold text-4xl lg:text-[42px] uppercase leading-none">
+                {collection.name}
+              </p>
             </div>
-        </>
-    )
+            <div className="space-y-1">
+              <h2 className="text-2xl font-bold uppercase tracking-tight text-neutral-800 font-text">
+                Meine Objekte
+              </h2>
+              <p className="text-neutral-500 text-sm font-medium">
+                Durchsuche deine persönlichen Objekte.
+              </p>
+            </div>
+          </div>
+
+          {/* Filtering Controls */}
+          <div className="flex flex-col items-start md:items-end gap-4 font-inter">
+            <p className="text-md md:text-right text-neutral-500 leading-normal">
+              N°01 — {objects.length} Objekte <br />
+              <span className="text-md text-neutral-400">zuletzt aktualisiert heute</span>
+            </p>
+            <div className="uppercase flex flex-wrap gap-4 text-md font-bold tracking-wider text-neutral-600">
+              <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">Neuste</button>
+              <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">A–Z</button>
+              <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">N°</button>
+              <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5 font-black text-black">aufsteigend</button>
+            </div>
+          </div>
+        </section>
+
+        {/* Grid Karte */}
+        <div className="p-8 md:p-12">
+          {objects.length === 0 ? (
+            <div className="py-20 text-center">
+              <p className="text-xl text-neutral-400 font-medium">
+                Noch keine Objekte in dieser Sammlung.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-items-center">
+              {currentObjects.map((object) => (
+                <div
+                  key={object.id}
+                  className="group w-full max-w-[240px] bg-white border-[5px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-all duration-300 ease-out"
+                >
+                  <Link href={`/collections/${collection.id}/${object.id}`}>
+                    {/* Swatch Color Block */}
+                    <div
+                      className="aspect-[3/4] w-full border-b-[5px] border-black"
+                      style={{ background: getObjectColor(object.id) }}
+                    />
+
+                    {/* Bottom Label Plate */}
+                    <div className="p-3 bg-black text-white flex flex-col justify-between h-[80px] font-inet font-black border-t-[5px] border-black">
+                      <p className="text-lg uppercase tracking-wide truncate leading-tight">
+                        {object.title}
+                      </p>
+                      <div className="flex justify-between items-center text-[11px] text-neutral-400 font-bold mt-1">
+                        <span>Objekt</span>
+                        <span>N°{String(object.id).padStart(2, "0")}</span>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+      </div>
+
+      {/* Pagination Controls */}
+      {objects.length > 0 && (
+        <div className="p-8 md:p-12 border-t border-black/10 flex justify-end items-center gap-6 text-xl font-['Grotesk_XBold'] font-black">
+          <button
+            type="button"
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((page) => page - 1)}
+            className={`transition-opacity ${currentPage === 1 ? "opacity-20 cursor-not-allowed" : "hover:scale-110"}`}
+          >
+            ←
+          </button>
+
+          <span className="tracking-widest">
+            {startIndex + 1}–{Math.min(startIndex + objectsPerPage, objects.length)}
+          </span>
+
+          <span className="text-neutral-300">/</span>
+
+          <span className="text-neutral-400">{objects.length}</span>
+
+          <button
+            type="button"
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((page) => page + 1)}
+            className={`transition-opacity ${currentPage === totalPages ? "opacity-20 cursor-not-allowed" : "hover:scale-110"}`}
+          >
+            →
+          </button>
+        </div>
+      )}
+
+    </div>
+  );
 }
