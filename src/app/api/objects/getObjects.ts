@@ -1,4 +1,4 @@
-import { prisma } from "../../../../prisma/client";
+import { prisma } from "../../../../prisma/prisma.client";
 
 export async function getObjects(userId: string, collectionId: string) {
 

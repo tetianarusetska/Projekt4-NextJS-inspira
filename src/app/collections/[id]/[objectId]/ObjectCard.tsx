@@ -113,7 +113,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                     </div>
                 </div>
             </div>
-
+            
         </div>
     );
 }

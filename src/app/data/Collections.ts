@@ -18,7 +18,7 @@ export const collections: Record<string, Collection> = {
                 id: "title",
                 label: "N°01, TITEL",
                 type: "text",
-                placeholder: '“Sexus”',
+                placeholder: '“Opis Pistorum”',
             },
             {
                 id: "author",
