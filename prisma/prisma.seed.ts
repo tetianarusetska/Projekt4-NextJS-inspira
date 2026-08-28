@@ -24,6 +24,7 @@ const coverArtArchive = (releaseId: string) =>
 const commonsFile = (fileName: string) =>
     `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(fileName)}`;
 
+
 async function seed() {
     const user = await prisma.user.findUnique({
         where: { email: USER_EMAIL },
