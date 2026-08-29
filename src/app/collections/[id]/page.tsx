@@ -7,6 +7,7 @@ import { collections } from "../../data/Collections";
 import StudioHeader from "@/app/studio/header/StudioHeader";
 import CollectionContent from "./CollectionContent";
 import StudioBackground from "@/app/layoutDesign/StudioBackground";
+import Footer from "@/app/components/footer/Footer";
 
 
 export default async function CollectionPage({ params }: { params: Promise<{ id: string }> }) {
@@ -29,10 +30,12 @@ export default async function CollectionPage({ params }: { params: Promise<{ id:
 
     return (
         <>
-            <StudioHeader />
-            <StudioBackground />
-            <CollectionContent collection={collection} objects={objects} />
-
+            <main>
+                <StudioHeader />
+                <StudioBackground />
+                <CollectionContent collection={collection} objects={objects} />
+            </main>
+            <Footer />
         </>
     );
 }

@@ -2,6 +2,7 @@
 
 import Header from "@/app/components/header/Header";
 import Background from "@/app/layoutDesign/Background";
+import Footer from "../components/footer/Footer";
 
 export default function AboutPage() {
     return (
@@ -250,12 +251,7 @@ export default function AboutPage() {
 
             </main>
 
-            {/* ================= FOOTER ================= */}
-            <footer className="border-t border-black py-8 px-12 bg-[#EDEDED] flex justify-between items-center z-10">
-                <span className="text-[10px] font-bold text-neutral-400 tracking-wider font-text uppercase">
-                    © {new Date().getFullYear()} I . NSPIRA. ALLE RECHTE VORBEHALTEN.
-                </span>
-            </footer>
+            <Footer />
 
         </div>
     );

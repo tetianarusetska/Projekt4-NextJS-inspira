@@ -7,6 +7,7 @@ import { collections } from "@/app/data/Collections";
 import StudioHeader from "@/app/studio/header/StudioHeader";
 import StudioBackground from "@/app/layoutDesign/StudioBackground";
 import ObjectCard from "./ObjectCard";
+import Footer from "@/app/components/footer/Footer";
 
 
 export default async function ObjectPage({ params }: { params: Promise<{ id: string, slug: string }> }) {
@@ -30,6 +31,7 @@ export default async function ObjectPage({ params }: { params: Promise<{ id: str
             <StudioHeader />
             <StudioBackground />
             <ObjectCard collection={collection} object={object} />
+            <Footer />
         </>
     );
 }

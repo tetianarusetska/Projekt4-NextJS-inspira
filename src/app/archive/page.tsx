@@ -5,6 +5,7 @@ import { auth } from "@/lib/auth";
 import StudioHeader from "../studio/header/StudioHeader";
 import StudioBackground from "../layoutDesign/StudioBackground";
 import Archive from "./Archive";
+import Footer from "../components/footer/Footer";
 
 
 export default async function ArchivePage() {
@@ -20,7 +21,7 @@ export default async function ArchivePage() {
             <StudioHeader />
             <StudioBackground />
             <Archive />
-
+            <Footer />
         </>
     );
 }

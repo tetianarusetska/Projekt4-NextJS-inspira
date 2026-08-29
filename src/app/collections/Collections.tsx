@@ -4,13 +4,19 @@ import Link from "next/link";
 import { collections } from "../data/Collections";
 import { CollectionsProps } from "../types/CollectionsProps";
 
+const CARD_HEIGHT = 242 + 120;
+
 export default function Collections({ counts }: CollectionsProps) {
-  
+
   const totalObjects = Object.values(counts).reduce((sum, n) => sum + n, 0);
-  const totalCollections = Object.keys(collections).slice(0, 10).length;
+  const desktopCollections = Object.values(collections).slice(0, 10);
+  const totalCollections = desktopCollections.length;
+
+  const desktopContainerHeight =
+    Math.max(...desktopCollections.map((col) => col.top)) + CARD_HEIGHT + 40;
 
   return (
-    <div className="w-full text-black relative selection:bg-black selection:text-[#EDEDED] min-h-screen pb-20">
+    <div className="w-full text-black relative selection:bg-black selection:text-[#EDEDED] pb-20">
 
       {/* ================= HEADER SECTION ================= */}
       <section className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center w-full border-b-[3px] border-black gap-6">
@@ -62,8 +68,11 @@ export default function Collections({ counts }: CollectionsProps) {
       </div>
 
       {/* ================= Sammlungen-Karten DESKTOP LAYOUT ================= */}
-      <div className="hidden lg:block relative mx-auto w-full -mt-60 z-10">
-        {Object.values(collections).slice(0, 10).map((col) => (
+      <div
+        className="hidden lg:block relative mx-auto w-full max-w-[1436px] -ml-2 -mt-60 z-10"
+        style={{ height: desktopContainerHeight }}
+      >
+        {desktopCollections.map((col) => (
           <div
             key={col.id}
             className="absolute transition-all duration-500 ease-out hover:z-50 group"

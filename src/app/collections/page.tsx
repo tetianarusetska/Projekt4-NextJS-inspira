@@ -7,6 +7,7 @@ import { getObjectCounts } from "../api/objects/getObjectCounts";
 import Collections from "./Collections"
 import StudioHeader from "../studio/header/StudioHeader";
 import StudioBackground from "../layoutDesign/StudioBackground";
+import Footer from "../components/footer/Footer";
 
 export default async function CollectionsPage() {
 
@@ -20,13 +21,17 @@ export default async function CollectionsPage() {
 
     return (
         <>
-            <main className="relative w-screen">
+            <div className="min-h-screen flex flex-col">
+            <main className="relative w-screen flex-1">
                 <StudioBackground />
                 <div className="relative z-10 flex flex-col w-full">
                     <StudioHeader />
                     <Collections counts={counts} />
                 </div>
             </main>
+            <Footer />
+        </div>
         </>
+
     );
 }

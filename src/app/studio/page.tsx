@@ -7,6 +7,7 @@ import { getObjectCounts } from "../api/objects/getObjectCounts";
 import Studio from "./Studio";
 import StudioBackground from "../layoutDesign/StudioBackground";
 import StudioHeader from "./header/StudioHeader";
+import Footer from "../components/footer/Footer";
 
 export default async function StudioPage() {
 
@@ -27,6 +28,7 @@ export default async function StudioPage() {
           <Studio user={session.user} counts={counts} />
         </div>
       </main>
+      <Footer />
     </>
   );
 }
