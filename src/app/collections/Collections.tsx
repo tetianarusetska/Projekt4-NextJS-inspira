@@ -19,7 +19,7 @@ export default function Collections({ counts }: CollectionsProps) {
     <div className="w-full text-black relative selection:bg-black selection:text-[#EDEDED] pb-20">
 
       {/* ================= HEADER SECTION ================= */}
-      <section className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center w-full border-b-[3px] border-black gap-6">
+      <section className="relative z-20 p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center w-full border-b-[3px] border-black gap-6">
         <div className="space-y-4">
           <span className="text-sm font-bold tracking-widest text-neutral-400 font-inter uppercase block">
             Sammlungen /
@@ -32,14 +32,26 @@ export default function Collections({ counts }: CollectionsProps) {
           </p>
         </div>
 
-        {/* Total Statistics Block */}
-        <div className="text-left md:text-right font-['Grotesk_XBold'] font-black">
-          <p className="text-3xl lg:text-[40px] leading-none uppercase tracking-wider grotesk-xbold">
-            sammlungen  –  {totalCollections}
-          </p>
-          <p className="text-3xl lg:text-[40px] leading-none uppercase tracking-wider mt-2 grotesk-xbold">
-            objekte  –  {totalObjects}
-          </p>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-16">
+
+          <Link
+            href="/archive"
+            className="hidden lg:flex items-center gap-2 border-[3px] border-black px-6 py-3 bg-black text-white font-inter font-black uppercase text-sm tracking-wider hover:bg-white hover:text-black transition-colors duration-300"
+          >
+            <span className="material-symbols-outlined !text-xl">add</span>
+            Neue Sammlung
+          </Link>
+
+          {/* Total Statistics Block */}
+          <div className="text-left md:text-right font-['Grotesk_XBold'] font-black">
+            <p className="text-3xl lg:text-[40px] leading-none uppercase tracking-wider grotesk-xbold">
+              sammlungen  –  {totalCollections}
+            </p>
+            <p className="text-3xl lg:text-[40px] leading-none uppercase tracking-wider mt-2 grotesk-xbold">
+              objekte  –  {totalObjects}
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -48,7 +60,7 @@ export default function Collections({ counts }: CollectionsProps) {
         {Object.values(collections).map((col) => (
           <Link
             key={col.id}
-            href={`/collections/${col.id}`}
+            href={col.id === "newCollection" ? "/archive" : `/collections/${col.id}`}
             className="flex flex-col border-[4px] border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300"
           >
             {/* Color block */}

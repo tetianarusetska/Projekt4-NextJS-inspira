@@ -1,18 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { slugify } from "@/app/utils/slugify";
 import { CollectionContentProps } from "@/app/types/CollectionContentProps";
 import { getObjectColor } from "@/app/utils/getObjectColor";
 import Link from "next/link";
 
-export default function CollectionContent({ collection, objects }: CollectionContentProps) {
-  const objectsPerPage = 10;
-  const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(objects.length / objectsPerPage) || 1;
+type SortBy = "newest" | "az";
+type SortDirection = "asc" | "desc";
+
+export default function CollectionContent({ collection, objects }: CollectionContentProps) {
+
+  const objectsPerPage = 10;
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sortBy, setSortBy] = useState<SortBy>("newest");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [sortBy, sortDirection]);
+
+  const sortedObjects = useMemo(() => {
+    const sorted = [...objects].sort((a, b) => {
+      switch (sortBy) {
+        case "az":
+          return a.title.localeCompare(b.title, "de");
+        case "newest":
+        default:
+          return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+      }
+    });
+
+    return sortDirection === "asc" ? sorted : sorted.reverse();
+  }, [objects, sortBy, sortDirection]);
+
+  const totalPages = Math.ceil(sortedObjects.length / objectsPerPage) || 1;
   const startIndex = (currentPage - 1) * objectsPerPage;
-  const currentObjects = objects.slice(startIndex, startIndex + objectsPerPage);
+  const currentObjects = sortedObjects.slice(startIndex, startIndex + objectsPerPage);
+
+  const handleSortByClick = (value: SortBy) => {
+    setSortBy(value);
+  };
+
+  const toggleSortDirection = () => {
+    setSortDirection((dir) => (dir === "asc" ? "desc" : "asc"));
+  };
+
+  const sortButtonClass = (isActive: boolean) =>
+    `transition-colors border-b pb-0.5 ${isActive
+      ? "border-black text-black font-black"
+      : "border-transparent text-neutral-600 hover:text-black hover:border-black"
+    }`;
 
   return (
     <div className="w-full text-black min-h-screen flex flex-col justify-between selection:bg-black selection:text-white pb-12">
@@ -44,23 +84,40 @@ export default function CollectionContent({ collection, objects }: CollectionCon
             </div>
           </div>
 
-          {/* Filtering Controls */}
           <div className="flex flex-col items-start md:items-end gap-4 font-inter">
             <p className="text-md md:text-right text-neutral-500 leading-normal">
-              N°01 — {objects.length} Objekte <br />
+              N°01 — {sortedObjects.length} Objekte <br />
               <span className="text-md text-neutral-400">zuletzt aktualisiert heute</span>
             </p>
-            <div className="uppercase flex flex-wrap gap-4 text-md font-bold tracking-wider text-neutral-600">
-              <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">Neuste</button>
-              <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">A–Z</button>
-              <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5 font-black text-black">aufsteigend</button>
+            <div className="uppercase flex flex-wrap gap-4 text-md font-bold tracking-wider">
+              <button
+                type="button"
+                onClick={() => handleSortByClick("newest")}
+                className={sortButtonClass(sortBy === "newest")}
+              >
+                Neuste
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSortByClick("az")}
+                className={sortButtonClass(sortBy === "az")}
+              >
+                A–Z
+              </button>
+              <button
+                type="button"
+                onClick={toggleSortDirection}
+                className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5 font-black text-black"
+              >
+                {sortDirection === "asc" ? "aufsteigend" : "absteigend"}
+              </button>
             </div>
           </div>
         </section>
 
         {/* Grid Karte */}
         <div className="p-8 md:p-12">
-          {objects.length === 0 ? (
+          {sortedObjects.length === 0 ? (
             <div className="py-20 text-center">
               <p className="text-xl text-neutral-400 font-medium">
                 Noch keine Objekte in dieser Sammlung.
@@ -109,7 +166,7 @@ export default function CollectionContent({ collection, objects }: CollectionCon
       </div>
 
       {/* Pagination Controls */}
-      {objects.length > 0 && (
+      {sortedObjects.length > 0 && (
         <div className="p-8 md:p-12 border-t border-black/10 flex justify-end items-center gap-6 text-xl font-['Grotesk_XBold'] font-black">
           <button
             type="button"
@@ -121,12 +178,12 @@ export default function CollectionContent({ collection, objects }: CollectionCon
           </button>
 
           <span className="tracking-widest">
-            {startIndex + 1}–{Math.min(startIndex + objectsPerPage, objects.length)}
+            {startIndex + 1}–{Math.min(startIndex + objectsPerPage, sortedObjects.length)}
           </span>
 
           <span className="text-neutral-300">/</span>
 
-          <span className="text-neutral-400">{objects.length}</span>
+          <span className="text-neutral-400">{sortedObjects.length}</span>
 
           <button
             type="button"
