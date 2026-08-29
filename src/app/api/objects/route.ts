@@ -13,13 +13,11 @@ import { isValidCollectionId } from "./collectionModels";
 export async function POST(request: Request) {
 
     const session = await auth.api.getSession({ headers: await headers() });
-
     if (!session?.user) {
         return NextResponse.json({ error: "Nicht angemeldet" }, { status: 401 });
     }
 
     const { collectionId, values, imageUrl } = await request.json();
-
     try {
         const object = await saveObject(session.user.id, collectionId, values, imageUrl);
 
@@ -40,7 +38,6 @@ export async function DELETE(request: Request) {
     const session = await auth.api.getSession({
         headers: await headers(),
     });
-
     if (!session?.user) {
         return NextResponse.json(
             { error: "Nicht angemeldet" },
@@ -49,7 +46,6 @@ export async function DELETE(request: Request) {
     }
 
     let body: { collectionId?: unknown; objectId?: unknown };
-
     try {
         body = await request.json();
     } catch {
@@ -60,14 +56,12 @@ export async function DELETE(request: Request) {
     }
 
     const { collectionId, objectId } = body;
-
     if (typeof collectionId !== "string" || !collectionId) {
         return NextResponse.json(
             { error: "collectionId ist erforderlich" },
             { status: 400 }
         );
     }
-
     if (!isValidCollectionId(collectionId)) {
         return NextResponse.json(
             { error: "Unbekannte Sammlung" },
@@ -82,7 +76,6 @@ export async function DELETE(request: Request) {
             { status: 400 }
         );
     }
-
     try {
         const result = await deleteObject(session.user.id, collectionId, id);
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { slugify } from "@/app/utils/slugify";
 import { CollectionContentProps } from "@/app/types/CollectionContentProps";
 import { getObjectColor } from "@/app/utils/getObjectColor";
 import Link from "next/link";
@@ -52,7 +53,6 @@ export default function CollectionContent({ collection, objects }: CollectionCon
             <div className="uppercase flex flex-wrap gap-4 text-md font-bold tracking-wider text-neutral-600">
               <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">Neuste</button>
               <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">A–Z</button>
-              <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">N°</button>
               <button className="hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5 font-black text-black">aufsteigend</button>
             </div>
           </div>
@@ -73,12 +73,21 @@ export default function CollectionContent({ collection, objects }: CollectionCon
                   key={object.id}
                   className="group w-full max-w-[240px] bg-white border-[5px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-all duration-300 ease-out"
                 >
-                  <Link href={`/collections/${collection.id}/${object.id}`}>
+                  <Link href={`/collections/${collection.id}/${slugify(object.title)}`}>
+
                     {/* Swatch Color Block */}
                     <div
-                      className="aspect-[3/4] w-full border-b-[5px] border-black"
+                      className="aspect-[3/4] w-full border-b-[5px] border-black overflow-hidden"
                       style={{ background: getObjectColor(object.id) }}
-                    />
+                    >
+                      {object.imageUrl && (
+                        <img
+                          src={object.imageUrl}
+                          alt={object.title}
+                          className="h-full w-full object-cover"
+                        />
+                      )}
+                    </div>
 
                     {/* Bottom Label Plate */}
                     <div className="p-3 bg-black text-white flex flex-col justify-between h-[80px] font-inet font-black border-t-[5px] border-black">

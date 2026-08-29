@@ -5,6 +5,7 @@ import { collections } from "../data/Collections";
 import { CollectionsProps } from "../types/CollectionsProps";
 
 export default function Collections({ counts }: CollectionsProps) {
+  
   const totalObjects = Object.values(counts).reduce((sum, n) => sum + n, 0);
   const totalCollections = Object.keys(collections).slice(0, 10).length;
 
@@ -83,7 +84,6 @@ export default function Collections({ counts }: CollectionsProps) {
                 <div>
                   <div className="font-inter text-2xl uppercase font-black  pr-2">
                     {col.name}
-                    <span className="text-xs ml-0.5 align-super">®</span>
                   </div>
                 </div>
                 <div className="grotesk-xbold text-md uppercase tracking-wider">

@@ -3,7 +3,6 @@
 import { CollectionProps } from "../types/CollectionProps";
 import { collections } from "../data/Collections";
 
-// Extending the interface locally to allow passing the stepper callback safely
 interface ExtendedCollectionProps extends CollectionProps {
   onNext?: () => void;
 }

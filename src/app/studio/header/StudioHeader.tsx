@@ -42,7 +42,7 @@ export default function StudioHeader() {
 
                 {navLinks.map((link, idx) => {
                    
-                    const isActive = pathname === link.href;
+                    const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
 
                     return (
                         <div

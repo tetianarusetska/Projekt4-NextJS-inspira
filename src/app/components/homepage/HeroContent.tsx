@@ -12,7 +12,7 @@ export default function HeroContent() {
     <div className="grid grid-cols-12 flex-1 w-full h-[calc(100vh-72px)]">
 
       {/* ================= LEFT SIDE ================= */}
-      <div className="col-span-5 flex flex-col justify-between p-12 border-r border-black h-full">
+      <div className="col-span-5 flex flex-col justify-between p-12 h-full">
 
         {/* Main Hero Header */}
         <div className="mt-8 lg:mt-16 space-y-6">
@@ -45,8 +45,8 @@ export default function HeroContent() {
       {/* ================= RIGHT SIDE ================= */}
       <div className="col-span-7 grid grid-cols-4 h-full relative">
 
-        {/* Decorative Grid Lines */}
-        <div className="absolute inset-0 grid grid-rows-6 pointer-events-none opacity-[0.03]">
+        
+       <div className="absolute inset-0 grid grid-rows-6 pointer-events-none opacity-[0.03]">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="border-b border-black w-full h-full" />
           ))}
@@ -56,7 +56,7 @@ export default function HeroContent() {
         {pantoneCards.map((card, idx) => (
           <div
             key={idx}
-            className="border-r border-black last:border-r-0 flex flex-col justify-center p-6 h-full relative group transition-colors duration-300 hover:bg-black/5"
+            className="flex flex-col justify-center p-6 h-full relative group transition-colors duration-300 hover:bg-black/5"
           >
             {/* Pantone Card Container */}
             <div className="relative z-10 bg-white border-2 border-black flex flex-col overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
