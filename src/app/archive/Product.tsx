@@ -90,9 +90,6 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                         <div className="relative h-30 w-[236.138px] border-[5px] border-black bg-white">
                             <div className="font-inter font-black absolute left-3 top-2 text-2xl uppercase">
                                 {collection.name}
-                                <span className="relative -top-2.5 ml-1 text-[16px]">
-                                    ®
-                                </span>
                             </div>
                             <div className="grotesk-xbold text-sm text-neutral-500 mt-1 absolute left-3 top-16 text-[24px] uppercase">
                                 {collection.count}

@@ -51,7 +51,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
             </div>
 
             {/* Core Card Block */}
-            <div className="mx-auto mt-20 w-full max-w-301.75 h-148.75 border-[5px] border-black bg-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300">
+            <div className="mx-auto mt-20 w-full max-w-330.75 h-148.75 border-[5px] border-black bg-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300">
                 <div className="grid grid-cols-1 md:grid-cols-[38%_62%]">
 
                     {/* Image Block */}
@@ -114,7 +114,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                             {/* Quote Block */}
                             {hasQuote && (isEditing || getValue("bestQuote")) && (
                                 <div>
-                                    <p className="mt-16 text-[#808080] text-md font-inter normal-case">
+                                    <p className="mt-6 text-[#808080] text-md font-inter normal-case">
                                         Bestes Zitat
                                     </p>
                                     {isEditing ? (
@@ -123,12 +123,12 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                                             onChange={(e) =>
                                                 handleFieldChange("bestQuote", e.target.value)
                                             }
-                                            className="mt-4 bg-transparent border-b border-white font-['Kino40'] w-[672.95px] text-[28px] leading-[100%] focus:outline-none resize-none"
+                                            className="mt-4 bg-transparent border-b border-white font-inter w-[672.95px] text-[28px] leading-[100%] focus:outline-none resize-none"
                                             rows={2}
                                         />
                                     ) : (
-                                        <p className="mt-4 font-['Kino40'] w-[672.95px] text-[28px] leading-[100%]">
-                                            “ {getValue("bestQuote")} “
+                                        <p className="mt-4 font-inter italic w-[672.95px] text-xl leading-[100%]">
+                                            {getValue("bestQuote")}
                                         </p>
                                     )}
                                 </div>
@@ -141,11 +141,11 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                                 <textarea
                                     value={editedValues["note"] ?? ""}
                                     onChange={(e) => handleFieldChange("note", e.target.value)}
-                                    className="font-inter text-xl mb-12 bg-transparent border-b border-white focus:outline-none resize-none"
+                                    className="font-inter text-xl mt-4 mb-12 bg-transparent border-b border-white focus:outline-none resize-none"
                                     rows={2}
                                 />
                             ) : (
-                                <p className="font-inter text-xl mb-12">
+                                <p className="font-inter text-xl mt-4 mb-12">
                                     {getValue("note")}
                                 </p>
                             )

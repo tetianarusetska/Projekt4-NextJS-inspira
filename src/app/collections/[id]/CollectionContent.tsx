@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { slugify } from "@/app/utils/slugify";
 import { CollectionContentProps } from "@/app/types/CollectionContentProps";
 import { getObjectColor } from "@/app/utils/getObjectColor";
@@ -14,13 +15,14 @@ export default function CollectionContent({ collection, objects }: CollectionCon
 
   const objectsPerPage = 10;
 
-  const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState<SortBy>("newest");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
 
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [sortBy, sortDirection]);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const currentPage = Number(searchParams.get("page")) || 1;
 
   const sortedObjects = useMemo(() => {
     const sorted = [...objects].sort((a, b) => {
@@ -36,9 +38,24 @@ export default function CollectionContent({ collection, objects }: CollectionCon
     return sortDirection === "asc" ? sorted : sorted.reverse();
   }, [objects, sortBy, sortDirection]);
 
+
   const totalPages = Math.ceil(sortedObjects.length / objectsPerPage) || 1;
   const startIndex = (currentPage - 1) * objectsPerPage;
   const currentObjects = sortedObjects.slice(startIndex, startIndex + objectsPerPage);
+
+  const changePage = (page: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (page === 1) {
+      params.delete("page");
+    } else {
+      params.set("page", String(page));
+    }
+
+    const query = params.toString();
+
+    router.push(query ? `${pathname}?${query}` : pathname);
+  };
 
   const handleSortByClick = (value: SortBy) => {
     setSortBy(value);
@@ -171,7 +188,7 @@ export default function CollectionContent({ collection, objects }: CollectionCon
           <button
             type="button"
             disabled={currentPage === 1}
-            onClick={() => setCurrentPage((page) => page - 1)}
+            onClick={() => changePage(currentPage - 1)}
             className={`transition-opacity ${currentPage === 1 ? "opacity-20 cursor-not-allowed" : "hover:scale-110"}`}
           >
             ←
@@ -188,7 +205,7 @@ export default function CollectionContent({ collection, objects }: CollectionCon
           <button
             type="button"
             disabled={currentPage === totalPages}
-            onClick={() => setCurrentPage((page) => page + 1)}
+            onClick={() => changePage(currentPage + 1)}
             className={`transition-opacity ${currentPage === totalPages ? "opacity-20 cursor-not-allowed" : "hover:scale-110"}`}
           >
             →
