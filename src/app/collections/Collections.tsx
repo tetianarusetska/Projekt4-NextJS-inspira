@@ -10,7 +10,7 @@ export default function Collections({ counts }: CollectionsProps) {
 
   const totalObjects = Object.values(counts).reduce((sum, n) => sum + n, 0);
   const desktopCollections = Object.values(collections).slice(0, 10);
-  const totalCollections = desktopCollections.length;
+  const totalCollections = Object.keys(collections).length;
 
   const desktopContainerHeight =
     Math.max(...desktopCollections.map((col) => col.top)) + CARD_HEIGHT + 40;

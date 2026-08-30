@@ -2,7 +2,7 @@ import "dotenv/config";
 import { prisma } from "./prisma.client";
 import {
     books, vinyl, tracks, magazines, artworks,
-    museums, galleries, photographs, ideas, quotes,
+    museums, galleries, images, photographs, ideas, quotes,
 } from "./seedData";
 
 const USER_EMAIL = process.env.SEED_USER_EMAIL;
@@ -42,6 +42,7 @@ async function seed() {
     await prisma.artwork.createMany({ data: withUser(artworks, user.id) });
     await prisma.museum.createMany({ data: withUser(museums, user.id) });
     await prisma.gallery.createMany({ data: withUser(galleries, user.id) });
+    await prisma.image.createMany({ data: withUser(images, user.id) });
     await prisma.photograph.createMany({ data: withUser(photographs, user.id) });
     await prisma.idea.createMany({ data: withUser(ideas, user.id) });
     await prisma.quote.createMany({ data: withUser(quotes, user.id) });
