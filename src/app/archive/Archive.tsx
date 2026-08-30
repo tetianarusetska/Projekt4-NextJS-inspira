@@ -6,6 +6,7 @@ import Collection from "./Collection";
 import Details from "./Details";
 import Media from "./Media";
 import Product from "./Product";
+import { ArchiveProps } from "../types/ArchiveProps";
 
 const steps = [
     { id: "collection", label: "01", fullLabel: "01  ·  SAMMLUNG" },
@@ -14,7 +15,7 @@ const steps = [
     { id: "product", label: "04", fullLabel: "04  ·  VORSCHAU" },
 ];
 
-export default function Archive() {
+export default function Archive({ counts }: ArchiveProps) {
 
     const [selectedCategory, setSelectedCategory] = useState("bucher");
     const [activeStep, setActiveStep] = useState("collection");
@@ -90,9 +91,10 @@ export default function Archive() {
                         selectedCategory={selectedCategory}
                         values={formValues}
                         image={image}
+                        counts={counts}
                     />
                 )}
-
+                
             </main>
         </div>
     );

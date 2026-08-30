@@ -2,6 +2,8 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 
+import { getObjectCounts } from "../api/objects/getObjectCounts";
+
 import StudioHeader from "../studio/header/StudioHeader";
 import StudioBackground from "../layoutDesign/StudioBackground";
 import Archive from "./Archive";
@@ -16,11 +18,13 @@ export default async function ArchivePage() {
         redirect("/login");
     }
 
+    const counts = await getObjectCounts(session.user.id);
+
     return (
         <>
             <StudioHeader />
             <StudioBackground />
-            <Archive />
+            <Archive counts={counts} />
             <Footer />
         </>
     );

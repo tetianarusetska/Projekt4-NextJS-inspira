@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { collections } from "../data/Collections";
 import { ProductProps } from "../types/ProductProps";
 
-export default function Product({ selectedCategory, values, image }: ProductProps) {
+export default function Product({ selectedCategory, values, image, counts }: ProductProps) {
 
     const router = useRouter();
 
@@ -18,6 +18,9 @@ export default function Product({ selectedCategory, values, image }: ProductProp
     if (!collection) {
         return null;
     }
+
+    const currentCount = counts[selectedCategory] ?? 0;
+    const predictedNumber = currentCount + 1;
 
     const getDetailValue = (id: string) => {
 
@@ -92,7 +95,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
                                 {collection.name}
                             </div>
                             <div className="grotesk-xbold text-sm text-neutral-500 mt-1 absolute left-3 top-16 text-[24px] uppercase">
-                                {collection.count}
+                                {currentCount} OBJEKTE
                             </div>
 
                         </div>
@@ -147,8 +150,7 @@ export default function Product({ selectedCategory, values, image }: ProductProp
             <div className="mt-10 w-210 h-50 border-[#808080] border-2 flex flex-row justify-between items-center">
                 <div>
                     <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mt-9 ml-7">Wird gespeichert als</p>
-                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mb-5 ml-7">N°{objectId ?? "—"} — {collection.code}</p>
-                </div>
+                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mb-5 ml-7">N°{objectId ?? predictedNumber} — {collection.code}</p>                </div>
                 <div>
                     <button
                         onClick={handleSave}
