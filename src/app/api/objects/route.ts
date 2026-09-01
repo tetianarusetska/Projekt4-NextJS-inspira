@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     } catch (error) {
 
         return NextResponse.json({ error: (error as Error).message }, { status: 400 });
-        
+
     }
 }
 
@@ -162,7 +162,28 @@ export async function PATCH(request: Request) {
         );
     }
 
-    
+    const input = data as Record<string, unknown>;
+
+    if ("year" in input) {
+        if (input.year === "" || input.year === null) {
+            return NextResponse.json(
+                { error: "year ist erforderlich" },
+                { status: 400 }
+            );
+        }
+
+        const year = Number(input.year);
+
+        if (!Number.isInteger(year)) {
+            return NextResponse.json(
+                { error: "year muss eine ganze Zahl sein" },
+                { status: 400 }
+            );
+        }
+
+        input.year = year;
+    }
+
     const { userId: _ignoredUserId, id: _ignoredId, ...safeData } = data as Record<string, unknown>;
 
     try {
