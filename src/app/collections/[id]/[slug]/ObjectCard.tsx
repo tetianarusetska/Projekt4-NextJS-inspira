@@ -19,7 +19,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
     } = useEditableFields(object, editableFieldIds);
 
     const { isDeleting, isUpdating, handleDelete, handleUpdate } =
-        useObjectMutations(collection.id, object.id);
+        useObjectMutations(collection.id, object.id, collection.isCustom ?? false);
 
     const getValue = (id: string) => getFieldValue(object, id);
 

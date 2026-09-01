@@ -34,10 +34,6 @@ export async function getObjects(userId: string, collectionId: string) {
         case "quotes":
             return prisma.quote.findMany({ where: { userId }, orderBy: { createdAt: "asc" } });
 
-        case "newCollection":
-            return prisma.newCollection.findMany({ where: { userId }, orderBy: { createdAt: "asc" } });
-
-
         default:
             throw new Error("Unbekannte Sammlung");
     }

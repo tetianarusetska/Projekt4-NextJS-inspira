@@ -13,4 +13,5 @@ export interface Collection {
     top: number;
 
     details: CollectionDetail[];
+    isCustom?: boolean;
 }

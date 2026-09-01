@@ -1,5 +1,3 @@
-
-
 export function getFieldValue(object: Record<string, unknown>, id: string) {
     const value = object[id];
 

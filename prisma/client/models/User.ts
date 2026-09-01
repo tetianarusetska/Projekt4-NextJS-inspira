@@ -210,7 +210,7 @@ export type UserWhereInput = {
   photographs?: Prisma.PhotographListRelationFilter
   ideas?: Prisma.IdeaListRelationFilter
   quotes?: Prisma.QuoteListRelationFilter
-  news?: Prisma.NewCollectionListRelationFilter
+  customCollections?: Prisma.CustomCollectionListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -233,7 +233,7 @@ export type UserOrderByWithRelationInput = {
   photographs?: Prisma.PhotographOrderByRelationAggregateInput
   ideas?: Prisma.IdeaOrderByRelationAggregateInput
   quotes?: Prisma.QuoteOrderByRelationAggregateInput
-  news?: Prisma.NewCollectionOrderByRelationAggregateInput
+  customCollections?: Prisma.CustomCollectionOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -259,7 +259,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   photographs?: Prisma.PhotographListRelationFilter
   ideas?: Prisma.IdeaListRelationFilter
   quotes?: Prisma.QuoteListRelationFilter
-  news?: Prisma.NewCollectionListRelationFilter
+  customCollections?: Prisma.CustomCollectionListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -308,7 +308,7 @@ export type UserCreateInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -331,7 +331,7 @@ export type UserUncheckedCreateInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -354,7 +354,7 @@ export type UserUpdateInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -377,7 +377,7 @@ export type UserUncheckedUpdateInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -629,18 +629,18 @@ export type UserUpdateOneRequiredWithoutQuotesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutQuotesInput, Prisma.UserUpdateWithoutQuotesInput>, Prisma.UserUncheckedUpdateWithoutQuotesInput>
 }
 
-export type UserCreateNestedOneWithoutNewsInput = {
-  create?: Prisma.XOR<Prisma.UserCreateWithoutNewsInput, Prisma.UserUncheckedCreateWithoutNewsInput>
-  connectOrCreate?: Prisma.UserCreateOrConnectWithoutNewsInput
+export type UserCreateNestedOneWithoutCustomCollectionsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCustomCollectionsInput, Prisma.UserUncheckedCreateWithoutCustomCollectionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCustomCollectionsInput
   connect?: Prisma.UserWhereUniqueInput
 }
 
-export type UserUpdateOneRequiredWithoutNewsNestedInput = {
-  create?: Prisma.XOR<Prisma.UserCreateWithoutNewsInput, Prisma.UserUncheckedCreateWithoutNewsInput>
-  connectOrCreate?: Prisma.UserCreateOrConnectWithoutNewsInput
-  upsert?: Prisma.UserUpsertWithoutNewsInput
+export type UserUpdateOneRequiredWithoutCustomCollectionsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCustomCollectionsInput, Prisma.UserUncheckedCreateWithoutCustomCollectionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCustomCollectionsInput
+  upsert?: Prisma.UserUpsertWithoutCustomCollectionsInput
   connect?: Prisma.UserWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutNewsInput, Prisma.UserUpdateWithoutNewsInput>, Prisma.UserUncheckedUpdateWithoutNewsInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCustomCollectionsInput, Prisma.UserUpdateWithoutCustomCollectionsInput>, Prisma.UserUncheckedUpdateWithoutCustomCollectionsInput>
 }
 
 export type UserCreateWithoutSessionsInput = {
@@ -662,7 +662,7 @@ export type UserCreateWithoutSessionsInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -684,7 +684,7 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -722,7 +722,7 @@ export type UserUpdateWithoutSessionsInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -744,7 +744,7 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutAccountsInput = {
@@ -766,7 +766,7 @@ export type UserCreateWithoutAccountsInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutAccountsInput = {
@@ -788,7 +788,7 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutAccountsInput = {
@@ -826,7 +826,7 @@ export type UserUpdateWithoutAccountsInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -848,7 +848,7 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutBooksInput = {
@@ -870,7 +870,7 @@ export type UserCreateWithoutBooksInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutBooksInput = {
@@ -892,7 +892,7 @@ export type UserUncheckedCreateWithoutBooksInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutBooksInput = {
@@ -930,7 +930,7 @@ export type UserUpdateWithoutBooksInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBooksInput = {
@@ -952,7 +952,7 @@ export type UserUncheckedUpdateWithoutBooksInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMusicInput = {
@@ -974,7 +974,7 @@ export type UserCreateWithoutMusicInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMusicInput = {
@@ -996,7 +996,7 @@ export type UserUncheckedCreateWithoutMusicInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMusicInput = {
@@ -1034,7 +1034,7 @@ export type UserUpdateWithoutMusicInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMusicInput = {
@@ -1056,7 +1056,7 @@ export type UserUncheckedUpdateWithoutMusicInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMagazinesInput = {
@@ -1078,7 +1078,7 @@ export type UserCreateWithoutMagazinesInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMagazinesInput = {
@@ -1100,7 +1100,7 @@ export type UserUncheckedCreateWithoutMagazinesInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMagazinesInput = {
@@ -1138,7 +1138,7 @@ export type UserUpdateWithoutMagazinesInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMagazinesInput = {
@@ -1160,7 +1160,7 @@ export type UserUncheckedUpdateWithoutMagazinesInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutArtworksInput = {
@@ -1182,7 +1182,7 @@ export type UserCreateWithoutArtworksInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutArtworksInput = {
@@ -1204,7 +1204,7 @@ export type UserUncheckedCreateWithoutArtworksInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutArtworksInput = {
@@ -1242,7 +1242,7 @@ export type UserUpdateWithoutArtworksInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutArtworksInput = {
@@ -1264,7 +1264,7 @@ export type UserUncheckedUpdateWithoutArtworksInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMuseumsInput = {
@@ -1286,7 +1286,7 @@ export type UserCreateWithoutMuseumsInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMuseumsInput = {
@@ -1308,7 +1308,7 @@ export type UserUncheckedCreateWithoutMuseumsInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMuseumsInput = {
@@ -1346,7 +1346,7 @@ export type UserUpdateWithoutMuseumsInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMuseumsInput = {
@@ -1368,7 +1368,7 @@ export type UserUncheckedUpdateWithoutMuseumsInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutGalleriesInput = {
@@ -1390,7 +1390,7 @@ export type UserCreateWithoutGalleriesInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutGalleriesInput = {
@@ -1412,7 +1412,7 @@ export type UserUncheckedCreateWithoutGalleriesInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutGalleriesInput = {
@@ -1450,7 +1450,7 @@ export type UserUpdateWithoutGalleriesInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutGalleriesInput = {
@@ -1472,7 +1472,7 @@ export type UserUncheckedUpdateWithoutGalleriesInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutImagesInput = {
@@ -1494,7 +1494,7 @@ export type UserCreateWithoutImagesInput = {
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutImagesInput = {
@@ -1516,7 +1516,7 @@ export type UserUncheckedCreateWithoutImagesInput = {
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutImagesInput = {
@@ -1554,7 +1554,7 @@ export type UserUpdateWithoutImagesInput = {
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutImagesInput = {
@@ -1576,7 +1576,7 @@ export type UserUncheckedUpdateWithoutImagesInput = {
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutPhotographsInput = {
@@ -1598,7 +1598,7 @@ export type UserCreateWithoutPhotographsInput = {
   images?: Prisma.ImageCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPhotographsInput = {
@@ -1620,7 +1620,7 @@ export type UserUncheckedCreateWithoutPhotographsInput = {
   images?: Prisma.ImageUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutPhotographsInput = {
@@ -1658,7 +1658,7 @@ export type UserUpdateWithoutPhotographsInput = {
   images?: Prisma.ImageUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPhotographsInput = {
@@ -1680,7 +1680,7 @@ export type UserUncheckedUpdateWithoutPhotographsInput = {
   images?: Prisma.ImageUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutIdeasInput = {
@@ -1702,7 +1702,7 @@ export type UserCreateWithoutIdeasInput = {
   images?: Prisma.ImageCreateNestedManyWithoutUserInput
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutIdeasInput = {
@@ -1724,7 +1724,7 @@ export type UserUncheckedCreateWithoutIdeasInput = {
   images?: Prisma.ImageUncheckedCreateNestedManyWithoutUserInput
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutIdeasInput = {
@@ -1762,7 +1762,7 @@ export type UserUpdateWithoutIdeasInput = {
   images?: Prisma.ImageUpdateManyWithoutUserNestedInput
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutIdeasInput = {
@@ -1784,7 +1784,7 @@ export type UserUncheckedUpdateWithoutIdeasInput = {
   images?: Prisma.ImageUncheckedUpdateManyWithoutUserNestedInput
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   quotes?: Prisma.QuoteUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutQuotesInput = {
@@ -1806,7 +1806,7 @@ export type UserCreateWithoutQuotesInput = {
   images?: Prisma.ImageCreateNestedManyWithoutUserInput
   photographs?: Prisma.PhotographCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutQuotesInput = {
@@ -1828,7 +1828,7 @@ export type UserUncheckedCreateWithoutQuotesInput = {
   images?: Prisma.ImageUncheckedCreateNestedManyWithoutUserInput
   photographs?: Prisma.PhotographUncheckedCreateNestedManyWithoutUserInput
   ideas?: Prisma.IdeaUncheckedCreateNestedManyWithoutUserInput
-  news?: Prisma.NewCollectionUncheckedCreateNestedManyWithoutUserInput
+  customCollections?: Prisma.CustomCollectionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutQuotesInput = {
@@ -1866,7 +1866,7 @@ export type UserUpdateWithoutQuotesInput = {
   images?: Prisma.ImageUpdateManyWithoutUserNestedInput
   photographs?: Prisma.PhotographUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutQuotesInput = {
@@ -1888,10 +1888,10 @@ export type UserUncheckedUpdateWithoutQuotesInput = {
   images?: Prisma.ImageUncheckedUpdateManyWithoutUserNestedInput
   photographs?: Prisma.PhotographUncheckedUpdateManyWithoutUserNestedInput
   ideas?: Prisma.IdeaUncheckedUpdateManyWithoutUserNestedInput
-  news?: Prisma.NewCollectionUncheckedUpdateManyWithoutUserNestedInput
+  customCollections?: Prisma.CustomCollectionUncheckedUpdateManyWithoutUserNestedInput
 }
 
-export type UserCreateWithoutNewsInput = {
+export type UserCreateWithoutCustomCollectionsInput = {
   id?: string
   name?: string | null
   email: string
@@ -1913,7 +1913,7 @@ export type UserCreateWithoutNewsInput = {
   quotes?: Prisma.QuoteCreateNestedManyWithoutUserInput
 }
 
-export type UserUncheckedCreateWithoutNewsInput = {
+export type UserUncheckedCreateWithoutCustomCollectionsInput = {
   id?: string
   name?: string | null
   email: string
@@ -1935,23 +1935,23 @@ export type UserUncheckedCreateWithoutNewsInput = {
   quotes?: Prisma.QuoteUncheckedCreateNestedManyWithoutUserInput
 }
 
-export type UserCreateOrConnectWithoutNewsInput = {
+export type UserCreateOrConnectWithoutCustomCollectionsInput = {
   where: Prisma.UserWhereUniqueInput
-  create: Prisma.XOR<Prisma.UserCreateWithoutNewsInput, Prisma.UserUncheckedCreateWithoutNewsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCustomCollectionsInput, Prisma.UserUncheckedCreateWithoutCustomCollectionsInput>
 }
 
-export type UserUpsertWithoutNewsInput = {
-  update: Prisma.XOR<Prisma.UserUpdateWithoutNewsInput, Prisma.UserUncheckedUpdateWithoutNewsInput>
-  create: Prisma.XOR<Prisma.UserCreateWithoutNewsInput, Prisma.UserUncheckedCreateWithoutNewsInput>
+export type UserUpsertWithoutCustomCollectionsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCustomCollectionsInput, Prisma.UserUncheckedUpdateWithoutCustomCollectionsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCustomCollectionsInput, Prisma.UserUncheckedCreateWithoutCustomCollectionsInput>
   where?: Prisma.UserWhereInput
 }
 
-export type UserUpdateToOneWithWhereWithoutNewsInput = {
+export type UserUpdateToOneWithWhereWithoutCustomCollectionsInput = {
   where?: Prisma.UserWhereInput
-  data: Prisma.XOR<Prisma.UserUpdateWithoutNewsInput, Prisma.UserUncheckedUpdateWithoutNewsInput>
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCustomCollectionsInput, Prisma.UserUncheckedUpdateWithoutCustomCollectionsInput>
 }
 
-export type UserUpdateWithoutNewsInput = {
+export type UserUpdateWithoutCustomCollectionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1973,7 +1973,7 @@ export type UserUpdateWithoutNewsInput = {
   quotes?: Prisma.QuoteUpdateManyWithoutUserNestedInput
 }
 
-export type UserUncheckedUpdateWithoutNewsInput = {
+export type UserUncheckedUpdateWithoutCustomCollectionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
@@ -2013,7 +2013,7 @@ export type UserCountOutputType = {
   photographs: number
   ideas: number
   quotes: number
-  news: number
+  customCollections: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2029,7 +2029,7 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   photographs?: boolean | UserCountOutputTypeCountPhotographsArgs
   ideas?: boolean | UserCountOutputTypeCountIdeasArgs
   quotes?: boolean | UserCountOutputTypeCountQuotesArgs
-  news?: boolean | UserCountOutputTypeCountNewsArgs
+  customCollections?: boolean | UserCountOutputTypeCountCustomCollectionsArgs
 }
 
 /**
@@ -2129,8 +2129,8 @@ export type UserCountOutputTypeCountQuotesArgs<ExtArgs extends runtime.Types.Ext
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountNewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NewCollectionWhereInput
+export type UserCountOutputTypeCountCustomCollectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CustomCollectionWhereInput
 }
 
 
@@ -2154,7 +2154,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   photographs?: boolean | Prisma.User$photographsArgs<ExtArgs>
   ideas?: boolean | Prisma.User$ideasArgs<ExtArgs>
   quotes?: boolean | Prisma.User$quotesArgs<ExtArgs>
-  news?: boolean | Prisma.User$newsArgs<ExtArgs>
+  customCollections?: boolean | Prisma.User$customCollectionsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -2202,7 +2202,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   photographs?: boolean | Prisma.User$photographsArgs<ExtArgs>
   ideas?: boolean | Prisma.User$ideasArgs<ExtArgs>
   quotes?: boolean | Prisma.User$quotesArgs<ExtArgs>
-  news?: boolean | Prisma.User$newsArgs<ExtArgs>
+  customCollections?: boolean | Prisma.User$customCollectionsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -2223,7 +2223,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     photographs: Prisma.$PhotographPayload<ExtArgs>[]
     ideas: Prisma.$IdeaPayload<ExtArgs>[]
     quotes: Prisma.$QuotePayload<ExtArgs>[]
-    news: Prisma.$NewCollectionPayload<ExtArgs>[]
+    customCollections: Prisma.$CustomCollectionPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2639,7 +2639,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   photographs<T extends Prisma.User$photographsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$photographsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PhotographPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   ideas<T extends Prisma.User$ideasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ideasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$IdeaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   quotes<T extends Prisma.User$quotesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$quotesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$QuotePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  news<T extends Prisma.User$newsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$newsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NewCollectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  customCollections<T extends Prisma.User$customCollectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$customCollectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CustomCollectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3357,27 +3357,27 @@ export type User$quotesArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 }
 
 /**
- * User.news
+ * User.customCollections
  */
-export type User$newsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$customCollectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NewCollection
+   * Select specific fields to fetch from the CustomCollection
    */
-  select?: Prisma.NewCollectionSelect<ExtArgs> | null
+  select?: Prisma.CustomCollectionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NewCollection
+   * Omit specific fields from the CustomCollection
    */
-  omit?: Prisma.NewCollectionOmit<ExtArgs> | null
+  omit?: Prisma.CustomCollectionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NewCollectionInclude<ExtArgs> | null
-  where?: Prisma.NewCollectionWhereInput
-  orderBy?: Prisma.NewCollectionOrderByWithRelationInput | Prisma.NewCollectionOrderByWithRelationInput[]
-  cursor?: Prisma.NewCollectionWhereUniqueInput
+  include?: Prisma.CustomCollectionInclude<ExtArgs> | null
+  where?: Prisma.CustomCollectionWhereInput
+  orderBy?: Prisma.CustomCollectionOrderByWithRelationInput | Prisma.CustomCollectionOrderByWithRelationInput[]
+  cursor?: Prisma.CustomCollectionWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.NewCollectionScalarFieldEnum | Prisma.NewCollectionScalarFieldEnum[]
+  distinct?: Prisma.CustomCollectionScalarFieldEnum | Prisma.CustomCollectionScalarFieldEnum[]
 }
 
 /**

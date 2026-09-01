@@ -10,8 +10,7 @@ export const collectionModels = {
     images: prisma.image,
     photographs: prisma.photograph,
     ideas: prisma.idea,
-    quotes: prisma.quote,
-    newCollection: prisma.newCollection,
+    quotes: prisma.quote
 } as const;
 
 export type CollectionId = keyof typeof collectionModels;

@@ -149,18 +149,6 @@ export async function saveObject(
                 },
             });
 
-
-        case "newCollection":
-            return prisma.newCollection.create({
-                data: {
-                    userId,
-                    title: values.title,
-                    description: values.description,
-                    reason: values.reason,
-                    imageUrl,
-                },
-            });
-
         default:
             throw new Error("Unbekannte Sammlung");
     }

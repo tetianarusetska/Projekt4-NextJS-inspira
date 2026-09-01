@@ -541,8 +541,8 @@ export const collections: Record<string, Collection> = {
         ],
     },
 
-    newCollection: {
-        id: "newCollection",
+    customCollection: {
+        id: "customCollection",
         number: "N°11",
         code: "Neue",
         name: "NEUE",
@@ -570,8 +570,9 @@ export const collections: Record<string, Collection> = {
                 id: "reason",
                 label: "N°03, WARUM",
                 type: "textarea",
-                placeholder: "Warum möchte ich diese Sammlung anlegen?",
-            },
-        ],
-    },
+                placeholder:
+                    "Warum möchte ich diese Sammlung anlegen?",
+            }
+        ]
+    }
 };

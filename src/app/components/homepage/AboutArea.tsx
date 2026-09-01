@@ -1,5 +1,3 @@
-
-
 export default function AboutArea() {
   return (
     <section id="about" className="grid grid-cols-12 w-full border-t border-black bg-[#EDEDED]">

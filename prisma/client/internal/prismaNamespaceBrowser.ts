@@ -65,7 +65,8 @@ export const ModelName = {
   Photograph: 'Photograph',
   Idea: 'Idea',
   Quote: 'Quote',
-  NewCollection: 'NewCollection'
+  CustomCollection: 'CustomCollection',
+  CustomCollectionObject: 'CustomCollectionObject'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -304,7 +305,7 @@ export const QuoteScalarFieldEnum = {
 export type QuoteScalarFieldEnum = (typeof QuoteScalarFieldEnum)[keyof typeof QuoteScalarFieldEnum]
 
 
-export const NewCollectionScalarFieldEnum = {
+export const CustomCollectionScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
   title: 'title',
@@ -314,7 +315,20 @@ export const NewCollectionScalarFieldEnum = {
   createdAt: 'createdAt'
 } as const
 
-export type NewCollectionScalarFieldEnum = (typeof NewCollectionScalarFieldEnum)[keyof typeof NewCollectionScalarFieldEnum]
+export type CustomCollectionScalarFieldEnum = (typeof CustomCollectionScalarFieldEnum)[keyof typeof CustomCollectionScalarFieldEnum]
+
+
+export const CustomCollectionObjectScalarFieldEnum = {
+  id: 'id',
+  collectionId: 'collectionId',
+  title: 'title',
+  description: 'description',
+  note: 'note',
+  imageUrl: 'imageUrl',
+  createdAt: 'createdAt'
+} as const
+
+export type CustomCollectionObjectScalarFieldEnum = (typeof CustomCollectionObjectScalarFieldEnum)[keyof typeof CustomCollectionObjectScalarFieldEnum]
 
 
 export const SortOrder = {

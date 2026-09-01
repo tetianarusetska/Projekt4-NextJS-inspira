@@ -411,7 +411,8 @@ export const ModelName = {
   Photograph: 'Photograph',
   Idea: 'Idea',
   Quote: 'Quote',
-  NewCollection: 'NewCollection'
+  CustomCollection: 'CustomCollection',
+  CustomCollectionObject: 'CustomCollectionObject'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -427,7 +428,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "book" | "music" | "magazine" | "artwork" | "museum" | "gallery" | "image" | "photograph" | "idea" | "quote" | "newCollection"
+    modelProps: "user" | "session" | "account" | "verification" | "book" | "music" | "magazine" | "artwork" | "museum" | "gallery" | "image" | "photograph" | "idea" | "quote" | "customCollection" | "customCollectionObject"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1467,77 +1468,151 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    NewCollection: {
-      payload: Prisma.$NewCollectionPayload<ExtArgs>
-      fields: Prisma.NewCollectionFieldRefs
+    CustomCollection: {
+      payload: Prisma.$CustomCollectionPayload<ExtArgs>
+      fields: Prisma.CustomCollectionFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.NewCollectionFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload> | null
+          args: Prisma.CustomCollectionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.NewCollectionFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>
+          args: Prisma.CustomCollectionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>
         }
         findFirst: {
-          args: Prisma.NewCollectionFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload> | null
+          args: Prisma.CustomCollectionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.NewCollectionFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>
+          args: Prisma.CustomCollectionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>
         }
         findMany: {
-          args: Prisma.NewCollectionFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>[]
+          args: Prisma.CustomCollectionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>[]
         }
         create: {
-          args: Prisma.NewCollectionCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>
+          args: Prisma.CustomCollectionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>
         }
         createMany: {
-          args: Prisma.NewCollectionCreateManyArgs<ExtArgs>
+          args: Prisma.CustomCollectionCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.NewCollectionCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>[]
+          args: Prisma.CustomCollectionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>[]
         }
         delete: {
-          args: Prisma.NewCollectionDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>
+          args: Prisma.CustomCollectionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>
         }
         update: {
-          args: Prisma.NewCollectionUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>
+          args: Prisma.CustomCollectionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>
         }
         deleteMany: {
-          args: Prisma.NewCollectionDeleteManyArgs<ExtArgs>
+          args: Prisma.CustomCollectionDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.NewCollectionUpdateManyArgs<ExtArgs>
+          args: Prisma.CustomCollectionUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.NewCollectionUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>[]
+          args: Prisma.CustomCollectionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>[]
         }
         upsert: {
-          args: Prisma.NewCollectionUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$NewCollectionPayload>
+          args: Prisma.CustomCollectionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionPayload>
         }
         aggregate: {
-          args: Prisma.NewCollectionAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateNewCollection>
+          args: Prisma.CustomCollectionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCustomCollection>
         }
         groupBy: {
-          args: Prisma.NewCollectionGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.NewCollectionGroupByOutputType>[]
+          args: Prisma.CustomCollectionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CustomCollectionGroupByOutputType>[]
         }
         count: {
-          args: Prisma.NewCollectionCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.NewCollectionCountAggregateOutputType> | number
+          args: Prisma.CustomCollectionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CustomCollectionCountAggregateOutputType> | number
+        }
+      }
+    }
+    CustomCollectionObject: {
+      payload: Prisma.$CustomCollectionObjectPayload<ExtArgs>
+      fields: Prisma.CustomCollectionObjectFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CustomCollectionObjectFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CustomCollectionObjectFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>
+        }
+        findFirst: {
+          args: Prisma.CustomCollectionObjectFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CustomCollectionObjectFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>
+        }
+        findMany: {
+          args: Prisma.CustomCollectionObjectFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>[]
+        }
+        create: {
+          args: Prisma.CustomCollectionObjectCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>
+        }
+        createMany: {
+          args: Prisma.CustomCollectionObjectCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CustomCollectionObjectCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>[]
+        }
+        delete: {
+          args: Prisma.CustomCollectionObjectDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>
+        }
+        update: {
+          args: Prisma.CustomCollectionObjectUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>
+        }
+        deleteMany: {
+          args: Prisma.CustomCollectionObjectDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CustomCollectionObjectUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CustomCollectionObjectUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>[]
+        }
+        upsert: {
+          args: Prisma.CustomCollectionObjectUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomCollectionObjectPayload>
+        }
+        aggregate: {
+          args: Prisma.CustomCollectionObjectAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCustomCollectionObject>
+        }
+        groupBy: {
+          args: Prisma.CustomCollectionObjectGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CustomCollectionObjectGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CustomCollectionObjectCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CustomCollectionObjectCountAggregateOutputType> | number
         }
       }
     }
@@ -1800,7 +1875,7 @@ export const QuoteScalarFieldEnum = {
 export type QuoteScalarFieldEnum = (typeof QuoteScalarFieldEnum)[keyof typeof QuoteScalarFieldEnum]
 
 
-export const NewCollectionScalarFieldEnum = {
+export const CustomCollectionScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
   title: 'title',
@@ -1810,7 +1885,20 @@ export const NewCollectionScalarFieldEnum = {
   createdAt: 'createdAt'
 } as const
 
-export type NewCollectionScalarFieldEnum = (typeof NewCollectionScalarFieldEnum)[keyof typeof NewCollectionScalarFieldEnum]
+export type CustomCollectionScalarFieldEnum = (typeof CustomCollectionScalarFieldEnum)[keyof typeof CustomCollectionScalarFieldEnum]
+
+
+export const CustomCollectionObjectScalarFieldEnum = {
+  id: 'id',
+  collectionId: 'collectionId',
+  title: 'title',
+  description: 'description',
+  note: 'note',
+  imageUrl: 'imageUrl',
+  createdAt: 'createdAt'
+} as const
+
+export type CustomCollectionObjectScalarFieldEnum = (typeof CustomCollectionObjectScalarFieldEnum)[keyof typeof CustomCollectionObjectScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -2070,7 +2158,8 @@ export type GlobalOmitConfig = {
   photograph?: Prisma.PhotographOmit
   idea?: Prisma.IdeaOmit
   quote?: Prisma.QuoteOmit
-  newCollection?: Prisma.NewCollectionOmit
+  customCollection?: Prisma.CustomCollectionOmit
+  customCollectionObject?: Prisma.CustomCollectionObjectOmit
 }
 
 /* Types for Logging */

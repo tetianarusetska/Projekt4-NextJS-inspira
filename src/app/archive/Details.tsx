@@ -1,15 +1,42 @@
 "use client";
 
 import { collections } from "../data/Collections";
+import { CollectionDetail } from "../types/CollectionDetail";
 import { DetailsProps } from "../types/DetailsProps";
 
-export default function Details({ selectedCategory, formValues, setFormValues }: DetailsProps) {
+const customObjectDetails: CollectionDetail[] = [
+    {
+        id: "title",
+        label: "N°01, TITEL",
+        type: "text",
+        placeholder: "Titel des Objekts",
+    },
+    {
+        id: "description",
+        label: "N°02, BESCHREIBUNG",
+        type: "textarea",
+        placeholder: "Beschreibe das Objekt...",
+    },
+    {
+        id: "note",
+        label: "N°03, NOTIZ",
+        type: "textarea",
+        placeholder: "Deine Notiz dazu...",
+    },
+];
 
-    const category = Object.values(collections).find(
-        (item) => item.id === selectedCategory
-    );
+export default function Details({ selectedCategory, formValues, setFormValues, customCollections }: DetailsProps) {
 
-    if (!category) {
+    const staticCategory = Object.values(collections).find((item) => item.id === selectedCategory);
+    const isExistingCustomCollection = customCollections.some((item) => item.id === selectedCategory);
+
+    const details = staticCategory
+        ? staticCategory.details
+        : isExistingCustomCollection
+            ? customObjectDetails
+            : null;
+
+    if (!details) {
         return null;
     }
 
@@ -28,7 +55,7 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
 
             {/* ================= DYNAMIC DETAILS FORM ================= */}
             <form className="mt-12 mx-auto w-full max-w-[836px] border-2 border-[#808080] bg-[#EDEDED]">
-                {category.details.map((detail, index) => (
+                {details.map((detail, index) => (
                     <div key={detail.id} className="w-full">
                         <div
                             className={`px-6 md:px-[25px] flex flex-col transition-colors duration-300 hover:bg-neutral-100/50
@@ -39,7 +66,6 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
                                         : "pt-10 pb-8 md:pt-12 md:pb-10"
                                 }`}
                         >
-                            {/* Input Field Label */}
                             <label
                                 htmlFor={detail.id}
                                 className="grotesk-xbold block text-2xl md:text-[36px] leading-none tracking-wider text-black uppercase"
@@ -47,7 +73,6 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
                                 {detail.label}
                             </label>
 
-                            {/* Dropdown Select Element */}
                             {detail.type === "select" ? (
                                 <div className="relative mt-6 w-full">
                                     <select
@@ -75,7 +100,6 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
                                     </div>
                                 </div>
                             ) : detail.type === "textarea" ? (
-                                /* Multi-line Text Area Input */
                                 <textarea
                                     id={detail.id}
                                     placeholder={detail.placeholder}
@@ -99,7 +123,6 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
                                         }`}
                                 />
                             ) : (
-                                /* Standard Single-line Input Element */
                                 <input
                                     type={detail.type}
                                     id={detail.id}
@@ -120,8 +143,7 @@ export default function Details({ selectedCategory, formValues, setFormValues }:
                             )}
                         </div>
 
-                        {/* Flat Swiss Grid Row Divider Line */}
-                        {index < category.details.length - 1 && (
+                        {index < details.length - 1 && (
                             <div className="h-[2px] w-full bg-[#808080]" />
                         )}
                     </div>

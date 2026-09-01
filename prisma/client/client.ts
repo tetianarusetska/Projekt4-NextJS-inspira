@@ -112,7 +112,12 @@ export type Idea = Prisma.IdeaModel
  */
 export type Quote = Prisma.QuoteModel
 /**
- * Model NewCollection
+ * Model CustomCollection
  * 
  */
-export type NewCollection = Prisma.NewCollectionModel
+export type CustomCollection = Prisma.CustomCollectionModel
+/**
+ * Model CustomCollectionObject
+ * 
+ */
+export type CustomCollectionObject = Prisma.CustomCollectionObjectModel

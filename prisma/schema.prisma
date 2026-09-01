@@ -30,7 +30,7 @@ model User {
   photographs     Photograph[]
   ideas           Idea[]
   quotes          Quote[]
-  news            NewCollection[]
+  customCollections CustomCollection[]
 }
 
 model Session {
@@ -238,15 +238,30 @@ model Quote {
   createdAt       DateTime @default(now())
 }
 
-model NewCollection {
-  id              Int           @id @default(autoincrement())
+model CustomCollection {
+  id              String          @id @default(cuid())
   userId          String
-  user            User          @relation(fields: [userId], references: [id])
-  
-  title            String
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  title           String
   description     String
   reason          String
-
   imageUrl        String?
+
+  createdAt       DateTime @default(now())
+
+  objects         CustomCollectionObject[]
+}
+
+model CustomCollectionObject {
+  id              Int              @id @default(autoincrement())
+  collectionId    String
+  collection      CustomCollection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+
+  title           String
+  description     String?
+  note            String?
+  imageUrl        String?
+
   createdAt       DateTime @default(now())
 }

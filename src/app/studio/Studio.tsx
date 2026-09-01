@@ -8,7 +8,8 @@ export default function Studio({ user, counts }: PersonalAreaProps) {
     
     const displayName = user.name?.trim() || user.email;
     const totalObjects = Object.values(counts).reduce((sum, n) => sum + n, 0);
-    const totalCollections = Object.keys(collections).slice(0, 10).length;
+    const totalCollections = Object.values(collections).filter((collection) => collection.id !== "customCollection").length;
+
 
     return (
         <div className="grid grid-cols-12 w-full min-h-[calc(100vh-72px)] text-black relative selection:bg-black selection:text-[#EDEDED] overflow-hidden">

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 
 import { getObjectCounts } from "../api/objects/getObjectCounts";
+import { getCustomCollections } from "../api/customCollections/getCustomCollections";
 
 import Collections from "./Collections"
 import StudioHeader from "../studio/header/StudioHeader";
@@ -19,18 +20,20 @@ export default async function CollectionsPage() {
 
     const counts = await getObjectCounts(session.user.id);
 
+    const customCollections = await getCustomCollections(session.user.id);
+
     return (
         <>
             <div className="min-h-screen flex flex-col">
-            <main className="relative w-screen flex-1">
-                <StudioBackground />
-                <div className="relative z-10 flex flex-col w-full">
-                    <StudioHeader />
-                    <Collections counts={counts} />
-                </div>
-            </main>
-            <Footer />
-        </div>
+                <main className="relative w-screen flex-1">
+                    <StudioBackground />
+                    <div className="relative z-10 flex flex-col w-full">
+                        <StudioHeader />
+                        <Collections counts={counts} customCollections={customCollections} />
+                    </div>
+                </main>
+                <Footer />
+            </div>
         </>
 
     );

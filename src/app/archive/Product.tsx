@@ -1,65 +1,66 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { collections } from "../data/Collections";
 import { ProductProps } from "../types/ProductProps";
+import { Collection } from "../types/Collection";
+import { useProductSave } from "../hooks/useProductSave";
 
-export default function Product({ selectedCategory, values, image, counts }: ProductProps) {
+export default function Product({ selectedCategory, values, image, counts, customCollections }: ProductProps) {
 
-    const router = useRouter();
+    const staticCollectionData = collections[selectedCategory];
+    const existingCustomCollection = customCollections.find((c) => c.id === selectedCategory);
 
-    const [isSaving, setIsSaving] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-    const [objectId, setObjectId] = useState<number | null>(null);
+    const collection: Collection | null = staticCollectionData
+        ? selectedCategory === "customCollection"
+            ? {
+                ...staticCollectionData,
+                name: values.title || staticCollectionData.name,
+                color: "#172554",
+            }
+            : staticCollectionData
+        : existingCustomCollection
+            ? {
+                id: existingCustomCollection.id,
+                number: "N°",
+                code: "Custom",
+                name: existingCustomCollection.title,
+                icon: "folder",
+                count: "",
+                color: "#172554",
+                left: 0,
+                top: 0,
+                isCustom: true,
+                details: [
+                    { id: "title", label: "N°01, TITEL", type: "text" },
+                    { id: "description", label: "N°02, BESCHREIBUNG", type: "textarea" },
+                    { id: "note", label: "N°03, NOTIZ", type: "textarea" },
+                ],
+            }
+            : null;
 
-    const collection = collections[selectedCategory];
+    const isCreatingCollection = selectedCategory === "customCollection";
+
+    const { isSaving, error, objectId, handleSave } = useProductSave(
+        selectedCategory,
+        values,
+        image,
+        customCollections
+    );
 
     if (!collection) {
         return null;
     }
 
-    const currentCount = counts[selectedCategory] ?? 0;
+    const currentCount = existingCustomCollection
+        ? existingCustomCollection._count?.objects ?? 0
+        : counts[selectedCategory] ?? 0;
+
     const predictedNumber = currentCount + 1;
 
     const getDetailValue = (id: string) => {
-
         const detail = collection.details.find((item) => item.id === id);
-
         return values[id] || detail?.placeholder || "";
     };
-
-
-    async function handleSave() {
-        setIsSaving(true);
-        setError(null);
-
-        try {
-            const res = await fetch("/api/objects", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    collectionId: selectedCategory,
-                    values,
-                    imageUrl: image,
-                }),
-            });
-
-            if (!res.ok) {
-                const data = await res.json();
-                throw new Error(data.error || "Fehler beim Speichern");
-            }
-
-            const data = await res.json();
-            setObjectId(data.id);
-
-            router.push(`/collections/${selectedCategory}`);
-        } catch (err) {
-            setError(err instanceof Error ? err.message : "Fehler beim Speichern");
-        } finally {
-            setIsSaving(false);
-        }
-    }
 
     return (
         <div id="product" className="mb-20">
@@ -104,32 +105,28 @@ export default function Product({ selectedCategory, values, image, counts }: Pro
                     {/* Generierte Karte von Objekt */}
                     <div className="h-full flex-1">
                         <div className="gap-2 text-center h-90.5 w-[236.138px] border-[5px] border-black flex flex-col justify-center items-center">
-                            <p
-                                className="text-[24px]"
-                            >
-                                {getDetailValue("title")}
-                            </p>
-                            <p
-                                className="text-[18px]"
-                            >
-                                {getDetailValue("discovered_by")}
-                            </p>
-                            <p
-                                className="text-[18px]"
-                            >
-                                "{getDetailValue("note")}"
-                            </p>
-                            <p
-                                className="font-['Kino40'] text-[24px]"
-                            >
-                                {new Date().toLocaleDateString("de-DE", {
-                                    month: "2-digit",
-                                    year: "numeric",
-                                })}
-                            </p>
+                            {!isCreatingCollection && (
+                                <>
+                                    <p className="text-[24px]">
+                                        {getDetailValue("title")}
+                                    </p>
+                                    <p className="text-[18px]">
+                                        {getDetailValue("discovered_by")}
+                                    </p>
+                                    <p className="text-[18px]">
+                                        "{getDetailValue("note")}"
+                                    </p>
+                                    <p className="font-['Kino40'] text-[24px]">
+                                        {new Date().toLocaleDateString("de-DE", {
+                                            month: "2-digit",
+                                            year: "numeric",
+                                        })}
+                                    </p>
+                                </>
+                            )}
                         </div>
                     </div>
-
+                    
                     {/* Hinzugefügte Media */}
                     <div className="h-full flex-1">
                         <div className="h-90.5 w-[236.138px] border-[5px] border-black overflow-hidden">

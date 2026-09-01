@@ -1,10 +1,21 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export function useObjectMutations(collectionId: string, objectId: number) {
+export function useObjectMutations(collectionId: string, objectId: number, isCustom: boolean = false) {
+
     const [isDeleting, setIsDeleting] = useState(false);
     const [isUpdating, setIsUpdating] = useState(false);
+    
     const router = useRouter();
+
+    const endpoint = isCustom
+        ? `/api/customCollections/${collectionId}/objects`
+        : "/api/objects";
+
+    const buildBody = (extra: Record<string, unknown>) =>
+        isCustom
+            ? JSON.stringify({ objectId, ...extra })
+            : JSON.stringify({ collectionId, objectId, ...extra });
 
     const handleDelete = async () => {
         const confirmed = window.confirm(
@@ -17,10 +28,10 @@ export function useObjectMutations(collectionId: string, objectId: number) {
         try {
             setIsDeleting(true);
 
-            const response = await fetch("/api/objects", {
+            const response = await fetch(endpoint, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ collectionId, objectId }),
+                body: buildBody({}),
             });
 
             const data = await response.json();
@@ -49,14 +60,10 @@ export function useObjectMutations(collectionId: string, objectId: number) {
         try {
             setIsUpdating(true);
 
-            const response = await fetch("/api/objects", {
+            const response = await fetch(endpoint, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    collectionId,
-                    objectId,
-                    data: updatedFields,
-                }),
+                body: buildBody({ data: updatedFields }),
             });
 
             const data = await response.json();

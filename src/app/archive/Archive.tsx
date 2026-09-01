@@ -15,9 +15,9 @@ const steps = [
     { id: "product", label: "04", fullLabel: "04  ·  VORSCHAU" },
 ];
 
-export default function Archive({ counts }: ArchiveProps) {
+export default function Archive({ counts, customCollections }: ArchiveProps) {
 
-    const [selectedCategory, setSelectedCategory] = useState("bucher");
+    const [selectedCategory, setSelectedCategory] = useState("books");
     const [activeStep, setActiveStep] = useState("collection");
     const [formValues, setFormValues] = useState<Record<string, string>>({});
     const [image, setImage] = useState<string | null>(null);
@@ -67,15 +67,19 @@ export default function Archive({ counts }: ArchiveProps) {
                     <Collection
                         selectedCategory={selectedCategory}
                         setSelectedCategory={setSelectedCategory}
+                        customCollections={customCollections}
                         onNext={() => setActiveStep("details")}
+                        counts={counts}
                     />
                 )}
+
 
                 {activeStep === "details" && (
                     <Details
                         selectedCategory={selectedCategory}
                         formValues={formValues}
                         setFormValues={setFormValues}
+                        customCollections={customCollections}
                     />
                 )}
 
@@ -92,9 +96,10 @@ export default function Archive({ counts }: ArchiveProps) {
                         values={formValues}
                         image={image}
                         counts={counts}
+                        customCollections={customCollections}
                     />
                 )}
-                
+
             </main>
         </div>
     );
