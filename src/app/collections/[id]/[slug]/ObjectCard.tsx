@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import { ObjectCardProps } from "@/app/types/ObjectCardProps";
 import { getObjectColor } from "@/app/utils/getObjectColor";
 import { getFieldValue, formatLabel } from "@/app/utils/objectCardHelpers";
@@ -18,8 +20,10 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
         handleCancelEdit,
     } = useEditableFields(object, editableFieldIds);
 
-    const { isDeleting, isUpdating, handleDelete, handleUpdate } =
+    const { isDeleting, isUpdating, handleDelete, handleUpdate, handleToggleFavorite } =
         useObjectMutations(collection.id, object.id, collection.isCustom ?? false);
+
+    const [isFavorite, setIsFavorite] = useState(Boolean(object.isFavorite));
 
     const getValue = (id: string) => getFieldValue(object, id);
 
@@ -156,7 +160,31 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
             </div>
 
             {/* CRUD Buttons */}
-            <div className="mx-auto grid grid-cols-2 gap-16 mt-15 w-160">
+            <div className="mx-auto grid grid-cols-3 gap-16 mt-15 w-240">
+
+                <button
+                    type="button"
+                    onClick={() => handleToggleFavorite(isFavorite, setIsFavorite)}
+                    aria-label={isFavorite ? "Aus Favoriten entfernen" : "Zu Favoriten hinzufügen"}
+                    className="group flex items-center gap-3 justify-center border border-black py-4 bg-black text-[#EDEDED] text-sm font-bold tracking-widest transition-all duration-200 hover:bg-transparent hover:text-black hover:scale-[1.02]"
+                >
+                    <span className="relative w-10 h-10 shrink-0">
+                        <img
+                            src="/icons/Vector.svg"
+                            alt="Kein Favorit"
+                            className={`absolute inset-0 w-10 h-10 transition-opacity duration-200 ${isFavorite ? "opacity-0" : "group-hover:opacity-0"
+                                }`}
+                        />
+                        <img
+                            src="/icons/Vector1.svg"
+                            alt="Favorit"
+                            className={`absolute inset-0 w-10 h-10 transition-opacity duration-200 ${isFavorite ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                                }`}
+                        />
+                    </span>
+                    ZUR<span className="font-[Fayte] text-2xl">i . nspira</span>KARTE
+                </button>
+
                 {isEditing ? (
                     <>
                         <button

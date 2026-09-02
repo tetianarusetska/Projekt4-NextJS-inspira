@@ -5,7 +5,7 @@ export function useObjectMutations(collectionId: string, objectId: number, isCus
 
     const [isDeleting, setIsDeleting] = useState(false);
     const [isUpdating, setIsUpdating] = useState(false);
-    
+
     const router = useRouter();
 
     const endpoint = isCustom
@@ -85,5 +85,34 @@ export function useObjectMutations(collectionId: string, objectId: number, isCus
         }
     };
 
-    return { isDeleting, isUpdating, handleDelete, handleUpdate };
+    const handleToggleFavorite = async (
+        currentValue: boolean,
+        onOptimisticUpdate: (value: boolean) => void
+    ) => {
+        const nextValue = !currentValue;
+        onOptimisticUpdate(nextValue);
+
+        try {
+            const response = await fetch(endpoint, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: buildBody({ data: { isFavorite: nextValue } }),
+            });
+
+            if (!response.ok) {
+                const data = await response.json();
+                throw new Error(data.error || "Fehler beim Aktualisieren");
+            }
+        } catch (error) {
+            console.error(error);
+            onOptimisticUpdate(currentValue);
+            alert(
+                error instanceof Error
+                    ? error.message
+                    : "Fehler beim Speichern des Favoriten"
+            );
+        }
+    };
+
+    return { isDeleting, isUpdating, handleDelete, handleUpdate, handleToggleFavorite };
 }

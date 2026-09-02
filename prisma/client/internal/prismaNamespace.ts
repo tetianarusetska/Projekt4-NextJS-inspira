@@ -1724,6 +1724,7 @@ export const BookScalarFieldEnum = {
   discovered_by: 'discovered_by',
   note: 'note',
   bestQuote: 'bestQuote',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1741,6 +1742,7 @@ export const MusicScalarFieldEnum = {
   discovered_by: 'discovered_by',
   note: 'note',
   bestQuote: 'bestQuote',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1757,6 +1759,7 @@ export const MagazineScalarFieldEnum = {
   discovered_by: 'discovered_by',
   note: 'note',
   bestQuote: 'bestQuote',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1775,6 +1778,7 @@ export const ArtworkScalarFieldEnum = {
   dimensions: 'dimensions',
   discovered_by: 'discovered_by',
   note: 'note',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1791,6 +1795,7 @@ export const MuseumScalarFieldEnum = {
   date: 'date',
   discovered_by: 'discovered_by',
   note: 'note',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1807,6 +1812,7 @@ export const GalleryScalarFieldEnum = {
   exhibition: 'exhibition',
   date: 'date',
   note: 'note',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1823,6 +1829,7 @@ export const ImageScalarFieldEnum = {
   source: 'source',
   discovered_by: 'discovered_by',
   note: 'note',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1838,6 +1845,7 @@ export const PhotographScalarFieldEnum = {
   location: 'location',
   source: 'source',
   note: 'note',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1853,6 +1861,7 @@ export const IdeaScalarFieldEnum = {
   inspiration: 'inspiration',
   description: 'description',
   next_step: 'next_step',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1868,6 +1877,7 @@ export const QuoteScalarFieldEnum = {
   source: 'source',
   year: 'year',
   context: 'context',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const
@@ -1894,6 +1904,7 @@ export const CustomCollectionObjectScalarFieldEnum = {
   title: 'title',
   description: 'description',
   note: 'note',
+  isFavorite: 'isFavorite',
   imageUrl: 'imageUrl',
   createdAt: 'createdAt'
 } as const

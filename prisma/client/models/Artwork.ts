@@ -45,6 +45,7 @@ export type ArtworkMinAggregateOutputType = {
   dimensions: string | null
   discovered_by: string | null
   note: string | null
+  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -60,6 +61,7 @@ export type ArtworkMaxAggregateOutputType = {
   dimensions: string | null
   discovered_by: string | null
   note: string | null
+  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -75,6 +77,7 @@ export type ArtworkCountAggregateOutputType = {
   dimensions: number
   discovered_by: number
   note: number
+  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -100,6 +103,7 @@ export type ArtworkMinAggregateInputType = {
   dimensions?: true
   discovered_by?: true
   note?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -115,6 +119,7 @@ export type ArtworkMaxAggregateInputType = {
   dimensions?: true
   discovered_by?: true
   note?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -130,6 +135,7 @@ export type ArtworkCountAggregateInputType = {
   dimensions?: true
   discovered_by?: true
   note?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -232,6 +238,7 @@ export type ArtworkGroupByOutputType = {
   dimensions: string
   discovered_by: string
   note: string
+  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: ArtworkCountAggregateOutputType | null
@@ -270,6 +277,7 @@ export type ArtworkWhereInput = {
   dimensions?: Prisma.StringFilter<"Artwork"> | string
   discovered_by?: Prisma.StringFilter<"Artwork"> | string
   note?: Prisma.StringFilter<"Artwork"> | string
+  isFavorite?: Prisma.BoolFilter<"Artwork"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Artwork"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Artwork"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -286,6 +294,7 @@ export type ArtworkOrderByWithRelationInput = {
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -305,6 +314,7 @@ export type ArtworkWhereUniqueInput = Prisma.AtLeast<{
   dimensions?: Prisma.StringFilter<"Artwork"> | string
   discovered_by?: Prisma.StringFilter<"Artwork"> | string
   note?: Prisma.StringFilter<"Artwork"> | string
+  isFavorite?: Prisma.BoolFilter<"Artwork"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Artwork"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Artwork"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -321,6 +331,7 @@ export type ArtworkOrderByWithAggregationInput = {
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.ArtworkCountOrderByAggregateInput
@@ -344,6 +355,7 @@ export type ArtworkScalarWhereWithAggregatesInput = {
   dimensions?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
   discovered_by?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
   note?: Prisma.StringWithAggregatesFilter<"Artwork"> | string
+  isFavorite?: Prisma.BoolWithAggregatesFilter<"Artwork"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Artwork"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Artwork"> | Date | string
 }
@@ -357,6 +369,7 @@ export type ArtworkCreateInput = {
   dimensions: string
   discovered_by: string
   note: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutArtworksInput
@@ -373,6 +386,7 @@ export type ArtworkUncheckedCreateInput = {
   dimensions: string
   discovered_by: string
   note: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -386,6 +400,7 @@ export type ArtworkUpdateInput = {
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutArtworksNestedInput
@@ -402,6 +417,7 @@ export type ArtworkUncheckedUpdateInput = {
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -417,6 +433,7 @@ export type ArtworkCreateManyInput = {
   dimensions: string
   discovered_by: string
   note: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -430,6 +447,7 @@ export type ArtworkUpdateManyMutationInput = {
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -445,6 +463,7 @@ export type ArtworkUncheckedUpdateManyInput = {
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -470,6 +489,7 @@ export type ArtworkCountOrderByAggregateInput = {
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -489,6 +509,7 @@ export type ArtworkMaxOrderByAggregateInput = {
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -504,6 +525,7 @@ export type ArtworkMinOrderByAggregateInput = {
   dimensions?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -563,6 +585,7 @@ export type ArtworkCreateWithoutUserInput = {
   dimensions: string
   discovered_by: string
   note: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -577,6 +600,7 @@ export type ArtworkUncheckedCreateWithoutUserInput = {
   dimensions: string
   discovered_by: string
   note: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -621,6 +645,7 @@ export type ArtworkScalarWhereInput = {
   dimensions?: Prisma.StringFilter<"Artwork"> | string
   discovered_by?: Prisma.StringFilter<"Artwork"> | string
   note?: Prisma.StringFilter<"Artwork"> | string
+  isFavorite?: Prisma.BoolFilter<"Artwork"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Artwork"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Artwork"> | Date | string
 }
@@ -635,6 +660,7 @@ export type ArtworkCreateManyUserInput = {
   dimensions: string
   discovered_by: string
   note: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -648,6 +674,7 @@ export type ArtworkUpdateWithoutUserInput = {
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -662,6 +689,7 @@ export type ArtworkUncheckedUpdateWithoutUserInput = {
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -676,6 +704,7 @@ export type ArtworkUncheckedUpdateManyWithoutUserInput = {
   dimensions?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -693,6 +722,7 @@ export type ArtworkSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   dimensions?: boolean
   discovered_by?: boolean
   note?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -709,6 +739,7 @@ export type ArtworkSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   dimensions?: boolean
   discovered_by?: boolean
   note?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -725,6 +756,7 @@ export type ArtworkSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   dimensions?: boolean
   discovered_by?: boolean
   note?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -741,11 +773,12 @@ export type ArtworkSelectScalar = {
   dimensions?: boolean
   discovered_by?: boolean
   note?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type ArtworkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "format" | "title" | "author" | "year" | "technique" | "dimensions" | "discovered_by" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["artwork"]>
+export type ArtworkOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "format" | "title" | "author" | "year" | "technique" | "dimensions" | "discovered_by" | "note" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["artwork"]>
 export type ArtworkInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -772,6 +805,7 @@ export type $ArtworkPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     dimensions: string
     discovered_by: string
     note: string
+    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["artwork"]>
@@ -1208,6 +1242,7 @@ export interface ArtworkFieldRefs {
   readonly dimensions: Prisma.FieldRef<"Artwork", 'String'>
   readonly discovered_by: Prisma.FieldRef<"Artwork", 'String'>
   readonly note: Prisma.FieldRef<"Artwork", 'String'>
+  readonly isFavorite: Prisma.FieldRef<"Artwork", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Artwork", 'String'>
   readonly createdAt: Prisma.FieldRef<"Artwork", 'DateTime'>
 }

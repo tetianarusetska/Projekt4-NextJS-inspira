@@ -90,8 +90,9 @@ model Book {
   note            String
   bestQuote       String
 
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Music {
@@ -107,8 +108,9 @@ model Music {
   note            String
   bestQuote       String
 
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Magazine {
@@ -123,8 +125,9 @@ model Magazine {
   note            String
   bestQuote       String
 
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Artwork {
@@ -141,8 +144,9 @@ model Artwork {
   discovered_by   String
   note            String
 
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Museum {
@@ -157,8 +161,9 @@ model Museum {
   discovered_by   String
   note            String
 
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Gallery {
@@ -173,8 +178,9 @@ model Gallery {
   date            DateTime
   note            String
 
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Image {
@@ -189,8 +195,9 @@ model Image {
   discovered_by   String
   note            String
   
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Photograph {
@@ -204,8 +211,9 @@ model Photograph {
   source          String
   note            String
   
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Idea {
@@ -219,8 +227,9 @@ model Idea {
   description     String
   next_step       String
 
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model Quote {
@@ -234,8 +243,9 @@ model Quote {
   year            Int
   context         String
   
+  isFavorite      Boolean       @default(false)
   imageUrl        String?
-  createdAt       DateTime @default(now())
+  createdAt       DateTime      @default(now())
 }
 
 model CustomCollection {
@@ -246,9 +256,9 @@ model CustomCollection {
   title           String
   description     String
   reason          String
-  imageUrl        String?
 
-  createdAt       DateTime @default(now())
+  imageUrl        String?
+  createdAt       DateTime      @default(now())
 
   objects         CustomCollectionObject[]
 }
@@ -261,7 +271,8 @@ model CustomCollectionObject {
   title           String
   description     String?
   note            String?
-  imageUrl        String?
 
-  createdAt       DateTime @default(now())
+  isFavorite      Boolean       @default(false)
+  imageUrl        String?
+  createdAt       DateTime      @default(now())
 }

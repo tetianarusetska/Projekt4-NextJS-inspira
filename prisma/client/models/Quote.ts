@@ -44,6 +44,7 @@ export type QuoteMinAggregateOutputType = {
   source: string | null
   year: number | null
   context: string | null
+  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -56,6 +57,7 @@ export type QuoteMaxAggregateOutputType = {
   source: string | null
   year: number | null
   context: string | null
+  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -68,6 +70,7 @@ export type QuoteCountAggregateOutputType = {
   source: number
   year: number
   context: number
+  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -92,6 +95,7 @@ export type QuoteMinAggregateInputType = {
   source?: true
   year?: true
   context?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -104,6 +108,7 @@ export type QuoteMaxAggregateInputType = {
   source?: true
   year?: true
   context?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -116,6 +121,7 @@ export type QuoteCountAggregateInputType = {
   source?: true
   year?: true
   context?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -215,6 +221,7 @@ export type QuoteGroupByOutputType = {
   source: string
   year: number
   context: string
+  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: QuoteCountAggregateOutputType | null
@@ -250,6 +257,7 @@ export type QuoteWhereInput = {
   source?: Prisma.StringFilter<"Quote"> | string
   year?: Prisma.IntFilter<"Quote"> | number
   context?: Prisma.StringFilter<"Quote"> | string
+  isFavorite?: Prisma.BoolFilter<"Quote"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Quote"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Quote"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -263,6 +271,7 @@ export type QuoteOrderByWithRelationInput = {
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
   context?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -279,6 +288,7 @@ export type QuoteWhereUniqueInput = Prisma.AtLeast<{
   source?: Prisma.StringFilter<"Quote"> | string
   year?: Prisma.IntFilter<"Quote"> | number
   context?: Prisma.StringFilter<"Quote"> | string
+  isFavorite?: Prisma.BoolFilter<"Quote"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Quote"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Quote"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -292,6 +302,7 @@ export type QuoteOrderByWithAggregationInput = {
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
   context?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.QuoteCountOrderByAggregateInput
@@ -312,6 +323,7 @@ export type QuoteScalarWhereWithAggregatesInput = {
   source?: Prisma.StringWithAggregatesFilter<"Quote"> | string
   year?: Prisma.IntWithAggregatesFilter<"Quote"> | number
   context?: Prisma.StringWithAggregatesFilter<"Quote"> | string
+  isFavorite?: Prisma.BoolWithAggregatesFilter<"Quote"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Quote"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Quote"> | Date | string
 }
@@ -322,6 +334,7 @@ export type QuoteCreateInput = {
   source: string
   year: number
   context: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutQuotesInput
@@ -335,6 +348,7 @@ export type QuoteUncheckedCreateInput = {
   source: string
   year: number
   context: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -345,6 +359,7 @@ export type QuoteUpdateInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
   context?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutQuotesNestedInput
@@ -358,6 +373,7 @@ export type QuoteUncheckedUpdateInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
   context?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -370,6 +386,7 @@ export type QuoteCreateManyInput = {
   source: string
   year: number
   context: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -380,6 +397,7 @@ export type QuoteUpdateManyMutationInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
   context?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -392,6 +410,7 @@ export type QuoteUncheckedUpdateManyInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
   context?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -414,6 +433,7 @@ export type QuoteCountOrderByAggregateInput = {
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
   context?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -431,6 +451,7 @@ export type QuoteMaxOrderByAggregateInput = {
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
   context?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -443,6 +464,7 @@ export type QuoteMinOrderByAggregateInput = {
   source?: Prisma.SortOrder
   year?: Prisma.SortOrder
   context?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -500,6 +522,7 @@ export type QuoteCreateWithoutUserInput = {
   source: string
   year: number
   context: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -511,6 +534,7 @@ export type QuoteUncheckedCreateWithoutUserInput = {
   source: string
   year: number
   context: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -552,6 +576,7 @@ export type QuoteScalarWhereInput = {
   source?: Prisma.StringFilter<"Quote"> | string
   year?: Prisma.IntFilter<"Quote"> | number
   context?: Prisma.StringFilter<"Quote"> | string
+  isFavorite?: Prisma.BoolFilter<"Quote"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Quote"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Quote"> | Date | string
 }
@@ -563,6 +588,7 @@ export type QuoteCreateManyUserInput = {
   source: string
   year: number
   context: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -573,6 +599,7 @@ export type QuoteUpdateWithoutUserInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
   context?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -584,6 +611,7 @@ export type QuoteUncheckedUpdateWithoutUserInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
   context?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -595,6 +623,7 @@ export type QuoteUncheckedUpdateManyWithoutUserInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   year?: Prisma.IntFieldUpdateOperationsInput | number
   context?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -609,6 +638,7 @@ export type QuoteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   source?: boolean
   year?: boolean
   context?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -622,6 +652,7 @@ export type QuoteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   source?: boolean
   year?: boolean
   context?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -635,6 +666,7 @@ export type QuoteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   source?: boolean
   year?: boolean
   context?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -648,11 +680,12 @@ export type QuoteSelectScalar = {
   source?: boolean
   year?: boolean
   context?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type QuoteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "author" | "source" | "year" | "context" | "imageUrl" | "createdAt", ExtArgs["result"]["quote"]>
+export type QuoteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "author" | "source" | "year" | "context" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["quote"]>
 export type QuoteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -676,6 +709,7 @@ export type $QuotePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     source: string
     year: number
     context: string
+    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["quote"]>
@@ -1109,6 +1143,7 @@ export interface QuoteFieldRefs {
   readonly source: Prisma.FieldRef<"Quote", 'String'>
   readonly year: Prisma.FieldRef<"Quote", 'Int'>
   readonly context: Prisma.FieldRef<"Quote", 'String'>
+  readonly isFavorite: Prisma.FieldRef<"Quote", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Quote", 'String'>
   readonly createdAt: Prisma.FieldRef<"Quote", 'DateTime'>
 }

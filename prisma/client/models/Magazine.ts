@@ -43,6 +43,7 @@ export type MagazineMinAggregateOutputType = {
   discovered_by: string | null
   note: string | null
   bestQuote: string | null
+  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -56,6 +57,7 @@ export type MagazineMaxAggregateOutputType = {
   discovered_by: string | null
   note: string | null
   bestQuote: string | null
+  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -69,6 +71,7 @@ export type MagazineCountAggregateOutputType = {
   discovered_by: number
   note: number
   bestQuote: number
+  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -92,6 +95,7 @@ export type MagazineMinAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -105,6 +109,7 @@ export type MagazineMaxAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -118,6 +123,7 @@ export type MagazineCountAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -218,6 +224,7 @@ export type MagazineGroupByOutputType = {
   discovered_by: string
   note: string
   bestQuote: string
+  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: MagazineCountAggregateOutputType | null
@@ -254,6 +261,7 @@ export type MagazineWhereInput = {
   discovered_by?: Prisma.StringFilter<"Magazine"> | string
   note?: Prisma.StringFilter<"Magazine"> | string
   bestQuote?: Prisma.StringFilter<"Magazine"> | string
+  isFavorite?: Prisma.BoolFilter<"Magazine"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Magazine"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Magazine"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -268,6 +276,7 @@ export type MagazineOrderByWithRelationInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -285,6 +294,7 @@ export type MagazineWhereUniqueInput = Prisma.AtLeast<{
   discovered_by?: Prisma.StringFilter<"Magazine"> | string
   note?: Prisma.StringFilter<"Magazine"> | string
   bestQuote?: Prisma.StringFilter<"Magazine"> | string
+  isFavorite?: Prisma.BoolFilter<"Magazine"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Magazine"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Magazine"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -299,6 +309,7 @@ export type MagazineOrderByWithAggregationInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.MagazineCountOrderByAggregateInput
@@ -320,6 +331,7 @@ export type MagazineScalarWhereWithAggregatesInput = {
   discovered_by?: Prisma.StringWithAggregatesFilter<"Magazine"> | string
   note?: Prisma.StringWithAggregatesFilter<"Magazine"> | string
   bestQuote?: Prisma.StringWithAggregatesFilter<"Magazine"> | string
+  isFavorite?: Prisma.BoolWithAggregatesFilter<"Magazine"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Magazine"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Magazine"> | Date | string
 }
@@ -331,6 +343,7 @@ export type MagazineCreateInput = {
   discovered_by: string
   note: string
   bestQuote: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutMagazinesInput
@@ -345,6 +358,7 @@ export type MagazineUncheckedCreateInput = {
   discovered_by: string
   note: string
   bestQuote: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -356,6 +370,7 @@ export type MagazineUpdateInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutMagazinesNestedInput
@@ -370,6 +385,7 @@ export type MagazineUncheckedUpdateInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -383,6 +399,7 @@ export type MagazineCreateManyInput = {
   discovered_by: string
   note: string
   bestQuote: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -394,6 +411,7 @@ export type MagazineUpdateManyMutationInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -407,6 +425,7 @@ export type MagazineUncheckedUpdateManyInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -430,6 +449,7 @@ export type MagazineCountOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -447,6 +467,7 @@ export type MagazineMaxOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -460,6 +481,7 @@ export type MagazineMinOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -517,6 +539,7 @@ export type MagazineCreateWithoutUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -529,6 +552,7 @@ export type MagazineUncheckedCreateWithoutUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -571,6 +595,7 @@ export type MagazineScalarWhereInput = {
   discovered_by?: Prisma.StringFilter<"Magazine"> | string
   note?: Prisma.StringFilter<"Magazine"> | string
   bestQuote?: Prisma.StringFilter<"Magazine"> | string
+  isFavorite?: Prisma.BoolFilter<"Magazine"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Magazine"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Magazine"> | Date | string
 }
@@ -583,6 +608,7 @@ export type MagazineCreateManyUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -594,6 +620,7 @@ export type MagazineUpdateWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -606,6 +633,7 @@ export type MagazineUncheckedUpdateWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -618,6 +646,7 @@ export type MagazineUncheckedUpdateManyWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -633,6 +662,7 @@ export type MagazineSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -647,6 +677,7 @@ export type MagazineSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -661,6 +692,7 @@ export type MagazineSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -675,11 +707,12 @@ export type MagazineSelectScalar = {
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type MagazineOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "issue" | "date" | "discovered_by" | "note" | "bestQuote" | "imageUrl" | "createdAt", ExtArgs["result"]["magazine"]>
+export type MagazineOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "issue" | "date" | "discovered_by" | "note" | "bestQuote" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["magazine"]>
 export type MagazineInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -704,6 +737,7 @@ export type $MagazinePayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     discovered_by: string
     note: string
     bestQuote: string
+    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["magazine"]>
@@ -1138,6 +1172,7 @@ export interface MagazineFieldRefs {
   readonly discovered_by: Prisma.FieldRef<"Magazine", 'String'>
   readonly note: Prisma.FieldRef<"Magazine", 'String'>
   readonly bestQuote: Prisma.FieldRef<"Magazine", 'String'>
+  readonly isFavorite: Prisma.FieldRef<"Magazine", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Magazine", 'String'>
   readonly createdAt: Prisma.FieldRef<"Magazine", 'DateTime'>
 }

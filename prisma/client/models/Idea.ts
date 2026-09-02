@@ -42,6 +42,7 @@ export type IdeaMinAggregateOutputType = {
   inspiration: string | null
   description: string | null
   next_step: string | null
+  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -54,6 +55,7 @@ export type IdeaMaxAggregateOutputType = {
   inspiration: string | null
   description: string | null
   next_step: string | null
+  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -66,6 +68,7 @@ export type IdeaCountAggregateOutputType = {
   inspiration: number
   description: number
   next_step: number
+  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -88,6 +91,7 @@ export type IdeaMinAggregateInputType = {
   inspiration?: true
   description?: true
   next_step?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -100,6 +104,7 @@ export type IdeaMaxAggregateInputType = {
   inspiration?: true
   description?: true
   next_step?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -112,6 +117,7 @@ export type IdeaCountAggregateInputType = {
   inspiration?: true
   description?: true
   next_step?: true
+  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -211,6 +217,7 @@ export type IdeaGroupByOutputType = {
   inspiration: string
   description: string
   next_step: string
+  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: IdeaCountAggregateOutputType | null
@@ -246,6 +253,7 @@ export type IdeaWhereInput = {
   inspiration?: Prisma.StringFilter<"Idea"> | string
   description?: Prisma.StringFilter<"Idea"> | string
   next_step?: Prisma.StringFilter<"Idea"> | string
+  isFavorite?: Prisma.BoolFilter<"Idea"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Idea"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Idea"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -259,6 +267,7 @@ export type IdeaOrderByWithRelationInput = {
   inspiration?: Prisma.SortOrder
   description?: Prisma.SortOrder
   next_step?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -275,6 +284,7 @@ export type IdeaWhereUniqueInput = Prisma.AtLeast<{
   inspiration?: Prisma.StringFilter<"Idea"> | string
   description?: Prisma.StringFilter<"Idea"> | string
   next_step?: Prisma.StringFilter<"Idea"> | string
+  isFavorite?: Prisma.BoolFilter<"Idea"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Idea"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Idea"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -288,6 +298,7 @@ export type IdeaOrderByWithAggregationInput = {
   inspiration?: Prisma.SortOrder
   description?: Prisma.SortOrder
   next_step?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.IdeaCountOrderByAggregateInput
@@ -308,6 +319,7 @@ export type IdeaScalarWhereWithAggregatesInput = {
   inspiration?: Prisma.StringWithAggregatesFilter<"Idea"> | string
   description?: Prisma.StringWithAggregatesFilter<"Idea"> | string
   next_step?: Prisma.StringWithAggregatesFilter<"Idea"> | string
+  isFavorite?: Prisma.BoolWithAggregatesFilter<"Idea"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Idea"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Idea"> | Date | string
 }
@@ -318,6 +330,7 @@ export type IdeaCreateInput = {
   inspiration: string
   description: string
   next_step: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutIdeasInput
@@ -331,6 +344,7 @@ export type IdeaUncheckedCreateInput = {
   inspiration: string
   description: string
   next_step: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -341,6 +355,7 @@ export type IdeaUpdateInput = {
   inspiration?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   next_step?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutIdeasNestedInput
@@ -354,6 +369,7 @@ export type IdeaUncheckedUpdateInput = {
   inspiration?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   next_step?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -366,6 +382,7 @@ export type IdeaCreateManyInput = {
   inspiration: string
   description: string
   next_step: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -376,6 +393,7 @@ export type IdeaUpdateManyMutationInput = {
   inspiration?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   next_step?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -388,6 +406,7 @@ export type IdeaUncheckedUpdateManyInput = {
   inspiration?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   next_step?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -410,6 +429,7 @@ export type IdeaCountOrderByAggregateInput = {
   inspiration?: Prisma.SortOrder
   description?: Prisma.SortOrder
   next_step?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -426,6 +446,7 @@ export type IdeaMaxOrderByAggregateInput = {
   inspiration?: Prisma.SortOrder
   description?: Prisma.SortOrder
   next_step?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -438,6 +459,7 @@ export type IdeaMinOrderByAggregateInput = {
   inspiration?: Prisma.SortOrder
   description?: Prisma.SortOrder
   next_step?: Prisma.SortOrder
+  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -494,6 +516,7 @@ export type IdeaCreateWithoutUserInput = {
   inspiration: string
   description: string
   next_step: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -505,6 +528,7 @@ export type IdeaUncheckedCreateWithoutUserInput = {
   inspiration: string
   description: string
   next_step: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -546,6 +570,7 @@ export type IdeaScalarWhereInput = {
   inspiration?: Prisma.StringFilter<"Idea"> | string
   description?: Prisma.StringFilter<"Idea"> | string
   next_step?: Prisma.StringFilter<"Idea"> | string
+  isFavorite?: Prisma.BoolFilter<"Idea"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Idea"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Idea"> | Date | string
 }
@@ -557,6 +582,7 @@ export type IdeaCreateManyUserInput = {
   inspiration: string
   description: string
   next_step: string
+  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -567,6 +593,7 @@ export type IdeaUpdateWithoutUserInput = {
   inspiration?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   next_step?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -578,6 +605,7 @@ export type IdeaUncheckedUpdateWithoutUserInput = {
   inspiration?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   next_step?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -589,6 +617,7 @@ export type IdeaUncheckedUpdateManyWithoutUserInput = {
   inspiration?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   next_step?: Prisma.StringFieldUpdateOperationsInput | string
+  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -603,6 +632,7 @@ export type IdeaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   inspiration?: boolean
   description?: boolean
   next_step?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -616,6 +646,7 @@ export type IdeaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   inspiration?: boolean
   description?: boolean
   next_step?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -629,6 +660,7 @@ export type IdeaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   inspiration?: boolean
   description?: boolean
   next_step?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -642,11 +674,12 @@ export type IdeaSelectScalar = {
   inspiration?: boolean
   description?: boolean
   next_step?: boolean
+  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type IdeaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "category" | "inspiration" | "description" | "next_step" | "imageUrl" | "createdAt", ExtArgs["result"]["idea"]>
+export type IdeaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "category" | "inspiration" | "description" | "next_step" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["idea"]>
 export type IdeaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -670,6 +703,7 @@ export type $IdeaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     inspiration: string
     description: string
     next_step: string
+    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["idea"]>
@@ -1103,6 +1137,7 @@ export interface IdeaFieldRefs {
   readonly inspiration: Prisma.FieldRef<"Idea", 'String'>
   readonly description: Prisma.FieldRef<"Idea", 'String'>
   readonly next_step: Prisma.FieldRef<"Idea", 'String'>
+  readonly isFavorite: Prisma.FieldRef<"Idea", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Idea", 'String'>
   readonly createdAt: Prisma.FieldRef<"Idea", 'DateTime'>
 }
