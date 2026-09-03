@@ -53,6 +53,14 @@ export default function Collections({ counts, customCollections }: CollectionsPr
         <div className="flex flex-col md:flex-row items-start md:items-center gap-16">
 
           <Link
+            href="/inspira"
+            className="group flex items-center gap-2 justify-center border border-black px-6 py-3 bg-black text-[#EDEDED] text-sm font-bold tracking-widest transition-all duration-200 hover:bg-transparent hover:text-black hover:scale-[1.02]"
+          >
+            <span className="material-symbols-outlined !text-xl">add</span>
+            <span className="font-[Fayte] text-2xl">i . nspira</span>KARTE
+          </Link>
+
+          <Link
             href="/archive"
             className="hidden lg:flex items-center gap-2 border-[3px] border-black px-6 py-3 bg-black text-white font-inter font-black uppercase text-sm tracking-wider hover:bg-white hover:text-black transition-colors duration-300"
           >
