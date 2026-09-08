@@ -84,12 +84,22 @@ export default function Collections({ counts, customCollections }: CollectionsPr
                 ? "/archive"
                 : `/collections/${col.id}`
             }
-            className="flex flex-col border-[4px] border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300"
+            className="group flex flex-col border-[4px] border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300"
           >
+            {/* Swatch Color Block */}
             <div
-              className="aspect-[4/3] w-full border-b-[4px] border-black"
+              className="aspect-[4/3] w-full border-b-[4px] border-black flex items-center justify-center overflow-hidden"
               style={{ background: col.color }}
-            />
+            >
+              <span className={`material-symbols-outlined !text-[64px] transition-all duration-300 group-hover:scale-110
+                ${col.color === "#EDC225"
+                  ? "text-black/30 group-hover:text-black/75"
+                  : "text-white/30 group-hover:text-white/75"
+                }`}
+              >
+                {col.icon}
+              </span>
+            </div>
             <div className="p-4 bg-white flex flex-col justify-between">
               <div className="font-inter font-black text-2xl uppercase tracking-wider flex items-center">
                 {col.name}
@@ -109,12 +119,17 @@ export default function Collections({ counts, customCollections }: CollectionsPr
           <Link
             key={col.id}
             href={`/collections/${col.id}`}
-            className="flex flex-col border-[4px] border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300"
+            className="group flex flex-col border-[4px] border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300"
           >
+            {/* Swatch Color Block с иконкой папки */}
             <div
-              className="aspect-[4/3] w-full border-b-[4px] border-black"
+              className="aspect-[4/3] w-full border-b-[4px] border-black flex items-center justify-center overflow-hidden"
               style={{ background: col.color }}
-            />
+            >
+              <span className="material-symbols-outlined !text-[64px] text-white/30 group-hover:text-white/75 transition-all duration-300 group-hover:scale-110">
+                {col.icon}
+              </span>
+            </div>
 
             <div className="p-4 bg-white flex flex-col justify-between">
               <div className="font-inter font-black text-2xl uppercase tracking-wider">
@@ -146,14 +161,23 @@ export default function Collections({ counts, customCollections }: CollectionsPr
             <Link href={col.id === "customCollection" ? "/archive" : `/collections/${col.id}`}>
               {/* Swatch Color Block */}
               <div
-                className="h-[242px] w-[236px] border-[5px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group-hover:shadow-[14px_14px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-3 group-hover:rotate-1"
+                className="h-[242px] w-[236px] border-[5px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group-hover:shadow-[14px_14px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-3 group-hover:rotate-1 flex items-center justify-center overflow-hidden"
                 style={{ background: col.color }}
-              />
+              >
+                <span className={`material-symbols-outlined !text-[80px] transition-all duration-300 group-hover:scale-110
+                  ${col.color === "#EDC225"
+                    ? "text-black/25 group-hover:text-black/70"
+                    : "text-white/25 group-hover:text-white/70"
+                  }`}
+                >
+                  {col.icon}
+                </span>
+              </div>
 
               {/* Label Block */}
               <div className="relative h-[120px] w-[236px] border-x-[5px] border-b-[5px] border-black bg-white p-4 flex flex-col justify-between shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group-hover:shadow-[14px_14px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-3 group-hover:rotate-1">
                 <div>
-                  <div className="font-inter text-2xl uppercase font-black  pr-2">
+                  <div className="font-inter text-2xl uppercase font-black pr-2">
                     {col.name}
                   </div>
                 </div>
@@ -179,9 +203,13 @@ export default function Collections({ counts, customCollections }: CollectionsPr
               <Link key={col.id} href={`/collections/${col.id}`} className="group">
                 {/* Swatch Color Block */}
                 <div
-                  className="h-[242px] w-[236px] border-[5px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group-hover:shadow-[14px_14px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-3 group-hover:rotate-1"
+                  className="h-[242px] w-[236px] border-[5px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group-hover:shadow-[14px_14px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-3 group-hover:rotate-1 flex items-center justify-center overflow-hidden"
                   style={{ background: col.color }}
-                />
+                >
+                  <span className="material-symbols-outlined !text-[80px] text-white/25 group-hover:text-white/70 transition-all duration-300 group-hover:scale-110">
+                    {col.icon}
+                  </span>
+                </div>
 
                 {/* Label Block */}
                 <div className="relative h-[120px] w-[236px] border-x-[5px] border-b-[5px] border-black bg-white p-4 flex flex-col justify-between shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group-hover:shadow-[14px_14px_0px_0px_rgba(0,0,0,1)] group-hover:-translate-y-3 group-hover:rotate-1">
