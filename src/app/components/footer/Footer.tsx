@@ -21,7 +21,7 @@ export default function Footer() {
                         Datenschutz
                     </Link>
                     <Link
-                        href="/kontakt"
+                        href="/contact"
                         className="text-[10px] font-bold text-neutral-400 tracking-wider font-text uppercase hover:text-black transition-colors"
                     >
                         Kontakt
