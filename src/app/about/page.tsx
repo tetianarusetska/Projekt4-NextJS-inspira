@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "@/app/components/header/Header";
 import Background from "@/app/layoutDesign/Background";
 import Footer from "../components/footer/Footer";

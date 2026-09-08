@@ -1,8 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import { collections } from "../data/Collections";
 import { PersonalAreaProps } from "../types/PersonalAreaProps";
+import EditNameForm from "./EditNameForm";
 
 export default function Studio({ user, counts }: PersonalAreaProps) {
     
@@ -35,9 +34,10 @@ export default function Studio({ user, counts }: PersonalAreaProps) {
                     </div>
 
                     <div className="space-y-2 pt-6 border-t border-black">
-                        <p className="text-2xl font-black uppercase font-text">
+                        <EditNameForm initialName={displayName} />
+                        {/* <p className="text-2xl font-black uppercase font-text">
                             {displayName}
-                        </p>
+                        </p> */}
                         <p className="text-sm text-neutral-400 font-bold uppercase tracking-wider">
                             Sammler seit 2026
                         </p>
