@@ -1,9 +1,12 @@
 "use client";
 
+import type { Dispatch, SetStateAction } from "react";
 import { CollectionsProps } from "../types/CollectionsProps";
 import { collections } from "../data/Collections";
 
 interface ExtendedCollectionsProps extends CollectionsProps {
+  selectedCategory: string;
+  setSelectedCategory: Dispatch<SetStateAction<string>>;
   onNext?: () => void;
 }
 
