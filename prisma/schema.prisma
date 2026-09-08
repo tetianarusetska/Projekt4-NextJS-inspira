@@ -90,7 +90,6 @@ model Book {
   note            String
   bestQuote       String
 
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -108,7 +107,6 @@ model Music {
   note            String
   bestQuote       String
 
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -125,7 +123,6 @@ model Magazine {
   note            String
   bestQuote       String
 
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -144,7 +141,6 @@ model Artwork {
   discovered_by   String
   note            String
 
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -161,7 +157,6 @@ model Museum {
   discovered_by   String
   note            String
 
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -178,7 +173,6 @@ model Gallery {
   date            DateTime
   note            String
 
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -195,7 +189,6 @@ model Image {
   discovered_by   String
   note            String
   
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -211,7 +204,6 @@ model Photograph {
   source          String
   note            String
   
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -227,7 +219,6 @@ model Idea {
   description     String
   next_step       String
 
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -243,7 +234,6 @@ model Quote {
   year            Int
   context         String
   
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }
@@ -272,7 +262,6 @@ model CustomCollectionObject {
   description     String?
   note            String?
 
-  isFavorite      Boolean       @default(false)
   imageUrl        String?
   createdAt       DateTime      @default(now())
 }

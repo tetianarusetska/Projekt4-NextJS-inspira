@@ -45,7 +45,6 @@ export type ImageMinAggregateOutputType = {
   source: string | null
   discovered_by: string | null
   note: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -59,7 +58,6 @@ export type ImageMaxAggregateOutputType = {
   source: string | null
   discovered_by: string | null
   note: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -73,7 +71,6 @@ export type ImageCountAggregateOutputType = {
   source: number
   discovered_by: number
   note: number
-  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -99,7 +96,6 @@ export type ImageMinAggregateInputType = {
   source?: true
   discovered_by?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -113,7 +109,6 @@ export type ImageMaxAggregateInputType = {
   source?: true
   discovered_by?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -127,7 +122,6 @@ export type ImageCountAggregateInputType = {
   source?: true
   discovered_by?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -228,7 +222,6 @@ export type ImageGroupByOutputType = {
   source: string
   discovered_by: string
   note: string
-  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: ImageCountAggregateOutputType | null
@@ -265,7 +258,6 @@ export type ImageWhereInput = {
   source?: Prisma.StringFilter<"Image"> | string
   discovered_by?: Prisma.StringFilter<"Image"> | string
   note?: Prisma.StringFilter<"Image"> | string
-  isFavorite?: Prisma.BoolFilter<"Image"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Image"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Image"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -280,7 +272,6 @@ export type ImageOrderByWithRelationInput = {
   source?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -298,7 +289,6 @@ export type ImageWhereUniqueInput = Prisma.AtLeast<{
   source?: Prisma.StringFilter<"Image"> | string
   discovered_by?: Prisma.StringFilter<"Image"> | string
   note?: Prisma.StringFilter<"Image"> | string
-  isFavorite?: Prisma.BoolFilter<"Image"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Image"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Image"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -313,7 +303,6 @@ export type ImageOrderByWithAggregationInput = {
   source?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.ImageCountOrderByAggregateInput
@@ -335,7 +324,6 @@ export type ImageScalarWhereWithAggregatesInput = {
   source?: Prisma.StringWithAggregatesFilter<"Image"> | string
   discovered_by?: Prisma.StringWithAggregatesFilter<"Image"> | string
   note?: Prisma.StringWithAggregatesFilter<"Image"> | string
-  isFavorite?: Prisma.BoolWithAggregatesFilter<"Image"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Image"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Image"> | Date | string
 }
@@ -347,7 +335,6 @@ export type ImageCreateInput = {
   source: string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutImagesInput
@@ -362,7 +349,6 @@ export type ImageUncheckedCreateInput = {
   source: string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -374,7 +360,6 @@ export type ImageUpdateInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutImagesNestedInput
@@ -389,7 +374,6 @@ export type ImageUncheckedUpdateInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -403,7 +387,6 @@ export type ImageCreateManyInput = {
   source: string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -415,7 +398,6 @@ export type ImageUpdateManyMutationInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -429,7 +411,6 @@ export type ImageUncheckedUpdateManyInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -453,7 +434,6 @@ export type ImageCountOrderByAggregateInput = {
   source?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -472,7 +452,6 @@ export type ImageMaxOrderByAggregateInput = {
   source?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -486,7 +465,6 @@ export type ImageMinOrderByAggregateInput = {
   source?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -545,7 +523,6 @@ export type ImageCreateWithoutUserInput = {
   source: string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -558,7 +535,6 @@ export type ImageUncheckedCreateWithoutUserInput = {
   source: string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -601,7 +577,6 @@ export type ImageScalarWhereInput = {
   source?: Prisma.StringFilter<"Image"> | string
   discovered_by?: Prisma.StringFilter<"Image"> | string
   note?: Prisma.StringFilter<"Image"> | string
-  isFavorite?: Prisma.BoolFilter<"Image"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Image"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Image"> | Date | string
 }
@@ -614,7 +589,6 @@ export type ImageCreateManyUserInput = {
   source: string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -626,7 +600,6 @@ export type ImageUpdateWithoutUserInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -639,7 +612,6 @@ export type ImageUncheckedUpdateWithoutUserInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -652,7 +624,6 @@ export type ImageUncheckedUpdateManyWithoutUserInput = {
   source?: Prisma.StringFieldUpdateOperationsInput | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -668,7 +639,6 @@ export type ImageSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   source?: boolean
   discovered_by?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -683,7 +653,6 @@ export type ImageSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   source?: boolean
   discovered_by?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -698,7 +667,6 @@ export type ImageSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   source?: boolean
   discovered_by?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -713,12 +681,11 @@ export type ImageSelectScalar = {
   source?: boolean
   discovered_by?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type ImageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "creator" | "year" | "source" | "discovered_by" | "note" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["image"]>
+export type ImageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "creator" | "year" | "source" | "discovered_by" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["image"]>
 export type ImageInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -743,7 +710,6 @@ export type $ImagePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     source: string
     discovered_by: string
     note: string
-    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["image"]>
@@ -1178,7 +1144,6 @@ export interface ImageFieldRefs {
   readonly source: Prisma.FieldRef<"Image", 'String'>
   readonly discovered_by: Prisma.FieldRef<"Image", 'String'>
   readonly note: Prisma.FieldRef<"Image", 'String'>
-  readonly isFavorite: Prisma.FieldRef<"Image", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Image", 'String'>
   readonly createdAt: Prisma.FieldRef<"Image", 'DateTime'>
 }

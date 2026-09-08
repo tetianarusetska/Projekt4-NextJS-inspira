@@ -46,7 +46,6 @@ export type BookMinAggregateOutputType = {
   discovered_by: string | null
   note: string | null
   bestQuote: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -61,7 +60,6 @@ export type BookMaxAggregateOutputType = {
   discovered_by: string | null
   note: string | null
   bestQuote: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -76,7 +74,6 @@ export type BookCountAggregateOutputType = {
   discovered_by: number
   note: number
   bestQuote: number
-  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -103,7 +100,6 @@ export type BookMinAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -118,7 +114,6 @@ export type BookMaxAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -133,7 +128,6 @@ export type BookCountAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -235,7 +229,6 @@ export type BookGroupByOutputType = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: BookCountAggregateOutputType | null
@@ -273,7 +266,6 @@ export type BookWhereInput = {
   discovered_by?: Prisma.StringFilter<"Book"> | string
   note?: Prisma.StringFilter<"Book"> | string
   bestQuote?: Prisma.StringFilter<"Book"> | string
-  isFavorite?: Prisma.BoolFilter<"Book"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Book"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Book"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -289,7 +281,6 @@ export type BookOrderByWithRelationInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -308,7 +299,6 @@ export type BookWhereUniqueInput = Prisma.AtLeast<{
   discovered_by?: Prisma.StringFilter<"Book"> | string
   note?: Prisma.StringFilter<"Book"> | string
   bestQuote?: Prisma.StringFilter<"Book"> | string
-  isFavorite?: Prisma.BoolFilter<"Book"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Book"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Book"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -324,7 +314,6 @@ export type BookOrderByWithAggregationInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.BookCountOrderByAggregateInput
@@ -347,7 +336,6 @@ export type BookScalarWhereWithAggregatesInput = {
   discovered_by?: Prisma.StringWithAggregatesFilter<"Book"> | string
   note?: Prisma.StringWithAggregatesFilter<"Book"> | string
   bestQuote?: Prisma.StringWithAggregatesFilter<"Book"> | string
-  isFavorite?: Prisma.BoolWithAggregatesFilter<"Book"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Book"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Book"> | Date | string
 }
@@ -360,7 +348,6 @@ export type BookCreateInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutBooksInput
@@ -376,7 +363,6 @@ export type BookUncheckedCreateInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -389,7 +375,6 @@ export type BookUpdateInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutBooksNestedInput
@@ -405,7 +390,6 @@ export type BookUncheckedUpdateInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -420,7 +404,6 @@ export type BookCreateManyInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -433,7 +416,6 @@ export type BookUpdateManyMutationInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -448,7 +430,6 @@ export type BookUncheckedUpdateManyInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -473,7 +454,6 @@ export type BookCountOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -493,7 +473,6 @@ export type BookMaxOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -508,7 +487,6 @@ export type BookMinOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -576,7 +554,6 @@ export type BookCreateWithoutUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -590,7 +567,6 @@ export type BookUncheckedCreateWithoutUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -634,7 +610,6 @@ export type BookScalarWhereInput = {
   discovered_by?: Prisma.StringFilter<"Book"> | string
   note?: Prisma.StringFilter<"Book"> | string
   bestQuote?: Prisma.StringFilter<"Book"> | string
-  isFavorite?: Prisma.BoolFilter<"Book"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Book"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Book"> | Date | string
 }
@@ -648,7 +623,6 @@ export type BookCreateManyUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -661,7 +635,6 @@ export type BookUpdateWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -675,7 +648,6 @@ export type BookUncheckedUpdateWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -689,7 +661,6 @@ export type BookUncheckedUpdateManyWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -706,7 +677,6 @@ export type BookSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -722,7 +692,6 @@ export type BookSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -738,7 +707,6 @@ export type BookSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -754,12 +722,11 @@ export type BookSelectScalar = {
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type BookOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "author" | "year" | "pages" | "discovered_by" | "note" | "bestQuote" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["book"]>
+export type BookOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "author" | "year" | "pages" | "discovered_by" | "note" | "bestQuote" | "imageUrl" | "createdAt", ExtArgs["result"]["book"]>
 export type BookInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -785,7 +752,6 @@ export type $BookPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     discovered_by: string
     note: string
     bestQuote: string
-    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["book"]>
@@ -1221,7 +1187,6 @@ export interface BookFieldRefs {
   readonly discovered_by: Prisma.FieldRef<"Book", 'String'>
   readonly note: Prisma.FieldRef<"Book", 'String'>
   readonly bestQuote: Prisma.FieldRef<"Book", 'String'>
-  readonly isFavorite: Prisma.FieldRef<"Book", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Book", 'String'>
   readonly createdAt: Prisma.FieldRef<"Book", 'DateTime'>
 }

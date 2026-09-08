@@ -43,7 +43,6 @@ export type MuseumMinAggregateOutputType = {
   date: Date | null
   discovered_by: string | null
   note: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -57,7 +56,6 @@ export type MuseumMaxAggregateOutputType = {
   date: Date | null
   discovered_by: string | null
   note: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -71,7 +69,6 @@ export type MuseumCountAggregateOutputType = {
   date: number
   discovered_by: number
   note: number
-  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -95,7 +92,6 @@ export type MuseumMinAggregateInputType = {
   date?: true
   discovered_by?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -109,7 +105,6 @@ export type MuseumMaxAggregateInputType = {
   date?: true
   discovered_by?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -123,7 +118,6 @@ export type MuseumCountAggregateInputType = {
   date?: true
   discovered_by?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -224,7 +218,6 @@ export type MuseumGroupByOutputType = {
   date: Date
   discovered_by: string
   note: string
-  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: MuseumCountAggregateOutputType | null
@@ -261,7 +254,6 @@ export type MuseumWhereInput = {
   date?: Prisma.DateTimeFilter<"Museum"> | Date | string
   discovered_by?: Prisma.StringFilter<"Museum"> | string
   note?: Prisma.StringFilter<"Museum"> | string
-  isFavorite?: Prisma.BoolFilter<"Museum"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Museum"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Museum"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -276,7 +268,6 @@ export type MuseumOrderByWithRelationInput = {
   date?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -294,7 +285,6 @@ export type MuseumWhereUniqueInput = Prisma.AtLeast<{
   date?: Prisma.DateTimeFilter<"Museum"> | Date | string
   discovered_by?: Prisma.StringFilter<"Museum"> | string
   note?: Prisma.StringFilter<"Museum"> | string
-  isFavorite?: Prisma.BoolFilter<"Museum"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Museum"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Museum"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -309,7 +299,6 @@ export type MuseumOrderByWithAggregationInput = {
   date?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.MuseumCountOrderByAggregateInput
@@ -331,7 +320,6 @@ export type MuseumScalarWhereWithAggregatesInput = {
   date?: Prisma.DateTimeWithAggregatesFilter<"Museum"> | Date | string
   discovered_by?: Prisma.StringWithAggregatesFilter<"Museum"> | string
   note?: Prisma.StringWithAggregatesFilter<"Museum"> | string
-  isFavorite?: Prisma.BoolWithAggregatesFilter<"Museum"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Museum"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Museum"> | Date | string
 }
@@ -343,7 +331,6 @@ export type MuseumCreateInput = {
   date: Date | string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutMuseumsInput
@@ -358,7 +345,6 @@ export type MuseumUncheckedCreateInput = {
   date: Date | string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -370,7 +356,6 @@ export type MuseumUpdateInput = {
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutMuseumsNestedInput
@@ -385,7 +370,6 @@ export type MuseumUncheckedUpdateInput = {
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -399,7 +383,6 @@ export type MuseumCreateManyInput = {
   date: Date | string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -411,7 +394,6 @@ export type MuseumUpdateManyMutationInput = {
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -425,7 +407,6 @@ export type MuseumUncheckedUpdateManyInput = {
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -449,7 +430,6 @@ export type MuseumCountOrderByAggregateInput = {
   date?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -467,7 +447,6 @@ export type MuseumMaxOrderByAggregateInput = {
   date?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -481,7 +460,6 @@ export type MuseumMinOrderByAggregateInput = {
   date?: Prisma.SortOrder
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -539,7 +517,6 @@ export type MuseumCreateWithoutUserInput = {
   date: Date | string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -552,7 +529,6 @@ export type MuseumUncheckedCreateWithoutUserInput = {
   date: Date | string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -595,7 +571,6 @@ export type MuseumScalarWhereInput = {
   date?: Prisma.DateTimeFilter<"Museum"> | Date | string
   discovered_by?: Prisma.StringFilter<"Museum"> | string
   note?: Prisma.StringFilter<"Museum"> | string
-  isFavorite?: Prisma.BoolFilter<"Museum"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Museum"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Museum"> | Date | string
 }
@@ -608,7 +583,6 @@ export type MuseumCreateManyUserInput = {
   date: Date | string
   discovered_by: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -620,7 +594,6 @@ export type MuseumUpdateWithoutUserInput = {
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -633,7 +606,6 @@ export type MuseumUncheckedUpdateWithoutUserInput = {
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -646,7 +618,6 @@ export type MuseumUncheckedUpdateManyWithoutUserInput = {
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -662,7 +633,6 @@ export type MuseumSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   date?: boolean
   discovered_by?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -677,7 +647,6 @@ export type MuseumSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   date?: boolean
   discovered_by?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -692,7 +661,6 @@ export type MuseumSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   date?: boolean
   discovered_by?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -707,12 +675,11 @@ export type MuseumSelectScalar = {
   date?: boolean
   discovered_by?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type MuseumOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "city" | "exhibition" | "date" | "discovered_by" | "note" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["museum"]>
+export type MuseumOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "city" | "exhibition" | "date" | "discovered_by" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["museum"]>
 export type MuseumInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -737,7 +704,6 @@ export type $MuseumPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     date: Date
     discovered_by: string
     note: string
-    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["museum"]>
@@ -1172,7 +1138,6 @@ export interface MuseumFieldRefs {
   readonly date: Prisma.FieldRef<"Museum", 'DateTime'>
   readonly discovered_by: Prisma.FieldRef<"Museum", 'String'>
   readonly note: Prisma.FieldRef<"Museum", 'String'>
-  readonly isFavorite: Prisma.FieldRef<"Museum", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Museum", 'String'>
   readonly createdAt: Prisma.FieldRef<"Museum", 'DateTime'>
 }

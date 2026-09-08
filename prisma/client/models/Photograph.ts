@@ -42,7 +42,6 @@ export type PhotographMinAggregateOutputType = {
   location: string | null
   source: string | null
   note: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -55,7 +54,6 @@ export type PhotographMaxAggregateOutputType = {
   location: string | null
   source: string | null
   note: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -68,7 +66,6 @@ export type PhotographCountAggregateOutputType = {
   location: number
   source: number
   note: number
-  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -91,7 +88,6 @@ export type PhotographMinAggregateInputType = {
   location?: true
   source?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -104,7 +100,6 @@ export type PhotographMaxAggregateInputType = {
   location?: true
   source?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -117,7 +112,6 @@ export type PhotographCountAggregateInputType = {
   location?: true
   source?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -217,7 +211,6 @@ export type PhotographGroupByOutputType = {
   location: string
   source: string
   note: string
-  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: PhotographCountAggregateOutputType | null
@@ -253,7 +246,6 @@ export type PhotographWhereInput = {
   location?: Prisma.StringFilter<"Photograph"> | string
   source?: Prisma.StringFilter<"Photograph"> | string
   note?: Prisma.StringFilter<"Photograph"> | string
-  isFavorite?: Prisma.BoolFilter<"Photograph"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Photograph"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Photograph"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -267,7 +259,6 @@ export type PhotographOrderByWithRelationInput = {
   location?: Prisma.SortOrder
   source?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -284,7 +275,6 @@ export type PhotographWhereUniqueInput = Prisma.AtLeast<{
   location?: Prisma.StringFilter<"Photograph"> | string
   source?: Prisma.StringFilter<"Photograph"> | string
   note?: Prisma.StringFilter<"Photograph"> | string
-  isFavorite?: Prisma.BoolFilter<"Photograph"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Photograph"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Photograph"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -298,7 +288,6 @@ export type PhotographOrderByWithAggregationInput = {
   location?: Prisma.SortOrder
   source?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.PhotographCountOrderByAggregateInput
@@ -319,7 +308,6 @@ export type PhotographScalarWhereWithAggregatesInput = {
   location?: Prisma.StringWithAggregatesFilter<"Photograph"> | string
   source?: Prisma.StringWithAggregatesFilter<"Photograph"> | string
   note?: Prisma.StringWithAggregatesFilter<"Photograph"> | string
-  isFavorite?: Prisma.BoolWithAggregatesFilter<"Photograph"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Photograph"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Photograph"> | Date | string
 }
@@ -330,7 +318,6 @@ export type PhotographCreateInput = {
   location: string
   source: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutPhotographsInput
@@ -344,7 +331,6 @@ export type PhotographUncheckedCreateInput = {
   location: string
   source: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -355,7 +341,6 @@ export type PhotographUpdateInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutPhotographsNestedInput
@@ -369,7 +354,6 @@ export type PhotographUncheckedUpdateInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -382,7 +366,6 @@ export type PhotographCreateManyInput = {
   location: string
   source: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -393,7 +376,6 @@ export type PhotographUpdateManyMutationInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -406,7 +388,6 @@ export type PhotographUncheckedUpdateManyInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -429,7 +410,6 @@ export type PhotographCountOrderByAggregateInput = {
   location?: Prisma.SortOrder
   source?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -446,7 +426,6 @@ export type PhotographMaxOrderByAggregateInput = {
   location?: Prisma.SortOrder
   source?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -459,7 +438,6 @@ export type PhotographMinOrderByAggregateInput = {
   location?: Prisma.SortOrder
   source?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -516,7 +494,6 @@ export type PhotographCreateWithoutUserInput = {
   location: string
   source: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -528,7 +505,6 @@ export type PhotographUncheckedCreateWithoutUserInput = {
   location: string
   source: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -570,7 +546,6 @@ export type PhotographScalarWhereInput = {
   location?: Prisma.StringFilter<"Photograph"> | string
   source?: Prisma.StringFilter<"Photograph"> | string
   note?: Prisma.StringFilter<"Photograph"> | string
-  isFavorite?: Prisma.BoolFilter<"Photograph"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Photograph"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Photograph"> | Date | string
 }
@@ -582,7 +557,6 @@ export type PhotographCreateManyUserInput = {
   location: string
   source: string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -593,7 +567,6 @@ export type PhotographUpdateWithoutUserInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -605,7 +578,6 @@ export type PhotographUncheckedUpdateWithoutUserInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -617,7 +589,6 @@ export type PhotographUncheckedUpdateManyWithoutUserInput = {
   location?: Prisma.StringFieldUpdateOperationsInput | string
   source?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -632,7 +603,6 @@ export type PhotographSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   location?: boolean
   source?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -646,7 +616,6 @@ export type PhotographSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   location?: boolean
   source?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -660,7 +629,6 @@ export type PhotographSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   location?: boolean
   source?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -674,12 +642,11 @@ export type PhotographSelectScalar = {
   location?: boolean
   source?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type PhotographOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "photographer" | "title" | "location" | "source" | "note" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["photograph"]>
+export type PhotographOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "photographer" | "title" | "location" | "source" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["photograph"]>
 export type PhotographInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -703,7 +670,6 @@ export type $PhotographPayload<ExtArgs extends runtime.Types.Extensions.Internal
     location: string
     source: string
     note: string
-    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["photograph"]>
@@ -1137,7 +1103,6 @@ export interface PhotographFieldRefs {
   readonly location: Prisma.FieldRef<"Photograph", 'String'>
   readonly source: Prisma.FieldRef<"Photograph", 'String'>
   readonly note: Prisma.FieldRef<"Photograph", 'String'>
-  readonly isFavorite: Prisma.FieldRef<"Photograph", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Photograph", 'String'>
   readonly createdAt: Prisma.FieldRef<"Photograph", 'DateTime'>
 }

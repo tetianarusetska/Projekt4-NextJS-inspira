@@ -44,7 +44,6 @@ export type MusicMinAggregateOutputType = {
   discovered_by: string | null
   note: string | null
   bestQuote: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -59,7 +58,6 @@ export type MusicMaxAggregateOutputType = {
   discovered_by: string | null
   note: string | null
   bestQuote: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -74,7 +72,6 @@ export type MusicCountAggregateOutputType = {
   discovered_by: number
   note: number
   bestQuote: number
-  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -99,7 +96,6 @@ export type MusicMinAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -114,7 +110,6 @@ export type MusicMaxAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -129,7 +124,6 @@ export type MusicCountAggregateInputType = {
   discovered_by?: true
   note?: true
   bestQuote?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -231,7 +225,6 @@ export type MusicGroupByOutputType = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: MusicCountAggregateOutputType | null
@@ -269,7 +262,6 @@ export type MusicWhereInput = {
   discovered_by?: Prisma.StringFilter<"Music"> | string
   note?: Prisma.StringFilter<"Music"> | string
   bestQuote?: Prisma.StringFilter<"Music"> | string
-  isFavorite?: Prisma.BoolFilter<"Music"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Music"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Music"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -285,7 +277,6 @@ export type MusicOrderByWithRelationInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -304,7 +295,6 @@ export type MusicWhereUniqueInput = Prisma.AtLeast<{
   discovered_by?: Prisma.StringFilter<"Music"> | string
   note?: Prisma.StringFilter<"Music"> | string
   bestQuote?: Prisma.StringFilter<"Music"> | string
-  isFavorite?: Prisma.BoolFilter<"Music"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Music"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Music"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -320,7 +310,6 @@ export type MusicOrderByWithAggregationInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.MusicCountOrderByAggregateInput
@@ -343,7 +332,6 @@ export type MusicScalarWhereWithAggregatesInput = {
   discovered_by?: Prisma.StringWithAggregatesFilter<"Music"> | string
   note?: Prisma.StringWithAggregatesFilter<"Music"> | string
   bestQuote?: Prisma.StringWithAggregatesFilter<"Music"> | string
-  isFavorite?: Prisma.BoolWithAggregatesFilter<"Music"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Music"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Music"> | Date | string
 }
@@ -356,7 +344,6 @@ export type MusicCreateInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutMusicInput
@@ -372,7 +359,6 @@ export type MusicUncheckedCreateInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -385,7 +371,6 @@ export type MusicUpdateInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutMusicNestedInput
@@ -401,7 +386,6 @@ export type MusicUncheckedUpdateInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -416,7 +400,6 @@ export type MusicCreateManyInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -429,7 +412,6 @@ export type MusicUpdateManyMutationInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -444,7 +426,6 @@ export type MusicUncheckedUpdateManyInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -469,7 +450,6 @@ export type MusicCountOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -488,7 +468,6 @@ export type MusicMaxOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -503,7 +482,6 @@ export type MusicMinOrderByAggregateInput = {
   discovered_by?: Prisma.SortOrder
   note?: Prisma.SortOrder
   bestQuote?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -562,7 +540,6 @@ export type MusicCreateWithoutUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -576,7 +553,6 @@ export type MusicUncheckedCreateWithoutUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -620,7 +596,6 @@ export type MusicScalarWhereInput = {
   discovered_by?: Prisma.StringFilter<"Music"> | string
   note?: Prisma.StringFilter<"Music"> | string
   bestQuote?: Prisma.StringFilter<"Music"> | string
-  isFavorite?: Prisma.BoolFilter<"Music"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Music"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Music"> | Date | string
 }
@@ -634,7 +609,6 @@ export type MusicCreateManyUserInput = {
   discovered_by: string
   note: string
   bestQuote: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -647,7 +621,6 @@ export type MusicUpdateWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -661,7 +634,6 @@ export type MusicUncheckedUpdateWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -675,7 +647,6 @@ export type MusicUncheckedUpdateManyWithoutUserInput = {
   discovered_by?: Prisma.StringFieldUpdateOperationsInput | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
   bestQuote?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -692,7 +663,6 @@ export type MusicSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -708,7 +678,6 @@ export type MusicSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -724,7 +693,6 @@ export type MusicSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -740,12 +708,11 @@ export type MusicSelectScalar = {
   discovered_by?: boolean
   note?: boolean
   bestQuote?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type MusicOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "format" | "title" | "author" | "year" | "discovered_by" | "note" | "bestQuote" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["music"]>
+export type MusicOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "format" | "title" | "author" | "year" | "discovered_by" | "note" | "bestQuote" | "imageUrl" | "createdAt", ExtArgs["result"]["music"]>
 export type MusicInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -771,7 +738,6 @@ export type $MusicPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     discovered_by: string
     note: string
     bestQuote: string
-    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["music"]>
@@ -1207,7 +1173,6 @@ export interface MusicFieldRefs {
   readonly discovered_by: Prisma.FieldRef<"Music", 'String'>
   readonly note: Prisma.FieldRef<"Music", 'String'>
   readonly bestQuote: Prisma.FieldRef<"Music", 'String'>
-  readonly isFavorite: Prisma.FieldRef<"Music", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Music", 'String'>
   readonly createdAt: Prisma.FieldRef<"Music", 'DateTime'>
 }

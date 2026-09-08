@@ -43,7 +43,6 @@ export type GalleryMinAggregateOutputType = {
   exhibition: string | null
   date: Date | null
   note: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -57,7 +56,6 @@ export type GalleryMaxAggregateOutputType = {
   exhibition: string | null
   date: Date | null
   note: string | null
-  isFavorite: boolean | null
   imageUrl: string | null
   createdAt: Date | null
 }
@@ -71,7 +69,6 @@ export type GalleryCountAggregateOutputType = {
   exhibition: number
   date: number
   note: number
-  isFavorite: number
   imageUrl: number
   createdAt: number
   _all: number
@@ -95,7 +92,6 @@ export type GalleryMinAggregateInputType = {
   exhibition?: true
   date?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -109,7 +105,6 @@ export type GalleryMaxAggregateInputType = {
   exhibition?: true
   date?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
 }
@@ -123,7 +118,6 @@ export type GalleryCountAggregateInputType = {
   exhibition?: true
   date?: true
   note?: true
-  isFavorite?: true
   imageUrl?: true
   createdAt?: true
   _all?: true
@@ -224,7 +218,6 @@ export type GalleryGroupByOutputType = {
   exhibition: string
   date: Date
   note: string
-  isFavorite: boolean
   imageUrl: string | null
   createdAt: Date
   _count: GalleryCountAggregateOutputType | null
@@ -261,7 +254,6 @@ export type GalleryWhereInput = {
   exhibition?: Prisma.StringFilter<"Gallery"> | string
   date?: Prisma.DateTimeFilter<"Gallery"> | Date | string
   note?: Prisma.StringFilter<"Gallery"> | string
-  isFavorite?: Prisma.BoolFilter<"Gallery"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Gallery"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Gallery"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -276,7 +268,6 @@ export type GalleryOrderByWithRelationInput = {
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -294,7 +285,6 @@ export type GalleryWhereUniqueInput = Prisma.AtLeast<{
   exhibition?: Prisma.StringFilter<"Gallery"> | string
   date?: Prisma.DateTimeFilter<"Gallery"> | Date | string
   note?: Prisma.StringFilter<"Gallery"> | string
-  isFavorite?: Prisma.BoolFilter<"Gallery"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Gallery"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Gallery"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -309,7 +299,6 @@ export type GalleryOrderByWithAggregationInput = {
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.GalleryCountOrderByAggregateInput
@@ -331,7 +320,6 @@ export type GalleryScalarWhereWithAggregatesInput = {
   exhibition?: Prisma.StringWithAggregatesFilter<"Gallery"> | string
   date?: Prisma.DateTimeWithAggregatesFilter<"Gallery"> | Date | string
   note?: Prisma.StringWithAggregatesFilter<"Gallery"> | string
-  isFavorite?: Prisma.BoolWithAggregatesFilter<"Gallery"> | boolean
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Gallery"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Gallery"> | Date | string
 }
@@ -343,7 +331,6 @@ export type GalleryCreateInput = {
   exhibition: string
   date: Date | string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutGalleriesInput
@@ -358,7 +345,6 @@ export type GalleryUncheckedCreateInput = {
   exhibition: string
   date: Date | string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -370,7 +356,6 @@ export type GalleryUpdateInput = {
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutGalleriesNestedInput
@@ -385,7 +370,6 @@ export type GalleryUncheckedUpdateInput = {
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -399,7 +383,6 @@ export type GalleryCreateManyInput = {
   exhibition: string
   date: Date | string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -411,7 +394,6 @@ export type GalleryUpdateManyMutationInput = {
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -425,7 +407,6 @@ export type GalleryUncheckedUpdateManyInput = {
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -449,7 +430,6 @@ export type GalleryCountOrderByAggregateInput = {
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -467,7 +447,6 @@ export type GalleryMaxOrderByAggregateInput = {
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -481,7 +460,6 @@ export type GalleryMinOrderByAggregateInput = {
   exhibition?: Prisma.SortOrder
   date?: Prisma.SortOrder
   note?: Prisma.SortOrder
-  isFavorite?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
@@ -539,7 +517,6 @@ export type GalleryCreateWithoutUserInput = {
   exhibition: string
   date: Date | string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -552,7 +529,6 @@ export type GalleryUncheckedCreateWithoutUserInput = {
   exhibition: string
   date: Date | string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -595,7 +571,6 @@ export type GalleryScalarWhereInput = {
   exhibition?: Prisma.StringFilter<"Gallery"> | string
   date?: Prisma.DateTimeFilter<"Gallery"> | Date | string
   note?: Prisma.StringFilter<"Gallery"> | string
-  isFavorite?: Prisma.BoolFilter<"Gallery"> | boolean
   imageUrl?: Prisma.StringNullableFilter<"Gallery"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Gallery"> | Date | string
 }
@@ -608,7 +583,6 @@ export type GalleryCreateManyUserInput = {
   exhibition: string
   date: Date | string
   note: string
-  isFavorite?: boolean
   imageUrl?: string | null
   createdAt?: Date | string
 }
@@ -620,7 +594,6 @@ export type GalleryUpdateWithoutUserInput = {
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -633,7 +606,6 @@ export type GalleryUncheckedUpdateWithoutUserInput = {
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -646,7 +618,6 @@ export type GalleryUncheckedUpdateManyWithoutUserInput = {
   exhibition?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   note?: Prisma.StringFieldUpdateOperationsInput | string
-  isFavorite?: Prisma.BoolFieldUpdateOperationsInput | boolean
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -662,7 +633,6 @@ export type GallerySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   exhibition?: boolean
   date?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -677,7 +647,6 @@ export type GallerySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   exhibition?: boolean
   date?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -692,7 +661,6 @@ export type GallerySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   exhibition?: boolean
   date?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -707,12 +675,11 @@ export type GallerySelectScalar = {
   exhibition?: boolean
   date?: boolean
   note?: boolean
-  isFavorite?: boolean
   imageUrl?: boolean
   createdAt?: boolean
 }
 
-export type GalleryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "city" | "artist" | "exhibition" | "date" | "note" | "isFavorite" | "imageUrl" | "createdAt", ExtArgs["result"]["gallery"]>
+export type GalleryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "title" | "city" | "artist" | "exhibition" | "date" | "note" | "imageUrl" | "createdAt", ExtArgs["result"]["gallery"]>
 export type GalleryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -737,7 +704,6 @@ export type $GalleryPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     exhibition: string
     date: Date
     note: string
-    isFavorite: boolean
     imageUrl: string | null
     createdAt: Date
   }, ExtArgs["result"]["gallery"]>
@@ -1172,7 +1138,6 @@ export interface GalleryFieldRefs {
   readonly exhibition: Prisma.FieldRef<"Gallery", 'String'>
   readonly date: Prisma.FieldRef<"Gallery", 'DateTime'>
   readonly note: Prisma.FieldRef<"Gallery", 'String'>
-  readonly isFavorite: Prisma.FieldRef<"Gallery", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Gallery", 'String'>
   readonly createdAt: Prisma.FieldRef<"Gallery", 'DateTime'>
 }
