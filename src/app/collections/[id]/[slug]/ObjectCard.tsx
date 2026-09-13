@@ -156,7 +156,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
             </div>
 
             {/* CRUD Buttons */}
-            <div className="mx-auto grid grid-cols-3 gap-16 mt-15 w-160">
+            <div className="mx-auto grid grid-cols-2 gap-16 mt-15 w-160">
 
                 {isEditing ? (
                     <>
