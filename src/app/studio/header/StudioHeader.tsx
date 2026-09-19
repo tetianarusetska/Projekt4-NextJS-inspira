@@ -28,17 +28,17 @@ export default function StudioHeader() {
     };
 
     return (
-        <header className="grid grid-cols-12 w-full border-b border-black h-18 items-stretch text-sm font-bold tracking-wider bg-[#EDEDED]">
+        <header className="grid grid-cols-12 w-full border-b border-black h-16 lg:h-18 items-stretch text-[8px] min-[390px]:text-[9px] sm:text-xs lg:text-sm font-bold tracking-tighter sm:tracking-wider bg-[#EDEDED]">
 
             {/* Logo */}
-            <div className="col-span-5 flex items-center px-8 border-r border-black">
-                <Link href="/" className="font-['Fayte'] text-4xl">
+            <div className="col-span-4 sm:col-span-5 flex items-center px-2 sm:px-6 lg:px-8 border-r border-black overflow-hidden">
+                <Link href="/" className="w-full h-full flex items-center justify-center text-center px-0 sm:px-2 leading-tight">
                     i . nspira
                 </Link>
             </div>
 
             {/* Navigation */}
-            <div className="col-span-7 grid grid-cols-4 h-full">
+            <div className="col-span-8 sm:col-span-7 grid grid-cols-4 h-full">
 
                 {navLinks.map((link, idx) => {
                    
@@ -50,7 +50,7 @@ export default function StudioHeader() {
                             className={`border-r border-black flex items-center justify-center transition-colors hover:bg-black hover:text-white ${isActive ? "bg-black text-white" : ""
                                 }`}
                         >
-                            <Link href={link.href} className="w-full h-full flex items-center justify-center text-center px-2">
+                            <Link href={link.href} className="w-full h-full flex items-center justify-center text-center px-0.5 sm:px-2 leading-none truncate">
                                 {link.label}
                             </Link>
                         </div>
@@ -61,7 +61,7 @@ export default function StudioHeader() {
                 <div className="flex items-center justify-center bg-white transition-colors hover:bg-black hover:text-white">
                     <button
                         onClick={handleLogout}
-                        className="w-full h-full flex items-center justify-center text-center px-2 cursor-pointer font-bold text-sm tracking-wider"
+                        className="w-full h-full flex items-center justify-center text-center px-0 sm:px-2 cursor-pointer font-bold text-[8px] min-[390px]:text-[9px] sm:text-xs lg:text-sm tracking-tighter sm:tracking-wider leading-none"
                     >
                         LOGOUT
                     </button>

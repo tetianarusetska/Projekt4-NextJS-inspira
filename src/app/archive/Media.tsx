@@ -32,11 +32,11 @@ export default function Media({ image, setImage }: MediaProps) {
     };
 
     return (
-        <div id="media" className="relative z-10 mb-20">
+        <div id="media" className="relative z-10 mb-10 lg:mb-20">
 
             {/* Überschrift */}
-            <div className="flex flex-col gap-4 mt-10">
-                <p className="font-inter font-black text-[32px] leading-[100%] tracking-[1%]">
+            <div className="flex flex-col gap-2 sm:gap-4 mt-6 sm:mt-10">
+                <p className="font-inter font-black text-xl sm:text-2xl lg:text-[32px] leading-tight tracking-[1%]">
                     03    –    MEDIEN HINZUFÜGEN
                 </p>
 
@@ -44,13 +44,13 @@ export default function Media({ image, setImage }: MediaProps) {
                     zeig, was bleibt.
                 </p> */}
 
-                <p className="text-[24px] leading-[100%]">
+                <p className="text-base sm:text-lg lg:text-[24px] leading-tight">
                     Füge die wichtigsten Details hinzu.
                 </p>
             </div>
 
             {/* Media hinzufügen */}
-            <label className="mt-20  flex h-70 w-250 cursor-pointer items-center justify-center border-2 border-dashed border-[#808080]">
+            <label className="mt-8 sm:mt-12 lg:mt-20 flex h-48 sm:h-64 lg:h-70 w-full max-w-[1000px] cursor-pointer items-center justify-center border-2 border-dashed border-[#808080] p-4 text-center">
 
                 <input
                     type="file"
@@ -61,7 +61,7 @@ export default function Media({ image, setImage }: MediaProps) {
                 />
 
                 {isUploading ? (
-                    <span className="text-[24px]">Wird hochgeladen...</span>
+                    <span className="text-xs sm:text-base lg:text-[24px] font-medium leading-snug">Wird hochgeladen...</span>
                 ) : image ? (
                     <img
                         src={image}
@@ -69,7 +69,7 @@ export default function Media({ image, setImage }: MediaProps) {
                         className="h-full w-full object-contain"
                     />
                 ) : (
-                    <span className="text-[24px]">
+                    <span className="text-xs sm:text-base lg:text-[24px] font-medium leading-snug">
                         Bild hierher ziehen oder klicken zum Hochladen
                     </span>
                 )}
@@ -77,7 +77,7 @@ export default function Media({ image, setImage }: MediaProps) {
             </label>
 
             {error && (
-                <p className="ml-5.25 mt-2 text-[16px] text-red-600">{error}</p>
+                <p className="ml-0 sm:ml-5.25 mt-2 text-xs sm:text-[16px] text-red-600">{error}</p>
             )}
 
         </div>

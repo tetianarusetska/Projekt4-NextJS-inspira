@@ -63,11 +63,11 @@ export default function Product({ selectedCategory, values, image, counts, custo
     };
 
     return (
-        <div id="product" className="mb-20">
+        <div id="product" className="mb-10 lg:mb-20">
 
             {/* Überschrift */}
-            <div className="mt-10 flex flex-col gap-4">
-                <p className="font-inter font-black text-[32px] leading-[100%] tracking-[1%]">
+            <div className="mt-6 sm:mt-10 flex flex-col gap-2 sm:gap-4">
+                <p className="font-inter font-black text-xl sm:text-2xl lg:text-[32px] leading-tight tracking-[1%]">
                     04    –    VORSCHAU
                 </p>
 
@@ -75,27 +75,27 @@ export default function Product({ selectedCategory, values, image, counts, custo
                     Ein letzter Blick.
                 </p> */}
 
-                <p className="font-inter  text-[24px] leading-[100%]">
-                    Überprüfe deine Angaben. Dann ist<br></br>dein Objekt bereit fur dein Archiv.
+                <p className="font-inter text-base sm:text-lg lg:text-[24px] leading-snug">
+                    Überprüfe deine Angaben. Dann ist<br className="hidden sm:inline" />dein Objekt bereit fur dein Archiv.
                 </p>
             </div>
 
             {/* Vorschau */}
             <div>
                 {/* Ausgewählte Sammlung */}
-                <div className="mt-10 flex w-full max-w-210 h-104 gap-6 border-dashed border-[#808080] border-2 p-6">
+                <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row w-full max-w-[840px] h-auto lg:h-104 gap-4 sm:gap-6 border-dashed border-[#808080] border-2 p-3 sm:p-6">
 
                     <div className="h-full flex-1">
 
                         <div
-                            className="h-60.5 w-[236.138px] border-[5px] border-black"
+                            className="h-40 sm:h-60.5 w-full max-w-[236px] border-[3px] sm:border-[5px] border-black"
                             style={{ background: collection.color }}
                         />
-                        <div className="relative h-30 w-[236.138px] border-[5px] border-black bg-white">
-                            <div className="font-inter font-black absolute left-3 top-2 text-2xl uppercase">
+                        <div className="relative h-24 sm:h-30 w-full max-w-[236px] border-[3px] sm:border-[5px] border-black bg-white p-3 flex flex-col justify-between">
+                            <div className="font-inter font-black text-base sm:text-xl lg:text-2xl uppercase leading-tight truncate">
                                 {collection.name}
                             </div>
-                            <div className="grotesk-xbold text-sm text-neutral-500 mt-1 absolute left-3 top-16 text-[24px] uppercase">
+                            <div className="grotesk-xbold text-xs sm:text-base lg:text-[20px] text-neutral-500 uppercase leading-none pb-1">
                                 {currentCount} OBJEKTE
                             </div>
 
@@ -104,19 +104,19 @@ export default function Product({ selectedCategory, values, image, counts, custo
 
                     {/* Generierte Karte von Objekt */}
                     <div className="h-full flex-1">
-                        <div className="gap-2 text-center h-90.5 w-[236.138px] border-[5px] border-black flex flex-col justify-center items-center">
+                        <div className="gap-2 text-center h-64 sm:h-90.5 w-full max-w-[236px] border-[3px] sm:border-[5px] border-black flex flex-col justify-center items-center p-4">
                             {!isCreatingCollection && (
                                 <>
-                                    <p className="text-[24px]">
+                                    <p className="text-base sm:text-lg lg:text-[24px] font-bold break-words">
                                         {getDetailValue("title")}
                                     </p>
-                                    <p className="text-[18px]">
+                                    <p className="text-xs sm:text-sm lg:text-[18px] break-words">
                                         {getDetailValue("discovered_by")}
                                     </p>
-                                    <p className="text-[18px]">
+                                    <p className="text-xs sm:text-sm lg:text-[18px] break-words">
                                         "{getDetailValue("note")}"
                                     </p>
-                                    <p className="font-['Kino40'] text-[24px]">
+                                    <p className="font-['Kino40'] text-base sm:text-lg lg:text-[24px]">
                                         {new Date().toLocaleDateString("de-DE", {
                                             month: "2-digit",
                                             year: "numeric",
@@ -126,10 +126,10 @@ export default function Product({ selectedCategory, values, image, counts, custo
                             )}
                         </div>
                     </div>
-                    
+
                     {/* Hinzugefügte Media */}
                     <div className="h-full flex-1">
-                        <div className="h-90.5 w-[236.138px] border-[5px] border-black overflow-hidden">
+                        <div className="h-64 sm:h-90.5 w-full max-w-[236px] border-[3px] sm:border-[5px] border-black overflow-hidden">
                             {image && (
                                 <img
                                     src={image}
@@ -144,15 +144,16 @@ export default function Product({ selectedCategory, values, image, counts, custo
             </div>
 
             {/* CTA Button  */}
-            <div className="mt-10 w-210 h-50 border-[#808080] border-2 flex flex-row justify-between items-center">
+            <div className="mt-6 sm:mt-10 w-full max-w-[840px] h-auto lg:h-50 border-[#808080] border-2 flex flex-col sm:flex-row justify-between items-stretch sm:items-center p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6 bg-white">
                 <div>
-                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mt-9 ml-7">Wird gespeichert als</p>
-                    <p className="grotesk-xbold text-[36px] uppercase tracking-[5%] mb-5 ml-7">N°{objectId ?? predictedNumber} — {collection.code}</p>                </div>
-                <div>
+                    <p className="grotesk-xbold text-xs sm:text-lg lg:text-[24px] uppercase tracking-wider text-neutral-400">Wird gespeichert als</p>
+                    <p className="grotesk-xbold text-base sm:text-2xl lg:text-[32px] uppercase tracking-wider text-black">N°{objectId ?? predictedNumber} — {collection.code}</p>
+                </div>
+                <div className="flex flex-col gap-2 w-full sm:w-auto">
                     <button
                         onClick={handleSave}
                         disabled={isSaving}
-                        className="mt-9 mr-9 grotesk-xbold block  text-white bg-black uppercase text-center text-[32px] w-60.25 h-15.5 tracking-[1px] border-2 border-(--mainColor)"
+                        className="grotesk-xbold text-white bg-black uppercase text-center text-sm sm:text-xl lg:text-[28px] w-full sm:w-60 h-12 sm:h-15.5 tracking-[1px] border-2 border-black hover:bg-white hover:text-black transition-all cursor-pointer active:scale-[0.98] shrink-0"
                     >
                         {isSaving ? "..." : "Speichern"}
                     </button>

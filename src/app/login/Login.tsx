@@ -189,13 +189,6 @@ export default function Login() {
 
             </main>
 
-            {/* FOOTER */}
-            <footer className="border-t border-black py-6 px-12 bg-[#EDEDED] flex justify-between items-center z-10">
-                <span className="text-[10px] font-bold text-neutral-400 tracking-wider font-text uppercase">
-                    © {new Date().getFullYear()} I . NSPIRA. ALLE RECHTE VORBEHALTEN.
-                </span>
-            </footer>
-
         </div>
     );
 }
