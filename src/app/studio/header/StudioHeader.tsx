@@ -31,8 +31,8 @@ export default function StudioHeader() {
         <header className="grid grid-cols-12 w-full border-b border-black h-16 lg:h-18 items-stretch text-[8px] min-[390px]:text-[9px] sm:text-xs lg:text-sm font-bold tracking-tighter sm:tracking-wider bg-[#EDEDED]">
 
             {/* Logo */}
-            <div className="col-span-4 sm:col-span-5 flex items-center px-2 sm:px-6 lg:px-8 border-r border-black overflow-hidden">
-                <Link href="/" className="w-full h-full flex items-center justify-center text-center px-0 sm:px-2 leading-tight">
+            <div className="col-span-4 sm:col-span-5 flex items-center px-3 sm:px-6 lg:px-8 border-r border-black">
+                <Link href="/" className="font-['Fayte'] text-2xl sm:text-3xl lg:text-4xl whitespace-nowrap">
                     i . nspira
                 </Link>
             </div>
