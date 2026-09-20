@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CustomCollection } from "@/app/types/CustomCollection";

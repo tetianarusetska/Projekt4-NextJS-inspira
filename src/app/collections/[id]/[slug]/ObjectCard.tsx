@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { ObjectCardProps } from "@/app/types/ObjectCardProps";
 import { getObjectColor } from "@/app/utils/getObjectColor";
@@ -51,8 +51,8 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
             </div>
 
             {/* Core Card Block */}
-            <div className="mmx-auto mt-6 sm:mt-12 lg:mt-20 w-full lg:max-w-[1323px] h-auto lg:h-[595px] border-[3px] sm:border-[5px] border-black bg-black shadow-[6px\_6px\_0px\_0px\_rgba(0,0,0,1)] sm:shadow-[10px\_10px\_0px\_0px\_rgba(0,0,0,1)] hover:shadow-[12px\_12px\_0px\_0px\_rgba(0,0,0,1)] lg:hover:shadow-[16px\_16px\_0px\_0px\_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300">
-                <div className="grid grid-cols-1 md:grid-cols-[38%_62%]">
+            <div className="mx-auto mt-6 sm:mt-12 lg:mt-20 w-full max-w-[1323px] h-auto lg:h-[595px] border-[3px] sm:border-[5px] border-black bg-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] lg:hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300">
+                <div className="grid grid-cols-1 md:grid-cols-[38%_62%] h-full">
 
                     {/* Image Block */}
                     <div
@@ -69,29 +69,29 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                     </div>
 
                     {/* Text Details Block */}
-                    <div className="p-4 sm:p-6 lg:p-8 lg:pl-12 text-white flex flex-col justify-between h-full">
+                    <div className="p-4 sm:p-6 lg:p-8 lg:pl-12 text-white flex flex-col justify-between h-full min-h-0">
                         <div>
                             {isEditing ? (
                                 <input
                                     value={editedValues["title"] ?? ""}
                                     onChange={(e) => handleFieldChange("title", e.target.value)}
-                                    className="mt-2 sm:mt-4 lg:mt-10 bg-transparent border-b border-white font-inter font-black text-xl sm:text-2xl lg:text-[32px] w-full focus:outline-none"
+                                    className="mt-2 sm:mt-4 lg:mt-6 bg-transparent border-b border-white font-inter font-black text-xl sm:text-2xl lg:text-[32px] w-full focus:outline-none"
                                 />
                             ) : (
-                                <h3 className="mt-2 sm:mt-4 lg:mt-10 font-inter font-black text-xl sm:text-2xl lg:text-[32px] break-words">
+                                <h3 className="mt-2 sm:mt-4 lg:mt-6 font-inter font-black text-xl sm:text-2xl lg:text-[32px] break-words leading-tight">
                                     {getValue("title")}
                                 </h3>
                             )}
 
-                            <p className="grotesk-xbold text-base sm:text-xl lg:text-[24px] mt-2 sm:mt-4 leading-snug tracking-[1%]">
+                            <p className="grotesk-xbold text-base sm:text-xl lg:text-[24px] mt-2 sm:mt-3 leading-snug tracking-[1%]">
                                 {collection.code}  –  N°{object.id}
                             </p>
 
                             {/* Details */}
-                            <div className="mt-4 sm:mt-8 lg:mt-14 flex flex-row gap-4 sm:gap-8 lg:gap-12 flex-wrap">
+                            <div className="mt-4 sm:mt-6 lg:mt-8 flex flex-row gap-4 sm:gap-8 lg:gap-10 flex-wrap">
                                 {mainDetails.map((detail) => (
-                                    <div key={detail.id} className="flex flex-col gap-2">
-                                        <p className="text-md font-inter text-[#808080] normal-case">
+                                    <div key={detail.id} className="flex flex-col gap-1 sm:gap-2">
+                                        <p className="text-xs sm:text-sm font-inter text-[#808080] normal-case">
                                             {formatLabel(detail.label)}
                                         </p>
                                         {isEditing ? (
@@ -100,10 +100,10 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                                                 onChange={(e) =>
                                                     handleFieldChange(detail.id, e.target.value)
                                                 }
-                                                className="bg-transparent border-b border-white text-md font-inter focus:outline-none w-32"
+                                                className="bg-transparent border-b border-white text-sm sm:text-base font-inter focus:outline-none w-28 sm:w-32"
                                             />
                                         ) : (
-                                            <p className="text-md font-inter">
+                                            <p className="text-sm sm:text-base font-inter font-medium">
                                                 {getValue(detail.id)}
                                             </p>
                                         )}
@@ -114,7 +114,7 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                             {/* Quote Block */}
                             {hasQuote && (isEditing || getValue("bestQuote")) && (
                                 <div>
-                                    <p className="mt-4 lg:mt-6 text-[#808080] text-sm sm:text-md font-inter normal-case">
+                                    <p className="mt-4 lg:mt-5 text-[#808080] text-xs sm:text-sm font-inter normal-case">
                                         Bestes Zitat
                                     </p>
                                     {isEditing ? (
@@ -123,11 +123,11 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                                             onChange={(e) =>
                                                 handleFieldChange("bestQuote", e.target.value)
                                             }
-                                            className="mt-2 sm:mt-4 bg-transparent border-b border-white font-inter w-full text-base sm:text-xl lg:text-[28px] leading-snug focus:outline-none resize-none"
+                                            className="mt-1 sm:mt-2 bg-transparent border-b border-white font-inter w-full text-base sm:text-lg lg:text-2xl leading-snug focus:outline-none resize-none"
                                             rows={2}
                                         />
                                     ) : (
-                                        <p className="mt-2 sm:mt-4 font-inter italic w-full text-sm sm:text-base lg:text-xl leading-snug break-words">
+                                        <p className="mt-1 sm:mt-2 font-inter italic w-full text-sm sm:text-base lg:text-lg leading-snug break-words">
                                             {getValue("bestQuote")}
                                         </p>
                                     )}
@@ -141,11 +141,11 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                                 <textarea
                                     value={editedValues["note"] ?? ""}
                                     onChange={(e) => handleFieldChange("note", e.target.value)}
-                                    className="font-inter text-sm sm:text-base lg:text-xl mt-2 sm:mt-4 mb-4 lg:mb-12 w-full bg-transparent border-b border-white focus:outline-none resize-none"
+                                    className="font-inter text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 mb-2 lg:mb-4 w-full bg-transparent border-b border-white focus:outline-none resize-none"
                                     rows={2}
                                 />
                             ) : (
-                                <p className="ffont-inter text-sm sm:text-base lg:text-xl mt-2 sm:mt-4 mb-4 lg:mb-12 break-words">
+                                <p className="font-inter text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 mb-2 lg:mb-4 break-words text-neutral-300">
                                     {getValue("note")}
                                 </p>
                             )
@@ -156,21 +156,21 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
             </div>
 
             {/* CRUD Buttons */}
-            <div className="mx-auto grid grid-cols-2 gap-3 sm:gap-8 lg:gap-16 mt-8 lg:mt-15 w-full max-w-xs sm:max-w-md lg:max-w-160 px-4 sm:px-0">
+            <div className="mx-auto grid grid-cols-2 gap-3 sm:gap-8 lg:gap-16 mt-8 lg:mt-12 w-full max-w-xs sm:max-w-md lg:max-w-[640px] px-4 sm:px-0">
 
                 {isEditing ? (
                     <>
                         <button
                             onClick={() => handleUpdate(editedValues, () => setIsEditing(false))}
                             disabled={isUpdating}
-                            className="flex items-center justify-center border border-black py-3 sm:py-4 bg-black text-[#EDEDED] text-[10px] sm:text-xs lg:text-sm font-bold tracking-wider sm:tracking-widest uppercase transition-all duration-200 hover:bg-transparent hover:text-black hover:scale-[1.02]"
+                            className="flex items-center justify-center border border-black py-3 sm:py-4 bg-black text-[#EDEDED] text-[10px] sm:text-xs lg:text-sm font-bold tracking-wider sm:tracking-widest uppercase transition-all duration-200 hover:bg-transparent hover:text-black hover:scale-[1.02] cursor-pointer"
                         >
                             {isUpdating ? "SPEICHERN..." : "SPEICHERN"}
                         </button>
                         <button
                             onClick={handleCancelEdit}
                             disabled={isUpdating}
-                            className="flex items-center justify-center border border-black ppy-3 sm:py-4 text-[10px] sm:text-xs lg:text-sm tracking-wider sm:tracking-widest bg-white text-black text-sm font-bold uppercase transition-all duration-200 hover:bg-black hover:text-[#EDEDED] hover:scale-[1.02]"
+                            className="flex items-center justify-center border border-black py-3 sm:py-4 bg-white text-black text-[10px] sm:text-xs lg:text-sm font-bold tracking-wider sm:tracking-widest uppercase transition-all duration-200 hover:bg-black hover:text-[#EDEDED] hover:scale-[1.02] cursor-pointer"
                         >
                             ABBRECHEN
                         </button>
@@ -179,14 +179,14 @@ export default function ObjectCard({ collection, object }: ObjectCardProps) {
                     <>
                         <button
                             onClick={() => setIsEditing(true)}
-                            className="flex items-center justify-center border border-black py-3 sm:py-4 bg-black text-[#EDEDED] text-[10px] sm:text-xs lg:text-sm font-bold tracking-wider sm:tracking-widest uppercase transition-all duration-200 hover:bg-transparent hover:text-black hover:scale-[1.02]"
+                            className="flex items-center justify-center border border-black py-3 sm:py-4 bg-black text-[#EDEDED] text-[10px] sm:text-xs lg:text-sm font-bold tracking-wider sm:tracking-widest uppercase transition-all duration-200 hover:bg-transparent hover:text-black hover:scale-[1.02] cursor-pointer"
                         >
                             BEARBEITEN
                         </button>
                         <button
                             onClick={handleDelete}
                             disabled={isDeleting}
-                            className="flex items-center justify-center border border-black py-4 bg-white text-black text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:bg-black hover:text-[#EDEDED] hover:scale-[1.02]"
+                            className="flex items-center justify-center border border-black py-3 sm:py-4 bg-white text-black text-[10px] sm:text-xs lg:text-sm font-bold tracking-wider sm:tracking-widest uppercase transition-all duration-200 hover:bg-black hover:text-[#EDEDED] hover:scale-[1.02] cursor-pointer"
                         >
                             {isDeleting ? "LÖSCHEN..." : "LÖSCHEN"}
                         </button>
