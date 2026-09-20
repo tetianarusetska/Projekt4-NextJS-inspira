@@ -1,7 +1,6 @@
 # i . nspira
 
 i.nspira ist ein digitales Archiv für persönliche Sammlungen wie Bücher, Musik, Zeitschriften, Kunstwerke, Museen, Galerien, Fotografien, Ideen und Zitate.
-
 Das Ziel besteht darin, verstreute physische Notizen und Sammlungen durch ein strukturiertes und durchsuchbares digitales Archiv zu ersetzen.
 
 ## Tech-Stack
@@ -16,117 +15,29 @@ Das Ziel besteht darin, verstreute physische Notizen und Sammlungen durch ein st
 - **Vercel** – Deployment und Hosting
 - **Tailwind CSS** – Styling
 
-## Architektur
+## Kernfeatures
+- Persönliche Sammlungen für Bücher, Musik, Magazine, Kunstwerke, Museen, Galerien, Fotos, Ideen und Zitate
+- Benutzerregistrierung und Authentifizierung
+- Private Benutzerdaten
+- Neue Einträge erstellen
+- Gespeicherte Einträge anzeigen
+- Bestehende Einträge bearbeiten
+- Einträge löschen
+- Strukturierte persönliche Sammlung
+- PostgreSQL-Datenbank mit Prisma ORM
+- Docker für die lokale Entwicklung
+- Deployment mit Vercel und Neon
 
-```text
-User
-  ↓
-Next.js / React
-  ↓
-API Routes
-  ↓
-Better Auth + Business Logic
-  ↓
-Prisma ORM
-  ↓
-PostgreSQL / Neon
-```
+## Live-Demo
+[Vercel-Live-Demo](https://projekt4-next-js-inspira.vercel.app/)
 
-Docker wird für die lokale Entwicklung verwendet, während Vercel und Neon in der Produktionsumgebung eingesetzt werden.
-
-## Authentifizierung & Sicherheit
-
-Better Auth übernimmt die Authentifizierung und Sitzungsverwaltung.
-
-Geschützte Anfragen prüfen die aktuelle Sitzung und verwenden:
-
-```ts
-session.user.id
-```
-
-zur Identifizierung des Benutzers.
-
-Auch die Datenbankabfragen werden nach userId gefiltert. Dadurch wird sichergestellt, dass Benutzer ausschließlich auf ihre eigenen Objekte zugreifen und diese bearbeiten können.
-
-## CRUD API
-
-Die zentrale Objekt-API befindet sich unter:
-
-```text
-/api/objects
-```
-
-Sie unterstützt die wichtigsten CRUD-Operationen:
-
-- **CREATE** – ein neues Objekt erstellen
-- **READ** – Objekte abrufen
-- **UPDATE** – ein Objekt aktualisieren
-- **DELETE** – ein Objekt löschen
-
-Nach Änderungen wird `revalidatePath()` verwendet, damit die angezeigten Daten aktuell bleiben.
-
-## Datenbank
-
-Als Datenbank wird PostgreSQL verwendet, der Zugriff erfolgt über Prisma.
-
-Das Projekt enthält relationale Modelle für die Authentifizierung sowie für verschiedene Sammlungstypen. Fremdschlüssel und kaskadierende Löschvorgänge gewährleisten die referenzielle Integrität der Daten.
-
-Die Datenbankmigrationen befinden sich unter:
-
-```text
-prisma/migrations/
-```
-
-Initiale bzw. Demo-Daten können über das Prisma-Seed-Skript erstellt werden.
-
-## Lokale Entwicklung
-
-Abhängigkeiten installieren:
-
-```bash
-npm install
-```
-
-Die Entwicklungsumgebung mit Docker starten:
-
-```bash
-docker compose up
-```
-
-Die Anwendung ist anschließend unter folgender Adresse erreichbar:
-
-```text
-http://localhost:3000
-```
-
-## Produktion
-
-Die Anwendung wird mit **Vercel** bereitgestellt.
-
-Die Produktionsdatenbank wird auf Neon PostgreSQL gehostet. Vercel übernimmt das Hosting und Deployment der Anwendung, während Neon die Cloud-Datenbank bereitstellt.
-
-## Projektstruktur
-
-```text
-src/
-├── app/
-│   ├── api/
-│   ├── actions/
-│   ├── components/
-│   ├── hooks/
-│   └── lib/
-│
-prisma/
-├── schema.prisma
-├── migrations/
-└── prisma.seed.ts
-
-Dockerfile.dev
-docker-compose.yml
-```
-
-## Autorin
-
-**Tetiana Rusetska**
-
-Projekt: **i.nspira**
+## Screens
+![](./public/images/img1.png)
+![](./public/images/img2.png)
+![](./public/images/img3.png)
+![](./public/images/img4.png)
+![](./public/images/img5.png)
+![](./public/images/img6.png)
+![](./public/images/img7.png)
+![](./public/images/img8.png)
+![](./public/images/img9.png)
