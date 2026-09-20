@@ -3,33 +3,33 @@ export default function Impressum() {
         <main className="flex-1 w-full relative z-10">
 
             {/* ================= SECTION 1: HEADER ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[35vh]">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[35vh]">
                 {/* Left Column */}
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         LEGAL / RECHTLICH
                     </span>
                     <div className="mt-8">
-                        <h1 className="text-5xl lg:text-[64px] leading-[102%] tracking-[1%] font-display uppercase">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl lg:text-[64px] leading-[102%] tracking-[1%] font-display uppercase">
                             Impressum
                         </h1>
                     </div>
                 </div>
 
                 {/* Right Column */}
-                <div className="col-span-7 p-12 flex flex-col justify-center max-w-[90%]">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center max-w-full lg:max-w-[90%]">
                     <span className="text-xs font-bold text-neutral-400 font-text uppercase tracking-wider mb-3">
                         Angaben gemäß § 5 DDG
                     </span>
-                    <p className="text-lg font-light text-black font-text leading-relaxed tracking-wide">
-                        <span className="font-[Fayte] text-3xl">i . nspira</span> ist ein persönliches digitales Archivierungs- und Inspirationsprojekt. Die Anwendung ermöglicht es Nutzerinnen und Nutzern, persönliche Sammlungen anzulegen, Inhalte zu speichern, zu bearbeiten und mit eigenen Bildern, Notizen und weiteren Informationen zu ergänzen.
+                    <p className="text-sm sm:text-base lg:text-lg font-light text-black font-text leading-relaxed tracking-wide">
+                        <span className="font-[Fayte] text-xl sm:text-2xl lg:text-3xl">i . nspira</span> ist ein persönliches digitales Archivierungs- und Inspirationsprojekt. Die Anwendung ermöglicht es Nutzerinnen und Nutzern, persönliche Sammlungen anzulegen, Inhalte zu speichern, zu bearbeiten und mit eigenen Bildern, Notizen und weiteren Informationen zu ergänzen.
                     </p>
                 </div>
             </section>
 
             {/* ================= SECTION 2: BETREIBER ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[25vh]">
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[25vh]">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between gap-2 lg:gap-0">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         01 / BETREIBER
                     </span>
@@ -38,7 +38,7 @@ export default function Impressum() {
                     </p>
                 </div>
 
-                <div className="col-span-7 p-12 flex flex-col justify-center space-y-4 bg-white/40">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center space-y-2 sm:space-y-4 bg-white/40">
                     <h3 className="text-lg font-black font-text tracking-tight uppercase text-black">
                         Tetiana Rusetska
                     </h3>
@@ -50,8 +50,8 @@ export default function Impressum() {
             </section>
 
             {/* ================= SECTION 3: KONTAKT ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[25vh]">
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[25vh]">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between gap-2 lg:gap-0">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         02 / KONTAKT
                     </span>
@@ -60,7 +60,7 @@ export default function Impressum() {
                     </p>
                 </div>
 
-                <div className="col-span-7 p-12 flex flex-col justify-center space-y-4">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center space-y-2 sm:space-y-4 bg-white/40">
                     <h3 className="text-lg font-black font-text tracking-tight uppercase text-black">
                         E-Mail-Adresse
                     </h3>
@@ -79,8 +79,8 @@ export default function Impressum() {
             </section>
 
             {/* ================= SECTION 4: VERANTWORTLICH ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[25vh]">
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[25vh]">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between gap-2 lg:gap-0">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         03 / VERANTWORTLICH
                     </span>
@@ -89,7 +89,7 @@ export default function Impressum() {
                     </p>
                 </div>
 
-                <div className="col-span-7 p-12 flex flex-col justify-center space-y-4 bg-white/40">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center space-y-2 sm:space-y-4 bg-white/40">
                     <h3 className="text-lg font-black font-text tracking-tight uppercase text-black">
                         Tetiana Rusetska
                     </h3>
@@ -101,8 +101,8 @@ export default function Impressum() {
             </section>
 
             {/* ================= SECTION 5: DISCLAIMER & LEGAL ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[40vh]">
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[40vh]">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between gap-2 lg:gap-0">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         04 / LEGAL DISCLAIMER
                     </span>
@@ -111,7 +111,7 @@ export default function Impressum() {
                     </p>
                 </div>
 
-                <div className="col-span-7 p-12 flex flex-col justify-center space-y-8">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center space-y-6 sm:space-y-8">
                     {/* Haftung für Inhalte */}
                     <div className="space-y-2">
                         <h4 className="text-xs font-bold text-neutral-400 font-text uppercase tracking-wider">

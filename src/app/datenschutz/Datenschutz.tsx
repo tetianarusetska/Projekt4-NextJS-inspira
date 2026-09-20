@@ -3,33 +3,33 @@ export default function Datenschutz() {
         <main className="flex-1 w-full relative z-10">
 
             {/* ================= SECTION 1: HEADER ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[35vh]">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[35vh]">
                 {/* Left Column */}
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         PRIVACY / DATENSCHUTZ
                     </span>
                     <div className="mt-8">
-                        <h1 className="text-5xl lg:text-[64px] leading-[102%] tracking-[1%] font-display uppercase">
+                        <h1 className="text-3xl sm:text-4xl lg:text-[64px] leading-[102%] tracking-[1%] font-display uppercase">
                             Datenschutz
                         </h1>
                     </div>
                 </div>
 
                 {/* Right Column */}
-                <div className="col-span-7 p-12 flex flex-col justify-center max-w-[90%]">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center max-w-full lg:max-w-[90%]">
                     <span className="text-xs font-bold text-neutral-400 font-text uppercase tracking-wider mb-3">
                         Erklärung zur Barrierefreiheit & DSGVO
                     </span>
-                    <p className="text-lg font-light text-black font-text leading-relaxed tracking-wide">
+                    <p className="text-sm sm:text-base lg:text-lg font-light text-black font-text leading-relaxed tracking-wide">
                         Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie ausführlich über den Umgang mit Ihren Daten im Rahmen der Nutzung von <span className="font-[Fayte] text-3xl">i . nspira</span>.
                     </p>
                 </div>
             </section>
 
             {/* ================= SECTION 2: VERANTWORTLICHE STELLE ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[25vh]">
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[25vh]">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between gap-2 lg:gap-0">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         01 / VERANTWORTLICHER
                     </span>
@@ -38,14 +38,14 @@ export default function Datenschutz() {
                     </p>
                 </div>
 
-                <div className="col-span-7 p-12 flex flex-col justify-center space-y-4 bg-white/40">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center space-y-2 sm:space-y-4 bg-white/40">
                     <h3 className="text-lg font-black font-text tracking-tight uppercase text-black">
                         Tetiana Rusetska
                     </h3>
                     <p className="text-sm text-neutral-600 leading-relaxed font-text">
                         Birkholzweg 38<br />
                         60433 Frankfurt am Main<br />
-                        <a href="mailto:rusetskatata@gmail.com" className="underline hover:text-black transition-colors">
+                        <a href="mailto:rusetskatata@gmail.com" className="underline hover:text-black transition-colors break-all sm:break-normal">
                             rusetskatata@gmail.com
                         </a>
                     </p>
@@ -94,8 +94,8 @@ export default function Datenschutz() {
             </section>
 
             {/* ================= SECTION 4: DATENSICHERHEIT & SERVICES ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[35vh]">
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[35vh]">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between gap-2 lg:gap-0">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         03 / INVOLVIERTE DIENSTE
                     </span>
@@ -104,7 +104,7 @@ export default function Datenschutz() {
                     </p>
                 </div>
 
-                <div className="col-span-7 p-12 flex flex-col justify-center space-y-6 bg-white/40">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center space-y-4 sm:space-y-6">
                     <div className="space-y-2">
                         <h4 className="text-xs font-bold text-neutral-400 font-text uppercase tracking-wider">
                             Hosting & Datenbank
@@ -126,8 +126,8 @@ export default function Datenschutz() {
             </section>
 
             {/* ================= SECTION 5: NUTZERRECHTE ================= */}
-            <section className="grid grid-cols-12 w-full border-b border-black min-h-[30vh]">
-                <div className="col-span-5 p-12 border-r border-black flex flex-col justify-between">
+            <section className="grid grid-cols-12 w-full border-b border-black min-h-0 lg:min-h-[30vh]">
+                <div className="col-span-12 lg:col-span-5 p-4 sm:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col justify-between gap-2 lg:gap-0">
                     <span className="text-xs font-bold tracking-widest text-neutral-400 font-text uppercase">
                         04 / IHRE RECHTE
                     </span>
@@ -136,7 +136,7 @@ export default function Datenschutz() {
                     </p>
                 </div>
 
-                <div className="col-span-7 p-12 flex flex-col justify-center space-y-4">
+                <div className="col-span-12 lg:col-span-7 p-4 sm:p-8 lg:p-12 flex flex-col justify-center space-y-3 sm:space-y-4">
                     <p className="text-xs text-neutral-500 leading-relaxed font-text">
                         Sie haben jederzeit das Recht auf unentgeltliche **Auskunft** über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf **Berichtigung**, **Sperrung** oder **Löschung** dieser Daten. 
                     </p>
