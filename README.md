@@ -1,7 +1,7 @@
 # i . nspira
 
 i.nspira ist ein digitales Archiv für persönliche Sammlungen wie Bücher, Musik, Zeitschriften, Kunstwerke, Museen, Galerien, Fotografien, Ideen und Zitate.
-Das Ziel besteht darin, verstreute physische Notizen und Sammlungen durch ein strukturiertes und durchsuchbares digitales Archiv zu ersetzen.
+Das Ziel besteht darin, verstreute physische Notizen und Sammlungen durch ein strukturiertes und durchsuchbares digitales Archiv zu ersetzen. 
 
 ## Tech-Stack
 
